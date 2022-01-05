@@ -1,7 +1,0 @@
-@mixin width($width : $act-site-width, $max-width : 100%){
-  width : $width;
-  max-width : $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
