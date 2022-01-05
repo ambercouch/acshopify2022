@@ -1,0 +1,506 @@
+/*
+  BEM BLOCK .c-btn
+ */
+
+.c-btn {
+ @extend .o-btn;
+  @extend .o-btn--small;
+  @extend .o-btn--ghost;
+  overflow: hidden;
+  position: relative;
+  color: $brand-col-2;
+  border-radius: $act-unit-t;
+  border-width: 3px;
+  min-width: 200px;
+  max-width: 100%;
+  &:hover, &:focus{
+    color: $brand-col-2;
+    @extend .o-btn--small;
+    @extend .o-btn--ghost;
+    border-width: 3px;
+    min-width: 200px;
+  }
+
+}
+
+/*
+  BEM BLOCK MODIFIER .c-btn--
+ */
+
+.c-btn-- {
+  &swipe-hover{
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    &:after{
+      transition: width 0.8s ease-in-out;
+      transform: rotateZ(-15deg);
+      content: "";
+      width: 100%;
+      height: 100vw;
+      display: block;
+      position: absolute;
+      left: -50%;
+      top: -50vw;
+      background: rgba(#fff, 0.2);
+      width: 0;
+
+    }
+    &:hover{
+      &:after{
+        width: 200% !important;
+      }
+    }
+  }
+  &subscribe-submit{
+    @extend .o-btn--small;
+    @extend .o-btn--full;
+    @extend .o-btn--bg5;
+    color: $brand-col-2;
+    border-radius: 0 $act-unit-s $act-unit-s 0 ;
+    height: 100%;
+    border: none;
+    background: $brand-col-5 !important;
+    min-width: 0;
+    &:hover{
+      @extend .c-btn--subscribe-submit;
+    }
+  }
+  &content-block{
+    border-radius:  $act-unit-t;
+    background: transparent;
+    border: solid ;
+    margin: 0 auto;
+    padding-top: $act-unit-s;
+    padding-bottom: $act-unit-s;
+    &:hover,&:focus{
+      //background: rgba(white, 0.5);
+      color: white;
+    }
+  }
+  &contact-submit{
+    border-radius:  $act-unit-t;
+    color: white;
+    background: $brand-col-3 !important;
+    border: solid 3px $brand-col-3 !important;
+    margin: 0 auto;
+    padding-top: $act-unit-s !important;
+    padding-bottom: $act-unit-s  !important;
+    &:hover,&:focus{
+      @extend .c-btn--contact-submit;
+    }
+}
+  &mobile-nav-close{
+    @extend .o-btn--small;
+    @extend .o-btn--transparent;
+    @extend .o-btn--flush;
+    color: $brand-col-2;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    width: 20px;
+  }
+  &search-submit{
+    @extend .o-btn--transparent;
+    @extend .o-btn--tiny;
+    colour: $brand-col-2;
+    border: none;
+    padding: $act-unit-t;
+    width: 30px;
+    min-width: 0;
+    &:hover, &:focus{
+      @extend .c-btn--search-submit;
+    }
+  }
+  &search-close{
+    @extend .o-btn--transparent;
+    @extend .o-btn--tiny;
+    colour: $brand-col-2;
+    border: none;
+    padding: $act-unit-t;
+    width: 30px;
+    min-width: 0;
+    &:hover, &:focus{
+      @extend .c-btn--search-close;
+    }
+  }
+  &collection-thumb{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    color: $brand-col-2;
+    min-width: 200px;
+    &:hover, &:focus{
+      @extend .c-btn--content-block;
+      color: $brand-col-2;
+    }
+  }
+  &product-thumb{
+     @extend .c-btn;
+     @extend .c-btn--content-block;
+     color: $brand-col-2;
+     min-width: 200px;
+     padding-top: $act-unit-s;
+     padding-bottom: $act-unit-s;
+     &:hover{
+       color: $brand-col-2;
+     }
+    &:after{
+      @extend .c-btn--swipe-hover:after;
+      background: rgba(white, 0.5);
+      z-index: 0;
+    }
+   }
+  &thumb{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    color: $brand-col-2;
+    min-width: 200px;
+    padding-top: $act-unit-s;
+    padding-bottom: $act-unit-s;
+    &:hover{
+      color: $brand-col-2;
+    }
+  }
+  &product-form-submit{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    @extend .o-btn--full;
+    color: white;
+    background: $brand-col-3 !important;
+    @include act-font-size($act-fs-5,1);
+    border-radius: 0;
+    border: solid 3px $brand-col-3;
+    min-width: 0;
+    &:hover,&:focus{
+      @extend .o-btn--full;
+     //background: darken($brand-col-3, 10%) !important;
+      color: white;
+      border: solid 3px $brand-col-3;
+    }
+    &:after{
+      //@extend .c-btn--swipe-hover;
+      background: darken($brand-col-3, 10%);
+    }
+  }
+  &add-to-bundle{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    @extend .o-btn--full;
+    @extend .o-btn--transparent;
+    color: $brand-col-3;
+    @include act-font-size($act-fs-5,1);
+    border-radius: $act-unit-t;
+    border: solid 3px $brand-col-3;
+    &:hover,&:focus{
+      @extend .o-btn--full;
+      color: $brand-col-3;
+    }
+  }
+  &collection-list-2{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    color: $brand-col-3;
+    min-width: 200px;
+    padding-top: $act-unit-s;
+    padding-bottom: $act-unit-s;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      color: $brand-col-3;
+    }
+    &:after{
+      //@extend .c-btn--swipe-hover:after;
+    }
+  }
+  &buy-bundle{
+    @extend .c-btn--product-form-submit;
+  }
+  &buy-bundle-popout{
+    @extend .c-btn--product-form-submit;
+    border-radius:  0 0 $act-unit-s $act-unit-s;
+  }
+  &product-bundle-link{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    @extend .o-btn--full;
+    color: $brand-col-3;
+    @include act-font-size($act-fs-5,1);
+    border-width: 3px;
+    position: relative;
+    overflow: hidden;
+    &:hover, &:focus{
+      @extend .o-btn--full;
+      color: $brand-col-3;
+      border-color: $brand-col-3;
+      border-width: 3px;
+    }
+    &:after{
+      //@extend .c-btn--swipe-hover:after;
+      background: rgba($brand-col-3, 0.3);
+    }
+  }
+  &block{
+    @extend .o-btn--transparent;
+    @extend .o-btn--full;
+    color: $brand-col-3;
+    font-family: $act-font-family-headings;
+    font-weight: 700;
+    text-align: center;
+    border: solid 3px $brand-col-3;
+  border-radius: $act-unit-t;
+    &:hover, &:focus{
+      @extend .o-btn--transparent;
+      @extend .o-btn--full;
+      @extend .o-btn--small;
+      color: $brand-col-3;
+      border: solid 3px $brand-col-3;
+    }
+  }
+  &block-care{
+     @extend .o-btn--transparent;
+     @extend .o-btn--full;
+     color: $brand-col-2;
+     font-family: $act-font-family-headings;
+     font-weight: 700;
+     padding: $act-unit 0;
+     text-align: center;
+   }
+  &block-benefits{
+    @extend .c-btn--block-care;
+  }
+  &product-back{
+    @extend .o-btn--icon-left;
+    @extend .o-btn--transparent;
+    color: $brand-col-5;
+    font-family: $act-font-family-headings;
+    font-weight: 700;
+    border: none;
+    display: flex !important;
+    margin: 0 auto;
+    width: 300px;
+    max-width: 100%;
+    cursor: pointer;
+    &:hover, &:focus{
+      color: darken($brand-col-5, 10%);
+      @extend .o-btn--icon-left;
+      @extend .o-btn--transparent;
+      @extend .c-btn--product-back;
+    }
+    & > :first-child{
+      transform: rotateZ(90deg);
+    }
+  }
+  &cart-update{
+    @extend .o-btn--flush;
+    @extend .o-btn--tiny;
+    @extend .o-btn--transparent;
+    color: $brand-col-1;
+    border: 0;
+    min-width: 0;
+    @include act-font-size($act-fs-6);
+    &:hover, &:focus{
+      @extend .c-btn--cart-update;
+    }
+  }
+  &cart-remove{
+    min-width: 0;
+    padding: 3px;
+    @extend .o-btn--transparent;
+    color: #ccc;
+    border-radius: 50%;
+    border: solid 1px;
+    @include size(30px);
+    min-width: 0;
+    &:hover, &:focus, &:active{
+      min-width: 0;
+      @include size(30px);
+      padding: 3px;
+      @extend .o-btn--transparent;
+      color: #ccc;
+      border: solid 1px;
+
+    }
+  }
+  &cart-submit{
+    @extend .o-btn--full;
+    background:$brand-col-3;
+    color: white;
+    border:solid 3px $brand-col-3;
+    border-radius: 0;
+    font-family: $act-font-family-headings;
+    font-weight: 700;
+    &:after{
+     // @extend .c-btn--swipe-hover:after;
+      background: $brand-col-3;
+    }
+    &:hover, &:focus{
+      @extend .o-btn--full;
+      background: white;
+      color: $brand-col-2;
+      border:solid 3px;
+      @include mq($from:desktop){
+        margin-left: auto;
+        margin-right: auto;
+        width: 900px;
+        max-width: 100%;
+        display: block;
+      }
+    }
+    @include mq($from:desktop){
+      width: 900px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+  &reviews-cta{
+    @extend .o-btn--full;
+    @extend .o-btn--transparent;
+    color: $brand-col-2;
+    border-radius: $act-unit-s;
+    border:solid 3px;
+    font-family: $act-font-family-sans;
+    &:hover, &:focus{
+      @extend .o-btn--full;
+      @extend .o-btn--transparent;
+      border-radius: $act-unit-s;
+      color: $brand-col-2;
+      border:solid 3px;
+      background: rgba(#fff, 0.3);
+    }
+  }
+  &header-link-collection{
+    width: auto;
+    min-width: 200px;
+    max-width: 100%;
+    display: inline-block !important;
+    overflow: hidden;
+    &:after{
+   //  @extend .c-btn--swipe-hover:after;
+      background: $brand-col-2;
+    }
+    &:hover, &:focus{
+      display: inline-block !important;
+      width: auto;
+      &:after {
+        width: 100%;
+      }
+      .c-btn__label--header-link-collection{
+        color: #fff !important;
+      }
+    }
+  }
+  &content-block-login{
+    background: $brand-col-3 !important;
+    border: solid 3px $brand-col-3;
+    color: #fff !important;
+    width: 300px !important;
+    max-width: 100%;
+    &:hover{
+      background: darken($brand-col-3, 10%) !important;
+      width: 300px !important;
+      max-width: 100%;
+      border: solid 3px $brand-col-3;
+    }
+  }
+  &page-footer-login{
+    background: $brand-col-3 !important;
+    border: solid 3px $brand-col-3;
+    color: #fff !important;
+    width: 300px !important;
+    max-width: 100%;
+    display: inline-block !important;
+    &:hover{
+      background: darken($brand-col-3, 10%) !important;
+      display: inline-block;
+      width: 300px !important !important;
+      max-width: 100%;
+      border: solid 3px $brand-col-3;
+      display: inline-block !important;
+    }
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-btn--
+
+[class*=c-btn--] {
+  @extend .c-btn;
+}
+
+/*
+  BEM ELEMENTS .c-btn__
+ */
+
+.c-btn__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &label{
+    display: inline;
+  }
+  &icon{
+    display: block;
+  }
+  &label{
+    position: relative;
+    z-index: 1;
+  }
+  &link-label{
+    position: relative;
+    z-index: 1;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__header--
+
+[class*=c-btn__header--] {
+  @extend .c-btn__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__label--
+
+[class*=c-btn__label--] {
+  @extend .c-btn__label;
+}
+
+.c-btn__label--{
+  &mobile-nav-close{
+    display: none;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__icon--
+
+[class*=c-btn__icon--] {
+  @extend .c-btn__icon;
+}
+
+.c-btn__icon--{
+  &mobile-nav-close{
+    &:hover, &:focus{
+      color: $brand-col-3;
+    }
+  }
+}
+

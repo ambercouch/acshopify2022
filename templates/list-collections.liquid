@@ -1,0 +1,40 @@
+{% comment %}
+  This page represents the /collections and /products pages.
+{% endcomment %}
+
+<div class="l-main__page--shop-collections">
+  <div class="l-page--shop-collections">
+    <header class="l-page__header--shop-collections" role="banner">
+      <h1 class="l-page__heading--shop-collections" >
+        <span class="l-page__title">Shop</span>
+      </h1>
+      <h4 class="l-page__sub-heading">Discover products that <br>make your life easier!</h4>
+      </header>
+    <div class="l-page__feature-image--shop-collections">
+      <img src="{{ 'collection_list_header.png' | asset_img_url : 'master' }}" alt="" class="l-page__img">
+    </div>
+    <div class="l-page__product-list--collections">
+      <div class="l-product-list--collections">
+        <div class="l-product-list__list">
+          {% for collection in collections %}
+
+            {% assign hideCollection = collection.metafields.global.hide_collection %}
+            {% assign showCollection = collection.metafields.global.show_collection %}
+
+
+            {% if collection.image != blank and hideCollection != "true" %}
+              <div class="l-product-list__item">
+                <div class="l-product-list__collection-thumb">
+                  {% include 'ac-collection-thumb' %}
+
+              </div>
+              </div>
+            {% endif %}
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>

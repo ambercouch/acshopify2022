@@ -1,0 +1,66 @@
+/*
+  BEM BLOCK .c-discount-code
+ */
+
+.c-discount-code {
+  display: block;
+  @extend .o-box--tiny;
+  background: transparent;
+  color: white;
+  font-family: $act-font-family-headings;
+  @include act-font-size($act-fs-1);
+
+  font-weight: 700;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-discount-code--
+ */
+
+.c-discount-code-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-discount-code--
+
+[class*=c-discount-code--] {
+  @extend .c-discount-code;
+}
+
+/*
+  BEM ELEMENTS .c-discount-code__
+ */
+
+.c-discount-code__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-discount-code--
+
+[class*=c-discount-code__header--] {
+  @extend .c-discount-code__header;
+}

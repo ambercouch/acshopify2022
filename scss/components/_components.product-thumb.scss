@@ -1,0 +1,416 @@
+/*
+  BEM BLOCK .c-product-thumb
+ */
+
+.c-product-thumb {
+  display: block;
+  padding: $act-unit-s;
+  background: $brand-col-4;
+  @include mq($from: desktop){
+    height: 100%;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-product-thumb--
+ */
+
+.c-product-thumb-- {
+  &type {
+    display: block
+  }
+  &search-result{
+    background: white;
+    padding: 0;
+    @include mq($from:desktop){
+      display: flex;
+    }
+  }
+  &cart{
+    padding: $act-unit-t;
+    background: #fff;
+    color: $brand-col-2;
+    position: relative;
+
+    @include mq($from:desktop){
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      padding: 0;
+    }
+  }
+  &modal{
+    background: $brand-col-5;
+  }
+
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-product-thumb--
+
+[class*=c-product-thumb--] {
+  @extend .c-product-thumb;
+}
+
+/*
+  BEM ELEMENTS .c-product-thumb__
+ */
+
+.c-product-thumb__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block;
+    @include act-font-size($act-fs-5);
+    @include act-font-size($inuit-font-size-h3,1);
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link-title{
+    @include a($col : $brand-col-2, $col-hov : $brand-col-2);
+    text-decoration: none;
+  }
+
+  &link {
+    display: inline
+  }
+  &link-image{
+    margin: 0;
+  }
+  &feature-image{
+    margin-bottom: $act-unit;
+    background: white;
+    @include mq($from:desktop){
+      overflow: hidden;
+    }
+  }
+  &meta{
+    color: $brand-col-2;
+  }
+
+  &content {
+    display: block;
+    text-align: left;
+  }
+
+  &footer {
+    display: block
+  }
+  &info{
+    display: block;
+    @include mq($from:desktop){
+      padding: 0 $act-unit;
+    }
+  }
+  &btn{
+    text-align: center;
+    padding: $act-unit-s 0;
+    margin: $act-unit-s 0;
+
+  }
+  &wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &qty-sep{
+    display: none;
+  }
+  &input{
+    width: auto;
+  }
+  &variant{
+    margin: $act-unit-t;
+    margin-left: 0;
+    @include act-font-size($act-fs-5, 1);
+  }
+  &variant-title{
+  }
+  &options{
+    @include act-font-size($act-fs-6);
+  }
+  &qty{
+    display: flex;
+  }
+  &cart-remove{
+    text-align: right;
+    margin-bottom: $act-unit-t;
+    position: absolute;
+    top: $act-unit-t;
+    right: $act-unit-t;
+  }
+  &img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &price{
+    display: block;
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__header--
+
+[class*=c-product-thumb__header--] {
+  @extend .c-product-thumb__header;
+}
+
+.c-product-thumb__header--{
+  &modal{
+    text-align: left;
+    margin-bottom: $act-unit;
+  }
+
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__heading--
+
+[class*=c-product-thumb__heading--] {
+  @extend .c-product-thumb__heading;
+}
+
+.c-product-thumb__heading--{
+  &cart{
+    color: $brand-col-2;
+    margin-bottom: $act-unit-s;
+    @include act-font-size($act-fs-5,1.2);
+    text-align: left;
+    @include mq($from: desktop){
+      margin-bottom: $act-unit-t;
+    }
+  }
+  &modal{
+    text-align: left;
+  }
+  &search-result{
+
+    @include mq($from:desktop){
+      @include act-font-size($act-fs-1);
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__info--
+
+[class*=c-product-thumb__info--] {
+  @extend .c-product-thumb__info;
+}
+
+
+.c-product-thumb__info--{
+  &search-result{
+    background: #fff;
+    padding: $act-unit-s;
+    @include mq($from:desktop){
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      align-items: flex-start;
+      justify-content: center;
+        padding: $act-unit-l * 3;
+    }
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__feature-image--
+
+[class*=c-product-thumb__feature-image--] {
+  @extend .c-product-thumb__feature-image;
+}
+
+
+.c-product-thumb__feature-image--{
+  &search-result{
+    margin-bottom: 0;
+    padding: $act-unit-s;
+    @include mq($from:desktop){
+      width: 50%;
+    }
+  }
+  &cart{
+    margin-bottom: 0;
+    //border-radius: $act-unit-s;
+    //border: solid 5px $brand-col-2;
+    @include size(135px);
+    margin-bottom: $act-unit-t;
+    @include mq($from:desktop){
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__wrapper--
+
+[class*=c-product-thumb__wrapper--] {
+  @extend .c-product-thumb__wrapper;
+}
+
+
+.c-product-thumb__wrapper--{
+  &search-result{
+    background: #fff;
+    padding: $act-unit-s;
+
+  }
+  &cart-qty{
+    margin-bottom: $act-unit-t;
+    @include mq($from: desktop){
+      margin-bottom: 0;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__input--
+
+[class*=c-product-thumb__input--] {
+  @extend .c-product-thumb__input;
+}
+
+
+.c-product-thumb__input--{
+  &qty{
+    text-align: center;
+    width: $act-unit-l;
+    @include act-font-size($act-fs-5);
+    padding: 0;
+    line-height: 1.4;
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__btn--
+
+[class*=c-product-thumb__btn--] {
+  @extend .c-product-thumb__btn;
+}
+
+
+.c-product-thumb__btn--{
+  &cart-update{
+    margin: 0;
+    padding: 0;
+    margin-left: $act-unit-s;
+    display: flex;
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__content--
+
+[class*=c-product-thumb__content--] {
+  @extend .c-product-thumb__content;
+}
+
+
+.c-product-thumb__content--{
+  &cart{
+    @include mq($from:desktop){
+      padding: $act-unit-t;
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__img--
+
+[class*=c-product-thumb__img--] {
+  @extend .c-product-thumb__img;
+}
+
+
+.c-product-thumb__img--{
+  &cart{
+    border-radius: $act-unit-s;
+    border: solid 5px $brand-col-2;
+  }
+}
+
+.c-product-thumb__feature-image{
+  .responsive-image__wrapper{
+    max-width: 100% !important;
+    width: 100% !important;
+    img{
+      width: 100%;
+      height: 100%;
+      max-width: 100% !important;
+      max-height: 100% !important;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-product-thumb__price--
+
+[class*=c-product-thumb__price--] {
+  @extend .c-product-thumb__price;
+}
+
+
+.c-product-thumb__price--{
+  &cart{
+    @include act-font-size($act-fs-5);
+  }
+}
+
+
+
+//.is-product-id-{
+//  &1859934158891{
+//    .c-product-thumb {
+//      background: $brand-col-5;
+//    }
+//  }
+//  &4383271583787{
+//    .c-product-thumb {
+//      background: $brand-col-4;
+//    }
+//  }
+//  &1859836051499 {
+//    .c-product-thumb {
+//      background: $brand-col-1;
+//    }
+//  }
+//  &1859837722667{
+//    .c-product-thumb {
+//      background: $brand-col-7;
+//      color: white;
+//    }
+//  }
+//
+//  &4252992700459 {
+//    .c-product-thumb {
+//      background: #FF2E1F;
+//    }
+//  }
+//
+//  &4252994371627{
+//    .c-product-thumb {
+//      background: #A7A9AC;
+//    }
+//  }
+//
+//  &4163474128939{
+//    .c-product-thumb {
+//      background: #231F20;
+//      color: white;
+//    }
+//  }
+//
+//  &4252993716267{
+//    .c-product-thumb {
+//      background: #4D2B6D;
+//      color: white;
+//    }
+//  }
+//
+//
+//
+//}

@@ -1,53 +1,55 @@
-{% comment %}
-    Renders a set of links for paginated results. Must be used within paginate tags.
+<div class="c-pagination">
+  {%- if paginate.pages > 1 -%}
+    <nav class="c-pagination__nav" role="navigation">
+      <ol class="c-pagination__list">
+        {%- if paginate.previous-%}
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--prev" href="{{ paginate.previous.url }}">
+              <span class="c-pagination__icon--prev" aria-hidden="true">&laquo;</span>
+              <span class="c-pagination__access-text--prev visuallyhidden">Previous page</span>
+            </a>
+          </li>
+        {%- else -%}
+          <li class="c-pagination__item is-disabled" >
+            <span class="c-pagination__icon--prev"  aria-hidden="true">&laquo;</span>
+            <span class="c-pagination__access-text--prev visuallyhidden">Previous page</span>
+          </li>
+        {%- endif -%}
 
-    Usage:
-    {% paginate results by 2 %}
-      {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
-    {% endpaginate %}
-
-    Accepts:
-    - paginate: {Object}
-    - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
-{% endcomment %}
-
-<link rel="stylesheet" href="{{ 'component-pagination.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'component-pagination.css' | asset_url | stylesheet_tag }}</noscript>
-
-{%- if paginate.parts.size > 0 -%}
-  <div class="pagination-wrapper">
-    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-      <ul class="pagination__list list-unstyled" role="list">
-      {%- if paginate.previous -%}
-        <li>
-          <a href="{{ paginate.previous.url }}{{ anchor }}" class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.previous' | t }}">
-            {% render 'icon-caret' %}
-          </a>
-        </li>
-      {%- endif -%}
-
-      {%- for part in paginate.parts -%}
-        <li>
+        {%- for part in paginate.parts -%}
           {%- if part.is_link -%}
-            <a href="{{ part.url }}{{ anchor }}" class="pagination__item link" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+            <li class="c-pagination__item--page" >
+              <a class="c-pagination__link--page" href="{{ part.url }}">
+                <span class="c-pagination__access-text--page visuallyhidden">page</span> <span class="c-pagination__label--page">{{ part.title }}</span>
+              </a>
+            </li>
           {%- else -%}
             {%- if part.title == paginate.current_page -%}
-              <span class="pagination__item pagination__item--current" aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
+              <li class="c-pagination__item--page is-active" >
+                  <span class="c-pagination__access-text--page visuallyhidden">page</span> <span class="c-pagination__label--page">{{ part.title }}</span>
+              </li>
             {%- else -%}
-              <span class="pagination__item">{{ part.title }}</span>
+              <li class="c-pagination__item--page" >
+                <span class="c-pagination__access-text--page visuallyhidden">page</span> <span class="c-pagination__label--page">{{ part.title }}</span>
+              </li>
             {%- endif -%}
           {%- endif -%}
-        </li>
-      {%- endfor -%}
+        {%- endfor -%}
 
-      {%- if paginate.next -%}
-        <li>
-          <a href="{{ paginate.next.url }}{{ anchor }}" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.next' | t }}" >
-            {%- render 'icon-caret' -%}
-          </a>
-        </li>
-      {%- endif -%}
-      </ul>
+        {%- if paginate.next -%}
+          <li class="c-pagination__item--next">
+            <a class="c-pagination__link--next" href="{{ paginate.next.url }}">
+              <span class="c-pagination__access-text--next visuallyhidden">Next page</span>
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        {%- else -%}
+          <li class="c-pagination__item--next is-disabled">
+            <span class="visuallyhidden">Next page</span>
+            <span aria-hidden="true">&raquo;</span>
+          </li>
+        {%- endif -%}
+      </ol>
     </nav>
-  </div>
-{%- endif -%}
+  {%- endif -%}
+</div>

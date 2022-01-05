@@ -1,0 +1,9 @@
+@include headings(){
+  font-weight: 500;
+  color: $col-heading;
+  font-family: $act-font-family-headings;
+}
+
+h1{
+ // @include act-font-size($act-fs-k)
+}

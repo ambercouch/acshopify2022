@@ -1,0 +1,162 @@
+/*
+  BEM BLOCK .l-thumb-list
+ */
+
+.l-thumb-list {
+  display: block;
+  color: $brand-col-2;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-thumb-list--
+ */
+.l-thumb-list-- {
+  &type {
+    display: block
+  }
+  &blog{
+    background: #fff;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-thumb-list--
+
+[class*=l-thumb-list--] {
+  @extend .l-thumb-list;
+}
+
+/*
+  BEM ELEMENTS .l-thumb-list__
+ */
+
+.l-thumb-list__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block;
+    text-align: center;
+    @include act-font-size($act-fs-1);
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block;
+    text-align: center;
+  }
+  &list{
+    @extend .o-list-bare;
+    margin-bottom: 0;
+    @include mq($from:desktop){
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &item{
+    margin-bottom: $act-unit-l;
+    @include mq($from:desktop){
+      width: 33.33%;
+    }
+  }
+  &thumb{
+    @include mq($from:desktop){
+      width: $act-wrapper-width;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &footer{
+    margin-bottom: $act-unit;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-thumb-list__header--
+
+[class*=l-thumb-list__header--] {
+  @extend .l-thumb-list__header;
+}
+
+.l-thumb-list__heading--{
+
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-thumb-list__list--
+
+[class*=l-thumb-list__list--] {
+  @extend .l-thumb-list__list;
+}
+
+.l-thumb-list__list--{
+  &more{
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    height: auto;
+    &[data-state=on]{
+      max-height: 3000px;
+    }
+  }
+  &blog{
+    display: block;
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .l-thumb-list__link--
+
+[class*=l-thumb-list__link--] {
+  @extend .l-thumb-list__link;
+}
+
+.l-thumb-list__link--{
+  &btn{
+    @extend .c-btn;
+    @extend .c-btn--content-block;
+    padding-left: $act-unit-t;
+    padding-right: $act-unit-t;
+    color: $brand-col-3 !important;
+    max-width: 100%;
+    display: inline-block;
+    &:focus{
+      color: $brand-col-3 !important;
+    }
+    &:hover{
+      color: $brand-col-3 !important;
+      margin-left:auto !important;
+      margin-right:auto !important;
+    }
+  }
+  &block{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .l-thumb-list__item--
+
+[class*=l-thumb-list__item--] {
+  @extend .l-thumb-list__item;
+}
+
+.l-thumb-list__item--{
+
+  &blog{
+    margin-bottom: $act-unit;
+  width: 100%;
+  }
+
+}

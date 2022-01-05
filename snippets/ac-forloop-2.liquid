@@ -1,0 +1,46 @@
+{% assign blockLink =  collection.metafields.content-block.url1 %}
+{% assign blockTitle = collection.metafields.content-block.title1 %}
+{% assign blockSubtitle = collection.metafields.content-block.subtitle1 %}
+{% assign blockText =  collection.metafields.content-block.text1 %}
+{% if blockTitle != blank %}
+  {% assign blockHandle = collection.metafields.content-block.title1 | handle  %}
+{% else %}
+  {% assign blockHandle = 'loop2' %}
+{% endif %}
+
+<!-- forloop.index {{ forloop.index }} -->
+{% if  blockTitle != blank or blockSubtitle != blank or blockText != blank %}
+<div class="l-product-list__item">
+  <div class="l-product-list__content-block--{{ blockHandle  }}">
+    <div class="c-content-block--collection-list-1 c-content-block--{{  collection.metafields.content-block.title1 | handle }}">
+      {%  if blockLink != blank %}
+        <a href="{{blockLink}}" class="c-content-block__link-thumb">
+      {% endif %}
+          {% if blockTitle != blank or  blockSubtitle != blank %}
+      <header class="c-content-block__header ">
+        {% if  blockTitle != blank %}
+        <h2 class="c-content-block__heading">
+                <span class="c-content-block__title">
+                  {{ collection.metafields.content-block.title1 }}
+                </span>
+        </h2>
+        {% endif %}
+        {% if blockSubtitle != blank %}
+        <h4 class="c-content-block__sub-heading--collection-list-1">
+          {{ collection.metafields.content-block.subtitle1 }}
+        </h4>
+        {% endif %}
+      </header>
+          {% endif %}
+          {% if blockText != blank %}
+      <div class="c-content-block__body">
+        <p>{{ collection.metafields.content-block.text1 }}</p>
+      </div>
+          {% endif %}
+          {%  if blockLink != blank %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

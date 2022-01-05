@@ -1,0 +1,103 @@
+/*
+  BEM BLOCK .l-off-page-container
+ */
+
+.l-off-page-container {
+  transition: opacity 0.3s ease-in-out;
+
+  position: fixed;
+
+  z-index: 1000;
+  opacity: 0;
+  padding: 0;
+
+  background: $brand-col-4;
+  height: 100vh;
+
+  left: 0;
+  top: 0;
+  bottom:0;
+
+  overflow: auto;
+
+  &[data-state=off]{
+    opacity: 0 !important;
+    //@include inuit-hidden-visually();
+  }
+
+  &[data-state=on]{
+    opacity: 1;
+
+  }
+
+  @include mq($from : desktop){
+    display: none !important;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .l-off-page-container--
+ */
+
+.l-off-page-container-- {
+  &type {
+    display: block;
+  }
+  &full-fade{
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $brand-col-4;
+  }
+  &mobile-nav{
+    width: 300px;
+    max-width: 60%;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-off-page-container--
+
+[class*=l-off-page-container--] {
+  @extend .l-off-page-container;
+}
+
+/*
+  BEM ELEMENTS .l-off-page-container__
+ */
+
+.l-off-page-container__ {
+  &header {
+    display: block;
+    padding: $act-unit $act-unit 0;
+    margin-bottom: $act-unit-s;
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &nav-menu{
+    padding: 0 $act-unit;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-off-page-container--
+
+[class*=l-off-page-container__header--] {
+  @extend .l-off-page-container__header;
+}

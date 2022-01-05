@@ -1,0 +1,71 @@
+{% paginate blog.articles by 5 %}
+  {% if blog.handle == 'breakfast' or
+    blog.handle == 'lunch'% or
+    blog.handle == 'dinner' or
+    blog.handle == 'cook-book'
+    %}
+    {%- assign blog_title = 'Recipes' -%}
+    {%- assign blog_menu = true -%}
+    {%- else -%}
+  {%- assign blog_title = blog.title -%}
+      {%- assign blog_menu = false -%}
+  {%- endif -%}
+<div class="l-main__page--blog">
+  <div class="l-page--blog">
+
+    <header class="l-page__header--blog" role="banner">
+
+      <div class="c-image-layer">
+        <div class="c-image-layer__background">
+          {% include 'ac-blobs' %}
+        </div>
+        <div class="c-image-layer__content">
+<div class="l-page__heading-wrapper">
+      <h1 class="l-page__heading--blog" >
+        <span class="l-page__title">{{ blog_title }}</span>
+      </h1>
+
+</div>
+        </div><!-- .c-image-layer__content -->
+      </div><!-- .c-image-layer__content -->
+
+    </header>
+
+  {% if blog.all_tags.size > 0 %}
+    <h2>Tags</h2>
+    {% include 'ac-tag-list-blog' %}
+  {% endif %}
+    {% if blog_menu == true %}
+      {% include 'ac-nav-menu-blog' %}
+    {% endif %}
+
+  {% comment %}
+
+  Article Previews
+  ====================
+  {% endcomment %}
+    <div class="l-page__thumb-list">
+      <div class="l-thumb-list--blog">
+        <ul class="l-thumb-list__list--blog">
+          {% for item in blog.articles %}
+            <li class="l-thumb-list__item--blog">
+              <div class="l-thumb-list__thumb">
+                {% include 'ac-thumbnail' with modClass : '--blog' %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  {% if paginate.pages > 1 %}
+    <div class="l-page__footer">
+      <div class="l-page__pagination">
+        {% include 'pagination' %}
+      </div>
+
+    </div>
+  {% endif %}
+  </div>
+</div>
+{% endpaginate %}

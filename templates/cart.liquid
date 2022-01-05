@@ -1,0 +1,171 @@
+<div class="l-main__page--cart l-main__page{{ page.title | handle }}">
+
+  <div class="l-page--cart l-page--{{ page.title | handle }}">
+<div class="c-image-layer">
+
+  {%  comment %}
+  <div class="c-image-layer__background">
+    {% include 'ac-blobs' %}
+  </div>
+  {% endcomment %}
+
+  <div class="c-image-layer__content">
+
+{% if cart.item_count > 0 %}
+  <div class="c-cart-drawer__header">
+    <div class="c-cart-drawer__heading">
+      <span class="c-cart-drawer__title">Shopping Cart</span>
+    </div>
+  </div>
+
+  <form action="/cart" method="post" novalidate class="cart ajaxcart l-quick-cart__form">
+    <div class="l-quick-cart__cart-list--page ">
+
+      {% include 'ac-cart-discount-logic' %}
+
+      {% unless discText == '' %}
+        <div class="l-quick-cart__discount-card">
+          <div class="c-discount-card">
+            <div class="c-discount-card__content">
+              <p>{{  discText }} <br>
+                {{  discTextExtra }}</p>
+            </div>
+          </div>
+        </div>
+      {% endunless %}
+
+      <div class="l-cart-list--page">
+        <ul class="l-cart-list__list">
+          {% for item in cart.items %}
+          <li class="l-cart-list__item">
+            <div class="l-cart-list__item-thum">
+              <div class="c-item-thumb--cart-product">
+
+                <div class="c-item-thumb__feature-image--cart-product">
+
+                    <img class="c-item-thumb__img--cart" src=" {{ item | img_url: '240x240'}}" alt="{{ name }}">
+
+                </div>
+
+
+                <div class="c-item-thumb__content--cart-product">
+
+                  <div class="c-item-thumb__control--cart-product-remove">
+                    <div class="c-cart-remove cart-remove">
+                      <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
+                        {% include 'icon-close.liquid' %}
+                      </a>
+                    </div>
+                  </div>
+
+                  <h4 class="c-item-thumb__heading--cart-product">
+                    <div class="c-item-thumb__title">
+                      <a class="c-item-thumb__link-title" href="{{ item.url }}">{{ item.product.title }}</a>
+                    </div>
+                  </h4>
+
+                  <div class="c-item-thumb__container--cart-product-qty">
+
+
+                    <div class="c-item-thumb__variant">
+                      {% unless item.variant.title contains 'Default' %}
+                        <span class="c-item-thumb__variant-title">{{ item.variant.title }}</span>
+                      {% endunless %}
+                      {% assign property_size = item.properties | size %}
+
+                      {% if property_size > 0 %}
+                      <div class="c-item-thumb__options">
+                        {% for p in item.properties %}
+                        {% unless p.last == blank %}
+                        <div class="c-item-thumb__option">{{ p.first }}: {{ p.last }}</div>
+                        {% endunless %}
+                        {% endfor %}
+                      </div>
+                      {% endif %}
+                    </div>
+<!--
+                    <div class="c-item-thumb__qty-sep">
+                      X
+                    </div>
+-->
+                    <div class="c-item-thumb__qty">
+                      <input type="number"
+                             class="c-item-thumb__input--qty"
+                             name="updates[]"
+                             id="updates_{{ item.key }}"
+                             value="{{ item.quantity }}"
+                             min="0"
+                             pattern="[0-9]*"
+                             aria-label="{{ 'cart.general.item_quantity' | t }}">
+                      <div class="c-item-thumb__btn--cart-update">
+                        <button type="submit" class="c-btn--cart-update" name="update">
+                          <span>Update</span>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="c-item-thumb__container--cart-product-price">
+                    <span class="c-item-thumb__line-price-money">{{ item.line_price | money }}</span>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        <!-- <div class="l-quick-cart__footer">
+           <p>Shipping and Taxes calculated at next step</p>
+         </div> -->
+      </div>
+      <div class="l-quick-cart__total"><span class="l"><span>Subtotal:</span> <b class="carto">{{ cart.total_price | money }}</b></span></div>
+
+
+    </div>
+
+
+    <!-- {% if settings.cart_notes_enable %}
+      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+      <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+    {% endif %} -->
+
+    <div class="l-quick-cart__checkout--page" >
+      <button type="submit" class="c-btn--cart-submit" name="checkout" value>
+        <i class="fa fa-lock"></i>
+        <span class="c-btn__link-label">
+        {{ 'cart.general.checkout' | t }}
+          </span>
+      </button>
+    </div>
+  </form>
+{% else %}
+  <h1>{{ 'cart.general.title' | t }}</h1>
+
+  {% comment %}
+  Cart empty state
+  {% endcomment %}
+  <div class="supports-cookies">
+    <p>{{ 'cart.general.empty' | t }}</p>
+    <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  </div>
+
+  {% comment %}
+  Cart no cookies state
+  ---------------------
+  Browser cookies are required to use the cart. If cookies aren't enabled in the
+  browser a message is displayed prompting the user to enable them.
+  {% endcomment %}
+  <div class="supports-no-cookies">
+    <p>{{ 'cart.general.cookies_required' | t }}</p>
+  </div>
+{% endif %}
+
+
+  </div><!-- .c-image-layer__content -->
+</div><!-- .c-image-layer__content -->
+  </div>
+</div>

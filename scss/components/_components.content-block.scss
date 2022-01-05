@@ -1,0 +1,1068 @@
+/*
+  BEM BLOCK .c-content-block
+ */
+
+$act-block-height : 450px;
+
+.c-content-block {
+
+  // Padding for blocks on homepage
+  padding: $act-unit $act-unit-s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.has-footer-image{
+    padding-bottom: 200px;
+  }
+
+  @include mq($from : desktop){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto auto 1fr;
+    padding: 0;
+    max-width: $act-wrapper-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-content-block--
+ */
+
+.c-content-block-- {
+  &page{
+    @include mq($from: desktop){
+      display: block !important;
+      padding: $act-unit-l $act-unit;
+
+    }
+  }
+  &quote{
+    text-align: center;
+    padding-bottom: $act-unit-l;
+    @include mq($from: desktop){
+      display: flex;
+      padding-top: $act-unit-h;
+      padding-bottom: $act-unit-h * 1.5;
+    }
+  }
+  &dribble-bib{
+    @include mq($from : desktop){
+    }
+  }
+  &collection-list-1{
+     text-align: center;
+     padding-bottom: $act-unit-l;
+     margin-bottom: $act-unit;
+   }
+  &collection-list-2{
+    text-align: center;
+    padding-bottom: $act-unit-l;
+    margin-bottom: 0;
+    @include mq($from: desktop){
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows:  1fr auto auto 1fr;
+      padding-bottom: 0 !important;
+      padding-top: $act-unit;
+
+    }
+  }
+  &collection-buddies{
+    display: flex;
+    flex-direction: column;
+    @include mq($from: desktop){
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows:  1fr auto auto 1fr;
+      padding-bottom: 0 !important;
+      padding-top: $act-unit;
+
+    }
+  }
+  &bibado-weaning-bundle-save-20{
+    display: flex;
+    flex-direction: column;
+    @include mq($from: desktop){
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows:  1fr auto auto 1fr;
+      padding-bottom: 0 !important;
+      padding-top: $act-unit;
+
+    }
+  }
+  &product{
+    padding: $act-unit-t $act-unit 0;
+    @include mq($from:desktop){
+      padding: $act-unit 0 $act-unit-l  * 1.5;
+      display: block;
+    }
+  }
+  &charity{
+    background: $brand-col-5;
+    padding: $act-unit $act-unit;
+    margin-bottom: $act-unit;
+    @include mq($from : desktop){
+      @include breakout-band($bgc : $brand-col-5);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &features{
+    padding: $act-unit-t $act-unit 0;
+    margin-bottom: $act-unit-s;
+    &:after{
+      content : '';
+      display: block;
+      margin-top: $act-unit;
+      border-bottom: solid 3px $brand-col-6;
+    }
+
+  }
+  &care{
+    padding: $act-unit-t $act-unit 0;
+    margin-bottom: $act-unit-s;
+  }
+  &how-it-works{
+    padding: $act-unit-t $act-unit 0;
+    margin-bottom: $act-unit-s;
+    &:after{
+      content : '';
+      display: block;
+      margin-top: $act-unit;
+      border-bottom: solid 3px $brand-col-6;
+    }
+  }
+  &benefits{
+    padding: $act-unit-t $act-unit 0;
+    margin-bottom: $act-unit-s;
+  }
+  &safety{
+    padding: $act-unit-t $act-unit 0;
+    margin-bottom: $act-unit-s;
+    &:after{
+      content : '';
+      display: block;
+      margin-top: $act-unit;
+      border-bottom: solid 3px $brand-col-6;
+    }
+  }
+  &btn{
+    background: #000;
+    margin-bottom: $act-unit !important;
+    display: none !important;
+
+  }
+  &image{
+    display: none;
+  }
+  &making-parents-lives-easier{
+    //display: flex !important;
+  }
+}
+
+// BEM BLOCK MODIFIER FALLBACK .c-content-block--
+
+[class*=c-content-block--] {
+  @extend .c-content-block;
+}
+
+/*
+  BEM ELEMENTS .c-content-block__
+ */
+
+.c-content-block__ {
+  &header {
+    display: block;
+    margin-bottom: $act-unit;
+    @include mq($from:tablet, $until : desktop){
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq($from:desktop){
+      grid-column-start: 2;
+      grid-row-start: 2;
+      align-self:flex-end;
+    }
+  }
+
+  &heading {
+    display: block;
+    margin-bottom: 0;
+    //color: $brand-col-1;
+    font-weight: 500;
+    @include mq($from:desktop){
+
+      //for half content blocks on desktop
+      width: 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .is-heading-hidden &{
+      @include inuit-hidden-visually;
+    }
+
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block;
+    text-align: center;
+  }
+
+  &quote-list{
+    @include mq($from:desktop){
+      width: 600px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &icon-list{
+    width: 550px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq($from:tablet){
+      width: 700px;
+    }
+    @include mq($from:desktop){
+      width: 1000px;
+    }
+  }
+
+  &image{
+    margin-bottom: $act-unit;
+    .is-image-layout-hidden &{
+      display: none !important;
+    }
+    &.is-pos-above-header{
+      order: -1;
+    }
+    &.is-pos-below-text{
+      order: 3;
+      margin-bottom: 0;
+      @include mq($from:desktop){
+        display: flex;
+        align-items:flex-end;
+        align-content: flex-end;
+      }
+      .responsive-image__wrapper{
+        @include mq($from:desktop){
+          max-height: 100%;
+      }
+
+      }
+    }
+    @include mq($from:desktop){
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-row-end: 5;
+      margin-bottom: 0;
+      height: $act-block-height;
+    }
+    .responsive-image__wrapper{
+      @include mq($from:desktop){
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+    img{
+      @include mq($from:desktop){
+        height: $act-block-height;
+        object-fit: cover;
+        width: 100% !important;
+        max-width: 100% !important;
+        //min-height: 100%;
+      }
+    }
+
+  }
+
+  &link{
+   display: inline;
+  }
+
+  &link-thumb{
+    text-decoration: none;
+    color: white;
+    &:hover, &:focus, &:active{
+      color: white !important;
+    }
+  }
+
+  &sub-heading{
+    font-weight: 300;
+    font-family: $act-font-family-sans;
+  }
+
+  &logo{
+    margin-bottom: 0 !important;
+    max-width: 300px;
+    margin: 0 auto $act-unit;
+    @include mq($from: tablet){
+      max-width: 450px;
+
+    }
+  }
+
+  &block-image{
+    position: absolute;
+    left: -24px;
+    bottom: 0;
+    width: 200px;
+  }
+
+  &img{
+    max-width: none;
+  }
+
+  &btn{
+    display: block;
+    //margin-bottom: $act-unit;
+    @include mq($from:desktop){
+      margin-top: 0 !important;
+      text-align: center;
+    }
+  }
+
+  &cta{
+    margin: $act-unit 0;
+  }
+
+  &body{
+    margin-bottom: $act-unit;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    > *:last-child{
+      margin-bottom: 0;
+    }
+    .c-content-block__btn:first-child{
+      margin-top: $act-unit;
+    }
+    @include mq($from : tablet){
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq($from: desktop){
+      grid-column-start: 2;
+      grid-row-start: 3;
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+  }
+
+  &icon{
+    text-align: center;
+  }
+  &text{
+    display: block;
+  }
+  &feature-image{
+    text-align: center;
+
+    //add margin-bottom for the How BIBaDO Began
+    margin-bottom: $act-unit;
+    @include mq($from: desktop){
+      float: right;
+      margin-right: -100%;
+      width: 100%;
+      padding-left: $act-unit-l;
+    }
+  }
+
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__header--
+
+[class*=c-content-block__header--] {
+  @extend .c-content-block__header;
+}
+
+.c-content-block__header--{
+  &quote{
+    margin-bottom: $act-unit;
+    align-self: center !important;
+  }
+  &page{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq($from:tablet, $until : desktop){
+      width: 600px;
+    }
+    @include mq($from:desktop){
+      width: 100%;
+    }
+  }
+  &collection-list-2{
+    width: 100%;
+    text-align: center;
+    @include mq($from:desktop){
+      text-align: left;
+    }
+
+  }
+
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__heading--
+
+[class*=c-content-block__heading--] {
+  @extend .c-content-block__heading;
+}
+
+.c-content-block__heading--{
+  &quote{
+    color: $brand-col-4;
+  }
+  &product{
+    color: $brand-col-2;
+    margin-bottom: $act-unit;
+    text-align: left;
+    @include mq($from:desktop){
+      width: 100% !important;
+    }
+  }
+  &features{
+    color: $brand-col-2;
+    margin-bottom: $act-unit;
+  }
+  &how-it-works{
+    color: $brand-col-2;
+    margin-bottom: $act-unit;
+  }
+  &care{
+    color: $brand-col-2;
+    margin-bottom: $act-unit;
+  }
+  &benefits{
+    color: $brand-col-2;
+    margin-bottom: $act-unit;
+  }
+  &safety{
+    color: $brand-col-2;
+    margin-bottom: $act-unit;
+  }
+  &static-page{
+    color: $brand-col-2;
+    text-align: center;
+    @include act-font-size($act-fs-1);
+  }
+  &charity{
+    margin-bottom: $act-unit;
+    @include mq($from:desktop){
+      width: 60%;
+    }
+  }
+  &collection-buddies{
+    text-align: center;
+    @include mq($from:desktop){
+      text-align: left;
+    }
+
+  }
+  &bibado-weaning-bundle-save-20{
+    text-align: center;
+    @include mq($from:desktop){
+      text-align: left;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__link--
+
+ [class*=c-content-block__link--] {
+   @extend .c-content-block__link;
+ }
+
+ .c-content-block__link--{
+   &btn{
+     display: block;
+     @extend .c-btn;
+     @extend .c-btn--content-block;
+     @extend .c-btn--swipe-hover;
+     padding-left: $act-unit;
+     padding-right: $act-unit;
+     @include mq($from:desktop){
+       //max-width: 300px;
+       margin-left: 0 !important;
+     }
+     &:hover{
+       padding-left: $act-unit;
+       padding-right: $act-unit;
+     }
+   }
+   &block{
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+   }
+
+ }
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__sub-heading--
+
+[class*=c-content-block__sub-heading--] {
+  @extend .c-content-block__sub-heading;
+}
+
+.c-content-block__sub-heading--{
+  &collection-list-2{
+    font-family: $act-font-family-headings;
+    font-weight: 500;
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__img--
+
+[class*=c-content-block__img--] {
+  @extend .c-content-block__img;
+
+}
+
+.c-content-block__img--{
+  &charity{
+    max-width: 200px !important;
+    @include mq($from:desktop){
+      width: 300px !important;
+      max-width: 35% !important;
+      margin-right: auto;
+      align-self: flex-start;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__btn--
+
+[class*=c-content-block__btn--] {
+  @extend .c-content-block__btn;
+
+}
+
+.c-content-block__btn--{
+  &care{
+    @include breakout-band($bgc : $brand-col-4);
+  }
+  &benefits{
+    @include breakout-band($bgc : $brand-col-1);
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__logo--
+
+[class*=c-content-block__logo--] {
+  @extend .c-content-block__logo;
+
+}
+
+.c-content-block__logo--{
+  &collection-list-2{
+
+    @include mq($from:desktop){
+      //margin-left: 0;
+      .responsive-image__wrapper{
+        //margin-left: 0 !important;
+      }
+    }
+  }
+}
+
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__icon--
+
+[class*=c-content-block__icon--] {
+  @extend .c-content-block__icon;
+
+}
+
+.c-content-block__icon--{
+  &scroll{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 50px;
+    cursor: pointer;
+    @include mq($from: desktop){
+      bottom: 110px;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__image--
+
+[class*=c-content-block__image--] {
+  @extend .c-content-block__image;
+}
+
+.c-content-block__image--{
+  &additional{
+    display: none;
+    @include mq($from:desktop){
+      display: block;
+    }
+  }
+  &desktop{
+    display: none;
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__body--
+
+[class*=c-content-block__body--] {
+  @extend .c-content-block__body;
+}
+.c-content-block__body--{
+  &page{
+    width: 100%;
+    @include mq($from:tablet, $until : desktop){
+      width: 600px;
+    }
+    @include mq($from: desktop){
+      width: 100%;
+    }
+  }
+  &product{
+    text-align: left;
+    @include mq($from:desktop){
+      width: 100%;
+      .c-btn--block{
+        display: inline-block;
+        width: auto;
+      }
+    }
+
+  }
+  &icon-list{
+    width: 100%;
+  }
+  &charity{
+    @include mq($from:desktop){
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+  &collection-list-2{
+    @include mq($from:desktop){
+      width: 100%;
+      text-align: left;
+      margin-bottom: $act-unit;
+  }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__text--
+
+[class*=c-content-block__text--] {
+  @extend .c-content-block__text;
+}
+
+.c-content-block__text--{
+  &page{
+    @include mq($from: desktop){
+      width: 50%;
+      margin-left: 0;
+    }
+    p:first-child{
+      @include mq($from: desktop) {
+        float: left;
+      }
+    }
+  }
+  &charity{
+    @include mq($from:desktop){
+      width: 60%;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__text--
+[class*=c-content-block__link-thumb--] {
+  @extend .c-content-block__link-thumb;
+}
+
+.c-content-block__link-thumb--{
+  &collection-list-2{
+    @include mq($from: desktop){
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      @include a($col:white, $col-hov: white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: $act-unit-l;
+    }
+  }
+}
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__block-image--
+[class*=c-content-block__block-image--] {
+  @extend .c-content-block__block-image;
+}
+
+.c-content-block__block-image--{
+  &collection-list-2{
+    @include mq($from: desktop){
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 5;
+      position: relative;
+      left:auto;
+      right: auto;
+      top: auto;
+      width: 400px;
+      .responsive-image__wrapper{
+        max-width: 400px !important;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &collection-buddies{
+      order: -1;
+      position: static;
+      margin: 0 auto $act-unit;
+      @include mq($from:desktop){
+        order: unset;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        position: relative;
+        left:auto;
+        right: auto;
+        top: auto;
+        width: 400px;
+        .responsive-image__wrapper{
+          max-width: 400px !important;
+          margin-left: 0;
+        }
+      }
+    }
+  &bibado-weaning-bundle-save-20{
+    order: -1;
+    position: static;
+    margin: 0 auto $act-unit;
+    @include mq($from:desktop){
+      order: unset;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 5;
+      position: relative;
+      left:auto;
+      right: auto;
+      top: auto;
+      width: 400px;
+      .responsive-image__wrapper{
+        max-width: 400px !important;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+// BEM ELEMENT MODIFIER FALLBACK .c-content-block__footer--
+
+[class*=c-content-block__footer--] {
+  @extend .c-content-block__footer;
+}
+
+.c-content-block__footer--{
+  &collection-list-2{
+    margin-bottom: $act-unit;
+    position: relative;
+    z-index: 10;
+    @include mq($from: desktop){
+      grid-column-start:2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      padding-bottom: $act-unit-l;
+      padding-left: $act-unit-l;
+
+    }
+  }
+}
+
+
+/*
+  BEM ATTRIBUTES
+ */
+.is-pos-below-text{
+  img{
+    @include mq($from: desktop){
+      height: 100% !important;
+      max-height: none !important;
+    }
+  }
+}
+
+
+.is-text-layout-center{
+  text-align: center;
+  @include mq($from: desktop){
+    //align-self: center !important;
+  }
+}
+
+.is-heading-layout-center{
+  text-align: center;
+  @include mq($from: desktop){
+    //align-self: center !important;
+  }
+}
+
+.is-video{
+  &.c-content-block--product{
+    padding: $act-unit 0;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    @include mq($from:desktop){
+      padding-bottom: $act-unit-l * 1.5;
+    }
+  }
+}
+
+.is-single-col-desktop{
+  display: flex !important;
+  .c-content-block__header{
+     align-self: center;
+   }
+  .c-content-block__body{
+    width: 600px;
+  }
+}
+
+.is-section-width-50{
+  @include mq($from:desktop){
+    width: 50%;
+  }
+}
+.is-block-width-50{
+  height: 100%;
+
+  [class*=c-content-block--], &.c-content-block{
+    //display: none !important;
+    @include mq($from: desktop){
+      display:flex !important;
+      justify-content: flex-start;
+      max-width: 50vw ;
+      width: $act-wrapper-width / 2 ;
+      margin-right: 0 !important;
+      padding: $act-unit;
+    }
+  }
+
+  [class*=c-content-block__header--], .c-content-block__header {
+    @include mq($from: desktop) {
+      align-self: flex-start;
+      padding: 0 $act-unit;
+    }
+  }
+
+  [class*=c-content-block__image--], .c-content-block__image{
+    @include mq($from: desktop) {
+      margin-bottom: $act-unit !important;
+      height: 375px;
+      img{
+        height: 375px;
+      }
+    }
+  }
+
+  [class*=c-content-block__body--], .c-content-block__body{
+    @include mq($from: desktop) {
+      width: 100%;
+      margin-bottom: $act-unit;
+      padding: 0 $act-unit;
+    }
+  }
+
+  [class*=c-content-block__text--], .c-content-block__text{
+    @include mq($from: desktop) {
+      margin-bottom: $act-unit;
+      width: 100%;
+    }
+  }
+}
+
+.is-block-layout-width-50{
+  @include mq($from: desktop){
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.is-section-width-50 + .is-section-width-50{
+
+  @include mq($from: desktop){
+    [class*=c-content-block--], &.c-content-block {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+  }
+}
+
+.is-block-image-right{
+  .c-content-block__image, [class*=c-content-block__image--] {
+    grid-column-start: 2 !important;
+  }
+  .c-content-block__header, [class*=c-content-block__header--] {
+     grid-column-start: 1 !important;
+     grid-column-end: 2 !important;
+   }
+  .c-content-block__body, [class*=c-content-block__header--] {
+    grid-column-start: 1 !important;
+    grid-column-end: 2 !important;
+  }
+}
+
+.has-additional-image{
+  &.c-content-block{
+    @include mq($from:desktop){
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+  }
+  .c-content-block__image--additional{
+    @include mq($from: desktop){
+      grid-column-start: 3;
+    }
+  }
+}
+
+.has-image-pos-below-text{
+  &.c-content-block{
+    padding-bottom: 0;
+  }
+  .c-content-block__image, [class*=c-content-block__image--]{
+    @include mq($from: desktop){
+      grid-row-start: 2;
+      grid-row-end: 5;
+      height: 300px;
+    }
+  }
+  .c-content-block__header{
+    @include mq($from:desktop){
+      grid-row-start: 2;
+    }
+  }
+  .c-content-block__body{
+    @include mq($from:desktop){
+      grid-row-start: 3;
+    }
+  }
+}
+
+.has-bgc{
+  [class*=c-content-block__btn]{
+    margin-top: 0 !important;
+  }
+  [class*=c-content-block--]{
+    padding-top: $act-unit;
+     padding-bottom: $act-unit;
+   }
+  [class*=c-content-block__body--]{
+    margin-bottom: 0;
+  }
+
+}
+
+.is-image-layout-right{
+  .c-content-block__header{
+    @include mq($from:desktop){
+      padding: 0 $act-unit;
+    }
+
+  }
+}
+
+.is-icon-list{
+  text-align: center;
+  .c-content-block__heading--product{
+    text-align: center;
+  }
+}
+
+.is-image-layout-background{
+  position: relative;
+  padding: 0;
+  .c-content-block__image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .c-content-block__header{
+    position: relative;
+    z-index: 1;
+  }
+  .c-content-block__body{
+    position: relative;
+    padding: 0 $act-unit;
+  }
+  .responsive-image__wrapper{
+    height: 100%;
+  }
+  .responsive-image__image{
+    object-fit: cover;
+  }
+  .c-content-block__image--desktop{
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
+    .responsive-image__image{
+    height: 100%;
+      max-height: none !important;
+  }
+  }
+}
+
+.has-desktop-image{
+  @include mq($from: desktop){
+    .c-content-block__image{
+      display: none;
+    }
+    .c-content-block__image--desktop{
+      display: block;
+    }
+  }
+}
+
+
+
+
+

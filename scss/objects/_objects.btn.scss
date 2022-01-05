@@ -1,0 +1,87 @@
+.o-btn{
+  transition: background 0.3s ease;
+  display: inline-block;
+  line-height:1;
+  width: auto;
+  border: none;
+  padding: $act-unit;
+  @include act-font-size($act-fs-4, 1);
+  background: $brand-col-1;
+  color: #fff;
+  text-decoration: none;
+  &[disabled]{
+    opacity: 0.5;
+    cursor: default;
+    filter: saturate(0.1);
+  }
+}
+
+.o-btn{
+  &:hover,&:focus{
+    //background: darken($brand-col-1, 5%);
+    color: #fff;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+[class*=o-btn--]{
+  @extend .o-btn;
+}
+.o-btn--{
+  &tiny {
+    @extend .o-btn;
+    padding: $act-unit-t;
+    @include inuit-font-size($act-fs-6, 1);
+  }
+  &small {
+    @extend .o-btn;
+    padding: $act-unit-s;
+    @include inuit-font-size($act-fs-5, 1);
+  }
+  &bg5{
+    background: $brand-col-5;
+  }
+  &full {
+    @extend .o-btn;
+    width: 100%;
+  }
+  &auto-width {
+    @extend .o-btn;
+    width: auto !important;
+    display: inline-block !important;
+  }
+  &block {
+    @extend .o-btn;
+    width: 100%;
+    display: block !important;
+  }
+  &ghost{
+    background: transparent;
+    border: solid 1px;
+  }
+  &transparent{
+    @extend .o-btn;
+    background: transparent;
+  }
+  &rounded {
+    @extend .o-btn;
+    border-radius: $act-unit;
+    padding: $act-unit-s $act-unit;
+  }
+  &flush{
+    padding: 0!important;
+  }
+  &icon-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.o-btn__icon--{
+  &left{
+    margin-right: $act-unit-s;
+  }
+}

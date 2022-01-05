@@ -1,0 +1,200 @@
+/*
+  BEM BLOCK .c-product-gallery
+ */
+
+.c-product-gallery {
+  display: block;
+  //padding: $act-unit-s $act-unit;
+
+  .responsive-image__wrapper:before{
+    @include mq($until: desktop){
+      padding-top: 100vw !important;
+    }
+  }
+  .responsive-image__wrapper{
+    width: 100vw !important;
+    max-width: 100% !important;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-product-gallery--
+ */
+
+.c-product-gallery-- {
+  &landing {
+    .responsive-image__wrapper:before{
+      @include mq($until: desktop){
+        padding-top: 70vw !important;
+      }
+    }
+    .responsive-image__wrapper{
+      width: 70vw !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-product-gallery--
+
+[class*=c-product-gallery--] {
+  @extend .c-product-gallery;
+}
+
+/*
+  BEM ELEMENTS .c-product-gallery__
+ */
+
+.c-product-gallery__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &list{
+    @extend .o-list-bare;
+    margin-bottom: 0;
+    padding: 0 $act-unit-s;
+    display: flex;
+    &.flickity-enabled{
+      display: block;
+    }
+  }
+  &item{
+    width: 18%;
+    height: 17vw;
+    padding: $act-unit-t;
+    @include mq($from: desktop){
+      height: 85px;
+    }
+
+  }
+  &img{
+  //  display: block;
+    @include size(100%);
+    object-fit: cover;
+  }
+  &focus-image{
+    //display: none;
+  }
+  &focus-image-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 ;
+    @include mq($from:desktop){
+      height: auto;
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-gallery__header--
+
+[class*=c-product-gallery__header--] {
+  @extend .c-product-gallery__header;
+}
+
+.c-product-gallery__header--{
+  &type{
+
+  }
+}
+
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-gallery__list--
+
+ [class*=c-product-gallery__list--] {
+   @extend .c-product-gallery__list;
+ }
+
+.c-product-gallery__list--{
+  &type{
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-gallery__item--
+
+[class*=c-product-gallery__item--] {
+  @extend .c-product-gallery__item;
+}
+
+.c-product-gallery__item--{
+  &type{
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-gallery__img--
+
+[class*=c-product-gallery__img--] {
+  @extend .c-product-gallery__img;
+}
+
+.c-product-gallery__img--{
+  &type{
+
+  }
+  &focus{
+    height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    @include mq($from:desktop){
+      height: auto !important;
+    }
+  }
+  &landing-focus{
+    height: 70vw !important;
+    max-height: 70vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: $act-unit-s;
+    @include mq($from:desktop){
+      height: auto !important;
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-gallery__focus-image-container--
+
+[class*=c-product-gallery__focus-image-container--] {
+  @extend .c-product-gallery__focus-image-container;
+}
+
+.c-product-gallery__focus-image-container--{
+  &landing{
+    height: 70vw;
+
+    @include mq($from:desktop){
+      height: auto;
+    }
+
+  }
+
+}
+
+
+
+
+

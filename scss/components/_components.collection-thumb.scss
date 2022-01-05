@@ -1,0 +1,90 @@
+/*
+  BEM BLOCK .c-collection-thumb
+ */
+
+.c-collection-thumb {
+  display: block;
+  background: white;
+  color: $brand-col-2;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-collection-thumb--
+ */
+
+.c-collection-thumb-- {
+  &type {
+    display: block
+  }
+  &collection-buddies{
+    padding: $act-unit-t;
+    padding-bottom:  0;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-collection-thumb--
+
+[class*=c-collection-thumb--] {
+  @extend .c-collection-thumb;
+}
+
+/*
+  BEM ELEMENTS .c-collection-thumb__
+ */
+
+.c-collection-thumb__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block;
+    color: $brand-col-2;
+    @include mq($from:desktop){
+      text-align: left;
+    }
+
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+  &link-image{
+    display: block;
+  }
+
+  &content {
+    display: block;
+    text-align: center;
+    padding: $act-unit;
+  }
+
+  &footer {
+    display: block
+  }
+  &description{
+    margin-bottom: $act-unit;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-collection-thumb--
+
+[class*=c-collection-thumb__header--] {
+  @extend .c-collection-thumb__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-collection-thumb__link-image--
+
+[class*=c-collection-thumb__link-image--] {
+  @extend .c-collection-thumb__link-image;
+}
+
+.c-collection-thumb__link-image--{
+  &collection-buddies{
+    border: solid 1px $brand-col-2;
+  }
+}

@@ -1,0 +1,69 @@
+/*
+  BEM BLOCK .c-socials
+ */
+
+.c-socials {
+  display: block;
+  a{
+    color: $brand-col-3;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-socials--
+ */
+
+.c-socials-- {
+  &type {
+    display: block
+  }
+
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-socials--
+
+[class*=c-socials--] {
+  @extend .c-socials;
+}
+
+/*
+  BEM ELEMENTS .c-socials__
+ */
+
+.c-socials__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block;
+    @include act-font-size($act-fs-m);
+    font-weight: 700;
+    color: $brand-col-4;
+    @include mq($from:desktop){
+      @include act-font-size($act-fs-k);
+    }
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-socials--
+
+[class*=c-socials__header--] {
+  @extend .c-socials__header;
+}

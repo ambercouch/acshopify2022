@@ -1,0 +1,124 @@
+{% assign hImage = article.metafields.global.hero_image %}
+
+{% if article.metafields.global.feature_image == null %}
+  {% assign fImage =  article.image.src | img_url: '500x' %}
+{% else %}
+  {% assign fImage =  article.metafields.global.feature_image | file_img_url: '500x' %}
+{% endif %}
+
+{% if article.metafields.global.author != null %}
+  {% assign aAuthor =  article.metafields.global.author %}
+{% else %}
+  {% assign aAuthor =  article.author  %}
+{% endif %}
+
+<article class="l-page__article is-article-blocks" role="article">
+  {% if hImage != null %}
+    <header class="l-page__header--article ac-update l-page__header--{{ article.title | handle }} {{ classHeroImage }} {{ classHeroText }}" role="banner">
+
+
+      <div class="c-image-layer">
+        <div class="c-image-layer__background">
+          {% include 'ac-blobs' %}
+        </div>
+        <div class="c-image-layer__content">
+          <div class="l-main__content-block-wrapper">
+            <div class="l-page__grid-wrapper--header-static-page">
+
+
+              {% if article.image %}
+                <div class="l-page__feature-image--article">
+                  <img class="l-page__img" src="{{  article.image | img_url: 'original' }}"  alt="{{article.title | escape }}" />
+                </div>
+              {% else %}
+                <!-- no article image -->
+              {% endif %}
+
+              <h1 class="l-page__heading--article l-page__heading--{{ article.title | handle }}" >
+                <span class="l-page__title">{{ article.title }}</span>
+              </h1>
+
+              <div class="l-page__meta">
+    <span class="l-page__meta-text--author">
+      {{ 'blogs.article.by_author' | t: author: aAuthor }}
+    </span>
+                <span class="l-page____meta-text--date">
+      {{ article.published_at | time_tag: format: 'month_day_year' }}
+    </span>
+              </div>
+
+
+              {% if pageHeroImage %}
+                <div class="l-page__hero-image">
+                  {% include 'responsive-image' with
+                    image: pageHeroImage,
+                    max_width: 800,
+                    max_height: 800
+                  %}
+                </div>
+              {% else %}
+                <!-- no page hero image {{ pageHeroImage }} ! -->
+              {% endif %}
+
+            </div>
+          </div><!-- .l-main__content-block-wrapper -->
+        </div><!-- .c-image-layer__content -->
+      </div><!-- .c-image-layer__content -->
+    </header>
+  {% endif %}
+
+
+  <div class="l-page__content--article ac test">
+    {% if  article.content != blank %}
+      <div class="rte">
+        {{ article.content }}
+      </div>
+    {% endif %}
+  </div>
+
+
+  {% assign modClass = "--article-block"  %}
+  <!-- modClass = {{ modClass }} -->
+  <div class="l-page__blocks">
+ {% include 'ac-block-loop' %}
+  </div>
+
+  {% if article.metafields.global.footer_text %}
+  <div class="l-page__footer-info">
+    {{ article.metafields.global.footer_text }}
+  </div>
+  {% endif %}
+
+</article>
+<div class="c-recipe__footer">
+  <p>Share this article!</p>
+  <div class="c-recipe__social-sharing">
+    {% include 'ac-social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Posts",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

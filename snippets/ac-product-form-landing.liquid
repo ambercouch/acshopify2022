@@ -1,0 +1,47 @@
+{% if product.metafields.global.landingpage_offer_text != nil %}
+  {% assign landingpageOfferText = product.metafields.global.landingpage_offer_text %}
+{%  endif %}
+
+{% if product.metafields.global.landingpage_icon != nil %}
+  {% assign landingpageIcon = product.metafields.global.landingpage_icon %}
+{%  endif %}
+
+{% if product.metafields.global.landingpage_klaviyo != nil %}
+  {% assign landingpageKlaviyo= product.metafields.global.landingpage_klaviyo %}
+{%  endif %}
+
+<div class="c-product-form--landing">
+
+
+  <div class="c-product-form__offer-info">
+    {% if landingpageIcon %}
+      <div class="c-product-form__offer-icon">
+        <div class="c-icon-thumb">
+          <div class="c-icon-thumb--icon-offer">
+            <img src="{{ landingpageIcon | file_img_url: '200x' }}" alt="icon" />
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <!-- no landingpage_icon -->
+    {% endif %}
+    {% if landingpageOfferText %}
+    <div class="c-product-form__offer-text">
+      {{ landingpageOfferText }}
+    </div>
+  {% endif %}
+  </div>
+
+
+
+  <div class="c-product-form__product-price">
+    {% include 'ac-product-form-price-landing' %}
+  </div>
+
+  {% if landingpageKlaviyo %}
+  <div class="klaviyo-form-{{ landingpageKlaviyo }}"></div>
+    {% else %}
+    <!-- no landingpage_klaviyo metafield -->
+  {% endif %}
+
+</div>

@@ -1,0 +1,109 @@
+/*
+  BEM BLOCK .l-icon-list
+ */
+
+.l-icon-list {
+  display: block;
+  color: $brand-col-2;
+  text-align: center;
+  @include mq($from: desktop){
+    max-width: $act-wrapper-width;
+    margin: 0 auto;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .l-icon-list--
+ */
+
+.l-icon-list-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-icon-list--
+
+[class*=l-icon-list--] {
+  @extend .l-icon-list;
+}
+
+/*
+  BEM ELEMENTS .l-icon-list__
+ */
+
+.l-icon-list__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block;
+    color: $brand-col-3;
+    text-align: center;
+    @include act-font-size($act-fs-2);
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &list{
+    @extend .o-list-bare;
+    display: flex;
+    justify-content: space-around;
+    padding: $act-unit 0;
+    //align-items: flex-end;
+    flex-wrap: wrap;
+    @include mq($from: desktop){
+      padding: $act-unit-l 0 0;
+      margin-bottom: 0;
+    }
+
+  }
+  &item{
+    min-width: 50%;
+    @extend .o-list-bare__item;
+    flex:1;
+    padding: 0 3%;
+    margin-bottom: $act-unit-l;
+    &:last-child{
+       margin-bottom: 0;
+     }
+    &:nth-last-child(2){
+      margin-bottom: 0;
+    }
+    @include mq($from:desktop){
+      min-width: 0;
+      padding: 0 2%;
+      margin-bottom: 0;
+    }
+    .is-3-col &{
+      min-width: 30%;
+      @include mq($from:desktop){
+        min-width: 0 !important;
+      }
+    }
+
+  }
+  &icon-thumb{
+    height: 100%;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-icon-list--
+
+[class*=l-icon-list__header--] {
+  @extend .l-icon-list__header;
+}
