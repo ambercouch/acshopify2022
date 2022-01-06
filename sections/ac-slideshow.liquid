@@ -1,0 +1,950 @@
+{%- if section.settings.show_overlay -%}
+  <style>
+    #Slideshow-{{ section.id }} .slideshow__overlay::before {
+      background-color: {{ section.settings.overlay_color }};
+      opacity: {{ section.settings.overlay_opacity | divided_by: 100.00 }};
+    }
+
+    #Slideshow-{{ section.id }} .slideshow__heading,
+    #Slideshow-{{ section.id }} .slideshow__button-label {
+      color: {{ section.settings.overlay_text }};
+    }
+  </style>
+{%- endif -%}
+
+{%- assign first_block = section.blocks[0] -%}
+
+{%- comment -%}
+  Just testing
+  A centered call to action button is displayed if the corresponding setting is
+  enabled or if there is just one slide with a call to action button.
+{%- endcomment -%}
+{%- assign show_center_cta = section.settings.center_cta -%}
+{%- if section.blocks.size == 1 and first_block.settings.cta_link != blank -%}
+  {%- assign show_center_cta = true -%}
+{%- endif -%}
+
+{%- if section.settings.slider_height == 'adapt' -%}
+  {%- comment -%}
+    'min_aspect_ratio' is the minimum aspect ratio of images shown without
+    whitespace when 'home_hero_height' is set to 'adapt'.
+    The aspect ratio values for the first image in the slideshow will be used
+    unless it is blank, in that case a ratio of 2:1 will be used.
+  {%- endcomment -%}
+
+  {%- if first_block.type == 'video' -%}
+    {%- assign min_aspect_ratio = 16 | divided_by: 9.0 -%}
+  {%- elsif first_block.settings.image.aspect_ratio == blank -%}
+    {%- assign min_aspect_ratio = 2.0 -%}
+  {%- else -%}
+    {%- assign min_aspect_ratio = first_block.settings.image.aspect_ratio -%}
+  {%- endif -%}
+  {%- assign wrapper_height = 100 | divided_by: min_aspect_ratio -%}
+  {%- style -%}
+    #Slideshow-{{ section.id }} {
+      height: {{- wrapper_height -}}vw;
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+<div class="slideshow--{{ section.settings.slider_height }}{% if show_center_cta %} slideshow--center-cta{% endif %}" data-section-id="{{ section.id }}" data-section-type="slideshow-section">
+  <div id="Slideshow-{{ section.id }}"
+       class="slideshow"
+       role="region"
+       aria-describedby="slideshow-info"
+       tabindex="-1"
+       aria-label="slideshow">
+    {%- if section.blocks.size > 0 -%}
+      <ul class="slideshow__slides">
+
+        {%- for block in section.blocks -%}
+          <li class="slideshow__slide slideshow__slide--{{ block.id }}{% if forloop.first %} slideshow__slide--active{% endif %}{% if section.settings.show_overlay %} slideshow__overlay{% endif %}"
+              id="Slide{{ forloop.index0 }}"
+              {% unless forloop.first %}aria-hidden="true"{% endunless %}
+              {{ block.shopify_attributes }}>
+            {%- if block.settings.image == blank -%}
+              <div class="slideshow__image slideshow__image--{{ block.id }}">
+                <div class="placeholder-background">
+                  {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                  {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              </div>
+            {%- else -%}
+              {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+              <style>
+                .slideshow__image--{{ block.id }} {
+                  object-position: {{ block.settings.alignment }};
+                  font-family: "object-fit: cover; object-position: {{ block.settings.alignment }};";
+                }
+              </style>
+
+              <img class="slideshow__image slideshow__image--{{ block.id }} lazyload"
+                  src="{{ block.settings.image | img_url: '300x' }}"
+                  data-src="{{ img_url }}"
+                  data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                  data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                  data-sizes="auto"
+                  data-parent-fit="cover"
+                  alt="{{ block.settings.image.alt | escape }}">
+            {%- endif -%}
+
+            {%- if block.type == 'video' and block.settings.video_url != blank -%}
+              <div class="slideshow__video slideshow__video--{{ block.id }}"
+                data-video-type="{{ block.settings.video_url.type }}"
+                data-video-id="{{ block.settings.video_url.id }}"
+                data-block-id="{{ block.id }}"></div>
+            {%- endif -%}
+
+            <div class="slideshow__text-container page-width">
+              {%- if block.type == 'video' -%}
+                <button class="slideshow__play-button btn btn--clear"
+                        disabled
+                        aria-live="polite"
+                        aria-label="{{ 'sections.slider.pause' | t }}"
+                        aria-pressed="false"
+                        data-label-pause="{{ 'sections.slider.pause' | t }}"
+                        data-label-play="{{ 'sections.slider.play' | t }}"
+                        data-pause-button>
+                  <span class="visually-hidden" data-play-label>{{ 'video.play' | t }}</span>
+                  <span class="slideshow__play-button-icon"></span>
+                  <span class="slideshow__play-button-circle"></span>
+                </button>
+              {%- endif -%}
+              <div class="slideshow__text-content" data-animate>
+                {%- if block.settings.title != blank -%}
+                  <h2 class="slideshow__heading h1">
+                    {{ block.settings.title | escape }}
+                  </h2>
+                {%- endif -%}
+                {%- if show_center_cta and block.settings.cta_link != blank -%}
+                  <a href="{{ block.settings.cta_link }}" class="slideshow__heading-cta btn{% if section.blocks.size == 1 and section.settings.slider_height == 'adapt' %} small--hide{% endif %}">
+                    {{ block.settings.cta | escape }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <div class="slideshow__image slideshow__image--{{ block.id }}{% if section.settings.show_overlay %} slideshow__overlay{% endif %}">
+        <div class="placeholder-background">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 1 -%}
+      <div class="slideshow__buttons critical-hide" data-count="{{ section.blocks.size }}">
+        {%- for block in section.blocks -%}
+          <div class="slideshow__button slideshow__button--{{ section.blocks.size }}{% if block.settings.cta_link != blank %} slideshow__button--link{% endif %}">
+            <button class="slideshow__button-label text-title btn--clear">
+              <span class="visually-hidden">{{ 'sections.slider.slide' | t: number: forloop.index }}</span>
+              <span class="slideshow__button-label-text">{{ block.settings.button }}</span>
+            </button>
+            {%- unless section.settings.center_cta -%}
+              {%- if block.settings.cta_link != blank -%}
+                <a href="{{ block.settings.cta_link }}" class="slideshow__button-cta slideshow__button-cta--multiple medium-up--hide btn" tabindex="-1">
+                  <span class="visually-hidden">{{ block.settings.cta | escape }}</span>
+                  {% include 'icon-plus' %}
+                </a>
+              {%- else -%}
+                <div class="slideshow__button-cta slideshow__button-cta--multiple medium-up--hide btn" tabindex="-1">
+                  <span class="visually-hidden">{{ block.settings.cta | escape }}</span>
+                  {% include 'icon-plus' %}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.cta_link != blank -%}
+                <a href="{{ block.settings.cta_link }}" class="slideshow__button-cta slideshow__button-cta--desktop small--hide btn" aria-label="{{ block.settings.cta | escape }}" tabindex="-1">
+                  <span class="slideshow__heading-cta-text" data-button-text="{{ block.settings.cta | escape }}" aria-hidden="true"></span>
+                </a>
+              {%- else -%}
+                <div class="slideshow__button-cta slideshow__button-cta--desktop small--hide btn" tabindex="-1">
+                  <span class="slideshow__heading-cta-text"></span>
+                </div>
+              {%- endif -%}
+            {%- endunless -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <ul class="slideshow__navigation">
+        <li>
+          <button class="slideshow__navigation-item critical-hide" aria-label="{{ 'sections.slider.previous_slide' | t}}" disabled="disabled" data-slider-navigation data-slider-navigation-previous></button>
+        </li>
+        <li>
+          <button class="slideshow__navigation-item slideshow__button-next critical-hide" aria-label="{{ 'sections.slider.next_slide' | t}}" data-slider-navigation data-slider-navigation-next></button>
+        </li>
+      </ul>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 1 -%}
+    <ol class="slideshow__indicators">
+      {%- for block in section.blocks -%}
+        <li>
+          <a href="#Slideshow-{{ section.id }}"
+             class="slideshow__indicator{% if forloop.first %} slideshow__indicator--active{% endif %} critical-clear"
+             data-slide-index="{{ forloop.index0 }}"
+             data-link-no-focus>
+            <span class="visually-hidden">{{ 'sections.slider.slide' | t: number: forloop.index }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ol>
+  {%- endif -%}
+  {%- if section.settings.slider_height == 'adapt' -%}
+    <div class="slideshow__text-container slideshow__text-container-mobile page-width">
+      {%- if section.blocks.size == 1 and first_block.settings.cta_link != blank -%}
+        <a href="{{ first_block.settings.cta_link }}" class="slideshow__button-cta-single medium-up--hide btn">
+          {{ first_block.settings.cta | escape }}
+        </a>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        <div class="slideshow__text-content slideshow__text-content-mobile" data-animate>
+          {%- if block.settings.title != blank -%}
+            <h2 class="slideshow__heading h1">
+              {{ block.settings.title | escape }}
+            </h2>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {% comment %}
+  <p id="slideshow-info" class="visually-hidden" aria-hidden="true">
+    {{- 'sections.slider.navigation_instructions' | t -}}
+  </p>
+  {%  endcomment %}
+</div>
+
+{% schema %}
+{
+  "name": {
+    "de": "Slideshow",
+    "en": "Slideshow",
+    "es": "Diapositivas",
+    "fr": "Diaporama",
+    "it": "Presentazione",
+    "ja": "スライドショー",
+    "nl": "Diavoorstelling",
+    "pt-BR": "Apresentação de slides",
+    "zh-CN": "幻灯片",
+    "zh-TW": "投影片輪播"
+  },
+  "class": "index-section",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "select",
+      "id": "slider_height",
+      "label": {
+        "de": "Diahöhe",
+        "en": "Slide height",
+        "es": "Altura de diapositiva",
+        "fr": "Hauteur de la diapositive",
+        "it": "Altezza slide",
+        "ja": "スライドの高さ",
+        "nl": "Diahoogte",
+        "pt-BR": "Altura do slide",
+        "zh-CN": "幻灯片高度",
+        "zh-TW": "投影片高度"
+      },
+      "info": {
+        "de": "Mehr über [Diashow-Richtlinien](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific) erfahren",
+        "en": "Learn more about [slideshow guidelines](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "es": "Leer más acerca de [las pautas de la presentación de diapositivas](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "fr": "En savoir plus sur [les directives relatives au diaporama](https://help.shopify.com/fr/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "it": "Maggiori informazioni sulle [linee guida per le presentazioni](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "ja": "[スライドショーのガイドライン](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)に関する詳細情報はこちら",
+        "nl": "Meer informatie over [slideshow guidelines](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "pt-BR": "Saiba mais sobre [diretrizes de apresentação de slides](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "zh-CN": "详细了解[幻灯片指南](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)",
+        "zh-TW": "深入了解 [投影輪播準則](https://help.shopify.com/en/manual/using-themes/themes-by-shopify/narrative#slideshow-sections-specific)"
+      },
+      "options": [
+        {
+          "value": "full",
+          "label": {
+            "de": "Vollbild",
+            "en": "Full screen",
+            "es": "Pantalla completa",
+            "fr": "Plein écran",
+            "it": "A schermo intero",
+            "ja": "全画面表示",
+            "nl": "Volledig scherm",
+            "pt-BR": "Tela cheia",
+            "zh-CN": "全屏",
+            "zh-TW": "全螢幕"
+          }
+        },
+        {
+          "value": "adapt",
+          "label": {
+            "de": "An erste Folie anpassen",
+            "en": "Adapt to first slide",
+            "es": "Adaptar a la primera diapositiva",
+            "fr": "Adapter à la première diapositive",
+            "it": "Adatta alla prima slide",
+            "ja": "最初のスライドに適応する",
+            "nl": "Aanpassen aan eerste dia",
+            "pt-BR": "Adaptar ao primeiro slide",
+            "zh-CN": "适应第一张幻灯片",
+            "zh-TW": "配合第一張投影片"
+          }
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "center_cta",
+      "label": {
+        "de": "Buttons zentrieren",
+        "en": "Center buttons",
+        "es": "Botones centrales",
+        "fr": "Boutons centraux",
+        "it": "Pulsanti centrali",
+        "ja": "中央ボタン",
+        "nl": "Knoppen centreren",
+        "pt-BR": "Botões do centro",
+        "zh-CN": "居中按钮",
+        "zh-TW": "置中按鈕"
+      },
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": {
+        "de": "Overlay",
+        "en": "Overlay",
+        "es": "Superposición",
+        "fr": "Superposition",
+        "it": "Sovrapposizione",
+        "ja": "オーバーレイ",
+        "nl": "Overlay",
+        "pt-BR": "Sobreposição",
+        "zh-CN": "叠加",
+        "zh-TW": "疊加層"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": {
+        "de": "Überlagerung anzeigen",
+        "en": "Show overlay",
+        "es": "Mostrar superposición",
+        "fr": "Afficher la superposition",
+        "it": "Mostra sovrapposizione",
+        "ja": "オーバーレイを表示する",
+        "nl": "Overlay weergeven",
+        "pt-BR": "Exibir sobreposição",
+        "zh-CN": "显示叠加",
+        "zh-TW": "顯示疊加層"
+      },
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": {
+        "de": "Überlagerungsfarbe",
+        "en": "Overlay Color",
+        "es": "Color de superposición",
+        "fr": "Couleur de superposition",
+        "it": "Colore sovrapposizione",
+        "ja": "オーバーレイの色",
+        "nl": "Kleur van overlay",
+        "pt-BR": "Cor de sobreposição",
+        "zh-CN": "叠加颜色",
+        "zh-TW": "疊加層顏色"
+      },
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text",
+      "label": {
+        "de": "Textfarbe",
+        "en": "Text color",
+        "es": "Color del texto",
+        "fr": "Couleur du texte",
+        "it": "Colore del testo",
+        "ja": "文字の色",
+        "nl": "Tekstkleur",
+        "pt-BR": "Cor do texto",
+        "zh-CN": "文本颜色",
+        "zh-TW": "文字顏色"
+      },
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": {
+        "de": "Überlagerungsdeckkraft",
+        "en": "Overlay opacity",
+        "es": "Opacidad superpuesta",
+        "fr": "Opacité de la superposition",
+        "it": "Opacità della sovrapposizione",
+        "ja": "オーバーレイ不透明率",
+        "nl": "Ondoorschijnendheid van overlay",
+        "pt-BR": "Opacidade de sobreposição",
+        "zh-CN": "叠加不透明度",
+        "zh-TW": "疊加不透明度"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": {
+        "de": "%",
+        "en": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "ja": "%",
+        "nl": "%",
+        "pt-BR": "%",
+        "zh-CN": "%",
+        "zh-TW": "%"
+      },
+      "default": 25
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "de": "Foto-Slide",
+        "en": "Image slide",
+        "es": "Diapositiva de imagen",
+        "fr": "Diapositive (image)",
+        "it": "Slide immagine",
+        "ja": "画像スライド",
+        "nl": "Afbeelding dia",
+        "pt-BR": "Slide de imagem",
+        "zh-CN": "图片幻灯片",
+        "zh-TW": "圖片投影片"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "de": "Foto",
+            "en": "Image",
+            "es": "Imagen",
+            "fr": "Image",
+            "it": "Immagine",
+            "ja": "画像",
+            "nl": "Afbeelding",
+            "pt-BR": "Imagem",
+            "zh-CN": "图片",
+            "zh-TW": "圖片"
+          }
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": {
+            "de": "Fotoausrichtung",
+            "en": "Image alignment",
+            "es": "Alineación de imagen",
+            "fr": "Alignement de l'image",
+            "it": "Allineamento immagine",
+            "ja": "画像アラインメント",
+            "nl": "Afbeelding uitlijnen",
+            "pt-BR": "Alinhamento da imagem",
+            "zh-CN": "图片对齐方式",
+            "zh-TW": "圖片對齊"
+          },
+          "default": "center center",
+          "options": [
+            {
+              "label": {
+                "de": "Oben links",
+                "en": "Top left",
+                "es": "Superior izquierda",
+                "fr": "En haut à gauche",
+                "it": "In alto a sinistra",
+                "ja": "左上",
+                "nl": "Linksboven",
+                "pt-BR": "Superior esquerdo",
+                "zh-CN": "左上方",
+                "zh-TW": "左上角"
+              },
+              "value": "top left"
+            },
+            {
+              "label": {
+                "de": "Oben Mitte",
+                "en": "Top center",
+                "es": "Superior al centro",
+                "fr": "En haut au centre",
+                "it": "In alto al centro",
+                "ja": "中央上",
+                "nl": "Midden boven",
+                "pt-BR": "Superior centro",
+                "zh-CN": "顶部居中",
+                "zh-TW": "中央上方"
+              },
+              "value": "top center"
+            },
+            {
+              "label": {
+                "de": "Oben rechts",
+                "en": "Top right",
+                "es": "Superior derecha",
+                "fr": "En haut à droite",
+                "it": "In alto a destra",
+                "ja": "右上",
+                "nl": "Rechtsboven",
+                "pt-BR": "Superior direito",
+                "zh-CN": "右上方",
+                "zh-TW": "右上角"
+              },
+              "value": "top right"
+            },
+            {
+              "label": {
+                "de": "Mitte links",
+                "en": "Middle left",
+                "es": "Al medio a la izquierda",
+                "fr": "Au milieu à gauche",
+                "it": "In mezzo a sinistra",
+                "ja": "中央左",
+                "nl": "Links midden",
+                "pt-BR": "Meio esquerdo",
+                "zh-CN": "中间居左",
+                "zh-TW": "中央左方"
+              },
+              "value": "center left"
+            },
+            {
+              "label": {
+                "de": "Mitte mittig",
+                "en": "Middle center",
+                "es": "Al medio al centro",
+                "fr": "Centrée au milieu",
+                "it": "In mezzo al centro",
+                "ja": "中央中",
+                "nl": "Centraal midden",
+                "pt-BR": "Meio centro",
+                "zh-CN": "中间居中",
+                "zh-TW": "正中央"
+              },
+              "value": "center center"
+            },
+            {
+              "label": {
+                "de": "Mitte rechts",
+                "en": "Middle right",
+                "es": "Al medio a la derecha",
+                "fr": "Au milieu à droite",
+                "it": "In centro a destra",
+                "ja": "中央右",
+                "nl": "Rechts midden",
+                "pt-BR": "Meio direito",
+                "zh-CN": "中间居右",
+                "zh-TW": "中央右方"
+              },
+              "value": "center right"
+            },
+            {
+              "label": {
+                "de": "Unten links",
+                "en": "Bottom left",
+                "es": "Inferior izquierda",
+                "fr": "En bas à gauche",
+                "it": "In basso a sinistra",
+                "ja": "左下",
+                "nl": "Linksonder",
+                "pt-BR": "Inferior esquerdo",
+                "zh-CN": "左下方",
+                "zh-TW": "左下角"
+              },
+              "value": "bottom left"
+            },
+            {
+              "label": {
+                "de": "Unten mittig",
+                "en": "Bottom center",
+                "es": "Inferior al centro",
+                "fr": "En bas au centre",
+                "it": "In basso al centro",
+                "ja": "中央下",
+                "nl": "Middenonder",
+                "pt-BR": "Inferior centro",
+                "zh-CN": "底部居中",
+                "zh-TW": "中央下方"
+              },
+              "value": "bottom center"
+            },
+            {
+              "label": {
+                "de": "Unten rechts",
+                "en": "Bottom right",
+                "es": "Inferior derecha",
+                "fr": "En bas à droite",
+                "it": "In basso a destra",
+                "ja": "右下",
+                "nl": "Rechtsonder",
+                "pt-BR": "Inferior direito",
+                "zh-CN": "右下方",
+                "zh-TW": "右下角"
+              },
+              "value": "bottom right"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": {
+            "de": "Text",
+            "en": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "it": "Testo",
+            "ja": "テキスト",
+            "nl": "Tekst",
+            "pt-BR": "Texto",
+            "zh-CN": "文本",
+            "zh-TW": "文字"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Titel",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "Titre",
+            "it": "Heading",
+            "ja": "見出し",
+            "nl": "Kop",
+            "pt-BR": "Título",
+            "zh-CN": "标题",
+            "zh-TW": "標題"
+          },
+          "default": {
+            "de": "Erzählen Sie Ihre Geschichte",
+            "en": "Tell your story",
+            "es": "Cuenta tu historia",
+            "fr": "Racontez votre histoire",
+            "it": "Racconta la tua storia",
+            "ja": "詳細をお聞かせください",
+            "nl": "Vertel uw verhaal",
+            "pt-BR": "Conte sua história",
+            "zh-CN": "讲述您的故事",
+            "zh-TW": "分享您的故事"
+          }
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": {
+            "de": "Folientitel",
+            "en": "Slide title",
+            "es": "Título de diapositiva",
+            "fr": "Titre de la diapositive",
+            "it": "Titolo slide",
+            "ja": "スライドタイトル",
+            "nl": "Diatitel",
+            "pt-BR": "Título do slide",
+            "zh-CN": "幻灯片标题",
+            "zh-TW": "投影片標題"
+          },
+          "default": {
+            "de": "Folientitel",
+            "en": "Slide title",
+            "es": "Título de diapositiva",
+            "fr": "Titre de la diapositive",
+            "it": "Titolo slide",
+            "ja": "スライドタイトル",
+            "nl": "Diatitel",
+            "pt-BR": "Título do slide",
+            "zh-CN": "幻灯片标题",
+            "zh-TW": "投影片標題"
+          },
+          "info": {
+            "de": "Obligatorisch, wenn mehrere Folien hinzugefügt werden",
+            "en": "Required if you add more than one slide",
+            "es": "Obligatorio si agregas más de una diapositiva",
+            "fr": "Obligatoire si vous ajoutez plus d'une diapositive",
+            "it": "Richiesto se aggiungi più di una slide",
+            "ja": "複数のスライドを追加する場合は必須です。",
+            "nl": "Vereist als u meer dan één dia toevoegt",
+            "pt-BR": "Obrigatório se você adicionar mais de um slide",
+            "zh-CN": "添加多张幻灯片时必需提供",
+            "zh-TW": "如果要新增多張投影片則需要此項目"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta",
+          "label": {
+            "de": "Button-Etikett",
+            "en": "Button label",
+            "es": "Etiqueta de botón",
+            "fr": "Texte du bouton",
+            "it": "Etichetta pulsante",
+            "ja": "ボタンラベル",
+            "nl": "Knoplabel",
+            "pt-BR": "Etiqueta do botão",
+            "zh-CN": "按钮标签",
+            "zh-TW": "按鈕標籤"
+          },
+          "default": {
+            "de": "Mehr anzeigen",
+            "en": "View more",
+            "es": "Ver más",
+            "fr": "Voir plus",
+            "it": "Visualizza altro",
+            "ja": "もっと見る",
+            "nl": "Meer bekijken",
+            "pt-BR": "Ver mais",
+            "zh-CN": "查看更多",
+            "zh-TW": "檢視更多"
+          }
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": {
+            "de": "Button-Etikett",
+            "en": "Button link",
+            "es": "Enlace de botón",
+            "fr": "Lien du bouton",
+            "it": "Link pulsante",
+            "ja": "ボタンリンク",
+            "nl": "Knoplink",
+            "pt-BR": "Link do botão",
+            "zh-CN": "按钮链接",
+            "zh-TW": "按鈕連結"
+          }
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": {
+        "de": "Video-Slide",
+        "en": "Video slide",
+        "es": "Diapositiva de video",
+        "fr": "Diapositive (vidéo)",
+        "it": "Slide video",
+        "ja": "ビデオスライド",
+        "nl": "Videodia",
+        "pt-BR": "Slide de vídeo",
+        "zh-CN": "视频幻灯片",
+        "zh-TW": "影片投影片"
+      },
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "info": {
+            "de": "Beste Ergebnisse bei einem Seitenverhältnis des Videos von 16:9",
+            "en": "Best results if the video's aspect ratio is 16:9",
+            "es": "Mejor resultado si la relación de aspecto del video es 16: 9",
+            "fr": "Vous obtiendrez de meilleurs résultats si le rapport d'aspect de la vidéo est de 16: 9",
+            "it": "Ottieni i migliori risultati se il formato del video è 16:9",
+            "ja": "ビデオのアスペクト比は16：9にするのが最適です。",
+            "nl": "U krijgt de beste resultaten met een hoogte-breedteverhouding van 16:9",
+            "pt-BR": "Resultados melhores quando a proporção de tela do vídeo for 16: 9",
+            "zh-CN": "视频的纵横比为 16:9 时效果最佳",
+            "zh-TW": "影片長寬比控制為 16:9 效果最佳"
+          },
+          "label": {
+            "de": "Video-Link",
+            "en": "Video link",
+            "es": "Enlace de video",
+            "fr": "Lien de la vidéo",
+            "it": "Link video",
+            "ja": "ビデオリンク",
+            "nl": "Videolink",
+            "pt-BR": "Link do vídeo",
+            "zh-CN": "视频链接",
+            "zh-TW": "影片連結"
+          },
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "default": {
+            "de": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "en": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "es": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "fr": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "it": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "ja": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "nl": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "pt-BR": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "zh-CN": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "zh-TW": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "de": "Titelbild",
+            "en": "Cover image",
+            "es": "Imagen de portada",
+            "fr": "Image de couverture",
+            "it": "Immagine di copertina",
+            "ja": "表紙画像",
+            "nl": "Coverafbeelding",
+            "pt-BR": "Imagem de capa",
+            "zh-CN": "封面图片",
+            "zh-TW": "封面圖片"
+          },
+          "info": {
+            "de": "Wird immer auf Mobilgeräten angezeigt",
+            "en": "Always shown on mobile devices",
+            "es": "Mostrar siempre dispositivos móviles",
+            "fr": "S'affiche toujours sur les appareils mobiles",
+            "it": "Sempre visualizzata sui dispositivi mobili",
+            "ja": "常にモバイル端末に表示",
+            "nl": "Altijd weergeven op mobiele apparaten",
+            "pt-BR": "Sempre mostrado em dispositivos móveis",
+            "zh-CN": "始终在移动设备上显示",
+            "zh-TW": "一律在行動裝置上顯示"
+          }
+        },
+        {
+          "type": "header",
+          "content": {
+            "de": "Text",
+            "en": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "it": "Testo",
+            "ja": "テキスト",
+            "nl": "Tekst",
+            "pt-BR": "Texto",
+            "zh-CN": "文本",
+            "zh-TW": "文字"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Titel",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "En-tête",
+            "it": "Heading",
+            "ja": "見出し",
+            "nl": "Kop",
+            "pt-BR": "Título",
+            "zh-CN": "标题",
+            "zh-TW": "標題"
+          },
+          "default": {
+            "de": "Präsentationsvideo",
+            "en": "Slideshow video",
+            "es": "Video de presentación",
+            "fr": "Diaporama vidéo",
+            "it": "Video presentazione",
+            "ja": "スライドショーのビデオ",
+            "nl": "Video in diavoorstelling",
+            "pt-BR": "Vídeo de apresentação de slides",
+            "zh-CN": "幻灯片放映视频",
+            "zh-TW": "投影片輪播影片"
+          }
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": {
+            "de": "Folientitel",
+            "en": "Slide title",
+            "es": "Título de diapositiva",
+            "fr": "Titre de la diapositive",
+            "it": "Titolo slide",
+            "ja": "スライドタイトル",
+            "nl": "Diatitel",
+            "pt-BR": "Título do slide",
+            "zh-CN": "幻灯片标题",
+            "zh-TW": "投影片標題"
+          },
+          "default": {
+            "de": "Folientitel",
+            "en": "Slide title",
+            "es": "Título de diapositiva",
+            "fr": "Titre de la diapositive",
+            "it": "Titolo slide",
+            "ja": "スライドタイトル",
+            "nl": "Diatitel",
+            "pt-BR": "Título do slide",
+            "zh-CN": "幻灯片标题",
+            "zh-TW": "投影片標題"
+          },
+          "info": {
+            "de": "Wird nur angezeigt, wenn der Präsentation mehrere Folien hinzugefügt werden",
+            "en": "Only shows if you set more than one slide in the slideshow",
+            "es": "Solo se muestra si configuras más de una diapositiva en la presentación de diapositivas",
+            "fr": "Ne s'affiche que si vous avez défini plusieurs diapositives dans le diaporama",
+            "it": "Appare solo se imposti più di una slide nella presentazione",
+            "ja": "スライドショーに複数のスライドを設定した場合のみ表示されます。",
+            "nl": "Wordt alleen weergegeven als u meer dan één dia instelt in de diavoorstelling",
+            "pt-BR": "Aparece apenas se você definir mais de um slide na apresentação de slides",
+            "zh-CN": "仅当您在幻灯片放映中设置了多张幻灯片时显示",
+            "zh-TW": "如果您在投影片輪播內設定多張投影片才會顯示此項目"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cta",
+          "label": {
+            "de": "Button-Etikett",
+            "en": "Button label",
+            "es": "Etiqueta de botón",
+            "fr": "Texte du bouton",
+            "it": "Etichetta pulsante",
+            "ja": "ボタンラベル",
+            "nl": "Knoplabel",
+            "pt-BR": "Etiqueta do botão",
+            "zh-CN": "按钮标签",
+            "zh-TW": "按鈕標籤"
+          },
+          "default": {
+            "de": "Mehr anzeigen",
+            "en": "View more",
+            "es": "Ver más",
+            "fr": "Voir plus",
+            "it": "Visualizza altro",
+            "ja": "もっと見る",
+            "nl": "Meer bekijken",
+            "pt-BR": "Ver mais",
+            "zh-CN": "查看更多",
+            "zh-TW": "檢視更多"
+          }
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": {
+            "de": "Button-Etikett",
+            "en": "Button link",
+            "es": "Enlace de botón",
+            "fr": "Lien du bouton",
+            "it": "Link pulsante",
+            "ja": "ボタンリンク",
+            "nl": "Knoplink",
+            "pt-BR": "Link do botão",
+            "zh-CN": "按钮链接",
+            "zh-TW": "按鈕連結"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
