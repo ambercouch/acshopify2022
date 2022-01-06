@@ -1,3 +1,4 @@
+{% assign siteLogoSvg = 'icon-bearhug-logo-text' %}
 {% if template.name == 'index' %}
 <h1 class="c-site-title c-site-title--front-page" >
   {% else %}
@@ -15,10 +16,11 @@
              srcset="{{ section.settings.mobile_logo | img_url: image_size_mobile }} 1x, {{ section.settings.mobile_logo | img_url: image_size_mobile, scale: 2 }} 2x"
              alt="{{ section.settings.logo.alt | default: shop.name }}"
              class="c-site-title__img--mob" >
+        {% elsif siteLogoSvg %}
+        {% include 'svg-icon' with {icon : siteLogoSvg} %}
       {% else %}
         {{ shop.name }}
       {% endif %}
-
     </a>
     {% if template.name == 'index' %}
 </h1>
