@@ -45,12 +45,12 @@
           "f4c25c10-d1e6-481c-8543-2766e1883102"
         ],
         "settings": {
-          "slider_height": "full",
+          "slider_height": "adapt",
           "center_cta": true,
           "show_overlay": true,
           "overlay_color": "#000000",
           "overlay_text": "#ffffff",
-          "overlay_opacity": 25
+          "overlay_opacity": 40
         }
       }
     },
