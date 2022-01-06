@@ -1,6 +1,37 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_bar_enabled": false,
+          "announcement_bar_home_page_only": true,
+          "announcement_bar_text": "Announce something here",
+          "announcement_bar_link": "",
+          "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo_max_width_mobile": 250,
+          "logo_max_width": 250,
+          "menu": "main-menu",
+          "mobile_menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_linklist": "footer",
+          "footer_newsletter_enable": false,
+          "show_payment_icons": false,
+          "site_info": "",
+          "logo_max_width": 250
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
