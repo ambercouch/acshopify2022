@@ -10,6 +10,10 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'main.css' | asset_url | stylesheet_tag }}
   {{ 'main.js' | asset_url | script_tag }}
+
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+
+
 </head>
 <body id="siteBody" class="template-{{ template | handle }}" data-template="{{ template.name | handle }}" data-template-type="{{ template.suffix | replace : ' ', '_' | replace : '-', '_'}}">
 
