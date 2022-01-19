@@ -80,6 +80,12 @@
         }
       ]
     }
+  ,
+    {
+      "type": "image_picker",
+      "id": "block_background_image",
+      "label": "Block Background Image"
+      }
   ],
   "blocks": [
     {
@@ -96,7 +102,13 @@
           "type": "richtext",
           "id": "content-body",
           "label": "Content Body",
-          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "html",
+          "id": "content-body-html",
+          "label": "Content HTML",
+          "default": "<p>Add some html code</p>"
         },
         {
           "type": "text",
