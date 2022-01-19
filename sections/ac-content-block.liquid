@@ -18,23 +18,19 @@
 <section id="{{ section.settings.title | handle }}" class="ac-json-schema l-main__content-block--{{ section.id }} u-bgc-{{ cb_background_colour_class  }} {{ cb_layout_desk_width_50_class }} is-image-layout-{{ cb_image_layout }} {{ cb_desktop_image_class }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
   <div class="c-content-block">
     <div class="c-content-block__row">
-      {% if cb_layout == '5050' %}
+      content block
+      {% if section.settings.block_layout == '5050' %}
+        {% for block in section.blocks %}
       <div class="c-content-block__col">
         <div class="c-content-block__content">
           <div class="c-content-block__content">
-            <h2 class="c-content-block__heading"></h2>
-            <div class="c-content-block__body"></div>
-            <div class="c-content-block__footer"></div>
+            <h2 class="c-content-block__heading">{{ block.settings.block_title }}</h2>
+            <div class="c-content-block__body">Block Body</div>
+            <div class="c-content-block__footer">Block footer</div>
           </div>
         </div>
       </div>
-      <div class="c-content-block__col">
-        <div class="c-content-block__content">
-          <h2 class="c-content-block__heading"></h2>
-          <div class="c-content-block__body"></div>
-          <div class="c-content-block__footer"></div>
-        </div>
-      </div>
+        {% endfor %}
       {% endif %}
     </div>
   </div>
@@ -94,42 +90,42 @@
       "settings": [
         {
           "type": "text",
-          "id": "content-title",
+          "id": "content_title",
           "label": "Content Title",
           "default": "Title"
         },
         {
           "type": "richtext",
-          "id": "content-body",
+          "id": "content_body",
           "label": "Content Body",
           "default": "<p>Add some basic text</p>"
         },
         {
           "type": "html",
-          "id": "content-body-html",
+          "id": "content_body_html",
           "label": "Content HTML",
           "default": "<p>Add some html code</p>"
         },
         {
           "type": "text",
-          "id": "content-btn-1-label",
+          "id": "content_btn_1_label",
           "label": "Button 1 Label",
           "default": "Shop Now"
         },
         {
           "type": "url",
-          "id": "content-btn-1-link",
+          "id": "content_btn_1_link",
           "label": "Button 1 link"
         },
         {
           "type": "text",
-          "id": "content-btn-2-label",
+          "id": "content_btn_2_label",
           "label": "Button 2 Label",
           "default": "Find Out More"
         },
         {
           "type": "url",
-          "id": "content-btn-2-link",
+          "id": "content_btn_2_link",
           "label": "Button 2 link"
         }
       ]
