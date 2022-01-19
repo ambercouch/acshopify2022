@@ -14,21 +14,54 @@
 
 {%- assign block_layout =  section.settings.cb_layout -%}
 
-
-<section id="{{ section.settings.title | handle }}" class="ac-json-schema l-main__content-block--{{ section.id }} u-bgc-{{ cb_background_colour_class  }} {{ cb_layout_desk_width_50_class }} is-image-layout-{{ cb_image_layout }} {{ cb_desktop_image_class }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
+<style>
+  .l-main__content-block--{{ section.id }} .c-content-block__row{
+    background-image: url({{ section.settings.block_background_image.src | image_url }});
+  }
+</style>
+<section id="{{ section.settings.title | handle }}" class="l-main__content-block--{{ section.id }} " data-section-id="{{ section.id }}" data-section-type="content-block" >
   <div class="c-content-block">
-    <div class="c-content-block__row">
-      content block
+    <div class="c-content-block__row u-bgc-{{ section.settings.block_background_colour  }} ">
       {% if section.settings.block_layout == '5050' %}
         {% for block in section.blocks %}
       <div class="c-content-block__col">
-        <div class="c-content-block__content">
           <div class="c-content-block__content">
-            <h2 class="c-content-block__heading">{{ block.settings.block_title }}</h2>
-            <div class="c-content-block__body">Block Body</div>
-            <div class="c-content-block__footer">Block footer</div>
+            {% if block.settings.content_title != '' %}
+            <h2 class="c-content-block__heading">{{ block.settings.content_title }}</h2>
+              {% else %}
+              <!-- content_title removed -->
+            {% endif %}
+            {% if block.settings.content_body != '' or block.settings.content_body_html != '' %}
+            <div class="c-content-block__body">
+              {% if block.settings.content_body != '' %}
+              <div class="c-content-block__rt">
+                {{ block.settings.content_body }}
+              </div>
+              {% endif %}
+              {% if block.settings.content_body_html != '' %}
+              <div class="c-content-block__html">
+                {{ block.settings.content_body_html }}
+              </div>
+              {% endif %}
+            </div>
+            {% else %}
+              <!-- content_body and content_body_html removed -->
+            {% endif %}
+            {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+            <div class="c-content-block__footer">
+              {% if block.settings.content_btn_1_link %}
+              <div class="c-btn--cta-primary">
+                <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+              </div>
+              {% endif %}
+              {% if block.settings.content_btn_2_link %}
+              <div class="c-btn--cta-secondry">
+                <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
           </div>
-        </div>
       </div>
         {% endfor %}
       {% endif %}
