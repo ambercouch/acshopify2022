@@ -89,7 +89,8 @@
           "title": "Birth of the bear section",
           "hide_title": true,
           "block_layout": "5050",
-          "block_background_colour": "1"
+          "block_background_colour": "1",
+          "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png"
         }
       }
     },
