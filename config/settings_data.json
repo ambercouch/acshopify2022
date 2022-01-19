@@ -59,25 +59,25 @@
           "60e2e60b-00bf-42f9-80ab-931c38bdb192": {
             "type": "content",
             "settings": {
-              "content-title": "",
-              "content-body": "",
-              "content-body-html": "<h2 class=\"u-fw-m u-col-w\">BIRTH OF THE BEAR<\/h2>",
-              "content-btn-1-label": "Shop Now",
-              "content-btn-1-link": "",
-              "content-btn-2-label": "Find Out More",
-              "content-btn-2-link": ""
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "<h2 class=\"u-fw-m u-col-w\">BIRTH OF THE BEAR<\/h2>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
             }
           },
           "8d1e2822-177d-4e14-9166-85a4676b9da9": {
             "type": "content",
             "settings": {
-              "content-title": "",
-              "content-body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born. <\/p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
-              "content-body-html": "",
-              "content-btn-1-label": "Shop Now",
-              "content-btn-1-link": "http:\/\/google.com",
-              "content-btn-2-label": "Read Reviews",
-              "content-btn-2-link": "https:\/\/google.com"
+              "content_title": "",
+              "content_body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born. <\/p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
+              "content_body-html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "http:\/\/google.com",
+              "content_btn_2_label": "Read Reviews",
+              "content_btn_2_link": "https:\/\/google.com"
             }
           }
         },
@@ -89,8 +89,7 @@
           "title": "Birth of the bear section",
           "hide_title": true,
           "block_layout": "5050",
-          "block_background_colour": "1",
-          "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png"
+          "block_background_colour": "1"
         }
       }
     },
