@@ -12,7 +12,7 @@
   - Button link: link of the button
 {%- endcomment -%}
 
-{%- assign cb_layout =  section.settings.cb_layout -%}
+{%- assign block_layout =  section.settings.cb_layout -%}
 
 
 <section id="{{ section.settings.title | handle }}" class="ac-json-schema l-main__content-block--{{ section.id }} u-bgc-{{ cb_background_colour_class  }} {{ cb_layout_desk_width_50_class }} is-image-layout-{{ cb_image_layout }} {{ cb_desktop_image_class }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
@@ -48,8 +48,26 @@
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Talk about your brand"
+      "default": "Block Heading"
     },
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "label": "Hide the block heading",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "cb_text_colour",
+      "label": "Text colour",
+      "default": "w",
+      "options": [
+        {
+          "value": "w",
+          "label": "BBD Yellow"
+        }
+        ]
+      },
     {
       "type": "richtext",
       "id": "text",
