@@ -9,9 +9,9 @@
           "announcement_bar_text": "FREE SHIPPING OVER £40",
           "announcement_bar_link": "",
           "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
-          "logo_max_width_mobile": 250,
+          "logo_max_width_mobile": 210,
           "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
-          "logo_max_width": 250,
+          "logo_max_width": 210,
           "menu": "main-menu",
           "mobile_menu": "main-menu"
         }
