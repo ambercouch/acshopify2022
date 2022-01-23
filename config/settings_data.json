@@ -1,0 +1,65 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_bar_enabled": true,
+          "announcement_bar_home_page_only": true,
+          "announcement_bar_text": "FREE SHIPPING OVER £40",
+          "announcement_bar_link": "",
+          "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo_max_width_mobile": 250,
+          "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo_max_width": 250,
+          "menu": "main-menu",
+          "mobile_menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_linklist": "footer",
+          "footer_newsletter_enable": false,
+          "show_payment_icons": false,
+          "site_info": "",
+          "logo_max_width": 250
+        }
+      },
+      "ac-slideshow": {
+        "type": "ac-slideshow",
+        "blocks": {
+          "f4c25c10-d1e6-481c-8543-2766e1883102": {
+            "type": "video",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/watch?v=YG2Fz9tqS5k",
+              "image": "shopify:\/\/shop_images\/bhg-team.jpg",
+              "title": "Bamboo Joint Sleeves.",
+              "button": "Slide title",
+              "cta": "Shop Now",
+              "cta_link": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "f4c25c10-d1e6-481c-8543-2766e1883102"
+        ],
+        "settings": {
+          "slider_height": "adapt",
+          "center_cta": true,
+          "show_overlay": true,
+          "overlay_color": "#000000",
+          "overlay_text": "#ffffff",
+          "overlay_opacity": 40
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}
