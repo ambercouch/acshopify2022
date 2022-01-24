@@ -269,8 +269,8 @@
             "type": "content",
             "settings": {
               "content_title": "",
-              "content_body": "<p>Add some basic text<\/p>",
-              "content_body_html": "<h2>MEET THE PACK.<\/h2>\n<p>Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
+              "content_body": "",
+              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">MEET THE PACK.<\/h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
               "content_btn_1_label": "Meet The Pack",
               "content_btn_1_link": "\/",
               "content_btn_2_label": "Find Out More",
@@ -286,7 +286,8 @@
           "title": "Block Heading",
           "hide_title": true,
           "block_layout": "5050",
-          "block_background_colour": "1"
+          "block_background_colour": "1",
+          "block_background_image": "shopify:\/\/shop_images\/bhg-team-banner.png"
         }
       }
     },
