@@ -100,7 +100,8 @@
           "subtitle": "",
           "show_description": false,
           "description_override": "",
-          "collection": "frontpage"
+          "collection": "frontpage",
+          "product_limit": 4
         }
       },
       "1643016298f1c80f98": {
