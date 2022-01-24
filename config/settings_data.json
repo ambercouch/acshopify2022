@@ -144,10 +144,24 @@
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
+          },
+          "7ff42be7-81dd-454b-a9b5-87aa9b3603f2": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/bhg-elbow.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
           }
         },
         "block_order": [
-          "9341eabc-ae45-4472-9bb6-016fe468df24"
+          "9341eabc-ae45-4472-9bb6-016fe468df24",
+          "7ff42be7-81dd-454b-a9b5-87aa9b3603f2"
         ],
         "settings": {
           "title": "Block Heading",
