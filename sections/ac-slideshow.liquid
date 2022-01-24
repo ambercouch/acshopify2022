@@ -104,7 +104,7 @@
                   </h2>
                 {%- endif -%}
 
-                <div class="actions">
+                <div class="slideshow__text-actions">
                   {%- if show_center_cta and block.settings.cta_link != blank -%}
                     <a href="{{ block.settings.cta_link }}" class="slideshow__heading-cta c-btn{% if section.blocks.size == 1 and section.settings.slider_height == 'adapt' %} small--hide{% endif %}">
                       {{ block.settings.cta | escape }}
