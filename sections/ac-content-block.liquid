@@ -19,7 +19,7 @@
     background-image: url({{ section.settings.block_background_image.src | image_url }});
   }
 </style>
-<section id="{{ section.settings.title | handle }}" class="l-main__content-block--{{ section.id }} " data-section-id="{{ section.id }}" data-section-type="content-block" >
+<section id="section-id-{{ section.id }}" class="l-content-section--content-block " data-section-id="{{ section.id }}" data-section-type="content-block" >
   <div class="c-content-block">
     <div class="c-content-block__row u-bgc-{{ section.settings.block_background_colour  }} ">
       {% if section.settings.block_layout == '5050' %}
@@ -83,6 +83,7 @@
 {% schema %}
 {
   "name": "Content Block",
+  "class": "l-main__content-section--content-block",
   "settings": [
     {
       "type": "text",

@@ -25,8 +25,7 @@
   {% else %}
   {% assign productLimit = all %}
 {% endif %}
-<section class="l-content-section--featured-collection">
-  <div class="l-content-section__container">
+<section  id="section-id-{{ section.id }}" class="l-content-section--feature-collection ">
 <div class="l-featured-collection">
   {% if section.settings.title != blank or section.settings.show_description == true %}
     <div class="l-featured-collection__header {{ cssClassDescription }}">
@@ -64,11 +63,11 @@
 
   {% endif %}
 </div>
-  </div>
 </section>
 {% schema %}
   {
     "name": "Featured collection",
+    "class": "l-main__content-section--collection",
     "settings": [
       {
         "type": "text",
@@ -102,7 +101,8 @@
   "id": "product_limit",
   "type": "number",
   "label": "Product Limit",
-  "info" : "Limit the number of products shown"
+  "info" : "Limit the number of products shown",
+  "default" : 4
   }
     ],
     "presets": [

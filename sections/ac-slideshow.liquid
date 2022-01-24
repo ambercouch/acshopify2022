@@ -97,31 +97,35 @@
             {%- endif -%}
 
             <div class="slideshow__text-container page-width">
-              {%- if block.type == 'video' -%}
-                <button class="slideshow__play-button btn btn--clear"
-                        disabled
-                        aria-live="polite"
-                        aria-label="{{ 'sections.slider.pause' | t }}"
-                        aria-pressed="false"
-                        data-label-pause="{{ 'sections.slider.pause' | t }}"
-                        data-label-play="{{ 'sections.slider.play' | t }}"
-                        data-pause-button>
-                  <span class="visually-hidden" data-play-label>{{ 'video.play' | t }}</span>
-                  <span class="slideshow__play-button-icon"></span>
-                  <span class="slideshow__play-button-circle"></span>
-                </button>
-              {%- endif -%}
               <div class="slideshow__text-content" data-animate>
                 {%- if block.settings.title != blank -%}
                   <h2 class="slideshow__heading h1">
                     {{ block.settings.title | escape }}
                   </h2>
                 {%- endif -%}
-                {%- if show_center_cta and block.settings.cta_link != blank -%}
-                  <a href="{{ block.settings.cta_link }}" class="slideshow__heading-cta btn{% if section.blocks.size == 1 and section.settings.slider_height == 'adapt' %} small--hide{% endif %}">
-                    {{ block.settings.cta | escape }}
-                  </a>
-                {%- endif -%}
+
+                <div class="slideshow__text-actions">
+                  {%- if show_center_cta and block.settings.cta_link != blank -%}
+                    <a href="{{ block.settings.cta_link }}" class="slideshow__heading-cta c-btn{% if section.blocks.size == 1 and section.settings.slider_height == 'adapt' %} small--hide{% endif %}">
+                      {{ block.settings.cta | escape }}
+                    </a>
+                  {%- endif -%}
+
+                  {%- if block.type == 'video' -%}
+                    <button class="slideshow__play-button btn btn--clear"
+                            disabled
+                            aria-live="polite"
+                            aria-label="{{ 'sections.slider.pause' | t }}"
+                            aria-pressed="false"
+                            data-label-pause="{{ 'sections.slider.pause' | t }}"
+                            data-label-play="{{ 'sections.slider.play' | t }}"
+                            data-pause-button>
+                      <span class="visually-hidden" data-play-label>{{ 'video.play' | t }}</span>
+                      <span class="slideshow__play-button-icon"></span>
+                      <span class="slideshow__play-button-circle"></span>
+                    </button>
+                  {%- endif -%}
+                </div>
               </div>
             </div>
           </li>
