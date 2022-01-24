@@ -169,13 +169,95 @@
           "block_layout": "5050",
           "block_background_colour": "t"
         }
+      },
+      "16430296842a0fc99f": {
+        "type": "ac-content-block",
+        "blocks": {
+          "9f9c1fba-e49a-4a52-8920-08cae5540c7e": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/bhg-t-shirt-front.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "dbb27682-8378-4f8c-9a61-5e12359d928a": {
+            "type": "content",
+            "settings": {
+              "content_title": "CLOTHING",
+              "content_body": "<p>The range consists of T-Shirts, hats and caps. Organic cotton tees can be worn while training, playing or competing, whether in the gym, on the tennis court, golf course or running in your local park run.<\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/products\/ankle-support",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "9f9c1fba-e49a-4a52-8920-08cae5540c7e",
+          "dbb27682-8378-4f8c-9a61-5e12359d928a"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "t"
+        }
+      },
+      "1643029741d3b07d30": {
+        "type": "ac-content-block",
+        "blocks": {
+          "25a105cc-807a-4346-9a35-90bfa500b08a": {
+            "type": "content",
+            "settings": {
+              "content_title": "BUNDLES",
+              "content_body": "<p>Products are sold in various packs to meet your activity needs.. all of which are discounted compared to purchasing them singularly!<\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/products\/elbow-support",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "9c19c962-3b10-4f16-8f94-b3fe638594ee": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/bhg-bundle.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "25a105cc-807a-4346-9a35-90bfa500b08a",
+          "9c19c962-3b10-4f16-8f94-b3fe638594ee"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "t"
+        }
       }
     },
     "content_for_index": [
       "1642591167f3ea18b4",
       "1643016047b462c6f9",
       "1643016298f1c80f98",
-      "16430262408de1051e"
+      "16430262408de1051e",
+      "16430296842a0fc99f",
+      "1643029741d3b07d30"
     ]
   },
   "presets": {
