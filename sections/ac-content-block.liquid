@@ -15,11 +15,11 @@
 {%- assign block_layout =  section.settings.cb_layout -%}
 
 <style>
-  .l-main__content-block--{{ section.id }} .c-content-block__row{
+  .l-content-section--{{ section.id }} .c-content-block__row{
     background-image: url({{ section.settings.block_background_image.src | image_url }});
   }
 </style>
-<section id="section-id-{{ section.id }}" class="l-content-section--content-block " data-section-id="{{ section.id }}" data-section-type="content-block" >
+<section id="section-id-{{ section.id }}" class="l-content-section--content-block l-content-section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
   <div class="c-content-block">
     <div class="c-content-block__row u-bgc-{{ section.settings.block_background_colour  }} ">
       {% if section.settings.block_layout == '5050' %}
