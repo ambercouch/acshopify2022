@@ -132,11 +132,28 @@
       },
       "16430262408de1051e": {
         "type": "ac-content-block",
+        "blocks": {
+          "9341eabc-ae45-4472-9bb6-016fe468df24": {
+            "type": "content",
+            "settings": {
+              "content_title": "SUPPORTS & SLEEVES",
+              "content_body": "<p>Bamboo joint and muscle supports created for exercise, recovery and pain relief. The range consists of wrist, elbow, thigh, knee, calf and ankle supports.<\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/products\/ankle-support",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "9341eabc-ae45-4472-9bb6-016fe468df24"
+        ],
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
           "block_layout": "5050",
-          "block_background_colour": "1"
+          "block_background_colour": "t"
         }
       }
     },
