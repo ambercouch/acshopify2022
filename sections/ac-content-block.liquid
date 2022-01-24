@@ -31,6 +31,11 @@
               {% else %}
               <!-- content_title removed -->
             {% endif %}
+            {% if block.settings.content_image != '' %}
+              some image
+            {% else %}
+              <!-- content_image false -->
+            {% endif %}
             {% if block.settings.content_body != '' or block.settings.content_body_html != '' %}
             <div class="c-content-block__body">
               {% if block.settings.content_body != '' %}
