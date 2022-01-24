@@ -92,10 +92,21 @@
           "block_background_colour": "1",
           "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png"
         }
+      },
+      "1643016047b462c6f9": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Featured collection",
+          "subtitle": "",
+          "show_description": false,
+          "description_override": "",
+          "collection": "frontpage"
+        }
       }
     },
     "content_for_index": [
-      "1642591167f3ea18b4"
+      "1642591167f3ea18b4",
+      "1643016047b462c6f9"
     ]
   },
   "presets": {
