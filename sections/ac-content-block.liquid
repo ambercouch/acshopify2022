@@ -31,7 +31,7 @@
               {% else %}
               <!-- content_title removed -->
             {% endif %}
-            {% if block.settings.content_image != '' %}
+            {% if block.settings.content_image != blank %}
             <div class="c-content-block__image">
               {% include 'responsive-image' with
                 image: block.settings.content_image,
