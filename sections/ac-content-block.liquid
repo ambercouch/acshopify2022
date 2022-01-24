@@ -32,7 +32,13 @@
               <!-- content_title removed -->
             {% endif %}
             {% if block.settings.content_image != '' %}
-              some image
+            <div class="c-content-block__image">
+              {% include 'responsive-image' with
+                image: block.settings.content_image,
+                max_width: 800,
+                max_height: 800
+              %}
+            </div>
             {% else %}
               <!-- content_image false -->
             {% endif %}
