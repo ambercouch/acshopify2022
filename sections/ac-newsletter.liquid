@@ -7,10 +7,10 @@
       {% endunless %}
       <input type="hidden" name="contact[tags]" value="newsletter">
       <div class="c-newsletter--input-group" data-animate>
-        <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" class="input-group__field" id="EmailField{{ section.id }}" aria-label="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" autocorrect="off" autocapitalize="off">
+        <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Enter your email" name="contact[email]" class="input-group__field" id="EmailField{{ section.id }}" aria-label="Email" autocorrect="off" autocapitalize="off">
         <div class="c-newsletter--btn input-group__btn--newsletter">
           <button type="submit" class="c-btn--newsletter-submit">
-            {{ 'general.newsletter_form.submit' | t }}
+            <span class="c-btn__label">Subscribe</span>
           </button>
         </div>
       </div>

@@ -2,39 +2,30 @@
 <header class="l-footer__header">
   <div class="c-header--footer">
     <h4 class="c-header__heading--footer">
-          <span class="c-header__title">
-            {{ 'general.newsletter_form.newsletter_header'  | t   }}
-          </span>
+          <span class="c-header__title">#JOINTHEPACK</span>
     </h4>
   </div>
 </header>
-<div class="l-footer__body-copy">
-  <div class="c-body-copy--footer">
-      <p>{{ 'general.newsletter_form.newsletter_intro'  | t | newline_to_br }}</p>
-  </div>
-</div>
 <div class="l-footer__contact-form">
   <div class="c-contact-form--subscribe">
     <div class="c-contact-form__form-wrapper">
       {% form 'customer' %}
         {{ form.errors | default_errors }}
         {% if form.posted_successfully? %}
-          <p class="c-contact-form__confirm--success form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+          <p class="c-contact-form__confirm--success form--success">Thanks for subscribing</p>
 
         {% else %}
 
           <input type="hidden" name="contact[tags]" value="newsletter">
           <label class="c-contact-form__label" >
-              <span class="c-contact-form__label-text" >
-               {{ 'general.newsletter_form.newsletter_email' | t }}
-              </span>
+              <span class="c-contact-form__label-text" >Email</span>
                       <span class="c-contact-form__input-wrapper" >
                 <input class="c-contact-form__input--text" type="email"
                        name="contact[email]"
                        id="Email"
                        class="input-group__field newsletter__input"
                        value="{% if customer %}{{ customer.email }}{% endif %}"
-                       placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                       placeholder="Enter your email address"
                        autocorrect="off"
                        autocapitalize="off">
               </span>
@@ -42,7 +33,7 @@
           <div class="c-contact-form__input-wrapper--submit" >
             <div class="c-contact-form__btn">
               <button type="submit" class=" c-btn--contact-form" name="commit" id="Subscribe">
-                <span class="o-btn__text">{{ 'general.newsletter_form.submit' | t }}</span>
+                <span class="o-btn__text">Subscribe</span>
               </button>
             </div>
           </div>
