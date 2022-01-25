@@ -12,614 +12,190 @@
   - Button link: link of the button
 {%- endcomment -%}
 
-{%- assign cb_image_layout =  section.settings.cb_image_layout -%}
-{%- assign cb_text_layout =  section.settings.cb_text_layout -%}
-{%- assign cb_background_colour_class =  section.settings.cb_background_colour -%}
-{%- assign cb_button_colour_class =  section.settings.cb_button_colour -%}
-{%- assign cb_button_bg_colour_class =  section.settings.cb_button_bg_colour -%}
-{%- assign cb_button_border_colour_class =  section.settings.cb_button_border_colour -%}
-{%- assign cb_button_width_class =  section.settings.cb_button_width -%}
-{%- assign cb_heading_colour_class =  section.settings.cb_heading_colour -%}
-{%- assign cb_heading_size_class =  section.settings.cb_heading_size -%}
-{%- assign cb_heading_layout =  section.settings.cb_heading_layout -%}
-{%- assign cb_text_colour_class =  section.settings.cb_text_colour -%}
-{%- assign cb_image_pos_class =  section.settings.cb_image_position -%}
+{%- assign block_layout =  section.settings.cb_layout -%}
 
-{% if section.settings.cb_min_height == true %}
-  {%- assign cb_min_height_class =  '75vh' -%}
-{% endif %}
-
-{% if section.settings.cb_min_height_px == true %}
-  {%- assign cb_min_height_class =  '500px' -%}
-{% endif %}
-
-{% if section.settings.cb_hide_title == true %}
-  {%- assign cb_hide_title_class =  'is-heading-hidden' -%}
-{% endif %}
-
-{% if section.settings.cb_desk_layout_1col == true %}
-  {%- assign cb_single_col_class =  'is-single-col-desktop' -%}
-{% endif %}
-
-{% if section.settings.cb_desk_width_50 == true %}
-  {%- assign cb_desk_width_50_class =  'is-block-width-50' -%}
-{% endif %}
-
-{% if section.settings.cb_desk_width_50 == true %}
-  {%- assign cb_layout_desk_width_50_class =  'is-block-layout-width-50' -%}
-{% endif %}
-
-{% if section.settings.cb_desk_image_right == true %}
-  {%- assign cb_desk_image_right_class =  'is-block-image-right' -%}
-{% endif %}
-
-{% if section.settings.cb_sub_title != blank %}
-  {%- assign cb_sub_class =  'has-sub-heading' -%}
-{% endif %}
-
-{% if section.settings.cb_image_2!= blank %}
-  {%- assign cb_additional_image_class =  'has-additional-image' -%}
-{% endif %}
-
-{% if section.settings.cb_image_desktop != blank %}
-  {% assign cb_desktop_image_class = 'has-desktop-image' %}
-{% endif %}
-
-
-{% if section.settings.cb_button_label == blank and section.settings.cb_button_link != blank %}
-  {% capture cb_anchor_markup_open %}
-    <a class="c-content-block__link--block" href="{{ section.settings.cb_button_link }}" >
-  {% endcapture %}
-  {% capture cb_anchor_markup_close %}
-    </a>
-  {% endcapture %}
-  <!-- NO BUTTON LABEL And url -->
-{% else %}
-  <!-- BUTTON LABEL -->
-{% endif %}
-
-
-<section id="{{ section.settings.title | handle }}" class="ac-json-schema l-main__content-block--{{ section.id }} u-bgc-{{ cb_background_colour_class  }} {{ cb_layout_desk_width_50_class }} is-image-layout-{{ cb_image_layout }} {{ cb_desktop_image_class }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
-  <div class="c-image-layer">
-    <div class="c-image-layer__background">
-      {% include 'ac-blobs' %}
-    </div>
-    <div class="c-image-layer__content">
-      <div class="l-main__content-block-wrapper">
-
-  <div class="c-content-block--{{ section.settings.title | handle }} {{ cb_desk_width_50_class }} {{ cb_single_col_class }}  has-image-pos-{{ cb_image_pos_class }} u-minh-{{ cb_min_height_class }} {{ cb_desk_width_50_class }} {{ cb_desk_image_right_class }} {{ cb_additional_image_class }}">
-{{ cb_anchor_markup_open }}
-    {% if section.settings.title != blank %}
-      <header class="c-content-block__header  is-heading-layout-{{ cb_heading_layout }} {{ cb_sub_class }} {{ cb_hide_title_class  }}">
-
-        {% if section.settings.cb_logo_image != blank %}
-          <div class="c-content-block__logo">
-            {% include 'responsive-image' with
-              image: section.settings.cb_logo_image,
-              max_width: 700,
-              max_height: 700
-            %}
+<style>
+  .l-content-section--{{ section.id }} .c-content-block__row{
+    background-image: url({{ section.settings.block_background_image.src | image_url }});
+  }
+</style>
+<section id="section-id-{{ section.id }}" class="l-content-section--content-block l-content-section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
+  <div class="c-content-block">
+    <div class="c-content-block__row u-bgc-{{ section.settings.block_background_colour  }} ">
+      {% if section.settings.block_layout == '5050' %}
+        {% for block in section.blocks %}
+      <div class="c-content-block__col">
+          <div class="c-content-block__content">
+            {% if block.settings.content_title != '' %}
+            <h2 class="c-content-block__heading">{{ block.settings.content_title }}</h2>
+              {% else %}
+              <!-- content_title removed -->
+            {% endif %}
+            {% if block.settings.content_image != blank %}
+            <div class="c-content-block__image">
+              {% include 'responsive-image' with
+                image: block.settings.content_image,
+                max_width: 800,
+                max_height: 800
+              %}
+            </div>
+            {% else %}
+              <!-- content_image false -->
+            {% endif %}
+            {% if block.settings.content_body != '' or block.settings.content_body_html != '' %}
+            <div class="c-content-block__body">
+              {% if block.settings.content_body != '' %}
+              <div class="c-content-block__rt">
+                {{ block.settings.content_body }}
+              </div>
+              {% endif %}
+              {% if block.settings.content_body_html != '' %}
+              <div class="c-content-block__html">
+                {{ block.settings.content_body_html }}
+              </div>
+              {% endif %}
+            </div>
+            {% else %}
+              <!-- content_body and content_body_html removed -->
+            {% endif %}
+            {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+            <div class="c-content-block__footer">
+              {% if block.settings.content_btn_1_link %}
+              <div class="c-btn--cta-primary">
+                <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+              </div>
+              {% endif %}
+              {% if block.settings.content_btn_2_link %}
+              <div class="c-btn--cta-secondry">
+                <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
           </div>
-        {% endif %}
-
-        <h2 class="c-content-block__heading u-col-{{ cb_heading_colour_class }} u-fs-{{ cb_heading_size_class }}">
-          <span  class="c-content-block__title">{{ section.settings.title | escape }}</span>
-        </h2>
-        {% if section.settings.cb_sub_title != blank %}
-          <h4 class="c-content-block__sub-heading">
-            {{  section.settings.cb_sub_title }}
-          </h4>
-        {% endif %}
-      </header>
-    {% endif %}
-
-    {% if section.settings.cb_image != blank %}
-    <div class="c-content-block__image is-pos-{{ cb_image_pos_class }}">
-        {% include 'responsive-image' with
-          image: section.settings.cb_image,
-          max_width: 800,
-          max_height: 1000
-        %}
-    </div>
-    {% endif %}
-
-    {% if section.settings.cb_image_desktop != blank %}
-      <div class="c-content-block__image--desktop is-pos-{{ cb_image_pos_class }}">
-        {% include 'responsive-image' with
-          image: section.settings.cb_image_desktop,
-          max_width: 1500,
-          max_height: 1000
-        %}
       </div>
-    {% endif %}
-
-  <div class="c-content-block__body is-text-layout-{{ cb_text_layout }}">
-      {% if section.settings.cb_text != blank %}
-        <div class="c-content-block__text u-col-{{ cb_text_colour_class }}" >{{ section.settings.cb_text }}</div>
-      {% endif %}
-    {% if section.settings.cb_code != blank %}
-      <div class="c-content-block__text--code" >{{ section.settings.cb_code }}</div>
-    {% endif %}
-      {% if section.settings.cb_button_label != blank and section.settings.cb_button_link != blank %}
-        <div class="c-content-block__footer">
-          <a class="c-content-block__link--btn o-btn--{{ cb_button_width_class }} u-bor-col-{{ cb_button_border_colour_class }} u-bgc-{{ cb_button_bg_colour_class }} u-col-{{ cb_button_colour_class }}" href="{{ section.settings.cb_button_link }}">
-            <span class="c-content-block__link-label">{{ section.settings.cb_button_label  }}</span>
-          </a>
-        </div>
+        {% endfor %}
       {% endif %}
     </div>
-
-    {% if section.settings.cb_image_2 != blank %}
-      <div class="c-content-block__image--additional is-pos-{{ cb_image_pos_class }}">
-        {% include 'responsive-image' with
-          image: section.settings.cb_image_2,
-          max_width: 700,
-          max_height: 700
-        %}
-      </div>
-    {% endif %}
-
-    {% if section.settings.cb_scroll_arrow %}
-    <div class="c-content-block__icon--scroll">
-      {% include 'icon-bbd-scroll' %}
-    </div>
-      {% else %}
-      <!-- no scroll arrow -->
-    {% endif %}
-
-    {{ cb_anchor_markup_close }}
-
   </div>
-
-      </div><!-- .l-main__content-block-wrapper -->
-    </div><!-- .c-image-layer__content -->
-  </div><!-- .c-image-layer__content -->
-
 </section>
 
 {% schema %}
-
-  {
+{
   "name": "Content Block",
-  "class": "section-block",
+  "class": "l-main__content-section--content-block",
   "settings": [
-  {
-  "type": "select",
-  "id": "cb_background_colour",
-  "label": "Background colour test schema",
-  "default": "t",
-  "options": [
-  {
-  "value": "t",
-  "label": "Transparent"
-  },
-  {
-  "value": "1",
-  "label": "BBD Yellow"
-  },
-  {
-  "value": "2",
-  "label": "BBD Indigo"
-  },
-  {
-  "value": "3",
-  "label": "BBD Pink"
-  },
-  {
-  "value": "4",
-  "label": "BBD Green"
-  },
-  {
-  "value": "5",
-  "label": "BBD Blue"
-  },
-  {
-  "value": "w",
-  "label": "BBD white"
-  }
-  ]
-  },
-  {
-  "type": "image_picker",
-  "id": "cb_image",
-  "label": "Image"
-  },
-  {
-  "type": "image_picker",
-  "id": "cb_image_desktop",
-  "label": "Image Desktop"
-  },
-  {
-  "type": "select",
-  "id": "cb_image_layout",
-  "label": "Image alignment",
-  "default": "background",
-  "options": [
-  {
-  "value": "left",
-  "label": "Left"
-  },
-  {
-  "value": "right",
-  "label": "Right"
-  },
-  {
-  "value": "center",
-  "label": "Center"
-  },
-  {
-  "value": "background",
-  "label": "Background"
-  },
-  {
-  "value": "hidden",
-  "label": "Hidden"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_image_position",
-  "label": "Image position",
-  "default": "below-header",
-  "options": [
-  {
-  "value": "below-header",
-  "label": "Below header"
-  },
-  {
-  "value": "above-header",
-  "label": "Above header"
-  },
-  {
-  "value": "below-text",
-  "label": "Below text"
-  }
-  ]
-  },
-  {
-  "type": "image_picker",
-  "id": "cb_image_2",
-  "label": "Image 2"
-  },
-  {
-  "type": "image_picker",
-  "id": "cb_logo_image",
-  "label": "Logo"
-  },
-  {
-  "type": "text",
-  "id": "title",
-  "label": "Heading",
-  "default": "Block Heading"
-  },
-  {
-  "type": "select",
-  "id": "cb_heading_size",
-  "label": "Heading Size",
-  "default": "2",
-  "options": [
-  {
-  "value": "2",
-  "label": "Normal"
-  },
-  {
-  "value": "k",
-  "label": "Bigger"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_heading_colour",
-  "label": "Heading Colour",
-  "default": "w",
-  "options": [
-  {
-  "value": "1",
-  "label": "BBD Yellow"
-  },
-  {
-  "value": "2",
-  "label": "BBD Indigo"
-  },
-  {
-  "value": "3",
-  "label": "BBD Pink"
-  },
-  {
-  "value": "4",
-  "label": "BBD Green"
-  },
-  {
-  "value": "5",
-  "label": "BBD Blue"
-  },
-  {
-  "value": "w",
-  "label": "BBD white"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_heading_layout",
-  "label": "Heading Alignment",
-  "default": "center",
-  "options": [
-  {
-  "value": "left",
-  "label": "Left"
-  },
-  {
-  "value": "right",
-  "label": "Right"
-  },
-  {
-  "value": "center",
-  "label": "Center"
-  },
-  {
-  "value": "hidden",
-  "label": "Hidden"
-  }
-  ]
-  },
-  {
-  "type": "checkbox",
-  "id": "cb_hide_title",
-  "label": "Hide the title",
-  "default": false
-  },
-  {
-  "type": "text",
-  "id": "cb_sub_title",
-  "label": "Sub Heading",
-  "default": "Some sub heading strap line"
-  },
-  {
-  "type": "richtext",
-  "id": "cb_text",
-  "label": "Text",
-  "default": "<p>A short paragraph to go with you image</p>"
-  },
-  {
-  "type": "html",
-  "id": "cb_code",
-  "label": "Custom Code",
-  "info": "<p>Add some html code</p>"
-  },
-  {
-  "type": "select",
-  "id": "cb_text_colour",
-  "label": "Text colour",
-  "default": "w",
-  "options": [
-  {
-  "value": "1",
-  "label": "BBD Yellow"
-  },
-  {
-  "value": "2",
-  "label": "BBD Indigo"
-  },
-  {
-  "value": "3",
-  "label": "BBD Pink"
-  },
-  {
-  "value": "4",
-  "label": "BBD Green"
-  },
-  {
-  "value": "5",
-  "label": "BBD Blue"
-  },
-  {
-  "value": "w",
-  "label": "BBD white"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_text_layout",
-  "label": "Text alignment",
-  "default": "center",
-  "options": [
-  {
-  "value": "left",
-  "label": "Left"
-  },
-  {
-  "value": "right",
-  "label": "Right"
-  },
-  {
-  "value": "center",
-  "label": "Center"
-  },
-  {
-  "value": "hidden",
-  "label": "Hidden"
-  }
-  ]
-  },
-  {
-  "type": "text",
-  "id": "cb_button_label",
-  "label": "Button label"
-  },
-  {
-  "type": "select",
-  "id": "cb_button_colour",
-  "label": "Button colour",
-  "default": "w",
-  "options": [
-  {
-  "value": "1",
-  "label": "BBD Yellow"
-  },
-  {
-  "value": "2",
-  "label": "BBD Indigo"
-  },
-  {
-  "value": "3",
-  "label": "BBD Pink"
-  },
-  {
-  "value": "4",
-  "label": "BBD Green"
-  },
-  {
-  "value": "5",
-  "label": "BBD Blue"
-  },
-  {
-  "value": "w",
-  "label": "BBD white"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_button_bg_colour",
-  "label": "Button background colour",
-  "default": "t",
-  "options": [
-  {
-  "value": "t",
-  "label": "Transparent"
-  },
-  {
-  "value": "1",
-  "label": "BBD Yellow"
-  },
-  {
-  "value": "2",
-  "label": "BBD Indigo"
-  },
-  {
-  "value": "3",
-  "label": "BBD Pink"
-  },
-  {
-  "value": "4",
-  "label": "BBD Green"
-  },
-  {
-  "value": "5",
-  "label": "BBD Blue"
-  },
-  {
-  "value": "w",
-  "label": "BBD white"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_button_border_colour",
-  "label": "Button border colour",
-  "default": "w",
-  "options": [
-  {
-  "value": "t",
-  "label": "Transparent"
-  },
-  {
-  "value": "1",
-  "label": "BBD Yellow"
-  },
-  {
-  "value": "2",
-  "label": "BBD Indigo"
-  },
-  {
-  "value": "3",
-  "label": "BBD Pink"
-  },
-  {
-  "value": "4",
-  "label": "BBD Green"
-  },
-  {
-  "value": "5",
-  "label": "BBD Blue"
-  },
-  {
-  "value": "w",
-  "label": "BBD white"
-  }
-  ]
-  },
-  {
-  "type": "select",
-  "id": "cb_button_width",
-  "label": "Button width",
-  "default": "block",
-  "options": [
-  {
-  "value": "block",
-  "label": "Full Width"
-  },
-  {
-  "value": "auto-width",
-  "label": "Auto"
-  }
-  ]
-  },
-  {
-  "type": "url",
-  "id": "cb_button_link",
-  "label": "Button link"
-  },
-
-  {
-  "type": "checkbox",
-  "id": "cb_min_height",
-  "label": "Block min height 75%",
-  "default": false
-  },
-  {
-  "type": "checkbox",
-  "id": "cb_min_height_px",
-  "label": "Block min height 500px",
-  "default": false,
-  "info": "Overrides the 75% setting"
-  },
-  {
-  "type": "checkbox",
-  "id": "cb_scroll_arrow",
-  "label": "Include scroll down arrow",
-  "default": false
-  },
-  {
-  "type": "checkbox",
-  "id": "cb_desk_layout_1col",
-  "label": "Desktop single column",
-  "default": false
-  },
-  {
-  "type": "checkbox",
-  "id": "cb_desk_width_50",
-  "label": "Desktop block width 50%",
-  "default": false
-  },
-  {
-  "type": "checkbox",
-  "id": "cb_desk_image_right",
-  "label": "Desktop image position right",
-  "default": false
-  }
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Block Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "label": "Hide the block heading",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "block_layout",
+      "label": "Block Layout",
+      "default": "5050",
+      "options": [
+        {
+          "value": "5050",
+          "label": "50/50"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "block_background_colour",
+      "label": "Block Background Colour",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "Brand Colour 1"
+        },
+        {
+          "value": "2",
+          "label": "Brand Colour 2"
+        },
+        {
+          "value": "3",
+          "label": "Brand Colour 3"
+        },
+        {
+          "value": "t",
+          "label": "Transparent"
+        }
+      ]
+    }
+  ,
+    {
+      "type": "image_picker",
+      "id": "block_background_image",
+      "label": "Block Background Image"
+      }
   ],
-  "presets": [
-  {
-  "name": "Content Block",
-  "category": "Content"
-  }
-  ]
-  }
-
+  "blocks": [
+    {
+      "name": "Content Section",
+      "type": "content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content_body",
+          "label": "Content Body",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "html",
+          "id": "content_body_html",
+          "label": "Content HTML",
+          "default": "<p>Add some html code</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_image",
+          "label": "Content image Image"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_1_label",
+          "label": "Button 1 Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_2_label",
+          "label": "Button 2 Label",
+          "default": "Find Out More"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_2_link",
+          "label": "Button 2 link"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Content Block",
+    "category": "Content"
+  }]
+}
 {% endschema %}
