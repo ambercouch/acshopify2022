@@ -20,9 +20,10 @@
         "type": "footer",
         "settings": {
           "footer_linklist": "footer",
-          "footer_newsletter_enable": false,
-          "show_payment_icons": false,
+          "footer_newsletter_enable": true,
+          "show_payment_icons": true,
           "site_info": "",
+          "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width": 250
         }
       },
