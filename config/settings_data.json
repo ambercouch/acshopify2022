@@ -1,0 +1,92 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_bar_enabled": true,
+          "announcement_bar_home_page_only": true,
+          "announcement_bar_text": "FREE SHIPPING OVER £40",
+          "announcement_bar_link": "",
+          "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo_max_width_mobile": 210,
+          "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo_max_width": 210,
+          "menu": "main-menu",
+          "mobile_menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_linklist": "footer",
+          "footer_newsletter_enable": false,
+          "show_payment_icons": false,
+          "site_info": "",
+          "logo_max_width": 250
+        }
+      },
+      "ac-slideshow": {
+        "type": "ac-slideshow",
+        "blocks": {
+          "f4c25c10-d1e6-481c-8543-2766e1883102": {
+            "type": "video",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/watch?v=YG2Fz9tqS5k",
+              "image": "shopify:\/\/shop_images\/bhg-team.jpg",
+              "title": "Bamboo Joint Sleeves.",
+              "button": "Slide title",
+              "cta": "Shop Now",
+              "cta_link": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "f4c25c10-d1e6-481c-8543-2766e1883102"
+        ],
+        "settings": {
+          "slider_height": "adapt",
+          "center_cta": true,
+          "show_overlay": true,
+          "overlay_color": "#000000",
+          "overlay_text": "#ffffff",
+          "overlay_opacity": 40
+        }
+      },
+      "164309543915ef3650": {
+        "type": "ac-content-block",
+        "blocks": {
+          "fa593689-2cb1-413a-8ea3-e8afd7d8d212": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "<h2 class=\"u-fs-m u-col-w u-fw-900\">BIRTH OF THE BEAR<\/h2>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "fa593689-2cb1-413a-8ea3-e8afd7d8d212"
+        ],
+        "settings": {
+          "title": "Birth of the bear section",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "2",
+          "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png"
+        }
+      }
+    },
+    "content_for_index": [
+      "164309543915ef3650"
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}
