@@ -294,8 +294,8 @@
       "16431012843577f266": {
         "type": "ac-newsletter",
         "settings": {
-          "heading": "Subscribe to our newsletter",
-          "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+          "heading": "#JOINTHEPACK",
+          "subheading": "<p>Keep up to date with the #packlife<\/p>",
           "success_message": "Thanks for subscribing",
           "text_color": "#3a3a3a",
           "background_color": "#eae7e0"
