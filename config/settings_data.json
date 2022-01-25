@@ -290,6 +290,16 @@
           "block_background_colour": "2",
           "block_background_image": "shopify:\/\/shop_images\/bhg-team-banner.png"
         }
+      },
+      "16431012843577f266": {
+        "type": "ac-newsletter",
+        "settings": {
+          "heading": "Subscribe to our newsletter",
+          "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+          "success_message": "Thanks for subscribing",
+          "text_color": "#3a3a3a",
+          "background_color": "#eae7e0"
+        }
       }
     },
     "content_for_index": [
@@ -299,7 +309,8 @@
       "16430262408de1051e",
       "16430296842a0fc99f",
       "1643029741d3b07d30",
-      "1643029835b6c91d25"
+      "1643029835b6c91d25",
+      "16431012843577f266"
     ]
   },
   "presets": {
