@@ -20,8 +20,8 @@
   }
 </style>
 <section id="section-id-{{ section.id }}" class="l-content-section--content-block l-content-section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
-  <div class="c-content-block">
-    <div class="c-content-block__row u-bgc-{{ section.settings.block_background_colour  }} ">
+  <div class="c-content-block u-bgc-{{ section.settings.block_background_colour }}">
+    <div class="c-content-block__row">
       {% if section.settings.block_layout == '5050' %}
         {% for block in section.blocks %}
       <div class="c-content-block__col">
