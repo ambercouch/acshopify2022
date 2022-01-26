@@ -1,6 +1,23 @@
 {% assign hideTitle = collection.metafields.global.hide_title %}
 {% assign collectionLogo = images[collection.metafields.global.logo] %}
-{% assign featureImage = images[collection.metafields.global.feature_image_desktop] %}
+{% assign featureImage = images[collection.metafields.global.feature_image_mobile] %}
+{% assign collectionSeoTitle = collection.metafields.global.seo_title %}
+{% assign collectionSubHeading = collection.metafields.global.sub_heading %}
+{% if collectionSeoTitle != blank %}
+  {% assign collectionTitle = collectionSeoTitle %}
+{% else %}
+  {% assign collectionTitle = collection.title %}
+{% endif %}
+
+{% assign collectionTitleLower = collection.title | downcase %}
+{% if collectionTitleLower contains 'single' %}
+  {% assign collectionType = "(Single)" %}
+  {% elsif collectionTitleLower contains 'pair' %}
+  {% assign collectionType = "(Pair)" %}
+{% else %}
+  {% assign collectionType = "" %}
+{% endif %}
+
 
 
 {% if collection.metafields.global.collection_header_logo %}
@@ -13,46 +30,42 @@
       <div class="l-page__header--collection">
         <header class="c-header--collection">
           <h1 class="c-header__heading--collection">
-           <span class="l-page__title">{{ collection.title }}</span>
+           <span class="c-header__title">{{ collectionTitle }}</span>
+            {% if collectionType != '' %}
+            <span class="c-header__type">{{ collectionType }}</span>
+            {% endif %}
           </h1>
+          {% if collectionSubHeading != blank %}
+          <h4 class="c-header__sub-heading">
+            {{ collectionSubHeading }}
+          </h4>
+          {% endif %}
         </header>
                 {% if collection.image.src %}
                   <div class="l-page__feature-image--collection">
                     {% include 'responsive-image' with
                       image: collection.image,
-                      max_width: 800,
-                      max_height: 1000
+                      max_width: 1440,
+                      max_height: 600
                     %}
-
-
-                    <div class="l-page__icon--scroll-collection" data-js-scroll-down >
-                      {% include 'icon-bbd-scroll' %}
-                    </div>
                   </div>
                 {% else %}
                   <!-- no collection image -->
                 {% endif %}
-                <div class="l-page__feature-image--collection-desktop">
-
+        {% if featureImage %}
+                <div class="l-page__feature-image--collection-mobile">
                   {% include 'responsive-image' with
                     image: featureImage,
-                    max_width: 1200,
-                    max_height: 1000
+                    max_width: 800,
+                    max_height: 600
                   %}
-                  {% comment %}
-                    <div class="l-page__icon--scroll-collection" data-js-scroll-down >
-                      {% include 'icon-scroll' %}
-                    </div>
-                  {% endcomment %}
-
                 </div>
+        {% endif %}
         <div class="l-page__tag-list">
           {% include 'ac-tag-list' %}
         </div>
-
       </div>
       <div class="l-page__collection-intro">
-
         {% if collection.description != blank %}
           <div class="l-page__content--collection">
             <div class="rte">

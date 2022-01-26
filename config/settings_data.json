@@ -9,9 +9,9 @@
           "announcement_bar_text": "FREE SHIPPING OVER £40",
           "announcement_bar_link": "",
           "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
-          "logo_max_width_mobile": 210,
+          "logo_max_width_mobile": 250,
           "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
-          "logo_max_width": 210,
+          "logo_max_width": 250,
           "menu": "main-menu",
           "mobile_menu": "main-menu"
         }
@@ -19,10 +19,11 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist": "footer",
-          "footer_newsletter_enable": false,
-          "show_payment_icons": false,
+          "footer_linklist": "footer-pages",
+          "footer_newsletter_enable": true,
+          "show_payment_icons": true,
           "site_info": "",
+          "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width": 250
         }
       },
@@ -34,9 +35,9 @@
             "settings": {
               "video_url": "https:\/\/www.youtube.com\/watch?v=YG2Fz9tqS5k",
               "image": "shopify:\/\/shop_images\/bhg-team.jpg",
-              "title": "Bamboo Joint Sleeves.",
+              "title": "BAMBOO JOINT SUPPORTS & MUSCLE SLEEVES",
               "button": "Slide title",
-              "cta": "Shop Now",
+              "cta": "SHOP NOW",
               "cta_link": "shopify:\/\/collections\/all"
             }
           }
@@ -53,37 +54,37 @@
           "overlay_opacity": 40
         }
       },
-      "164309543915ef3650": {
+      "1642591167f3ea18b4": {
         "type": "ac-content-block",
         "blocks": {
-          "fa593689-2cb1-413a-8ea3-e8afd7d8d212": {
+          "60e2e60b-00bf-42f9-80ab-931c38bdb192": {
             "type": "content",
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">BIRTH OF<br>THE BEAR<\/h2>",
+              "content_body_html": "<h2 class=\"u-fs-m u-col-w u-fw-900\">BIRTH OF THE BEAR<\/h2>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
           },
-          "f597efc3-77d7-4dc7-a614-8ca89c123706": {
+          "8d1e2822-177d-4e14-9166-85a4676b9da9": {
             "type": "content",
             "settings": {
               "content_title": "",
               "content_body": "",
               "content_body_html": "<p class=\"u-col-w\">In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born. <\/p>\n<p class=\"u-col-w\">The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections",
+              "content_btn_1_link": "http:\/\/google.com",
               "content_btn_2_label": "Read Reviews",
-              "content_btn_2_link": "https:\/\/google.co.uk"
+              "content_btn_2_link": "https:\/\/google.com"
             }
           }
         },
         "block_order": [
-          "fa593689-2cb1-413a-8ea3-e8afd7d8d212",
-          "f597efc3-77d7-4dc7-a614-8ca89c123706"
+          "60e2e60b-00bf-42f9-80ab-931c38bdb192",
+          "8d1e2822-177d-4e14-9166-85a4676b9da9"
         ],
         "settings": {
           "title": "Birth of the bear section",
@@ -92,10 +93,225 @@
           "block_background_colour": "2",
           "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png"
         }
+      },
+      "1643016047b462c6f9": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Featured collection",
+          "subtitle": "",
+          "show_description": false,
+          "description_override": "",
+          "collection": "frontpage",
+          "product_limit": 4
+        }
+      },
+      "1643016298f1c80f98": {
+        "type": "ac-content-block",
+        "blocks": {
+          "9556bbc9-349b-4dce-968f-9b16fb632bb6": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">WHY BEARHUG?<\/h2>\n<div class=\"c-feature-list u-col-w\">\n<ul class=\"c-feature-list__list\">\n<li class=\"c-feature-list__item\">UNRIVALLED COMFORT<\/li>\n<li class=\"c-feature-list__item\">RENEWABBLE RESOURCE<\/li>\n<li class=\"c-feature-list__item\">SUPERIOR WARMTH<\/li>\n<\/ul>\n<\/div>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Learn More",
+              "content_btn_2_link": "shopify:\/\/products\/ankle-support"
+            }
+          }
+        },
+        "block_order": [
+          "9556bbc9-349b-4dce-968f-9b16fb632bb6"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "2",
+          "block_background_image": "shopify:\/\/shop_images\/bhg-feature-banner.png"
+        }
+      },
+      "16430262408de1051e": {
+        "type": "ac-content-block",
+        "blocks": {
+          "9341eabc-ae45-4472-9bb6-016fe468df24": {
+            "type": "content",
+            "settings": {
+              "content_title": "SUPPORTS & SLEEVES",
+              "content_body": "<p>Bamboo joint and muscle supports created for exercise, recovery and pain relief. The range consists of wrist, elbow, thigh, knee, calf and ankle supports.<\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/products\/ankle-support",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "7ff42be7-81dd-454b-a9b5-87aa9b3603f2": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/bhg-elbow.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "9341eabc-ae45-4472-9bb6-016fe468df24",
+          "7ff42be7-81dd-454b-a9b5-87aa9b3603f2"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "t"
+        }
+      },
+      "16430296842a0fc99f": {
+        "type": "ac-content-block",
+        "blocks": {
+          "9f9c1fba-e49a-4a52-8920-08cae5540c7e": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/bhg-t-shirt-front.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "dbb27682-8378-4f8c-9a61-5e12359d928a": {
+            "type": "content",
+            "settings": {
+              "content_title": "CLOTHING",
+              "content_body": "<p>The range consists of T-Shirts, hats and caps. Organic cotton tees can be worn while training, playing or competing, whether in the gym, on the tennis court, golf course or running in your local park run.<\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/products\/ankle-support",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "9f9c1fba-e49a-4a52-8920-08cae5540c7e",
+          "dbb27682-8378-4f8c-9a61-5e12359d928a"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "t"
+        }
+      },
+      "1643029741d3b07d30": {
+        "type": "ac-content-block",
+        "blocks": {
+          "25a105cc-807a-4346-9a35-90bfa500b08a": {
+            "type": "content",
+            "settings": {
+              "content_title": "BUNDLES",
+              "content_body": "<p>Products are sold in various packs to meet your activity needs.. all of which are discounted compared to purchasing them singularly!<\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/products\/elbow-support",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "9c19c962-3b10-4f16-8f94-b3fe638594ee": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/bhg-bundle.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "25a105cc-807a-4346-9a35-90bfa500b08a",
+          "9c19c962-3b10-4f16-8f94-b3fe638594ee"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "t"
+        }
+      },
+      "1643029835b6c91d25": {
+        "type": "ac-content-block",
+        "blocks": {
+          "6b1e8308-5f9a-447a-b0ae-22fa23fe894f": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "f24be498-5344-49e4-ae73-af32a13d6584": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">MEET THE PACK.<\/h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
+              "content_btn_1_label": "Meet The Pack",
+              "content_btn_1_link": "\/",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "6b1e8308-5f9a-447a-b0ae-22fa23fe894f",
+          "f24be498-5344-49e4-ae73-af32a13d6584"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "5050",
+          "block_background_colour": "2",
+          "block_background_image": "shopify:\/\/shop_images\/bhg-team-banner.png"
+        }
+      },
+      "16431012843577f266": {
+        "type": "ac-newsletter",
+        "settings": {
+          "heading": "#JOINTHEPACK",
+          "subheading": "<p>Keep up to date with the #packlife<\/p>",
+          "success_message": "Thanks for subscribing",
+          "text_color": "#3a3a3a",
+          "background_color": "#eae7e0"
+        }
       }
     },
     "content_for_index": [
-      "164309543915ef3650"
+      "1642591167f3ea18b4",
+      "1643016047b462c6f9",
+      "1643016298f1c80f98",
+      "16430262408de1051e",
+      "16430296842a0fc99f",
+      "1643029741d3b07d30",
+      "1643029835b6c91d25",
+      "16431012843577f266"
     ]
   },
   "presets": {

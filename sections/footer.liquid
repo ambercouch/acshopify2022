@@ -1,4 +1,6 @@
 {%- assign footer_linklist = section.settings.footer_linklist -%}
+{%- assign footer_help = 'footer-help' -%}
+{%- assign footer_social = 'footer-social' -%}
 
 {% capture powered_by_link %}
   <a href="https://ambercouch.co.uk">Shopify Development by - AmberCouch - Website Designer Wales</a>
@@ -6,79 +8,64 @@
 
 <footer class="l-site__footer">
 
-  <div class="c-image-layer">
-    <div class="c-image-layer__background">
-      {% include 'ac-blobs' %}
-    </div>
-    <div class="c-image-layer__content">
-      <div class="l-main__content-block-wrapper">
-
 <div class="l-footer">
 <div class="l-footer__site-title">
   {% include 'ac-footer-logo' %}
 </div>
+  <div class="l-footer__scroll-top">
+    <a class="c-btn--scroll-top" href="#">
+      <span class="c-btn__link">Back to top</span>
+      <span class="c-btn__label">
+        {% include 'icon-arrow-up'%}
+      </span>
+    </a>
+  </div>
+
   {% if linklists[footer_linklist].links.size > 0 %}
-  <div class="l-footer__nav-menu">
-    <div class="c-nav-menu--footer">
-      <ul class="c-nav-menu__list--footer">
-        {% for link in linklists[footer_linklist].links %}
-          <li  class="c-nav-menu__item--footer" >
-            <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+    <div class="l-footer__nav-menu test">
+      <div class="c-nav-menu--footer">
+        <h4 class="c-nav-menu__heading">Pages</h4>
+        <ul class="c-nav-menu__list--footer">
+          {% for link in linklists[footer_linklist].links %}
+            <li  class="c-nav-menu__item--footer" >
+              <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-  </div>
   {% endif %}
 
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-{% assign show_socials = false %}
-  {% for social in social_accounts %}
-    {%- assign social_handle = social | handleize -%}
-    {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-    {% if settings[social_link] != blank %}
-      {% assign show_socials = true %}
-    {% endif %}
-  {% endfor %}
-  {% if show_socials == true %}
-  <div class="l-footer__socials">
-    <header class="l-footer__header">
-      <div class="c-header--footer">
-        <h4 class="c-header__heading--footer">
-          <span class="c-header__title">
-            {{ 'general.social.social_menu_heading' | t }}
-          </span>
-        </h4>
+  {% if linklists[footer_help].links.size > 0 %}
+    <div class="l-footer__nav-menu">
+      <div class="c-nav-menu--footer">
+        <h4 class="c-nav-menu__heading">Help</h4>
+        <ul class="c-nav-menu__list--footer">
+          {% for link in linklists[footer_help].links %}
+            <li  class="c-nav-menu__item--footer" >
+              <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-    </header>
-      <div class="l-footer__nav-menu--social">
-<nav class="c-nav-menu--social">
-  <ul class="c-nav-menu__list--social">
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li class="c-nav-menu__item--social">
-          <a class="c-nav-menu__link--social" href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            <span class="c-nav-menu__link-icon">
-            {% include social_icon %}
-            </span>
-            <span class="c-nav-menu__label--icon">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-</nav>
-      </div>
-  </div>
-
-    {% else %}
-    <!-- No social links -->
+    </div>
   {% endif %}
+
+  {% if linklists[footer_social].links.size > 0 %}
+    <div class="l-footer__nav-menu">
+      <div class="c-nav-menu--footer">
+        <h4 class="c-nav-menu__heading">social</h4>
+        <ul class="c-nav-menu__list--footer">
+          {% for link in linklists[footer_social].links %}
+            <li  class="c-nav-menu__item--footer" >
+              <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+
 
 
   {% if section.settings.footer_newsletter_enable %}
@@ -117,11 +104,6 @@
   </div>
 
 </div>
-
-
-      </div><!-- .l-main__content-block-wrapper -->
-    </div><!-- .c-image-layer__content -->
-  </div><!-- .c-image-layer__content -->
 
 </footer>
 
