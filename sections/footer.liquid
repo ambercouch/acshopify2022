@@ -9,16 +9,18 @@
 <footer class="l-site__footer">
 
 <div class="l-footer">
-<div class="l-footer__site-title">
-  {% include 'ac-footer-logo' %}
-</div>
-  <div class="l-footer__scroll-top">
-    <a class="c-btn--scroll-top" href="#">
-      <span class="c-btn__link">Back to top</span>
-      <span class="c-btn__label">
-        {% include 'icon-arrow-up'%}
-      </span>
-    </a>
+  <div id="footer-header">
+    <div class="l-footer__site-title">
+      {% include 'ac-footer-logo' %}
+    </div>
+    <div class="l-footer__scroll-top">
+      <a class="c-btn--scroll-top" href="#">
+        <span class="c-btn__link">Back to top</span>
+        <span class="c-btn__label">
+          {% include 'icon-arrow-up'%}
+        </span>
+      </a>
+    </div>
   </div>
 
   {% if linklists[footer_linklist].links.size > 0 %}
