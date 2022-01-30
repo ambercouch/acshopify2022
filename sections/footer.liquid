@@ -95,7 +95,7 @@
 
   <div class="l-footer__site-info">
     <div class="l-site-info">
-    <small class="l-site-info__line--copy-right">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. </small>
+    <span class="l-site-info__line--copy-right">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. </span>
       {% if section.settings.site_info != blank %}
         <div class="l-site-info__line--additional">
           {{ section.settings.site_info }}
@@ -103,7 +103,7 @@
         {% else %}
         <!-- no settings.site_info - {{ settings.site_info }} - -->
       {% endif %}
-      <small class="l-site-info__line--powered-by" > {{ powered_by_link }}</small>
+      <span class="l-site-info__line--powered-by" > {{ powered_by_link }}</span>
     </div>
   </div>
 
