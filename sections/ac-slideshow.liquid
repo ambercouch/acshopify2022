@@ -211,7 +211,7 @@
         </div>
       {%- endfor -%}
       {%- if section.blocks.size == 1 and first_block.settings.cta_link != blank -%}
-        <a href="{{ first_block.settings.cta_link }}" class="slideshow__button-cta-single medium-up--hide btn">
+        <a href="{{ first_block.settings.cta_link }}" class="c-btn slideshow__button-cta-single medium-up--hide btn">
           {{ first_block.settings.cta | escape }}
         </a>
       {%- endif -%}
