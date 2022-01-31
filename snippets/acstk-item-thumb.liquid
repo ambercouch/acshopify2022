@@ -2,11 +2,40 @@
 {% if product.featured_image != blank %}
   {% assign productFeatuerImage = product.featured_image %}
   {% else %}
-  {% assign  productFeatuerImage = images['rdr-radical-rhymes-logo-fallback.png'] %}
+  {% assign  productFeatuerImage = images['product-fallback.png'] %}
 {% endif %}
+{% assign titleThumb = product.metafields.global.title_thumb %}
+{% if titleThumb != blank %}
+  {% assign productTitle = titleThumb %}
+{% else %}
+  {% assign productTitle = product.title %}
+{% endif %}
+
+{% comment %}
+  Check if this collection is singles or pairs
+{% endcomment  %}
+
+{% if collection.handle contains 'single' %}
+  {% assign productType = "Single" %}
+  {% elsif collection.handle contains 'pair' %}
+  {% assign productType = "Pair" %}
+{% endif %}
+
+{% comment %}
+  Check if the product is in collection singles or pairs
+{% endcomment  %}
+
+{% assign productCollections = product.collections | map: "handle" %}
+    {% if productCollections contains "singles" %}
+      {% assign productType = "Single" %}
+      {% elsif productCollections contains "pairs" %}
+        {% assign productType = "Pairs" %}
+{% endif %}
+
 <div class="c-item-thumb--product">
-  <a href="{{ product.url | within: collection }}" class="c-item-thumb__thumb-link">
+
       <div class="c-item-thumb__featured-image">
+        <a href="{{ product.url | within: collection }}" class="c-item-thumb__image-link">
         <div class="c-featured-image--collection">
           {% include 'responsive-image' with
             image: productFeatuerImage,
@@ -14,10 +43,32 @@
             max_height: 700
           %}
         </div>
+        </a>
+        <div class="c-item-thumb__quick-cart">
+          <div class="c-quick-cart">
+            <div class="c-quick-cart__controls">
+              <a href="#modalQuickCart{{ product.id }}" class="c-quick-cart__control--quick-cart">Add to Cart</a>
+            </div>
+            <div class="remodal" data-remodal-id="modalQuickCart{{ product.id }}">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              {% assign prodClassModifier = "--q-cart" %}
+              {%  include "ac-product-remodal" %}
+            </div>
+          </div>
+        </div>
       </div>
 
+
+
     <div class="c-item-thumb__info">
-      <h5 class="c-item-thumb__heading"><span class="c-item-thumb__title">{{ product.title }}</span></h5>
+      <h5 class="c-item-thumb__heading">
+        <a href="{{ product.url | within: collection }}" class="c-item-thumb__heading-link">
+        <span class="c-item-thumb__title">{{ productTitle }}</span>
+        {% if productType != blank %}
+        <span class="c-item-thumb__title-type">({{ productType }})</span>
+        </a>
+        {% endif %}
+      </h5>
       <div class="c-item-thumb__price" >
         {% if product.compare_at_price > product.price %}
           {% if product.price_varies %}
@@ -38,5 +89,5 @@
       </div>
     </div >
 
-  </a>
+
 </div>
