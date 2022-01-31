@@ -2,7 +2,7 @@
   <ul  class="c-nav-menu__list">
     {% for link in linklists[section.settings.menu].links %}
       {% if link.links != blank %}
-        <li class="c-nav-menu__item">
+        <li class="c-nav-menu__item {% if link.active %}is-current{% endif %}">
           <a  class="c-nav-menu__link--main" href="{{ link.url }}"  data-control-radio="menuMain" data-state="off" data-control="{{ link.title | handle }}">
             <span  class="c-nav-menu__label">{{ link.title }} </span>
             <span  class="c-nav-menu__icon--arrow-down">{% include 'icon-arrow-down' %}</span>
@@ -10,7 +10,7 @@
 
           <ul class="c-nav-menu__list--sub-list" data-container-radio="menuMain" data-state="off" data-container="{{ link.title | handle }}">
             {% for childlink in link.links %}
-              <li class="c-nav-menu__item--sub-item">
+              <li class="c-nav-menu__item--sub-item {% if link.active %}is-parent-current{% endif %} {% if childlink.active %}is-current{% endif %}">
                 <a class="c-nav-menu__link--sub-link"   href="{{ childlink.url }}">
                   <span  class="c-nav-menu__label-sub-label">{{ childlink.title }}</span>
                 </a>
@@ -19,7 +19,7 @@
           </ul>
         </li>
       {% else %}
-        <li class="c-nav-menu__item" >
+        <li class="c-nav-menu__item {% if link.active %}is-current{% endif %}" >
           <a class="c-nav-menu__link--main" href="{{ link.url }}">
             <span  class="c-nav-menu__label">{{ link.title }} </span>
           </a>

@@ -13,7 +13,7 @@
           "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width": 250,
           "menu": "main-menu",
-          "mobile_menu": "main-menu"
+          "mobile_menu": "side-menu"
         }
       },
       "footer": {
