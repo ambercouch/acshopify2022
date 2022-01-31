@@ -113,7 +113,7 @@
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-col-1 u-fw-900\">WHY BEARHUG?<\/h2>\n<div class=\"c-feature-list u-col-w\">\n<ul class=\"c-feature-list__list\">\n<li class=\"c-feature-list__item\">UNRIVALLED COMFORT<\/li>\n<li class=\"c-feature-list__item\">RENEWABBLE RESOURCE<\/li>\n<li class=\"c-feature-list__item\">SUPERIOR WARMTH<\/li>\n<\/ul>\n<\/div>",
+              "content_body_html": "<h2 class=\"u-col-1 u-fw-900\">WHY BEARHUG?<\/h2>\n<div class=\"c-feature-list u-col-w\">\n<ul class=\"c-feature-list__list\">\n<li class=\"c-feature-list__item\">UNRIVALLED COMFORT<\/li>\n<li class=\"c-feature-list__item\">RENEWABLE RESOURCE<\/li>\n<li class=\"c-feature-list__item\">SUPERIOR WARMTH<\/li>\n<\/ul>\n<\/div>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Learn More",
