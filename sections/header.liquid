@@ -46,29 +46,16 @@
 
   <div id="mobileNavigation" class="site__off-page-container" >
 
-        <div id="mobileNavOffPageContainer" class="l-off-page-container--mobile-nav" data-state="off" data-container="mobileNavOffPageContainer" >
-
-
-          <div class="c-image-layer">
-            <div class="c-image-layer__background">
-              {% include 'ac-blobs' %}
-            </div>
-            <div class="c-image-layer__content">
-
-          <div class="l-off-page-container__header" data-state="off" data-control="mobileNavOffPageContainer" >
+    <div id="mobileNavOffPageContainer" class="l-off-page-container--mobile-nav" data-state="off" data-container="mobileNavOffPageContainer" >
+      <div class="l-off-page-container__header" data-state="off" data-control="mobileNavOffPageContainer" >
         <div class="c-btn--mobile-nav-close"><span class="c-btn__icon--mobile-nav-close">{% include 'icon-close' %}</span><span class="c-btn__label--mobile-nav-close">close</span></div>
       </div>
       <div class="l-off-page-container__nav-menu">
         {% include "ac-nav-menu-mobile" %}
       </div>
-
-            </div><!-- .c-image-layer__content -->
-          </div><!-- .c-image-layer__content -->
-
     </div>
 
   </div>
-
 
 </section>
 
@@ -117,12 +104,12 @@
         "type": "header",
         "content": "Header"
       },
-  {
-  "type": "image_picker",
-  "id": "mobile_logo",
-  "label": "Mobile Logo image"
-  },
-  {
+      {
+        "type": "image_picker",
+        "id": "mobile_logo",
+        "label": "Mobile Logo image"
+      },
+      {
   "type": "range",
   "id": "logo_max_width_mobile",
   "min": 50,
@@ -156,7 +143,7 @@
   {
   "type": "link_list",
   "id": "mobile_menu",
-  "label": "Main Menu",
+  "label": "Mobile Menu",
   "default": "main-menu"
   }
     ]

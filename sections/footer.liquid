@@ -9,72 +9,76 @@
 <footer class="l-site__footer">
 
 <div class="l-footer">
-<div class="l-footer__site-title">
-  {% include 'ac-footer-logo' %}
-</div>
-  <div class="l-footer__scroll-top">
-    <a class="c-btn--scroll-top" href="#">
-      <span class="c-btn__link">Back to top</span>
-      <span class="c-btn__label">
-        {% include 'icon-arrow-up'%}
-      </span>
-    </a>
+  <div id="footer-header">
+    <div class="l-footer__site-title">
+      {% include 'ac-footer-logo' %}
+    </div>
+    <div class="l-footer__scroll-top">
+      <a class="c-btn--scroll-top" href="#">
+        <span class="c-btn__link">Back to top</span>
+        <span class="c-btn__label">
+          {% include 'icon-arrow-up'%}
+        </span>
+      </a>
+    </div>
   </div>
 
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <div class="l-footer__nav-menu">
-      <div class="c-nav-menu--footer">
-        <h4 class="c-nav-menu__heading">Pages</h4>
-        <ul class="c-nav-menu__list--footer">
-          {% for link in linklists[footer_linklist].links %}
-            <li  class="c-nav-menu__item--footer" >
-              <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+  <div id="footer-content">
+    <div id="footer-menus">
+      {% if linklists[footer_linklist].links.size > 0 %}
+        <div class="l-footer__nav-menu">
+          <div class="c-nav-menu--footer">
+            <h4 class="c-nav-menu__heading">Pages</h4>
+            <ul class="c-nav-menu__list--footer">
+              {% for link in linklists[footer_linklist].links %}
+                <li  class="c-nav-menu__item--footer" >
+                  <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if linklists[footer_help].links.size > 0 %}
+        <div class="l-footer__nav-menu">
+          <div class="c-nav-menu--footer">
+            <h4 class="c-nav-menu__heading">Help</h4>
+            <ul class="c-nav-menu__list--footer">
+              {% for link in linklists[footer_help].links %}
+                <li  class="c-nav-menu__item--footer" >
+                  <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if linklists[footer_social].links.size > 0 %}
+        <div class="l-footer__nav-menu">
+          <div class="c-nav-menu--footer">
+            <h4 class="c-nav-menu__heading">social</h4>
+            <ul class="c-nav-menu__list--footer">
+              {% for link in linklists[footer_social].links %}
+                <li  class="c-nav-menu__item--footer" >
+                  <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.footer_newsletter_enable %}
+      <div class="l-footer__subscribe-form">
+        {% include 'ac-subscribe-form' %}
       </div>
-    </div>
-  {% endif %}
-
-  {% if linklists[footer_help].links.size > 0 %}
-    <div class="l-footer__nav-menu">
-      <div class="c-nav-menu--footer">
-        <h4 class="c-nav-menu__heading">Help</h4>
-        <ul class="c-nav-menu__list--footer">
-          {% for link in linklists[footer_help].links %}
-            <li  class="c-nav-menu__item--footer" >
-              <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  {% endif %}
-
-  {% if linklists[footer_social].links.size > 0 %}
-    <div class="l-footer__nav-menu">
-      <div class="c-nav-menu--footer">
-        <h4 class="c-nav-menu__heading">social</h4>
-        <ul class="c-nav-menu__list--footer">
-          {% for link in linklists[footer_social].links %}
-            <li  class="c-nav-menu__item--footer" >
-              <a  class="c-nav-menu__link--footer"  href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  {% endif %}
-
-
-
-  {% if section.settings.footer_newsletter_enable %}
-    <div class="l-footer__subscribe-form">
-      {% include 'ac-subscribe-form' %}
-    </div>
-  {% else %}
-    <!-- NEWS LETTER DISABLED -->
-  {% endif %}
+    {% else %}
+      <!-- NEWS LETTER DISABLED -->
+    {% endif %}
+  </div>
 
   {% if section.settings.show_payment_icons %}
     {% unless shop.enabled_payment_types == empty %}
@@ -91,7 +95,7 @@
 
   <div class="l-footer__site-info">
     <div class="l-site-info">
-    <small class="l-site-info__line--copy-right">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. </small>
+    <span class="l-site-info__line--copy-right">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. </span>
       {% if section.settings.site_info != blank %}
         <div class="l-site-info__line--additional">
           {{ section.settings.site_info }}
@@ -99,7 +103,7 @@
         {% else %}
         <!-- no settings.site_info - {{ settings.site_info }} - -->
       {% endif %}
-      <small class="l-site-info__line--powered-by" > {{ powered_by_link }}</small>
+      <span class="l-site-info__line--powered-by" > {{ powered_by_link }}</span>
     </div>
   </div>
 

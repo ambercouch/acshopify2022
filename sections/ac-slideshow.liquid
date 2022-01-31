@@ -201,11 +201,6 @@
   {%- endif -%}
   {%- if section.settings.slider_height == 'adapt' -%}
     <div class="slideshow__text-container slideshow__text-container-mobile page-width">
-      {%- if section.blocks.size == 1 and first_block.settings.cta_link != blank -%}
-        <a href="{{ first_block.settings.cta_link }}" class="slideshow__button-cta-single medium-up--hide btn">
-          {{ first_block.settings.cta | escape }}
-        </a>
-      {%- endif -%}
       {%- for block in section.blocks -%}
         <div class="slideshow__text-content slideshow__text-content-mobile" data-animate>
           {%- if block.settings.title != blank -%}
@@ -215,6 +210,11 @@
           {%- endif -%}
         </div>
       {%- endfor -%}
+      {%- if section.blocks.size == 1 and first_block.settings.cta_link != blank -%}
+        <a href="{{ first_block.settings.cta_link }}" class="c-btn slideshow__button-cta-single medium-up--hide btn">
+          {{ first_block.settings.cta | escape }}
+        </a>
+      {%- endif -%}
     </div>
   {%- endif -%}
 
