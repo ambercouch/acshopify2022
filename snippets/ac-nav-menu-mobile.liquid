@@ -27,3 +27,33 @@
     {% endfor %}
   </ul>
 </nav>
+
+<nav class="c-nav-menu--mobile-2" role="navigation" >
+  <ul  class="c-nav-menu__list--mobile-2">
+    {% for link in linklists['side-menu-2'].links %}
+      {% if link.links != blank %}
+        <li  class="c-nav-menu__item--mobile-2">
+          <a  class="c-nav-menu__link--mobile-2" href="{{ link.url }}" data-control-radio="menuMobile" data-state="off" data-control="{{ link.title | handle }}">
+            <span  class="c-nav-menu__label--mobile-2">{{ link.title }} </span>
+            <span  class="c-nav-menu__icon--arrow-down">{% include 'icon-arrow-down' %}</span>
+          </a>
+          <ul class="c-nav-menu__list--mobile-2-sub-list" data-container-radio="menuMobile" data-state="off" data-container="{{ link.title | handle }}">
+            {% for childlink in link.links %}
+              <li  class="c-nav-menu__item--mobile-2-sub-item">
+                <a class="c-nav-menu__link--mobile-2-sub-link" href="{{ childlink.url }}">
+                  <span  class="c-nav-menu__mobile-sub-label">{{ childlink.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li class="c-nav-menu__item--mobile-2">
+          <a  class="c-nav-menu__link--mobile-2" href="{{ link.url }}">
+            <span  class="c-nav-menu__label--mobile-2">{{ link.title }} </span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
