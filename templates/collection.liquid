@@ -50,32 +50,35 @@
             %}
           </div>
         {% endif %}
-        <header class="c-header--collection">
-          <h1 class="c-header__heading--collection">
-           <span class="c-header__title">{{ collectionTitle }}</span>
-            {% if collectionType != '' %}
-            <span class="c-header__type">{{ collectionType }}</span>
+
+        <div class="collection-header-content-wrap">
+          <header class="c-header--collection">
+            <h1 class="c-header__heading--collection">
+            <span class="c-header__title">{{ collectionTitle }}</span>
+              {% if collectionType != '' %}
+              <span class="c-header__type">{{ collectionType }}</span>
+              {% endif %}
+            </h1>
+            {% if collectionSubHeading != blank %}
+            <h4 class="c-header__sub-heading">
+              {{ collectionSubHeading }}
+            </h4>
             {% endif %}
-          </h1>
-          {% if collectionSubHeading != blank %}
-          <h4 class="c-header__sub-heading">
-            {{ collectionSubHeading }}
-          </h4>
-          {% endif %}
-        </header>
-        {% if filterMenuHandle != blank %}
-        <div class="l-page__nav-menu--collection-filter">
-          <div class="c-nav-menu--collection-filter">
-            <ul class="c-nav-menu__list--collection-filter">
-              {% for link in linklists[filterMenuHandle].links %}
-                <li  class="c-nav-menu__item--collection-filter {% if link.active %}is-current{% endif %}" >
-                  <a  class="c-nav-menu__link--collection-filter"  href="{{ link.url }}">{{ link.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
+          </header>
+          {% if filterMenuHandle != blank %}
+          <div class="l-page__nav-menu--collection-filter">
+            <div class="c-nav-menu--collection-filter">
+              <ul class="c-nav-menu__list--collection-filter">
+                {% for link in linklists[filterMenuHandle].links %}
+                  <li  class="c-nav-menu__item--collection-filter {% if link.active %}is-current{% endif %}" >
+                    <a  class="c-nav-menu__link--collection-filter"  href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
+          {% endif %}
         </div>
-        {% endif %}
         {% comment %}
         <div class="l-page__tag-list">
           {% include 'ac-tag-list' %}
