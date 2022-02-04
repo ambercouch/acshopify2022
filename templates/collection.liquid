@@ -30,6 +30,26 @@
 
     <div class="l-page--collection">
       <div class="l-page__header--collection">
+        {% if collection.image.src %}
+          <div class="l-page__feature-image--collection">
+            {% include 'responsive-image' with
+              image: collection.image,
+              max_width: 1440,
+              max_height: 600
+            %}
+          </div>
+        {% else %}
+          <!-- no collection image -->
+        {% endif %}
+        {% if featureImage != blank %}
+          <div class="l-page__feature-image--collection-mobile">
+            {% include 'responsive-image' with
+              image: featureImage,
+              max_width: 800,
+              max_height: 600
+            %}
+          </div>
+        {% endif %}
         <header class="c-header--collection">
           <h1 class="c-header__heading--collection">
            <span class="c-header__title">{{ collectionTitle }}</span>
@@ -55,26 +75,6 @@
             </ul>
           </div>
         </div>
-        {% endif %}
-        {% if collection.image.src %}
-                  <div class="l-page__feature-image--collection">
-                    {% include 'responsive-image' with
-                      image: collection.image,
-                      max_width: 1440,
-                      max_height: 600
-                    %}
-                  </div>
-                {% else %}
-                  <!-- no collection image -->
-                {% endif %}
-        {% if featureImage != blank %}
-                <div class="l-page__feature-image--collection-mobile">
-                  {% include 'responsive-image' with
-                    image: featureImage,
-                    max_width: 800,
-                    max_height: 600
-                  %}
-                </div>
         {% endif %}
         {% comment %}
         <div class="l-page__tag-list">
