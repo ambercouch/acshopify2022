@@ -1,5 +1,14 @@
 <div class="l-main__page--product">
-{% section 'product' %}
+  {% section 'product' %}
+
+  <div class="l-page-after--product">
+    <div class="l-page-after__product-list">
+      {% include 'ac-related-product-by-tag' %}
+    </div>
+  </div>
+
+
 </div>
 
 {% include 'ac-product-json' %}
+

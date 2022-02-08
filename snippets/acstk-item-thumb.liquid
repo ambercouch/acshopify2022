@@ -1,14 +1,23 @@
+{% if templateProduct != nil %}
+  <!-- templateProduct not nil 123-->
+
+{% assign itemProduct = templateProduct %}
+{% else %}
+  <!-- templateProduct nil -->
+{% assign itemProduct = product %}
+{% endif %}
+
 <!-- render acstk-item-thumb.liquid -->
-{% if product.featured_image != blank %}
-  {% assign productFeatuerImage = product.featured_image %}
+{% if itemProduct.featured_image != blank %}
+  {% assign productFeatuerImage = itemProduct.featured_image %}
   {% else %}
   {% assign  productFeatuerImage = images['product-fallback.png'] %}
 {% endif %}
-{% assign titleThumb = product.metafields.global.title_thumb %}
+{% assign titleThumb = itemProduct.metafields.global.title_thumb %}
 {% if titleThumb != blank %}
   {% assign productTitle = titleThumb %}
 {% else %}
-  {% assign productTitle = product.title %}
+  {% assign productTitle = itemProduct.title %}
 {% endif %}
 
 {% comment %}
@@ -25,7 +34,7 @@
   Check if the product is in collection singles or pairs
 {% endcomment  %}
 
-{% assign productCollections = product.collections | map: "handle" %}
+{% assign productCollections = itemProduct.collections | map: "handle" %}
     {% if productCollections contains "singles" %}
       {% assign productType = "Single" %}
       {% elsif productCollections contains "pairs" %}
@@ -34,7 +43,7 @@
 
 <div class="c-item-thumb--product">
   <div class="c-item-thumb__featured-image">
-    <a href="{{ product.url | within: collection }}" class="c-item-thumb__image-link">
+    <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__image-link">
       <div class="c-featured-image--collection">
         {% include 'responsive-image' with
           image: productFeatuerImage,
@@ -46,9 +55,9 @@
     <div class="c-item-thumb__quick-cart">
       <div class="c-quick-cart">
         <div class="c-quick-cart__controls">
-          <a href="#modalQuickCart{{ product.id }}" class="c-quick-cart__control--quick-cart">Quick Buy</a>
+          <a href="#modalQuickCart{{ itemProduct.id }}" class="c-quick-cart__control--quick-cart">Quick Buy</a>
         </div>
-        <div class="remodal" data-remodal-id="modalQuickCart{{ product.id }}">
+        <div class="remodal" data-remodal-id="modalQuickCart{{ itemProduct.id }}">
           <button data-remodal-action="close" class="remodal-close"></button>
           {% assign prodClassModifier = "--q-cart" %}
           {%  include "ac-product-remodal" %}
@@ -59,7 +68,7 @@
 
     <div class="c-item-thumb__info">
       <h5 class="c-item-thumb__heading">
-        <a href="{{ product.url | within: collection }}" class="c-item-thumb__heading-link">
+        <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__heading-link">
         <span class="c-item-thumb__title">{{ productTitle }}</span>
         {% if productType != blank %}
         <span class="c-item-thumb__title-type">({{ productType }})</span>
@@ -67,20 +76,20 @@
         {% endif %}
       </h5>
       <div class="c-item-thumb__price" >
-        {% if product.compare_at_price > product.price %}
-          {% if product.price_varies %}
-            {%- assign sale_price = product.price | money -%}
+        {% if itemProduct.compare_at_price > itemProduct.price %}
+          {% if itemProduct.price_varies %}
+            {%- assign sale_price = itemProduct.price | money -%}
             {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
           {% else %}
             {{ 'products.product.on_sale' | t }}
-            {{ product.price | money }}
+            {{ itemProduct.price | money }}
           {% endif %}
         {% else %}
-          {% if product.price_varies %}
-            {%- assign price = product.price | money -%}
+          {% if itemProduct.price_varies %}
+            {%- assign price = itemProduct.price | money -%}
             {{ 'products.product.from_text_html' | t: price: price }}
           {% else %}
-            {{ product.price | money }}
+            {{ itemProduct.price | money }}
           {% endif %}
         {% endif %}
       </div>

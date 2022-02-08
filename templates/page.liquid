@@ -38,44 +38,18 @@
 
 
 
-    <div class="l-page__content--static-page">
+    <div class="l-page__content--static-page" data-ajax-content>
       {% if page.content != blank %}
-
-
-        <div class="l-page__rte--static-page rte">
+        <div class="l-page__rte--static-page rte" >
           {{ page.content }}
         </div>
-
-
       {% endif %}
 
-      <!-- include ac-block-loop -->
-      {% assign sObj = page  %}
-      {% assign modClass = '--static-page'  %}
-
-      <div class="l-page__block-loop--static-page l-page__block-loop--{{ pageHandle }}">
-
-      <div class="c-image-layer">
-        <div class="c-image-layer__background--l-page">
-          {% include 'ac-blobs' %}
-        </div>
-        <div class="c-image-layer__content">
-      {% include 'ac-block-loop' %}
-        </div>
+      <div class="l-page__size-guide-icon" >
+      {% include 'svg-icon' {icon : 'icon-size-guide-single-knee'} %}
       </div>
-
-      </div>
-
 
     </div>
-
-    {% if pageFooterButtonText  %}
-      <div class="l-page__footer--static-page">
-        <div class="l-page__footer-btn">
-          <a href="{{ pageFooterButtonUrl }}" class="c-btn--page-footer-login">{{ pageFooterButtonText }}</a>
-        </div>
-      </div>
-    {% endif %}
 
   </div>
 </div>
