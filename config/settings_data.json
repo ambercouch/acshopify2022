@@ -301,6 +301,21 @@
           "text_color": "#3a3a3a",
           "background_color": "#eae7e0"
         }
+      },
+      "product": {
+        "type": "product",
+        "settings": {
+          "show_share_buttons": true
+        }
+      },
+      "ac-product-recommendations": {
+        "type": "ac-product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_spacing": false,
+          "show_vendor": false
+        }
       }
     },
     "content_for_index": [
