@@ -30,52 +30,55 @@
 
     <div class="l-page--collection">
       <div class="l-page__header--collection">
-        <header class="c-header--collection">
-          <h1 class="c-header__heading--collection">
-           <span class="c-header__title">{{ collectionTitle }}</span>
-            {% if collectionType != '' %}
-            <span class="c-header__type">{{ collectionType }}</span>
-            {% endif %}
-          </h1>
-          {% if collectionSubHeading != blank %}
-          <h4 class="c-header__sub-heading">
-            {{ collectionSubHeading }}
-          </h4>
-          {% endif %}
-        </header>
-        {% if filterMenuHandle != blank %}
-        <div class="l-page__nav-menu--collection-filter">
-          <div class="c-nav-menu--collection-filter">
-            <ul class="c-nav-menu__list--collection-filter">
-              {% for link in linklists[filterMenuHandle].links %}
-                <li  class="c-nav-menu__item--collection-filter {% if link.active %}is-current{% endif %}" >
-                  <a  class="c-nav-menu__link--collection-filter"  href="{{ link.url }}">{{ link.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        {% endif %}
         {% if collection.image.src %}
-                  <div class="l-page__feature-image--collection">
-                    {% include 'responsive-image' with
-                      image: collection.image,
-                      max_width: 1440,
-                      max_height: 600
-                    %}
-                  </div>
-                {% else %}
-                  <!-- no collection image -->
-                {% endif %}
-        {% if featureImage != blank %}
-                <div class="l-page__feature-image--collection-mobile">
-                  {% include 'responsive-image' with
-                    image: featureImage,
-                    max_width: 800,
-                    max_height: 600
-                  %}
-                </div>
+          <div class="l-page__feature-image--collection">
+            {% include 'responsive-image' with
+              image: collection.image,
+              max_width: 1440,
+              max_height: 600
+            %}
+          </div>
+        {% else %}
+          <!-- no collection image -->
         {% endif %}
+        {% if featureImage != blank %}
+          <div class="l-page__feature-image--collection-mobile">
+            {% include 'responsive-image' with
+              image: featureImage,
+              max_width: 800,
+              max_height: 600
+            %}
+          </div>
+        {% endif %}
+
+        <div class="collection-header-content-wrap">
+          <header class="c-header--collection">
+            <h1 class="c-header__heading--collection">
+            <span class="c-header__title">{{ collectionTitle }}</span>
+              {% if collectionType != '' %}
+              <span class="c-header__type">{{ collectionType }}</span>
+              {% endif %}
+            </h1>
+            {% if collectionSubHeading != blank %}
+            <h4 class="c-header__sub-heading">
+              {{ collectionSubHeading }}
+            </h4>
+            {% endif %}
+          </header>
+          {% if filterMenuHandle != blank %}
+          <div class="l-page__nav-menu--collection-filter">
+            <div class="c-nav-menu--collection-filter">
+              <ul class="c-nav-menu__list--collection-filter">
+                {% for link in linklists[filterMenuHandle].links %}
+                  <li  class="c-nav-menu__item--collection-filter {% if link.active %}is-current{% endif %}" >
+                    <a  class="c-nav-menu__link--collection-filter"  href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+        </div>
         {% comment %}
         <div class="l-page__tag-list">
           {% include 'ac-tag-list' %}

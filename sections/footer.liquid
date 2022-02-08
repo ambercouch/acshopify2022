@@ -81,16 +81,25 @@
   </div>
 
   {% if section.settings.show_payment_icons %}
+  {% assign enabled_payment_types = "visa,master,american_express,paypal" | remove:  '' | split: ',' %}
+    <div class="c-icon-list--payment">
+      <ul class="c-icon-list__list--payment">
     {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
         {% for type in shop.enabled_payment_types %}
-          <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
-          </li>
-        {% endfor %}
-      </ul>
+      <li  class="c-icon-list__item--payment" >
+        {{ type | payment_type_svg_tag: class: 'icon' }}
+      </li>
+    {% endfor %}
+      {% else %}
+      {% for type in enabled_payment_types %}
+        <li class="c-icon-list__item--payment" >
+          {{ type | payment_type_svg_tag: class: 'icon' }}
+        </li>
+      {% endfor %}
     {% endunless %}
+      </ul>
+    </div>
+
   {% endif %}
 
   <div class="l-footer__site-info">

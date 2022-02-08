@@ -2,6 +2,14 @@
 
 {% assign add_to_cart_text = 'products.product.add_to_cart' | t  %}
 
+{% assign sizeGuides = 'knee,ankle,thigh,wrist,elbow,calf' %}
+{% assign sizeGuideArray = sizeGuides | split : ',' %}
+{% for id in sizeGuideArray %}
+  {% if product.handle contains id %}
+    {% assign sizeGuideId = id %}
+  {% endif %}
+{% endfor %}
+
 <div class="c-product-form">
 {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', class:'c-product-form__form'%}
 
@@ -21,12 +29,27 @@
 
   {% unless product.has_only_default_variant %}
 
-    {% comment %}
-      One option
-    {% endcomment %}
+    {% comment %}One option{% endcomment %}
 
     {% assign optionsCount = product.options_with_values | size %}
     {% if  optionsCount == 1 %}
+      <div class="c-product-form__link--size-guide">
+        <div class="c-btn--size-guide">
+          <a class="c-btn__link--size-guide" data-ajax-id="/pages/size-guide-{{ sizeGuideId }}" data-remodal-ajax="product.handle" data-remodal-target="modalSizeGuide" href="#modalSizeGuide" data-remodal>
+            <span class="c-btn__label--size-guide">Size & Fit Guide</span>
+            <span class="c-btn__icon">
+              {% include 'svg-icon' with {icon : 'icon-arrow-up'} %}
+            </span>
+          </a>
+        </div>
+        <div class="remodal" data-remodal-id="modalSizeGuide">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <div class="remodal-ajax-content" data-ajax-content>
+            ajax content
+          </div>
+        </div>
+      </div>
+
       <div class="l-btn-group">
 
 
@@ -99,7 +122,9 @@
         {% endfor %}
     {% endif %}
 
-
+    <div class="c-product-form__note">
+      <span>*Have you checked your size?</span>
+    </div>
   {% endunless %}
 
   <noscript>
@@ -123,6 +148,7 @@
   </div>
 
 
+
   <div class="c-product-form__submit">
   <button
       class="c-btn--product-form-submit"
@@ -142,6 +168,10 @@
           {% endif %}
         </span>
   </button>
+  </div>
+
+  <div class="c-product-form__link--product">
+    <a href="{{ product.url | within: collection }}" >More Details & Size Guide</a>
   </div>
 
 {% endform %}

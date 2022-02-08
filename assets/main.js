@@ -16835,6 +16835,37 @@ const ACSTK = {
             End Video BG
              */
 
+            $(document).on('mouseover', '[data-remodal]:not(.is-ajax-loaded,.is-ajax-failed)', function () {
+
+                let $clicker = $(this);
+                let targetId = $clicker.attr('data-remodal-target')
+                let $target = $('[data-remodal-id=' + targetId )
+                let ajaxUrl = $(this).attr('data-ajax-id')
+
+                let sizeGuideId = "knee"
+                $.ajax({
+                    url: ajaxUrl,
+                    data: {ajax:1},
+                    // data: JSON.stringify({var:'val'}), // send data in the request body
+                    // contentType: "application/json; charset=utf-8",  // if sending in the request body
+                }).done(function(data, textStatus, jqXHR) {
+                    // because dataType is json 'data' is guaranteed to be an object
+                    $clicker.addClass('is-ajax-loaded');
+                    let content = $('[data-ajax-content]', data);
+                    $('[data-ajax-content]', $target).html(content);
+                    $target.addClass('is-ajax-loaded');
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    $clicker.addClass('is-ajax-failed');
+                    $target.addClass('is-ajax-failed')
+                    let content = '<p>No size guide found</p>';
+                    $('[data-ajax-content]', $target).html(content)
+                }).always(function(dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
+                    console.log('always');
+                });
+
+
+
+            });
         }
     },
     collection: {
