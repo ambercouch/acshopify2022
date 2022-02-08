@@ -1,13 +1,14 @@
 <div class="c-site-control">
 
   <ul class="c-site-control__list">
-
+{% comment Removed site search control %}
     <li class="c-site-control__item--search">
       <a id="searchControl" href="#" class="c-site-control__link--search" data-state="off" data-control="siteSearch">
         <span class="c-site-control__label">Search</span>
         {% include 'icon-search' %}
       </a>
     </li>
+    {%  endcomment %}
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
         <li class="c-site-control__item--account">
