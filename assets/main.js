@@ -16646,6 +16646,10 @@ const ACSTK = {
                     $(this).on('click', function(e) {
                         e.preventDefault();
                         const state = control.attr('data-state');
+                        if (state == 'on'){
+                            console.log('this control is already on')
+                            return;
+                        }
                         // toggele state of this controller
                             ACSTK.fn.actStateToggleSelect(control, state);
                         // toggele state of this container
@@ -16835,8 +16839,9 @@ const ACSTK = {
             End Video BG
              */
 
-            $(document).on('mouseover', '[data-remodal]:not(.is-ajax-loaded,.is-ajax-failed)', function () {
+            $(document).on('mouseover', '[data-remodal-ajax]:not(.is-ajax-loaded,.is-ajax-failed)', function () {
 
+                console.log('mouse over remodal control')
                 let $clicker = $(this);
                 let targetId = $clicker.attr('data-remodal-target')
                 let $target = $('[data-remodal-id=' + targetId )
@@ -16849,11 +16854,22 @@ const ACSTK = {
                     // data: JSON.stringify({var:'val'}), // send data in the request body
                     // contentType: "application/json; charset=utf-8",  // if sending in the request body
                 }).done(function(data, textStatus, jqXHR) {
+                    let response = $('<div />').html(data);
                     // because dataType is json 'data' is guaranteed to be an object
+
                     $clicker.addClass('is-ajax-loaded');
-                    let content = $('[data-ajax-content]', data);
-                    $('[data-ajax-content]', $target).html(content);
+
+                    let temp = $(data);
+                    temp.find('.c-size-guide-table').remove()
+
+                    let contentTable = response.find('[data-ajax-content] .c-size-guide-table');
+
+                    $('[data-ajax-content]', $target).append(temp.find('[data-ajax-content]').children());
+                    $('[data-ajax-content] .rte', $target).after(contentTable);
+
                     $target.addClass('is-ajax-loaded');
+                    $target.find('.c-size-guide__loading').remove();
+
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     $clicker.addClass('is-ajax-failed');
                     $target.addClass('is-ajax-failed')

@@ -33,32 +33,29 @@
 {% endif %}
 
 <div class="c-item-thumb--product">
-
-      <div class="c-item-thumb__featured-image">
-        <a href="{{ product.url | within: collection }}" class="c-item-thumb__image-link">
-        <div class="c-featured-image--collection">
-          {% include 'responsive-image' with
-            image: productFeatuerImage,
-            max_width: 700,
-            max_height: 700
-          %}
+  <div class="c-item-thumb__featured-image">
+    <a href="{{ product.url | within: collection }}" class="c-item-thumb__image-link">
+      <div class="c-featured-image--collection">
+        {% include 'responsive-image' with
+          image: productFeatuerImage,
+          max_width: 700,
+          max_height: 700
+        %}
+      </div>
+    </a>
+    <div class="c-item-thumb__quick-cart">
+      <div class="c-quick-cart">
+        <div class="c-quick-cart__controls">
+          <a href="#modalQuickCart{{ product.id }}" class="c-quick-cart__control--quick-cart">Quick Buy</a>
         </div>
-        </a>
-        <div class="c-item-thumb__quick-cart">
-          <div class="c-quick-cart">
-            <div class="c-quick-cart__controls">
-              <a href="#modalQuickCart{{ product.id }}" class="c-quick-cart__control--quick-cart">Quick Buy</a>
-            </div>
-            <div class="remodal" data-remodal-id="modalQuickCart{{ product.id }}">
-              <button data-remodal-action="close" class="remodal-close"></button>
-              {% assign prodClassModifier = "--q-cart" %}
-              {%  include "ac-product-remodal" %}
-            </div>
-          </div>
+        <div class="remodal" data-remodal-id="modalQuickCart{{ product.id }}">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          {% assign prodClassModifier = "--q-cart" %}
+          {%  include "ac-product-remodal" %}
         </div>
       </div>
-
-
+    </div>
+  </div>
 
     <div class="c-item-thumb__info">
       <h5 class="c-item-thumb__heading">
