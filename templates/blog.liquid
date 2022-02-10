@@ -1,43 +1,13 @@
-{% paginate blog.articles by 5 %}
-  {% if blog.handle == 'breakfast' or
-    blog.handle == 'lunch'% or
-    blog.handle == 'dinner' or
-    blog.handle == 'cook-book'
-    %}
-    {%- assign blog_title = 'Recipes' -%}
-    {%- assign blog_menu = true -%}
-    {%- else -%}
-  {%- assign blog_title = blog.title -%}
-      {%- assign blog_menu = false -%}
-  {%- endif -%}
+{% paginate blog.articles by 24 %}
+
 <div class="l-main__page--blog">
   <div class="l-page--blog">
 
     <header class="l-page__header--blog" role="banner">
-
-      <div class="c-image-layer">
-        <div class="c-image-layer__background">
-          {% include 'ac-blobs' %}
-        </div>
-        <div class="c-image-layer__content">
-<div class="l-page__heading-wrapper">
       <h1 class="l-page__heading--blog" >
         <span class="l-page__title">{{ blog_title }}</span>
       </h1>
-
-</div>
-        </div><!-- .c-image-layer__content -->
-      </div><!-- .c-image-layer__content -->
-
     </header>
-
-  {% if blog.all_tags.size > 0 %}
-    <h2>Tags</h2>
-    {% include 'ac-tag-list-blog' %}
-  {% endif %}
-    {% if blog_menu == true %}
-      {% include 'ac-nav-menu-blog' %}
-    {% endif %}
 
   {% comment %}
 
@@ -46,11 +16,11 @@
   {% endcomment %}
     <div class="l-page__thumb-list">
       <div class="l-thumb-list--blog">
-        <ul class="l-thumb-list__list--blog">
+        <ul class="l-thumb-list__list--blog" data-isotope="blog">
           {% for item in blog.articles %}
             <li class="l-thumb-list__item--blog">
               <div class="l-thumb-list__thumb">
-                {% include 'ac-thumbnail' with modClass : '--blog' %}
+                {% include 'ac-item-thumb-article' with modClass : '--blog' %}
               </div>
             </li>
           {% endfor %}
@@ -67,5 +37,29 @@
     </div>
   {% endif %}
   </div>
+  <div class="l-page-after--blog">
+    {% assign collection = collections['blog'] %}
+    <div class="l-page-after__content--prodlct-list">
+      {{ collection.description }}
+    </div>
+    <div class="l-page-after__product-list">
+      <div class="l-product-list">
+        <div class="l-product-list__list">
+          {% for product in collection.products limit:4 %}
+
+            <div class="l-product-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+              <div class="l-product-list__item-thumb">
+                {% include 'acstk-item-thumb' %}
+              </div>
+            </div>
+
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 {% endpaginate %}

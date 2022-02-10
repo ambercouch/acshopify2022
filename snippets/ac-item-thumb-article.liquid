@@ -1,51 +1,47 @@
-<div class="c-thumb{{ modClass }}">
-  <!-- modclass {{ modClass }} ac-thumb.liquid -->
+<div class="c-item-thumb{{ modClass }}">
+  <!-- modclass {{ modClass }} ac-item-thumb-blgo.liquid -->
 {% if item.object_type == 'article' %}
   {% assign imageType = 'image' %}
   {% else %}
   {% assign imageType = 'feature_image' %}
   {% endif %}
   {% if item[imageType] != blank %}
-    <div class="c-thumb__feature-image{{ modClass }}">
-    <a class="c-thumb__link-image" href="{{ item.url | within: collection }}">
+    <div class="c-item-thumb__featured-image{{ modClass }}">
+    <a class="c-item-thumb__link-image" href="{{ item.url | within: collection }}">
       {% include 'responsive-image' with
         image: item[imageType],
+        image_class: 'c-featured-image__img--blog'
         max_width: 800,
-        max_height: 800
+        max_height: 1600
       %}
     </a>
     </div>
   {% endif %}
-  <div class="c-thumb__content{{ modClass }}">
-  <h4 class="c-thumb__heading">
-    <span class="c-thumb__title">
-      <a class="c-thumb__link-title" href="{{ item.url | within: collection }}">{{ item.title }}</a>
+  <div class="c-item-thumb__content{{ modClass }}">
+  <h4 class="c-item-thumb__heading">
+    <span class="c-item-thumb__title">
+      <a class="c-item-thumb__link-title" href="{{ item.url | within: collection }}">{{ item.title }}</a>
     </span>
   </h4>
-  <div class="c-thumb__meta">
+  <div class="c-item-thumb__meta">
     {% case item.object_type%}
     {% when 'product' %}
-      {% include 'ac-thumb-meta-product' %}
+      {% include 'ac-item-thumb-meta-product' %}
     {% when 'article' %}
-      {% include 'ac-thumb-meta-article' %}
+      {% include 'ac-item-thumb-meta-article' %}
     {% endcase %}
   </div>
-    <div class="c-thumb__info{{ modClass }}">
+    <div class="c-item-thumb__info{{ modClass }}">
       {% case item.object_type%}
        {% when 'product' %}
 
       {% when 'article' %}
-        <div class="c-thumb__excerpt">
+        <div class="c-item-thumb__excerpt">
           {{ item.excerpt }}
         </div>
-        <div class="c-thumb__read-more">
-          <a class="c-thumb__link-read-more" href="{{  item.url }}">Read More</a>
-        </div>
-
-
       {% endcase %}
     </div>
-    <div class="c-thumb__btn{{ modClass }}">
+    <div class="c-item-thumb__btn{{ modClass }}">
       {% case item.object_type%}
       {% when 'product' %}
         {% assign btnLabel = 'View Product' %}
@@ -54,7 +50,7 @@
       {% when 'article' %}
       {% assign btnLabel = 'Read More' %}
       {% endcase %}
-      <a class="c-btn--thumb " href="{{ item.url }}">
+      <a class="c-btn--read-more " href="{{ item.url }}">
         <span class="c-btn__link-label">{{ btnLabel }}</span>
       </a>
     </div>

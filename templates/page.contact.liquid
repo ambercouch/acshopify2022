@@ -22,19 +22,14 @@
 
 <div class="l-main__page--static-page l-main__page--{{ page.title | handle }}">
   <div class="l-page--static-page l-page--{{ page.title | handle }}">
-    <div class="l-page__header--static-page l-page__header--{{ page.title | handle }} {{ classHeroImage }} {{ classHeroText }} u-bgc-{{ classHeroBackground}}" role="banner">
 
-<div class="c-header--static-page">
-
-      <h1 class="c-header__heading--static-page l-page__heading--{{ page.title | handle }}" >
-        <span class="c-header__title">{{ page.title }}</span>
-      </h1>
-
-</div>
-
-    </div>
-
-
+    <header class="l-page__header--static-page l-page__header--contact" role="banner">
+      <div class="c-header--static-page">
+        <h1 class="c-header__heading--static-page l-page__heading--contact" >
+          <span class="c-header__title">{{ page.title }}</span>
+        </h1>
+      </div>
+    </header>
 
     <div class="l-page__content--static-page l-page__content--contact">
       {% if page.content != blank %}
@@ -86,11 +81,11 @@
 
         <div class="l-page-after__stockists">
           <h4 class="l-page-after__heading--stockists">Stockists</h4>
-          <div class="l-page-after__item-list">
-            <div class="l-item-list">
+          <div class="l-page-after__thumb-list">
+            <div class="l-item-list--stockist">
               <div class="l-item-list__list">
           {% for stockist in blogs['bearhug-stockists'].articles %}
-                <div class="l-item-list__item is-item-id-{{ stockist.id }}">
+                <div class="l-item-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
                   <div class="l-item-list__item-thumb">
           {% include 'acstk-item-thumb-stockist' with {templateObject : stockist} %}
                   </div>

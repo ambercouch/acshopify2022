@@ -16882,6 +16882,16 @@ const ACSTK = {
 
 
             });
+
+            var $grid
+            $grid = $('.l-thumb-list__list--blog').isotope({
+                itemSelector: '.l-thumb-list__item--blog',
+                percentPosition: true,
+                layoutMode: 'packery',
+                packery: {
+                    gutter: 48
+                }
+            });
         }
     },
     collection: {
