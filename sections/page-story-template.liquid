@@ -52,114 +52,33 @@
 
 {% schema %}
 {
-  "name": {
-    "en": "Story Pages"
-  },
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Heading",
-      "default": "Block Heading"
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_title",
-      "label": "Hide the block heading",
-      "default": true
-    },
-    {
-      "type": "select",
-      "id": "block_layout",
-      "label": "Block Layout",
-      "default": "5050",
-      "options": [
-        {
-          "value": "5050",
-          "label": "50/50"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "block_background_colour",
-      "label": "Block Background Colour",
-      "default": "1",
-      "options": [
-        {
-          "value": "1",
-          "label": "Brand Colour 1"
-        },
-        {
-          "value": "2",
-          "label": "Brand Colour 2"
-        },
-        {
-          "value": "3",
-          "label": "Brand Colour 3"
-        },
-        {
-          "value": "t",
-          "label": "Transparent"
-        }
-      ]
-    }
-  ,
-    {
-      "type": "image_picker",
-      "id": "block_background_image",
-      "label": "Block Background Image"
-    }
-  ],
+  "name": "AC Test Footer",
+  "max_blocks": 8,
   "blocks": [
     {
-      "name": "Content Section",
-      "type": "content",
+      "type": "link",
+      "name": "Link",
       "settings": [
         {
-          "type": "text",
-          "id": "content_title",
-          "label": "Content Title",
-          "default": "Title"
-        },
-        {
-          "type": "richtext",
-          "id": "content_body",
-          "label": "Content Body",
-          "default": "<p>Add some basic text</p>"
-        },
-        {
-          "type": "html",
-          "id": "content_body_html",
-          "label": "Content HTML",
-          "default": "<p>Add some html code</p>"
-        },
-        {
-          "type": "image_picker",
-          "id": "content_image",
-          "label": "Content image Image"
-        },
-        {
-          "type": "text",
-          "id": "content_btn_1_label",
-          "label": "Button 1 Label",
-          "default": "Shop Now"
-        },
-        {
+          "id": "linkurl",
           "type": "url",
-          "id": "content_btn_1_link",
-          "label": "Button 1 link"
+          "label": "URL link"
         },
         {
+          "id": "linktext",
           "type": "text",
-          "id": "content_btn_2_label",
-          "label": "Button 2 Label",
-          "default": "Find Out More"
-        },
+          "label": "Link text"
+        }
+      ]
+    },
+    {
+      "type": "custom-text",
+      "name": "Custom Text",
+      "settings": [
         {
-          "type": "url",
-          "id": "content_btn_2_link",
-          "label": "Button 2 link"
+          "id": "custom-text-field",
+          "type": "textarea",
+          "label": "Text"
         }
       ]
     }
