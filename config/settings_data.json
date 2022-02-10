@@ -339,10 +339,22 @@
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
+          },
+          "87e0ac88-07fc-4444-b4e5-cd31aa4434f7": {
+            "type": "content",
+            "settings": {
+              "content_title": "Another title",
+              "content_body": "<p>Add some basic text<\/p>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
           }
         },
         "block_order": [
-          "3515fabe-c3b2-498f-9500-374724697c7f"
+          "3515fabe-c3b2-498f-9500-374724697c7f",
+          "87e0ac88-07fc-4444-b4e5-cd31aa4434f7"
         ],
         "settings": {
         }
