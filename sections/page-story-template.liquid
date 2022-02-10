@@ -44,9 +44,17 @@
           {{ page.content }}
         </div>
       {% endif %}
-
     </div>
 
+  </div>
+  <div class="l-page-after--story">
+    {% for block in section.blocks %}
+    <div class="c-content-block">
+      <div class="c-content-block__row">
+      {{ block.content_title }}
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 
@@ -57,7 +65,7 @@
   "blocks": [
     {
       "type": "content",
-      "name": "Content Section",
+      "name": "Content Block",
       "settings": [
         {
           "type": "text",
@@ -70,12 +78,6 @@
           "id": "content_body",
           "label": "Content Body",
           "default": "<p>Add some basic text</p>"
-        },
-        {
-          "type": "html",
-          "id": "content_body_html",
-          "label": "Content HTML",
-          "default": "<p>Add some html code</p>"
         },
         {
           "type": "image_picker",
@@ -103,17 +105,6 @@
           "type": "url",
           "id": "content_btn_2_link",
           "label": "Button 2 link"
-        }
-      ]
-    },
-    {
-      "type": "custom-text",
-      "name": "Custom Text",
-      "settings": [
-        {
-          "id": "custom-text-field",
-          "type": "textarea",
-          "label": "Text"
         }
       ]
     }
