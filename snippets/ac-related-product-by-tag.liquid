@@ -1,0 +1,47 @@
+{%- assign related_products_title = "Related Products" -%}
+{%- assign grid_style = 'grid' -%}
+
+{%- assign recommendations = '' -%}
+{%- for tag in product.tags -%}
+  {%- assign split_tag = tag | split: ':' -%}
+  {%- if split_tag[0] == 'related' -%}
+    {%- if recommendations != '' -%}
+      {%- assign recommendations = recommendations | append: ',' -%}
+    {%- endif -%}
+    {%- assign related_handle = split_tag[1] | handle -%}
+    {%- assign recommendations = recommendations | append: related_handle -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign recommendations = recommendations | split: ',' -%}
+{%- assign related_count = 0 -%}
+{%- capture shopify_explorer_related_product -%}
+  {%- for product_handle in recommendations -%}
+    {%- assign related_product = all_products[product_handle] -%}
+    {%- if related_product != blank -%}
+      {%- assign related_count = related_count | plus: 1 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-half' -%}
+
+			<div class="l-product-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+				<div class="l-product-list__item-thumb">
+					{% include 'acstk-item-thumb' with {templateProduct : related_product}%}
+				</div>
+			</div>
+
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if related_products_title != blank and related_product != blank-%}
+	<div class="l-product-list__header">
+		<h2 class="l-product-list__heading">{{ related_products_title }}</h2>
+	</div>
+{%- endif -%}
+  <div class="l-product-list">
+    <div class="l-product-list__list" data-grid-style="{{ grid_style }}">
+      {{ shopify_explorer_related_product }}
+    </div>
+  </div>
+{%- assign related_products_title = nil -%}
+{%- assign recommendations = nil -%}
+{%- assign related_handle = nil -%}
+{%- assign related_product = nil -%}
+{%- assign related_count = nil -%}

@@ -1,9 +1,8 @@
-{%- comment -%}
-  USAGE :
+{%- comment USAGE -%}
   {% include 'svg-icon' with {icon : 'icon-some-icon'} %}
 {%- endcomment -%}
 <span class="o-svg-icon c-svg-icon--{{ icon }}">
-          <svg class="o-svg-icon__svg c-svg-icon__svg--{{ icon }}">
+          <svg  preserveAspectRatio="none" class="o-svg-icon__svg c-svg-icon__svg--{{ icon }}">
             <use xlink:href="#{{ icon }}"></use>
           </svg>
 </span>

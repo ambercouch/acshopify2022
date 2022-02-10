@@ -1,0 +1,56 @@
+{% if templateObject != nil %}
+  <!-- templateObject not nil -->
+  {% assign item = templateObject %}
+{% else %}
+  <!-- templateObject nil test -->
+  {% assign item = article %}
+{% endif %}
+
+
+{% if item.image != blank %}
+  {% assign itemFeatuerImage = item.image %}
+{% else %}
+  {% assign  itemFeatuerImage = images['product-fallback.png'] %}
+{% endif %}
+
+{% assign googleMap = item.metafields.global.google_map %}
+{% assign email = item.metafields.global.email %}
+
+<div class="c-item-thumb--stockist">
+  <div class="c-item-thumb__featured-image">
+    <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__image-link">
+      <div class="c-featured-image--stockist">
+        {% include 'responsive-image' with
+          image: itemFeatuerImage,
+          max_width: 700,
+          max_height: 700
+        %}
+      </div>
+    </a>
+  </div>
+
+    <div class="c-item-thumb__info">
+
+      <h5 class="c-item-thumb__heading">
+        <span class="c-item-thumb__title">{{ item.title }}</span>
+      </h5>
+
+        {% if item.content != blank %}
+          <div class="c-item-thumb__rte--stockist rte" >
+            {{ item.content }}
+          </div>
+        {% endif %}
+
+      <div class="c-item-thumb__footer--stockist">
+        {% if googleMap != blank %}
+        <a href="{{ googleMap }}" target="_blank">Map</a>
+        {% endif %}
+        {% if email != blank %}
+        <a href="mailto:{{ email }}" >contact</a>
+        {% endif %}
+      </div>
+
+    </div >
+
+
+</div>

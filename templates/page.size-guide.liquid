@@ -38,12 +38,16 @@
 
 
 
-    <div class="l-page__content--static-page">
+    <div class="l-page__content--static-page size-guide" data-ajax-content>
       {% if page.content != blank %}
-        <div class="l-page__rte--static-page rte" >
+        <div class="l-page__rte--static-page rte size-guide" >
           {{ page.content }}
         </div>
       {% endif %}
+
+      <div class="l-page__size-guide-icon" >
+      {% include 'svg-icon' {icon : 'icon-size-guide-single-knee'} %}
+      </div>
 
     </div>
 
