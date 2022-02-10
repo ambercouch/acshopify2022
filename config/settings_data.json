@@ -316,6 +316,48 @@
           "show_spacing": false,
           "show_vendor": false
         }
+      },
+      "page-template": {
+        "type": "page-template",
+        "settings": {
+          "image_parallax": false,
+          "show_date": true,
+          "show_author": false,
+          "show_share_buttons": true
+        }
+      },
+      "page-story-template": {
+        "type": "page-story-template",
+        "blocks": {
+          "3515fabe-c3b2-498f-9500-374724697c7f": {
+            "type": "content",
+            "settings": {
+              "content_title": "Some title",
+              "content_body": "<p>Add some basic text<\/p>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "87e0ac88-07fc-4444-b4e5-cd31aa4434f7": {
+            "type": "content",
+            "settings": {
+              "content_title": "Another title",
+              "content_body": "<p>Add some basic text<\/p>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "3515fabe-c3b2-498f-9500-374724697c7f",
+          "87e0ac88-07fc-4444-b4e5-cd31aa4434f7"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
