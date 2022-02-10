@@ -52,22 +52,57 @@
 
 {% schema %}
 {
-  "name": "AC Test Footer",
+  "name": "Story Block",
   "max_blocks": 8,
   "blocks": [
     {
-      "type": "link",
-      "name": "Link",
+      "type": "content",
+      "name": "Content Section",
       "settings": [
         {
-          "id": "linkurl",
-          "type": "url",
-          "label": "URL link"
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title",
+          "default": "Title"
         },
         {
-          "id": "linktext",
+          "type": "richtext",
+          "id": "content_body",
+          "label": "Content Body",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "html",
+          "id": "content_body_html",
+          "label": "Content HTML",
+          "default": "<p>Add some html code</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_image",
+          "label": "Content image Image"
+        },
+        {
           "type": "text",
-          "label": "Link text"
+          "id": "content_btn_1_label",
+          "label": "Button 1 Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_2_label",
+          "label": "Button 2 Label",
+          "default": "Find Out More"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_2_link",
+          "label": "Button 2 link"
         }
       ]
     },
