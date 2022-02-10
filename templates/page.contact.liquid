@@ -1,0 +1,136 @@
+{% assign pageImage = page.metafields.global.feature_image %}
+{% assign pageHeroImage = images[page.metafields.global.hero_image] %}
+{% assign pageHeroText = page.metafields.global.hero_text %}
+{% assign pageFooterText = page.metafields.block_footer.text %}
+{% assign pageFooterButtonUrl = page.metafields.block_footer.button_url %}
+{% assign pageFooterButtonText = page.metafields.block_footer.button_text %}
+{% assign classBlockPadding = page.metafields.blocks.block_padding %}
+{% assign classHeroBackground = page.metafields.global.hero_background %}
+{% if page.metafields.global.page_handle %}
+  {% assign pageHandle = page.metafields.global.page_handle %}
+  {% else %}
+    {% assign pageHandle = page.handle %}
+{% endif %}
+
+
+{% if page.metafields.global.hero_image %}
+  {% assign classHeroImage = 'has-hero-image' %}
+{% endif %}
+{% if pageHeroText %}
+  {% assign classHeroText = 'has-hero-text' %}
+{% endif %}
+
+<div class="l-main__page--static-page l-main__page--{{ page.title | handle }}">
+  <div class="l-page--static-page l-page--{{ page.title | handle }}">
+    <div class="l-page__header--static-page l-page__header--{{ page.title | handle }} {{ classHeroImage }} {{ classHeroText }} u-bgc-{{ classHeroBackground}}" role="banner">
+
+<div class="c-header--static-page">
+
+      <h1 class="c-header__heading--static-page l-page__heading--{{ page.title | handle }}" >
+        <span class="c-header__title">{{ page.title }}</span>
+      </h1>
+
+</div>
+
+    </div>
+
+
+
+    <div class="l-page__content--static-page l-page__content--contact">
+      {% if page.content != blank %}
+        <div class="l-page__rte--static-page rte size-guide" >
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="l-page-after--static-page l-page-after--contact">
+      <div class="l-page-after__section">
+        <div class="l-page-after__email">
+          <h4 class="l-page-after__heading">Email</h4>
+          <div class="l-page-after__content--email">
+            <div class="l-page-after__btn--email">
+              <a class="c-btn" href="mailto:{{ shop.email }}" ><span class="c-btn__label">Get in touch</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="l-page-after__social">
+          <h4 class="l-page-after__heading">Social</h4>
+          <div class="l-page-after__content--social">
+            {% if linklists['footer-social'].links.size > 0 %}
+              <div class="l-page-after__nav-menu">
+                <div class="c-nav-menu--contact c-nav-menu__item--social">
+                  <ul class="c-nav-menu__list--social">
+                    {% for link in linklists['footer-social'].links %}
+                      {% assign icon_handle = 'icon-' | append : link.handle %}
+                      <li  class="c-nav-menu__item--social" >
+                        <a  class="c-nav-menu__link--social"  href="{{ link.url }}">
+                          {% include icon_handle %}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="l-page-after__location">
+          <h4 class="l-page-after__heading">Location</h4>
+          <div class="l-page-after__content--address">
+            {{ shop.name }},
+            {{ shop.address.summary }}
+          </div>
+        </div>
+      </div>
+      <div class="l-page-after__section--stockists">
+
+        <div class="l-page-after__stockists">
+          <h4 class="l-page-after__heading--stockists">Stockists</h4>
+          <div class="l-page-after__item-list">
+            <div class="l-item-list">
+              <div class="l-item-list__list">
+          {% for stockist in blogs['bearhug-stockists'].articles %}
+                <div class="l-item-list__item is-item-id-{{ stockist.id }}">
+                  <div class="l-item-list__item-thumb">
+          {% include 'acstk-item-thumb-stockist' with {templateObject : stockist} %}
+                  </div>
+                </div>
+          {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="section-id-{{ section.id }}" class=" l-content-section--{{ section.id }} l-content-section--newsletter " data-section-id="{{ section.id }}" data-section-type="newsletter">
+  <div class="c-newsletter">
+    {% form 'customer' %}
+      <h2 class="c-newsletter__heading">#Join The Pack</h2>
+        <div class="c-newsletter__subheading rte">Keep up to date with the #packlife</div>
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="c-newsletter--input-group" data-animate>
+        <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Enter your email" name="contact[email]" class="input-group__field" id="EmailField{{ section.id }}" aria-label="Email" autocorrect="off" autocapitalize="off">
+        <div class="c-newsletter--btn input-group__btn--newsletter">
+          <button type="submit" class="c-btn--newsletter-submit">
+            <span class="c-btn__label">Subscribe</span>
+          </button>
+        </div>
+      </div>
+      <div class="c-newsletter__message" aria-role="alert">
+        {% if form.posted_successfully? %}
+          <p class="c-newsletter__form-success" aria-role="alert">
+            {% unless section.settings.success_message == blank %}
+              {{ section.settings.success_message | escape }}
+            {% endunless %}
+          </p>
+        {% endif %}
+        {{ form.errors | default_errors }}
+      </div>
+    {% endform %}
+  </div>
+</div>

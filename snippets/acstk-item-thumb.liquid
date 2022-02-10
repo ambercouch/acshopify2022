@@ -1,6 +1,5 @@
 {% if templateProduct != nil %}
-  <!-- templateProduct not nil 123-->
-
+  <!-- templateProduct not nil -->
 {% assign itemProduct = templateProduct %}
 {% else %}
   <!-- templateProduct nil -->
@@ -13,6 +12,7 @@
   {% else %}
   {% assign  productFeatuerImage = images['product-fallback.png'] %}
 {% endif %}
+
 {% assign titleThumb = itemProduct.metafields.global.title_thumb %}
 {% if titleThumb != blank %}
   {% assign productTitle = titleThumb %}
@@ -72,17 +72,19 @@
         <span class="c-item-thumb__title">{{ productTitle }}</span>
         {% if productType != blank %}
         <span class="c-item-thumb__title-type">({{ productType }})</span>
-        </a>
         {% endif %}
+        </a>
       </h5>
       <div class="c-item-thumb__price" >
         {% if itemProduct.compare_at_price > itemProduct.price %}
+
           {% if itemProduct.price_varies %}
             {%- assign sale_price = itemProduct.price | money -%}
-            {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+            <div class="c-item-thumb__price-label--current" >{{  sale_price }}</div>
+            <div class="c-item-thumb__price-label--compare" >{{ itemProduct.compare_at_price | money}}</div>
           {% else %}
-            {{ 'products.product.on_sale' | t }}
-            {{ itemProduct.price | money }}
+            <div class="c-item-thumb__price-label--current" >{{ itemProduct.price | money }}</div>
+            <div class="c-item-thumb__price-label--compare" >{{ itemProduct.compare_at_price | money}}</div>
           {% endif %}
         {% else %}
           {% if itemProduct.price_varies %}
