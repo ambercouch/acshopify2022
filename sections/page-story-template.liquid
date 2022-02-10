@@ -1,0 +1,168 @@
+{% assign pageImage = page.metafields.global.feature_image %}
+{% assign pageHeroImage = images[page.metafields.global.hero_image] %}
+{% assign pageHeroText = page.metafields.global.hero_text %}
+{% assign pageFooterText = page.metafields.block_footer.text %}
+{% assign pageFooterButtonUrl = page.metafields.block_footer.button_url %}
+{% assign pageFooterButtonText = page.metafields.block_footer.button_text %}
+{% assign classBlockPadding = page.metafields.blocks.block_padding %}
+{% assign classHeroBackground = page.metafields.global.hero_background %}
+{% if page.metafields.global.page_handle %}
+  {% assign pageHandle = page.metafields.global.page_handle %}
+{% else %}
+  {% assign pageHandle = page.handle %}
+{% endif %}
+
+
+{% if page.metafields.global.hero_image %}
+  {% assign classHeroImage = 'has-hero-image' %}
+{% endif %}
+{% if pageHeroText %}
+  {% assign classHeroText = 'has-hero-text' %}
+{% endif %}
+
+<div class="l-main__page--static-page l-main__page--{{ page.title | handle }}">
+  <div class="l-page--static-page l-page--{{ page.title | handle }}">
+    <div class="l-page__header--static-page l-page__header--{{ page.title | handle }} {{ classHeroImage }} {{ classHeroText }} u-bgc-{{ classHeroBackground}}" role="banner">
+
+      <div class="c-header--static-page">
+
+        <h1 class="c-header__heading--static-page l-page__heading--{{ page.title | handle }}" >
+          <span class="c-header__title">{{ page.title }}</span>
+        </h1>
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <div class="l-page__content--static-page">
+      {% if page.content != blank %}
+        <div class="l-page__rte--static-page rte" >
+          {{ page.content }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Story Pages"
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Block Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "label": "Hide the block heading",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "block_layout",
+      "label": "Block Layout",
+      "default": "5050",
+      "options": [
+        {
+          "value": "5050",
+          "label": "50/50"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "block_background_colour",
+      "label": "Block Background Colour",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "Brand Colour 1"
+        },
+        {
+          "value": "2",
+          "label": "Brand Colour 2"
+        },
+        {
+          "value": "3",
+          "label": "Brand Colour 3"
+        },
+        {
+          "value": "t",
+          "label": "Transparent"
+        }
+      ]
+    }
+  ,
+    {
+      "type": "image_picker",
+      "id": "block_background_image",
+      "label": "Block Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Content Section",
+      "type": "content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content_body",
+          "label": "Content Body",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "html",
+          "id": "content_body_html",
+          "label": "Content HTML",
+          "default": "<p>Add some html code</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_image",
+          "label": "Content image Image"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_1_label",
+          "label": "Button 1 Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_2_label",
+          "label": "Button 2 Label",
+          "default": "Find Out More"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_2_link",
+          "label": "Button 2 link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
