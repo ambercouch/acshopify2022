@@ -1,7 +1,7 @@
 {% assign pageImage = section.settings.hero_image %}
 {% assign pageImageMobile = section.settings.hero_image_mobile %}
 {% assign pageTitle = section.settings.page_title %}
-{% assign pageSubitle = section.settings.page_subtitle %}
+{% assign pageSubtitle = section.settings.page_subtitle %}
 {% assign hidePageContent = section.settings.hide_page_content %}
 {% if page.metafields.global.page_handle %}
   {% assign pageHandle = page.metafields.global.page_handle %}
@@ -115,8 +115,54 @@
   ],
   "blocks": [
     {
-      "type": "content",
-      "name": "Content Block",
+      "type": "text_content",
+      "name": "Text Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content_body_1",
+          "label": "Content Body Col 1",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "content_body_2",
+          "label": "Content Body  Col 2",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_1_label",
+          "label": "Button 1 Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_2_label",
+          "label": "Button 2 Label",
+          "default": "Find Out More"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_2_link",
+          "label": "Button 2 link"
+        }
+      ]
+    },
+    {
+      "type": "image_content",
+      "name": "Image Content Block",
       "settings": [
         {
           "type": "text",

@@ -330,7 +330,7 @@
         "type": "page-story-template",
         "blocks": {
           "3515fabe-c3b2-498f-9500-374724697c7f": {
-            "type": "content",
+            "type": "image_content",
             "settings": {
               "content_title": "Some title",
               "content_body": "<p>Add some basic text<\/p>",
@@ -341,7 +341,7 @@
             }
           },
           "87e0ac88-07fc-4444-b4e5-cd31aa4434f7": {
-            "type": "content",
+            "type": "image_content",
             "settings": {
               "content_title": "Another title",
               "content_body": "<p>Add some basic text<\/p>",
