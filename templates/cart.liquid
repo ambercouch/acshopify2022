@@ -72,8 +72,11 @@
                           {% unless item.variant.title contains 'Default' %}
                             <span class="c-item-thumb__cart-note">* Have you checked your size?</span>
                             <a href="{{ item.url }}#modalSizeGuide" class="c-item-thumb__cart-link">Size Guide</a>
-                            <span class="c-item-thumb__variant-label">Size : </span>
-                            <span class="c-item-thumb__variant-title">{{ item.variant.title }}</span>
+
+                            <div class="variant-label">
+                              <span class="c-item-thumb__variant-label">Size : </span>
+                              <span class="c-item-thumb__variant-title">{{ item.variant.title }}</span>
+                            </div>
                           {% endunless %}
 
                           {% assign property_size = item.properties | size %}
