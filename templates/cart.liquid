@@ -12,12 +12,14 @@
 <div class="l-page__cart">
   <div class="c-cart">
     <form action="/cart" method="post" novalidate class="cart ajaxcart c-cart__form">
-      <div class="c-cart__cart-list ">
-        <div class="c-cart-list__header">
-          <h4 class="c-cart-list__heading">Product 123</h4>
-          <h4 class="c-cart-list__heading">Quantity</h4>
-          <h4 class="c-cart-list__heading">Total</h4>
-        </div>
+      <div class="c-cart__cart-list">
+        <div class="cart-content">
+          <div class="c-cart-list__header">
+            <h4 class="c-cart-list__heading">Product 123</h4>
+            <h4 class="c-cart-list__heading">Quantity</h4>
+            <h4 class="c-cart-list__heading">Total</h4>
+          </div>
+
           <ul class="c-cart-list__list">
             {% for item in cart.items %}
 
@@ -125,8 +127,9 @@
               </li>
             {% endfor %}
           </ul>
+        </div>
 
-        <div class="c-cart___summery">
+        <div class="c-cart___summary">
           <header class="c-cart___header--cart">
             <h4 class="c-cart___heading--cart">
               <span class="c-cart___title--cart">Order Summary</span>
