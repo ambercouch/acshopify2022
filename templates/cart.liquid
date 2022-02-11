@@ -56,14 +56,6 @@
 
                     {% comment %} <div class="c-item-thumb__content--cart-product"> {% endcomment %}
 
-                      <div class="c-item-thumb__control--cart-product-remove">
-                        <div class="c-cart-remove cart-remove">
-                          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
-                            {% include 'icon-close.liquid' %}
-                          </a>
-                        </div>
-                      </div>
-
                       <h4 class="c-item-thumb__heading--cart-product">
                         <div class="c-item-thumb__title">
                           <a class="c-item-thumb__link-title" href="{{ item.url }}">
@@ -112,6 +104,14 @@
                             <button type="submit" class="c-btn--cart-update" name="update">
                               <span>Update</span>
                             </button>
+                          </div>
+                        </div>
+
+                        <div class="c-item-thumb__control--cart-product-remove">
+                          <div class="c-cart-remove cart-remove">
+                            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
+                              {% include 'icon-close.liquid' %}
+                            </a>
                           </div>
                         </div>
 
