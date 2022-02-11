@@ -29,7 +29,7 @@
           %}
         </div>
       {% else %}
-        <!-- no collection image -->
+        <!-- no section.settings.hero_image -->
       {% endif %}
       {% if pageImageMobile != blank %}
         <div class="l-page__feature-image--story-template-mobile">
@@ -39,16 +39,20 @@
             max_height: 600
           %}
         </div>
+        {% else %}
+        <!-- section.settings.hero_image_mobile -->
       {% endif %}
       <div class="c-header__content-wrap--story-template">
         <header class="c-header--story-template">
           <h1 class="c-header__heading--story-template">
             <span class="c-header__title">{{ pageTitle }}</span>
           </h1>
-          {% if collectionSubHeading != blank %}
+          {% if pageSubtitle != blank %}
             <h4 class="c-header__sub-heading">
               {{ pageSubtitle }}
             </h4>
+            {% else %}
+            <!-- NO section.settings.page_subtitle -->
           {% endif %}
         </header>
       </div>
