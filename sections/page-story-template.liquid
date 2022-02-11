@@ -1,11 +1,8 @@
 {% assign pageImage = section.settings.hero_image %}
-{% assign pageHeroImage = images[page.metafields.global.hero_image] %}
-{% assign pageHeroText = page.metafields.global.hero_text %}
-{% assign pageFooterText = page.metafields.block_footer.text %}
-{% assign pageFooterButtonUrl = page.metafields.block_footer.button_url %}
-{% assign pageFooterButtonText = page.metafields.block_footer.button_text %}
-{% assign classBlockPadding = page.metafields.blocks.block_padding %}
-{% assign classHeroBackground = page.metafields.global.hero_background %}
+{% assign pageImageMobile = section.settings.hero_image_mobile %}
+{% assign pageTitle = section.settings.page_title %}
+{% assign pageSubitle = section.settings.page_subtitle %}
+{% assign hidePageContent = section.settings.hide_page_content %}
 {% if page.metafields.global.page_handle %}
   {% assign pageHandle = page.metafields.global.page_handle %}
 {% else %}
@@ -20,11 +17,9 @@
   {% assign classHeroText = 'has-hero-text' %}
 {% endif %}
 
-<div class="l-main__page--static-page l-main__page--{{ page.title | handle }} l-main__page--story-template">
-  <div class="l-page--static-page l-page--{{ page.title | handle }} l-page--story-template">
-    <div class="l-page__header--static-page some-test">
-      pageImage {{ pageImage }}
-      pageTitle {{ section.settings.title }}
+<div class="l-main__page--{{ page.title | handle }} l-main__page--story-template">
+  <div class="l-page--{{ page.title | handle }} l-page--story-template">
+    <header class="l-page__header--story-template">
       {% if pageImage %}
         <div class="l-page__feature-image--story-template l-page__feature-image--static-page">
           {% include 'responsive-image' with
@@ -36,60 +31,37 @@
       {% else %}
         <!-- no collection image -->
       {% endif %}
-      {% if featureImage != blank %}
-        <div class="l-page__feature-image--collection-mobile">
+      {% if pageImageMobile != blank %}
+        <div class="l-page__feature-image--story-template-mobile">
           {% include 'responsive-image' with
-            image: featureImage,
+            image: pageImageMobile,
             max_width: 800,
             max_height: 600
           %}
         </div>
       {% endif %}
-
-      <div class="collection-header-content-wrap">
-        <header class="c-header--collection">
-          <h1 class="c-header__heading--collection">
-            <span class="c-header__title">{{ collectionTitle }}</span>
-            {% if collectionType != '' %}
-              <span class="c-header__type">{{ collectionType }}</span>
-            {% endif %}
+      <div class="c-header__content-wrap--story-template">
+        <header class="c-header--story-template">
+          <h1 class="c-header__heading--story-template">
+            <span class="c-header__title">{{ pageTitle }}</span>
           </h1>
           {% if collectionSubHeading != blank %}
             <h4 class="c-header__sub-heading">
-              {{ collectionSubHeading }}
+              {{ pageSubtitle }}
             </h4>
           {% endif %}
         </header>
-        {% if filterMenuHandle != blank %}
-          <div class="l-page__nav-menu--collection-filter">
-            <div class="c-nav-menu--collection-filter">
-              <ul class="c-nav-menu__list--collection-filter">
-                {% for link in linklists[filterMenuHandle].links %}
-                  <li  class="c-nav-menu__item--collection-filter {% if link.active %}is-current{% endif %}" >
-                    <a  class="c-nav-menu__link--collection-filter"  href="{{ link.url }}">{{ link.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        {% endif %}
       </div>
-      {% comment %}
-        <div class="l-page__tag-list">
-          {% include 'ac-tag-list' %}
-        </div>
-      {% endcomment %}
-    </div>
-
-
-
-    <div class="l-page__content--static-page">
+    </header>
+    {% unless hidePageContent %}
+    <div class="l-page__content--story-template">
       {% if page.content != blank %}
-        <div class="l-page__rte--static-page rte" >
+        <div class="l-page__rte--story-template rte" >
           {{ page.content }}
         </div>
       {% endif %}
     </div>
+    {% endunless %}
 
   </div>
   <div class="l-page-after--story">
@@ -124,6 +96,17 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Page Hero Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Page Hero Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_page_content",
+      "label": "Hide the page content area",
+      "default": true
     }
   ],
   "blocks": [
