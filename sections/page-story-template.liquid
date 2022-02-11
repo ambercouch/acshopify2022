@@ -1,4 +1,4 @@
-{% assign pageImage = page.metafields.global.feature_image %}
+{% assign pageImage = section.settings.hero_image %}
 {% assign pageHeroImage = images[page.metafields.global.hero_image] %}
 {% assign pageHeroText = page.metafields.global.hero_text %}
 {% assign pageFooterText = page.metafields.block_footer.text %}
@@ -20,20 +20,65 @@
   {% assign classHeroText = 'has-hero-text' %}
 {% endif %}
 
-<div class="l-main__page--static-page l-main__page--{{ page.title | handle }}">
-  <div class="l-page--static-page l-page--{{ page.title | handle }}">
-    <div class="l-page__header--static-page l-page__header--{{ page.title | handle }} {{ classHeroImage }} {{ classHeroText }} u-bgc-{{ classHeroBackground}}" role="banner">
+<div class="l-main__page--static-page l-main__page--{{ page.title | handle }} l-main__page--story-template">
+  <div class="l-page--static-page l-page--{{ page.title | handle }} l-page--story-template">
+    <div class="l-page__header--static-page some-test">
+      pageImage {{ pageImage }}
+      pageTitle {{ section.settings.title }}
+      {% if pageImage %}
+        <div class="l-page__feature-image--story-template l-page__feature-image--static-page">
+          {% include 'responsive-image' with
+            image: pageImage,
+            max_width: 1440,
+            max_height: 600
+          %}
+        </div>
+      {% else %}
+        <!-- no collection image -->
+      {% endif %}
+      {% if featureImage != blank %}
+        <div class="l-page__feature-image--collection-mobile">
+          {% include 'responsive-image' with
+            image: featureImage,
+            max_width: 800,
+            max_height: 600
+          %}
+        </div>
+      {% endif %}
 
-      <div class="c-header--static-page">
-
-        <h1 class="c-header__heading--static-page l-page__heading--{{ page.title | handle }}" >
-          <span class="c-header__title">{{ page.title }}</span>
-        </h1>
-
+      <div class="collection-header-content-wrap">
+        <header class="c-header--collection">
+          <h1 class="c-header__heading--collection">
+            <span class="c-header__title">{{ collectionTitle }}</span>
+            {% if collectionType != '' %}
+              <span class="c-header__type">{{ collectionType }}</span>
+            {% endif %}
+          </h1>
+          {% if collectionSubHeading != blank %}
+            <h4 class="c-header__sub-heading">
+              {{ collectionSubHeading }}
+            </h4>
+          {% endif %}
+        </header>
+        {% if filterMenuHandle != blank %}
+          <div class="l-page__nav-menu--collection-filter">
+            <div class="c-nav-menu--collection-filter">
+              <ul class="c-nav-menu__list--collection-filter">
+                {% for link in linklists[filterMenuHandle].links %}
+                  <li  class="c-nav-menu__item--collection-filter {% if link.active %}is-current{% endif %}" >
+                    <a  class="c-nav-menu__link--collection-filter"  href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
       </div>
-
-
-
+      {% comment %}
+        <div class="l-page__tag-list">
+          {% include 'ac-tag-list' %}
+        </div>
+      {% endcomment %}
     </div>
 
 
@@ -65,13 +110,13 @@
   "settings": [
     {
       "type": "text",
-      "id": "Page_title",
+      "id": "page_title",
       "label": "Page Title",
       "default": "Title"
     },
     {
       "type": "text",
-      "id": "Page_subtitle",
+      "id": "page_subtitle",
       "label": "Page Subtitle",
       "default": "Subtitle"
     },
