@@ -62,6 +62,25 @@
 {
   "name": "Story Block",
   "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "Page_title",
+      "label": "Page Title",
+      "default": "Title"
+    },
+    {
+      "type": "text",
+      "id": "Page_subtitle",
+      "label": "Page Subtitle",
+      "default": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Page Hero Image"
+    }
+  ],
   "blocks": [
     {
       "type": "content",
@@ -82,7 +101,7 @@
         {
           "type": "image_picker",
           "id": "content_image",
-          "label": "Content image Image"
+          "label": "Content image"
         },
         {
           "type": "text",
