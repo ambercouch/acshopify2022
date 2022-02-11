@@ -357,8 +357,8 @@
           "87e0ac88-07fc-4444-b4e5-cd31aa4434f7"
         ],
         "settings": {
-          "Page_title": "About Us",
-          "Page_subtitle": "Bamboo joint supports and muscle sleeves created for exercise, recovery and pain relief.",
+          "page_title": "About Us",
+          "page_subtitle": "Bamboo joint supports and muscle sleeves created for exercise, recovery and pain relief.",
           "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-bamboo-joint-support.jpg"
         }
       }
