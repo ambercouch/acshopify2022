@@ -102,30 +102,32 @@
   </div>
 </div>
 
-<div id="section-id-{{ section.id }}" class=" l-content-section--{{ section.id }} l-content-section--newsletter " data-section-id="{{ section.id }}" data-section-type="newsletter">
-  <div class="c-newsletter">
-    {% form 'customer' %}
-      <h2 class="c-newsletter__heading">#Join The Pack</h2>
-        <div class="c-newsletter__subheading rte">Keep up to date with the #packlife</div>
-      <input type="hidden" name="contact[tags]" value="newsletter">
-      <div class="c-newsletter--input-group" data-animate>
-        <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Enter your email" name="contact[email]" class="input-group__field" id="EmailField{{ section.id }}" aria-label="Email" autocorrect="off" autocapitalize="off">
-        <div class="c-newsletter--btn input-group__btn--newsletter">
-          <button type="submit" class="c-btn--newsletter-submit">
-            <span class="c-btn__label">Subscribe</span>
-          </button>
+<div class="contact-section--newsletter">
+  <div id="section-id-{{ section.id }}" class=" l-content-section--{{ section.id }} l-content-section--newsletter " data-section-id="{{ section.id }}" data-section-type="newsletter">
+    <div class="c-newsletter">
+      {% form 'customer' %}
+        <h2 class="c-newsletter__heading">#Join The Pack</h2>
+          <div class="c-newsletter__subheading rte">Keep up to date with the #packlife</div>
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="c-newsletter--input-group" data-animate>
+          <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Enter your email" name="contact[email]" class="input-group__field" id="EmailField{{ section.id }}" aria-label="Email" autocorrect="off" autocapitalize="off">
+          <div class="c-newsletter--btn input-group__btn--newsletter">
+            <button type="submit" class="c-btn--newsletter-submit">
+              <span class="c-btn__label">Subscribe</span>
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="c-newsletter__message" aria-role="alert">
-        {% if form.posted_successfully? %}
-          <p class="c-newsletter__form-success" aria-role="alert">
-            {% unless section.settings.success_message == blank %}
-              {{ section.settings.success_message | escape }}
-            {% endunless %}
-          </p>
-        {% endif %}
-        {{ form.errors | default_errors }}
-      </div>
-    {% endform %}
+        <div class="c-newsletter__message" aria-role="alert">
+          {% if form.posted_successfully? %}
+            <p class="c-newsletter__form-success" aria-role="alert">
+              {% unless section.settings.success_message == blank %}
+                {{ section.settings.success_message | escape }}
+              {% endunless %}
+            </p>
+          {% endif %}
+          {{ form.errors | default_errors }}
+        </div>
+      {% endform %}
+    </div>
   </div>
 </div>
