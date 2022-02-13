@@ -330,21 +330,24 @@
         "type": "page-story-template",
         "blocks": {
           "3515fabe-c3b2-498f-9500-374724697c7f": {
-            "type": "image_content",
+            "type": "content",
             "settings": {
-              "content_title": "Some title",
-              "content_body": "<p>Add some basic text<\/p>",
+              "content_title": "Birth of the Bear",
+              "content_body_1": "<p>Add some basic text<\/p>",
+              "content_body_2": "<p>In 2014 our co - founder Gareth was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there.<\/p><p>Fast forward two years and along with Rhys & Dan the pack was formed and Bearhug was born. The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike.<\/p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "",
-              "content_btn_2_label": "Find Out More",
+              "content_btn_1_link": "\/",
+              "content_btn_2_label": "Read Reviews",
               "content_btn_2_link": ""
             }
           },
           "87e0ac88-07fc-4444-b4e5-cd31aa4434f7": {
-            "type": "image_content",
+            "type": "content",
+            "disabled": true,
             "settings": {
               "content_title": "Another title",
-              "content_body": "<p>Add some basic text<\/p>",
+              "content_body_1": "<p>Add some basic text<\/p>",
+              "content_body_2": "<p>Add some basic text<\/p>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -359,7 +362,8 @@
         "settings": {
           "page_title": "About Us",
           "page_subtitle": "Bamboo joint supports and muscle sleeves created for exercise, recovery and pain relief.",
-          "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-bamboo-joint-support.jpg"
+          "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-bamboo-joint-support.jpg",
+          "hide_page_content": true
         }
       }
     },
