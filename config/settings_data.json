@@ -346,12 +346,11 @@
               "section_title": "Meet the Team"
             }
           },
-          "87e0ac88-07fc-4444-b4e5-cd31aa4434f7": {
-            "type": "content",
-            "disabled": true,
+          "2c1af849-75cc-4090-a5a2-bdcbdb3b675f": {
+            "type": "image_content",
             "settings": {
-              "content_title": "Another title",
-              "content_body": "<p>Add some basic text<\/p>",
+              "content_title": "Rhys George",
+              "content_body": "<p>Managing Director & Co Founder<\/p>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -362,7 +361,7 @@
         "block_order": [
           "3515fabe-c3b2-498f-9500-374724697c7f",
           "3bcebad2-94c9-4c9c-83ea-af2e8df2d1c2",
-          "87e0ac88-07fc-4444-b4e5-cd31aa4434f7"
+          "2c1af849-75cc-4090-a5a2-bdcbdb3b675f"
         ],
         "settings": {
           "page_title": "About Us",
