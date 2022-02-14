@@ -485,6 +485,19 @@
               "content_question": "Can I make a change to my order?",
               "content_answer": "<p>Yes, only before you receive your shipping confirmation - please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a>. You cannot change your order after you have received your confirmation. <\/p>"
             }
+          },
+          "fd275c91-3cce-4945-8d5a-39b5151f5c6e": {
+            "type": "question",
+            "settings": {
+              "content_question": "Can I cancel my order?",
+              "content_answer": "<p>You can't cancel your order if you have already received your order confirmation. If you want to cancel your order you can return it within 21 days from when it was received and we will refund the products value.<\/p>"
+            }
+          },
+          "01c01de5-36d3-4c54-9a54-b99eae569bf6": {
+            "type": "section_title",
+            "settings": {
+              "section_title": "Returns"
+            }
           }
         },
         "block_order": [
@@ -493,7 +506,9 @@
           "5c6ed6b0-4f8a-4c9e-a3f1-0cca565d9030",
           "63bab92b-06bc-4277-a542-a17ba5721b35",
           "d84109f7-a1cb-41fe-8021-085b88f651ed",
-          "b02bb26c-d8df-4d9a-9dff-300ed5253171"
+          "b02bb26c-d8df-4d9a-9dff-300ed5253171",
+          "fd275c91-3cce-4945-8d5a-39b5151f5c6e",
+          "01c01de5-36d3-4c54-9a54-b99eae569bf6"
         ],
         "settings": {
           "page_title": "FAQ",
