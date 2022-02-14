@@ -17,6 +17,8 @@
   {% assign classHeroText = 'has-hero-text' %}
 {% endif %}
 
+
+
 <div class="l-main__page--{{ page.title | handle }} l-main__page--story-template">
   <div class="l-page--{{ page.title | handle }} l-page--story-template">
     <header class="l-page__header--story-template">
@@ -70,9 +72,32 @@
   </div>
   <div class="l-page-after--story">
     {% for block in section.blocks %}
-    <div class="c-content-block">
+
+      <style>
+        .c-content-block--{{ block.id }} .c-content-block {
+          background-image: url({{ block.settings.block_background_image.src | image_url }});
+        }
+      </style>
+
+    <div class="c-content-block  c-content-block--{{ block.id }}">
       <div class="c-content-block__row">
+
+        <div class="c-content-block__col">
+          <div class="c-content-block__content">
+        <h2 class="c-content-block__heading">
       {{ block.settings.content_title }}
+        </h2>
+          </div>
+        </div>
+            <div class="c-content-block__col">
+        <div class="c-content-block__body">
+          {{ block.settings.content_body }}
+        </div>
+          </div>
+
+
+
+
       </div>
     </div>
     {% endfor %}
@@ -130,6 +155,11 @@
       "type": "content",
       "name": "Text Content Block",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_background_image",
+          "label": "Background image"
+        },
         {
           "type": "text",
           "id": "content_title",
