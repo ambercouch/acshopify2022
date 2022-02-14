@@ -512,6 +512,39 @@
               "content_question": "How do I make a return?",
               "content_answer": "<p>Please email <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a> quoting your order number. <\/p><p>Please note original shipping fees are not refunded. <\/p><p>Bearhug is not responsible for any return shipping costs. <\/p>"
             }
+          },
+          "7f07c419-fdf5-4718-b9d2-4b5fdd59d597": {
+            "type": "section_title",
+            "settings": {
+              "section_title": "Product"
+            }
+          },
+          "8a14675c-db9f-4849-80b5-4566dc907577": {
+            "type": "question",
+            "settings": {
+              "content_question": "Do you have a product guide?",
+              "content_answer": "<p>You can scroll and explore all our products at our homepage, which works as our product guide. <\/p>"
+            }
+          },
+          "299ed318-160c-4ff8-b990-d5e3096e7076": {
+            "type": "question",
+            "settings": {
+              "content_question": "Where do I find the size guide?",
+              "content_answer": "<p>You can find size guides for the product on each product page. <\/p>"
+            }
+          },
+          "bee461e2-7ae8-4ce7-a9d1-57150646f382": {
+            "type": "section_title",
+            "settings": {
+              "section_title": "Payment"
+            }
+          },
+          "7874607f-cdb2-4447-a5e2-da6829522bd8": {
+            "type": "question",
+            "settings": {
+              "content_question": "When do I get charged for my purchase?",
+              "content_answer": "<p>You are charged at the same moment as you place your order. <\/p>"
+            }
           }
         },
         "block_order": [
@@ -524,7 +557,12 @@
           "fd275c91-3cce-4945-8d5a-39b5151f5c6e",
           "01c01de5-36d3-4c54-9a54-b99eae569bf6",
           "bbec807c-a5e2-4ad1-8012-1dd9cbf8ffbe",
-          "342e175e-2bca-45d7-acb0-1ec03e54662e"
+          "342e175e-2bca-45d7-acb0-1ec03e54662e",
+          "7f07c419-fdf5-4718-b9d2-4b5fdd59d597",
+          "8a14675c-db9f-4849-80b5-4566dc907577",
+          "299ed318-160c-4ff8-b990-d5e3096e7076",
+          "bee461e2-7ae8-4ce7-a9d1-57150646f382",
+          "7874607f-cdb2-4447-a5e2-da6829522bd8"
         ],
         "settings": {
           "page_title": "FAQ",
