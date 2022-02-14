@@ -1,0 +1,360 @@
+{% assign pageImage = section.settings.hero_image %}
+{% assign pageImageMobile = section.settings.hero_image_mobile %}
+{% assign pageTitle = section.settings.page_title %}
+{% assign pageSubtitle = section.settings.page_subtitle %}
+{% assign hidePageContent = section.settings.hide_page_content %}
+{% if page.metafields.global.page_handle %}
+  {% assign pageHandle = page.metafields.global.page_handle %}
+{% else %}
+  {% assign pageHandle = page.handle %}
+{% endif %}
+
+
+{% if page.metafields.global.hero_image %}
+  {% assign classHeroImage = 'has-hero-image' %}
+{% endif %}
+{% if pageHeroText %}
+  {% assign classHeroText = 'has-hero-text' %}
+{% endif %}
+
+
+
+<div class="l-main__page--{{ page.title | handle }} l-main__page--builder-template">
+  <div class="l-page--{{ page.title | handle }} l-page--builder-template">
+    <header class="l-page__header--builder-template">
+      {% if pageImage %}
+        <div class="l-page__feature-image--builder-template l-page__feature-image--static-page">
+          {% include 'responsive-image' with
+            image: pageImage,
+            max_width: 1440,
+            max_height: 600
+          %}
+        </div>
+      {% else %}
+        <!-- no section.settings.hero_image -->
+      {% endif %}
+      {% if pageImageMobile != blank %}
+        <div class="l-page__feature-image--builder-template-mobile">
+          {% include 'responsive-image' with
+            image: pageImageMobile,
+            max_width: 800,
+            max_height: 600
+          %}
+        </div>
+        {% else %}
+        <!-- section.settings.hero_image_mobile -->
+      {% endif %}
+      <div class="c-header__content-wrap--builder-template">
+        <header class="c-header--builder-template">
+          <h1 class="c-header__heading--builder-template">
+            <span class="c-header__title">{{ pageTitle }}</span>
+          </h1>
+          {% if pageSubtitle != blank %}
+            <h4 class="c-header__sub-heading">
+              {{ pageSubtitle }}
+            </h4>
+            {% else %}
+            <!-- NO section.settings.page_subtitle -->
+          {% endif %}
+        </header>
+      </div>
+    </header>
+    {% unless hidePageContent %}
+    <div class="l-page__content--builder-template">
+      {% if page.content != blank %}
+        <div class="l-page__rte--builder-template rte" >
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </div>
+    {% endunless %}
+
+  </div>
+  <div class="l-page-after--story">
+    {% for block in section.blocks %}
+      {%  if block.settings.block_direction != blank %}
+        {% assign cssClassDirection = 'is-direction-' | append :   block.settings.block_direction %}
+        {% else %}
+        {% assign cssClassDirection = 'is-direction-not-set' %}
+      {% endif %}
+      {% case block.type %}
+      {% when 'content' %}
+      <style>
+        .c-content-block--{{ block.id }}{
+          background-image: url({{ block.settings.block_background_image.src | image_url }});
+        }
+      </style>
+    <div class="c-content-block  c-content-block--{{ block.id }}">
+      <div class="c-content-block__row {{ cssClassDirection }}">
+
+        <div class="c-content-block__col">
+          <div class="c-content-block__content">
+        <h2 class="c-content-block__heading">
+      {{ block.settings.content_title }}
+        </h2>
+          </div>
+        </div>
+        <div class="c-content-block__col">
+          <div class="c-content-block__body">
+            {{ block.settings.content_body }}
+          </div>
+
+              {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+                <div class="c-content-block__footer">
+                  {% if block.settings.content_btn_1_link %}
+                    <div class="c-btn--cta-primary">
+                      <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.content_btn_2_link %}
+                    <div class="c-btn--cta-secondry">
+                      <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+            </div>
+
+      </div>
+    </div>
+        {% when 'section_title' %}
+    <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
+      <div class="c-content-block__row">
+        <div class="c-content-block__col">
+          <div class="c-content-block__content--section-title">
+            <h2 class="c-content-block__heading--section-title">{{ block.settings.section_title }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+        {% when 'image_content' %}
+        <style>
+          .c-content-block--{{ block.id }}{
+            background-image: url({{ block.settings.block_background_image.src | image_url }});
+          }
+        </style>
+        <div class="c-content-block  c-content-block--{{ block.id }}">
+          <div class="c-content-block__row {{ cssClassDirection }}">
+
+            <div class="c-content-block__col">
+              <div class="c-content-block__content">
+                {% if block.settings.content_image != blank %}
+                  <div class="c-content-block__image">
+                    {% include 'responsive-image' with
+                      image: block.settings.content_image,
+                      max_width: 800,
+                      max_height: 800
+                    %}
+                  </div>
+                {% else %}
+                  <!-- content_image false -->
+                {% endif %}
+              </div>
+            </div>
+            <div class="c-content-block__col">
+              <h2 class="c-content-block__heading">
+                {{ block.settings.content_title }}
+              </h2>
+              <div class="c-content-block__body">
+                {{ block.settings.content_body }}
+              </div>
+              {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+                <div class="c-content-block__footer">
+                  {% if block.settings.content_btn_1_link %}
+                    <div class="c-btn--cta-primary">
+                      <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.content_btn_2_link %}
+                    <div class="c-btn--cta-secondry">
+                      <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Story Block",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Title"
+    },
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page Subtitle",
+      "default": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Page Hero Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Page Hero Image Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_page_content",
+      "label": "Hide the page content area",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section_title",
+      "name": "Section Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Title"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Text Content Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_background_image",
+          "label": "Background image"
+        },
+        {
+          "type": "select",
+          "id": "block_direction",
+          "label": "Block Content Order",
+          "default": "",
+          "options": [
+            {
+              "value": "",
+              "label": "Title First"
+            },
+            {
+              "value": "rev",
+              "label": "Content First"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content_body",
+          "label": "Content Body",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_1_label",
+          "label": "Button 1 Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_2_label",
+          "label": "Button 2 Label",
+          "default": "Find Out More"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_2_link",
+          "label": "Button 2 link"
+        }
+      ]
+    },
+    {
+      "type": "image_content",
+      "name": "Image Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content_body",
+          "label": "Content Body",
+          "default": "<p>Add some basic text</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_image",
+          "label": "Content image"
+        },
+        {
+          "type": "select",
+          "id": "block_direction",
+          "label": "Block Content Order",
+          "default": "",
+          "options": [
+            {
+              "value": "",
+              "label": "Image First"
+            },
+            {
+              "value": "rev",
+              "label": "Content First"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "content_btn_1_label",
+          "label": "Button 1 Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_1_link",
+          "label": "Button 1 link"
+        },
+        {
+          "type": "text",
+          "id": "content_btn_2_label",
+          "label": "Button 2 Label",
+          "default": "Find Out More"
+        },
+        {
+          "type": "url",
+          "id": "content_btn_2_link",
+          "label": "Button 2 link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
