@@ -472,13 +472,20 @@
               "content_question": "What shall I do if my goods are damaged when I receive it?",
               "content_answer": "<p>Please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a> quoting your order number. <\/p>"
             }
+          },
+          "d84109f7-a1cb-41fe-8021-085b88f651ed": {
+            "type": "section_title",
+            "settings": {
+              "section_title": "Order"
+            }
           }
         },
         "block_order": [
           "2729ec3c-de27-48e4-bfdb-15f7e2f99cc8",
           "52aa9c52-0afe-4d59-82d5-dce484db2545",
           "5c6ed6b0-4f8a-4c9e-a3f1-0cca565d9030",
-          "63bab92b-06bc-4277-a542-a17ba5721b35"
+          "63bab92b-06bc-4277-a542-a17ba5721b35",
+          "d84109f7-a1cb-41fe-8021-085b88f651ed"
         ],
         "settings": {
           "page_title": "FAQ",
