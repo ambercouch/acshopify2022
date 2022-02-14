@@ -442,6 +442,33 @@
           "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-training-plans.jpg",
           "hide_page_content": false
         }
+      },
+      "page-question-template": {
+        "type": "page-question-template",
+        "blocks": {
+          "2729ec3c-de27-48e4-bfdb-15f7e2f99cc8": {
+            "type": "section_title",
+            "settings": {
+              "section_title": "Delivery"
+            }
+          },
+          "52aa9c52-0afe-4d59-82d5-dce484db2545": {
+            "type": "question",
+            "settings": {
+              "content_question": "How long is delivery time?",
+              "content_answer": ""
+            }
+          }
+        },
+        "block_order": [
+          "2729ec3c-de27-48e4-bfdb-15f7e2f99cc8",
+          "52aa9c52-0afe-4d59-82d5-dce484db2545"
+        ],
+        "settings": {
+          "page_title": "FAQ",
+          "page_subtitle": "",
+          "hide_page_content": true
+        }
       }
     },
     "content_for_index": [
