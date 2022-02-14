@@ -72,8 +72,8 @@
   </div>
   <div class="l-page-after--story">
     {% for block in section.blocks %}
-      {%  if block.settings.content_order != blank %}
-        {% assign cssClassDirection = 'is-direction-' | append :   block.settings.content_order %}
+      {%  if block.settings.block_direction != blank %}
+        {% assign cssClassDirection = 'is-direction-' | append :   block.settings.block_direction %}
         {% else %}
         {% assign cssClassDirection = 'is-direction-not-set' %}
       {% endif %}
