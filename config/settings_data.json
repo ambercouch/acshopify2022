@@ -387,6 +387,14 @@
           "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-bamboo-joint-support.jpg",
           "hide_page_content": true
         }
+      },
+      "page-builder-template": {
+        "type": "page-builder-template",
+        "settings": {
+          "page_title": "Training Plans",
+          "page_subtitle": "No email input, no excess nonsense, just free training tools for the pack.",
+          "hide_page_content": true
+        }
       }
     },
     "content_for_index": [
