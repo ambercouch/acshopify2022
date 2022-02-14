@@ -465,12 +465,20 @@
               "content_question": "Can I see the delivery status on my order?",
               "content_answer": "<p>It is not possible to track your shipment.<\/p>"
             }
+          },
+          "63bab92b-06bc-4277-a542-a17ba5721b35": {
+            "type": "question",
+            "settings": {
+              "content_question": "What shall I do if my goods are damaged when I receive it?",
+              "content_answer": "<p>Please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a> quoting your order number. <\/p>"
+            }
           }
         },
         "block_order": [
           "2729ec3c-de27-48e4-bfdb-15f7e2f99cc8",
           "52aa9c52-0afe-4d59-82d5-dce484db2545",
-          "5c6ed6b0-4f8a-4c9e-a3f1-0cca565d9030"
+          "5c6ed6b0-4f8a-4c9e-a3f1-0cca565d9030",
+          "63bab92b-06bc-4277-a542-a17ba5721b35"
         ],
         "settings": {
           "page_title": "FAQ",
