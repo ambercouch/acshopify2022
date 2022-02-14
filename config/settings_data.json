@@ -352,6 +352,19 @@
             "settings": {
               "content_title": "Rhys George",
               "content_body": "<p>Managing Director & Co Founder<\/p>",
+              "content_image": "shopify:\/\/shop_images\/bearhug-rhys-george.jpg",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "31ea5233-6872-49f1-ae08-8671e1c248b9": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "Alexander Davies",
+              "content_body": "<p>Chief Brand Builder<\/p>",
+              "content_image": "shopify:\/\/shop_images\/bearhug-alexander-davies.jpg",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -362,7 +375,8 @@
         "block_order": [
           "3515fabe-c3b2-498f-9500-374724697c7f",
           "3bcebad2-94c9-4c9c-83ea-af2e8df2d1c2",
-          "2c1af849-75cc-4090-a5a2-bdcbdb3b675f"
+          "2c1af849-75cc-4090-a5a2-bdcbdb3b675f",
+          "31ea5233-6872-49f1-ae08-8671e1c248b9"
         ],
         "settings": {
           "page_title": "About Us",
