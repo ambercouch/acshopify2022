@@ -478,6 +478,13 @@
             "settings": {
               "section_title": "Order"
             }
+          },
+          "b02bb26c-d8df-4d9a-9dff-300ed5253171": {
+            "type": "question",
+            "settings": {
+              "content_question": "Can I make a change to my order?",
+              "content_answer": "<p>Yes, only before you receive your shipping confirmation - please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a>. You cannot change your order after you have received your confirmation. <\/p>"
+            }
           }
         },
         "block_order": [
@@ -485,7 +492,8 @@
           "52aa9c52-0afe-4d59-82d5-dce484db2545",
           "5c6ed6b0-4f8a-4c9e-a3f1-0cca565d9030",
           "63bab92b-06bc-4277-a542-a17ba5721b35",
-          "d84109f7-a1cb-41fe-8021-085b88f651ed"
+          "d84109f7-a1cb-41fe-8021-085b88f651ed",
+          "b02bb26c-d8df-4d9a-9dff-300ed5253171"
         ],
         "settings": {
           "page_title": "FAQ",
