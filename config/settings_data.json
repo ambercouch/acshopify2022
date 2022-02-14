@@ -397,16 +397,44 @@
               "content_title": "Couch to 5K",
               "content_body": "<p>4 Week Training Plan<\/p>",
               "content_image": "shopify:\/\/shop_images\/bearhug-training-couch-to-5k.jpg",
-              "block_direction": "",
+              "block_direction": "rev",
               "content_btn_1_label": "Download",
               "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/couch5k.jpg?v=1613392810",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "19f1516b-37cc-4d73-8d94-78a000b670bb": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "Half Marathon",
+              "content_body": "<p>8 Week Training Plan<\/p>",
+              "content_image": "shopify:\/\/shop_images\/bearhug-training-half-marathon.jpg",
+              "block_direction": "",
+              "content_btn_1_label": "Download",
+              "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/half_marathon.jpg?v=1613392827",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "2cefdd65-aca9-44bd-8a5c-d5bd1dbdd7ec": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "High Intensity Interval Training",
+              "content_body": "<p>4 HIIT Session<\/p>",
+              "content_image": "shopify:\/\/shop_images\/bearhug-training-hiit.jpg",
+              "block_direction": "",
+              "content_btn_1_label": "Download",
+              "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/hiit.jpg?v=1613392843",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
           }
         },
         "block_order": [
-          "b093688a-241a-4f28-a3df-6b42adab0583"
+          "b093688a-241a-4f28-a3df-6b42adab0583",
+          "19f1516b-37cc-4d73-8d94-78a000b670bb",
+          "2cefdd65-aca9-44bd-8a5c-d5bd1dbdd7ec"
         ],
         "settings": {
           "page_title": "Training Plans",
