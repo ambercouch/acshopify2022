@@ -71,6 +71,7 @@
 
   </div>
   <div class="l-page-after--story">
+    {% assign dateState = 'on' %}
     {% for block in section.blocks %}
       {% case block.type %}
       {% when 'question' %}
@@ -85,8 +86,8 @@
         <div class="c-content-block__col">
           <div class="c-content-block__qanda">
             <div class="c-qanda">
-              <div class="c-qanda__question">{{ block.settings.content_question }}</div>
-              <div class="c-qanda__answer">{{ block.settings.content_answer }}</div>
+              <div class="c-qanda__question" data-state="{{ dateState }}" data-control="{{ block.id }}"><span class="c-qanda__question-label">{{ block.settings.content_question }}</span><span class="c-qanda__icon">-</span></div>
+              <div class="c-qanda__answer" data-state="{{ dateState }}" data-container="{{ block.id }}">{{ block.settings.content_answer }}</div>
             </div>
           </div>
         </div>
@@ -103,6 +104,7 @@
       </div>
     </div>
       {% endcase %}
+      {% assign dateState = 'off' %}
     {% endfor %}
   </div>
 </div>

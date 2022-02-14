@@ -1,0 +1,33 @@
+<div class="l-main__page--article l-main__page--{{ article.title | handle }}">
+  <div class="l-page--article l-page--{{ article.title | handle }}">
+    <div class="l-page__header--article l-page__header--{{article.title | handle }}" role="banner">
+
+      <header class="c-header--article">
+        <h1 class="c-header__heading--article l-page__heading--{{ article.title | handle }}" >
+          <span class="c-header__title">{{ article.title }}</span>
+        </h1>
+      </header>
+
+    </div>
+
+
+    <div class="l-page__feature-image--article">
+      {% include 'responsive-image' with
+        image: article.image,
+        max_width: 1440,
+        max_height: 600
+      %}
+    </div>
+
+
+    <div class="l-page__content--article">
+      {% if article.content != blank %}
+        <div class="l-page__rte--article rte" >
+          {{ article.content }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
