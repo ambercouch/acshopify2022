@@ -498,6 +498,20 @@
             "settings": {
               "section_title": "Returns"
             }
+          },
+          "bbec807c-a5e2-4ad1-8012-1dd9cbf8ffbe": {
+            "type": "question",
+            "settings": {
+              "content_question": "How long do I have right of return?",
+              "content_answer": "<p>You can return a product up to 30 days from when it was received. <\/p>"
+            }
+          },
+          "342e175e-2bca-45d7-acb0-1ec03e54662e": {
+            "type": "question",
+            "settings": {
+              "content_question": "How do I make a return?",
+              "content_answer": "<p>Please email <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a> quoting your order number. <\/p><p>Please note original shipping fees are not refunded. <\/p><p>Bearhug is not responsible for any return shipping costs. <\/p>"
+            }
           }
         },
         "block_order": [
@@ -508,7 +522,9 @@
           "d84109f7-a1cb-41fe-8021-085b88f651ed",
           "b02bb26c-d8df-4d9a-9dff-300ed5253171",
           "fd275c91-3cce-4945-8d5a-39b5151f5c6e",
-          "01c01de5-36d3-4c54-9a54-b99eae569bf6"
+          "01c01de5-36d3-4c54-9a54-b99eae569bf6",
+          "bbec807c-a5e2-4ad1-8012-1dd9cbf8ffbe",
+          "342e175e-2bca-45d7-acb0-1ec03e54662e"
         ],
         "settings": {
           "page_title": "FAQ",
