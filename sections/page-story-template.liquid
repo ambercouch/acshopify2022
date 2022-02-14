@@ -74,7 +74,7 @@
     {% for block in section.blocks %}
 
       <style>
-        .c-content-block--{{ block.id }} .c-content-block {
+        .c-content-block--{{ block.id }}{
           background-image: url({{ block.settings.block_background_image.src | image_url }});
         }
       </style>
