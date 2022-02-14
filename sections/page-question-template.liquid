@@ -1,0 +1,175 @@
+{% assign pageImage = section.settings.hero_image %}
+{% assign pageImageMobile = section.settings.hero_image_mobile %}
+{% assign pageTitle = section.settings.page_title %}
+{% assign pageSubtitle = section.settings.page_subtitle %}
+{% assign hidePageContent = section.settings.hide_page_content %}
+{% if page.metafields.global.page_handle %}
+  {% assign pageHandle = page.metafields.global.page_handle %}
+{% else %}
+  {% assign pageHandle = page.handle %}
+{% endif %}
+
+
+{% if page.metafields.global.hero_image %}
+  {% assign classHeroImage = 'has-hero-image' %}
+{% endif %}
+{% if pageHeroText %}
+  {% assign classHeroText = 'has-hero-text' %}
+{% endif %}
+
+
+
+<div class="l-main__page--{{ page.title | handle }} l-main__page--question-template">
+  <div class="l-page--{{ page.title | handle }} l-page--question-template">
+    <header class="l-page__header--question-template">
+      {% if pageImage %}
+        <div class="l-page__feature-image--question-template l-page__feature-image--static-page">
+          {% include 'responsive-image' with
+            image: pageImage,
+            max_width: 1440,
+            max_height: 600
+          %}
+        </div>
+      {% else %}
+        <!-- no section.settings.hero_image -->
+      {% endif %}
+      {% if pageImageMobile != blank %}
+        <div class="l-page__feature-image--question-template-mobile">
+          {% include 'responsive-image' with
+            image: pageImageMobile,
+            max_width: 800,
+            max_height: 600
+          %}
+        </div>
+        {% else %}
+        <!-- section.settings.hero_image_mobile -->
+      {% endif %}
+      <div class="c-header__content-wrap--question-template">
+        <header class="c-header--question-template">
+          <h1 class="c-header__heading--question-template">
+            <span class="c-header__title">{{ pageTitle }}</span>
+          </h1>
+          {% if pageSubtitle != blank %}
+            <h4 class="c-header__sub-heading">
+              {{ pageSubtitle }}
+            </h4>
+            {% else %}
+            <!-- NO section.settings.page_subtitle -->
+          {% endif %}
+        </header>
+      </div>
+    </header>
+    {% unless hidePageContent %}
+    <div class="l-page__content--question-template">
+      {% if page.content != blank %}
+        <div class="l-page__rte--question-template rte" >
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </div>
+    {% endunless %}
+
+  </div>
+  <div class="l-page-after--story">
+    {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'question' %}
+      <style>
+        .c-content-block--{{ block.id }}{
+          background-image: url({{ block.settings.block_background_image.src | image_url }});
+        }
+      </style>
+    <div class="c-content-block  c-content-block--{{ block.id }}">
+      <div class="c-content-block__row {{ cssClassDirection }}">
+
+        <div class="c-content-block__col">
+          <div class="c-content-block__qanda">
+            <div class="c-qanda">
+              <div class="c-qanda__question">{{ block.settings.content_question }}</div>
+              <div class="c-qanda__answer">{{ block.settings.content_answer }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        {% when 'section_title' %}
+    <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
+      <div class="c-content-block__row">
+        <div class="c-content-block__col">
+          <div class="c-content-block__content--section-title">
+            <h2 class="c-content-block__heading--section-title">{{ block.settings.section_title }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Story Block",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Title"
+    },
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page Subtitle",
+      "default": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Page Hero Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Page Hero Image Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_page_content",
+      "label": "Hide the page content area",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section_title",
+      "name": "Section Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Title"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "content_question",
+          "label": "Question"
+        },
+        {
+          "type": "text",
+          "id": "content_answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
