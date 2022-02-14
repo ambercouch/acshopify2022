@@ -72,13 +72,13 @@
   </div>
   <div class="l-page-after--story">
     {% for block in section.blocks %}
-
+      {% case block.type %}
+      {% when 'content' %}
       <style>
         .c-content-block--{{ block.id }}{
           background-image: url({{ block.settings.block_background_image.src | image_url }});
         }
       </style>
-
     <div class="c-content-block  c-content-block--{{ block.id }}">
       <div class="c-content-block__row">
 
@@ -100,6 +100,55 @@
 
       </div>
     </div>
+        {% when 'section_title' %}
+    <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
+      <div class="c-content-block__row">
+        <div class="c-content-block__col">
+          <div class="c-content-block__content--section-title">
+            <h2 class="c-content-block__heading--section-title">{{ block.settings.section_title }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+        {% when 'image_content' %}
+        <style>
+          .c-content-block--{{ block.id }}{
+            background-image: url({{ block.settings.block_background_image.src | image_url }});
+          }
+        </style>
+        <div class="c-content-block  c-content-block--{{ block.id }}">
+          <div class="c-content-block__row">
+
+            <div class="c-content-block__col">
+              <div class="c-content-block__content">
+                {% if block.settings.content_image != blank %}
+                  <div class="c-content-block__image">
+                    {% include 'responsive-image' with
+                      image: block.settings.content_image,
+                      max_width: 800,
+                      max_height: 800
+                    %}
+                  </div>
+                {% else %}
+                  <!-- content_image false -->
+                {% endif %}
+              </div>
+            </div>
+            <div class="c-content-block__col">
+              <h2 class="c-content-block__heading">
+                {{ block.settings.content_title }}
+              </h2>
+              <div class="c-content-block__body">
+                {{ block.settings.content_body }}
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      {% endcase %}
     {% endfor %}
   </div>
 </div>
