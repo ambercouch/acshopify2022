@@ -72,6 +72,11 @@
   </div>
   <div class="l-page-after--story">
     {% for block in section.blocks %}
+      {%  if block.settings.content_order != blank %}
+        {% assign cssClassDirection = 'is-direction-' | append :   block.settings.content_order %}
+        {% else %}
+        {% assign cssClassDirection = 'is-direction-not-set' %}
+      {% endif %}
       {% case block.type %}
       {% when 'content' %}
       <style>
@@ -80,7 +85,7 @@
         }
       </style>
     <div class="c-content-block  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row">
+      <div class="c-content-block__row {{ cssClassDirection }}">
 
         <div class="c-content-block__col">
           <div class="c-content-block__content">
@@ -89,14 +94,27 @@
         </h2>
           </div>
         </div>
-            <div class="c-content-block__col">
-        <div class="c-content-block__body">
-          {{ block.settings.content_body }}
-        </div>
+        <div class="c-content-block__col">
+          <div class="c-content-block__body">
+            {{ block.settings.content_body }}
           </div>
 
+              {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+                <div class="c-content-block__footer">
+                  {% if block.settings.content_btn_1_link %}
+                    <div class="c-btn--cta-primary">
+                      <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.content_btn_2_link %}
+                    <div class="c-btn--cta-secondry">
+                      <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
 
-
+            </div>
 
       </div>
     </div>
@@ -117,7 +135,7 @@
           }
         </style>
         <div class="c-content-block  c-content-block--{{ block.id }}">
-          <div class="c-content-block__row">
+          <div class="c-content-block__row {{ cssClassDirection }}">
 
             <div class="c-content-block__col">
               <div class="c-content-block__content">
@@ -141,6 +159,21 @@
               <div class="c-content-block__body">
                 {{ block.settings.content_body }}
               </div>
+              {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+                <div class="c-content-block__footer">
+                  {% if block.settings.content_btn_1_link %}
+                    <div class="c-btn--cta-primary">
+                      <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.content_btn_2_link %}
+                    <div class="c-btn--cta-secondry">
+                      <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+
             </div>
 
 
@@ -210,6 +243,22 @@
           "label": "Background image"
         },
         {
+          "type": "select",
+          "id": "block_direction",
+          "label": "Block Content Order",
+          "default": "",
+          "options": [
+            {
+              "value": "",
+              "label": "Title First"
+            },
+            {
+              "value": "rev",
+              "label": "Content First"
+            }
+          ]
+        },
+        {
           "type": "text",
           "id": "content_title",
           "label": "Content Title",
@@ -265,6 +314,22 @@
           "type": "image_picker",
           "id": "content_image",
           "label": "Content image"
+        },
+        {
+          "type": "select",
+          "id": "block_direction",
+          "label": "Block Content Order",
+          "default": "",
+          "options": [
+            {
+              "value": "",
+              "label": "Image First"
+            },
+            {
+              "value": "rev",
+              "label": "Content First"
+            }
+          ]
         },
         {
           "type": "text",
