@@ -393,7 +393,8 @@
         "settings": {
           "page_title": "Training Plans",
           "page_subtitle": "No email input, no excess nonsense, just free training tools for the pack.",
-          "hide_page_content": true
+          "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-training-plans.jpg",
+          "hide_page_content": false
         }
       }
     },
