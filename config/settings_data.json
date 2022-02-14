@@ -545,6 +545,27 @@
               "content_question": "When do I get charged for my purchase?",
               "content_answer": "<p>You are charged at the same moment as you place your order. <\/p>"
             }
+          },
+          "ba919bfb-815b-40be-8251-f400c8046989": {
+            "type": "question",
+            "settings": {
+              "content_question": "Can I change way of delivery or payment method?",
+              "content_answer": "<p>No, not after you have received your order confirmation. <\/p>"
+            }
+          },
+          "1ffee1c8-33c4-4790-a9d7-8bbab2850944": {
+            "type": "question",
+            "settings": {
+              "content_question": "Which payment methods are there?",
+              "content_answer": "<p>You can pay with Credit & Debit cards through multiple payment methods; Stripe, Amazon Pay and PayPal. <\/p>"
+            }
+          },
+          "e6f5322e-dc5c-4dc4-bcd4-c57d5b8d7967": {
+            "type": "question",
+            "settings": {
+              "content_question": "Is payment safe with you?",
+              "content_answer": "<p>We only cooperate with well-known payment solution providers. You can read more about how they operate on their hompages: <a href=\"http:\/\/www.stripe.com\/\">www.stripe.com<\/a>,<a href=\"http:\/\/www.pay.amazon.com\/\">www.pay.amazon.com<\/a>,<a href=\"http:\/\/www.paypal.com\/\">www.paypal.com<\/a>. <\/p>"
+            }
           }
         },
         "block_order": [
@@ -562,7 +583,10 @@
           "8a14675c-db9f-4849-80b5-4566dc907577",
           "299ed318-160c-4ff8-b990-d5e3096e7076",
           "bee461e2-7ae8-4ce7-a9d1-57150646f382",
-          "7874607f-cdb2-4447-a5e2-da6829522bd8"
+          "7874607f-cdb2-4447-a5e2-da6829522bd8",
+          "ba919bfb-815b-40be-8251-f400c8046989",
+          "1ffee1c8-33c4-4790-a9d7-8bbab2850944",
+          "e6f5322e-dc5c-4dc4-bcd4-c57d5b8d7967"
         ],
         "settings": {
           "page_title": "FAQ",
