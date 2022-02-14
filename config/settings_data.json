@@ -390,6 +390,24 @@
       },
       "page-builder-template": {
         "type": "page-builder-template",
+        "blocks": {
+          "b093688a-241a-4f28-a3df-6b42adab0583": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "Couch to 5K",
+              "content_body": "<p>4 Week Training Plan<\/p>",
+              "content_image": "shopify:\/\/shop_images\/bearhug-training-couch-to-5k.jpg",
+              "block_direction": "",
+              "content_btn_1_label": "Download",
+              "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/couch5k.jpg?v=1613392810",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "b093688a-241a-4f28-a3df-6b42adab0583"
+        ],
         "settings": {
           "page_title": "Training Plans",
           "page_subtitle": "No email input, no excess nonsense, just free training tools for the pack.",
