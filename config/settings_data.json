@@ -333,6 +333,7 @@
             "type": "content",
             "settings": {
               "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png",
+              "block_background_size": "a",
               "block_background_colour": "2",
               "block_direction": "",
               "content_title": "Birth of the Bear",
