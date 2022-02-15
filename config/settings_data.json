@@ -333,6 +333,7 @@
             "type": "content",
             "settings": {
               "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png",
+              "block_background_colour": "2",
               "block_direction": "",
               "content_title": "Birth of the Bear",
               "content_body": "<p>In 2014 our co - founder Gareth was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. <\/p><p>Fast forward two years and along with Rhys & Dan the pack was formed and Bearhug was born. The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike.<\/p>",
@@ -345,7 +346,8 @@
           "3bcebad2-94c9-4c9c-83ea-af2e8df2d1c2": {
             "type": "section_title",
             "settings": {
-              "section_title": "Meet the Team"
+              "section_title": "Meet the Team",
+              "block_background_colour": "t"
             }
           },
           "2c1af849-75cc-4090-a5a2-bdcbdb3b675f": {
@@ -354,6 +356,7 @@
               "content_title": "Rhys George",
               "content_body": "<p>Managing Director & Co Founder<\/p>",
               "content_image": "shopify:\/\/shop_images\/bearhug-rhys-george.jpg",
+              "block_background_colour": "t",
               "block_direction": "",
               "content_btn_1_label": "Linked In",
               "content_btn_1_link": "\/",
@@ -367,6 +370,7 @@
               "content_title": "Alexander Davies",
               "content_body": "<p>Chief Brand Builder<\/p>",
               "content_image": "shopify:\/\/shop_images\/bearhug-alexander-davies.jpg",
+              "block_background_colour": "t",
               "block_direction": "rev",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
@@ -385,7 +389,6 @@
           "page_title": "About Us",
           "page_subtitle": "Bamboo joint supports and muscle sleeves created for exercise, recovery and pain relief.",
           "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-bamboo-joint-support.jpg",
-          "block_background_colour": "t",
           "hide_page_content": true
         }
       },
