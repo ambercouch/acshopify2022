@@ -359,8 +359,8 @@
               "content_image": "shopify:\/\/shop_images\/bearhug-rhys-george.jpg",
               "block_background_colour": "t",
               "block_direction": "",
-              "content_btn_1_label": "Linked In",
-              "content_btn_1_link": "\/",
+              "content_btn_1_label": "LinkedIn",
+              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/startupandscaleupceo\/",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -373,8 +373,8 @@
               "content_image": "shopify:\/\/shop_images\/bearhug-alexander-davies.jpg",
               "block_background_colour": "t",
               "block_direction": "rev",
-              "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "",
+              "content_btn_1_label": "LinkedIn",
+              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/alexanderbrandbuilder\/",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
