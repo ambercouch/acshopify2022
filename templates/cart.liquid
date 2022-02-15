@@ -12,12 +12,16 @@
 <div class="l-page__cart">
   <div class="c-cart">
     <form action="/cart" method="post" novalidate class="cart ajaxcart c-cart__form">
-      <div class="c-cart__cart-list ">
-        <div class="c-cart-list__header">
-          <h4 class="c-cart-list__heading">Product 123</h4>
-          <h4 class="c-cart-list__heading">Quantity</h4>
-          <h4 class="c-cart-list__heading">Total</h4>
-        </div>
+      <div class="c-cart__cart-list">
+        <div class="cart-content">
+          <div class="c-cart-list__header">
+            <div class="c-cart-list__header-content">
+              <h4 class="c-cart-list__heading">Product 123</h4>
+              <h4 class="c-cart-list__heading">Quantity</h4>
+              <h4 class="c-cart-list__heading">Total</h4>
+            </div>
+          </div>
+
           <ul class="c-cart-list__list">
             {% for item in cart.items %}
 
@@ -50,15 +54,7 @@
                     </div>
 
 
-                    <div class="c-item-thumb__content--cart-product">
-
-                      <div class="c-item-thumb__control--cart-product-remove">
-                        <div class="c-cart-remove cart-remove">
-                          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
-                            {% include 'icon-close.liquid' %}
-                          </a>
-                        </div>
-                      </div>
+                    {% comment %} <div class="c-item-thumb__content--cart-product"> {% endcomment %}
 
                       <h4 class="c-item-thumb__heading--cart-product">
                         <div class="c-item-thumb__title">
@@ -76,8 +72,11 @@
                           {% unless item.variant.title contains 'Default' %}
                             <span class="c-item-thumb__cart-note">* Have you checked your size?</span>
                             <a href="{{ item.url }}#modalSizeGuide" class="c-item-thumb__cart-link">Size Guide</a>
-                            <span class="c-item-thumb__variant-label">Size : </span>
-                            <span class="c-item-thumb__variant-title">{{ item.variant.title }}</span>
+
+                            <div class="variant-label">
+                              <span class="c-item-thumb__variant-label">Size : </span>
+                              <span class="c-item-thumb__variant-title">{{ item.variant.title }}</span>
+                            </div>
                           {% endunless %}
 
                           {% assign property_size = item.properties | size %}
@@ -111,6 +110,14 @@
                           </div>
                         </div>
 
+                        <div class="c-item-thumb__control--cart-product-remove">
+                          <div class="c-cart-remove cart-remove">
+                            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
+                              {% include 'icon-close.liquid' %}
+                            </a>
+                          </div>
+                        </div>
+
                       </div>
 
                       <div class="c-item-thumb__container--cart-product-price">
@@ -118,15 +125,16 @@
                       </div>
 
 
-                    </div>
+                    {% comment %} </div> {% endcomment %}
 
                   </div>
                 </div>
               </li>
             {% endfor %}
           </ul>
+        </div>
 
-        <div class="c-cart___summery">
+        <div class="c-cart___summary">
           <header class="c-cart___header--cart">
             <h4 class="c-cart___heading--cart">
               <span class="c-cart___title--cart">Order Summary</span>

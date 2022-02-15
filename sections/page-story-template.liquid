@@ -84,7 +84,7 @@
           background-image: url({{ block.settings.block_background_image.src | image_url }});
         }
       </style>
-    <div class="c-content-block  c-content-block--{{ block.id }}">
+    <div class="c-content-block  c-content-block--{{ block.id }} u-bgc-{{ section.settings.block_background_colour }}">
       <div class="c-content-block__row {{ cssClassDirection }}">
 
         <div class="c-content-block__col">
@@ -119,7 +119,7 @@
       </div>
     </div>
         {% when 'section_title' %}
-    <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
+    <div class="c-content-block--section-title  c-content-block--{{ block.id }} u-bgc-{{ section.settings.block_background_colour }}">
       <div class="c-content-block__row">
         <div class="c-content-block__col">
           <div class="c-content-block__content--section-title">
@@ -134,7 +134,7 @@
             background-image: url({{ block.settings.block_background_image.src | image_url }});
           }
         </style>
-        <div class="c-content-block  c-content-block--{{ block.id }}">
+        <div class="c-content-block  c-content-block--{{ block.id }} u-bgc-{{ section.settings.block_background_colour }}">
           <div class="c-content-block__row {{ cssClassDirection }}">
 
             <div class="c-content-block__col">
@@ -208,6 +208,30 @@
       "id": "hero_image",
       "label": "Page Hero Image"
     },
+  {
+  "type": "select",
+  "id": "block_background_colour",
+  "label": "Block Background Colour",
+  "default": "1",
+  "options": [
+  {
+  "value": "1",
+  "label": "Brand Colour 1"
+  },
+  {
+  "value": "2",
+  "label": "Brand Colour 2"
+  },
+  {
+  "value": "3",
+  "label": "Brand Colour 3"
+  },
+  {
+  "value": "t",
+  "label": "Transparent"
+  }
+  ]
+  },
     {
       "type": "image_picker",
       "id": "hero_image_mobile",

@@ -3,16 +3,18 @@
     <nav class="c-pagination__nav" role="navigation">
       <ol class="c-pagination__list">
         {%- if paginate.previous-%}
-          <li class="c-pagination__item">
-            <a class="c-pagination__link--prev" href="{{ paginate.previous.url }}">
+          <li class="c-pagination__item--prev">
+            <a class="c-pagination__link--prev c-pagination__link--icon" href="{{ paginate.previous.url }}">
               <span class="c-pagination__icon--prev" aria-hidden="true">&laquo;</span>
               <span class="c-pagination__access-text--prev visuallyhidden">Previous page</span>
             </a>
           </li>
         {%- else -%}
-          <li class="c-pagination__item is-disabled" >
+          <li class="c-pagination__item--prev is-disabled" >
+            <div class="c-pagination__link--disabled c-pagination__link--icon">
             <span class="c-pagination__icon--prev"  aria-hidden="true">&laquo;</span>
             <span class="c-pagination__access-text--prev visuallyhidden">Previous page</span>
+            </div>
           </li>
         {%- endif -%}
 
@@ -38,15 +40,17 @@
 
         {%- if paginate.next -%}
           <li class="c-pagination__item--next">
-            <a class="c-pagination__link--next" href="{{ paginate.next.url }}">
+            <a class="c-pagination__link--next c-pagination__link--icon" href="{{ paginate.next.url }}">
               <span class="c-pagination__access-text--next visuallyhidden">Next page</span>
-              <span aria-hidden="true">&raquo;</span>
+              <span class="c-pagination__icon--next" aria-hidden="true">&raquo;</span>
             </a>
           </li>
         {%- else -%}
           <li class="c-pagination__item--next is-disabled">
-            <span class="visuallyhidden">Next page</span>
-            <span aria-hidden="true">&raquo;</span>
+            <div class="c-pagination__link--disabled c-pagination__link--icon">
+              <span class="visuallyhidden">Next page</span>
+              <span aria-hidden="true">&raquo;</span>
+            </div>
           </li>
         {%- endif -%}
       </ol>

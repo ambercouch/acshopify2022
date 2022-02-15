@@ -3,11 +3,17 @@
 <div class="l-main__page--blog">
   <div class="l-page--blog">
 
-    <header class="l-page__header--blog" role="banner">
-      <h1 class="l-page__heading--blog" >
-        <span class="l-page__title">{{ blog_title }}</span>
-      </h1>
-    </header>
+<div class="l-page__header--blog">
+  <header class="c-header--blog" role="banner">
+    <h1 class="c-header__heading--blog" >
+      <span class="c-header__title">{{ blog.title }}</span>
+    </h1>
+    <h4 class="c-header__sub-heading--blog">
+      Bamboo joint and muscle sleeves created for exercise, recovery and pain relief.
+    </h4>
+  </header>
+</div>
+
 
   {% comment %}
 
@@ -39,7 +45,7 @@
   </div>
   <div class="l-page-after--blog">
     {% assign collection = collections['blog'] %}
-    <div class="l-page-after__content--prodlct-list">
+    <div class="l-page-after__content--product-list">
       {{ collection.description }}
     </div>
     <div class="l-page-after__product-list">
