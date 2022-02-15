@@ -50,7 +50,7 @@
             <span class="c-header__title">{{ pageTitle }}</span>
           </h1>
           {% if pageSubtitle != blank %}
-            <h4 class="c-header__sub-heading">
+            <h4 class="c-header__sub-heading--builder-template">
               {{ pageSubtitle }}
             </h4>
             {% else %}
@@ -138,7 +138,7 @@
           <div class="c-content-block__row {{ cssClassDirection }}">
 
             <div class="c-content-block__col">
-              <div class="c-content-block__content">
+              <div class="c-content-block__content--image">
                 {% if block.settings.content_image != blank %}
                   <div class="c-content-block__image">
                     {% include 'responsive-image' with
@@ -153,10 +153,11 @@
               </div>
             </div>
             <div class="c-content-block__col">
-              <h2 class="c-content-block__heading">
+              <div class="c-content-block__content--image-text">
+              <h2 class="c-content-block__heading--builder-template">
                 {{ block.settings.content_title }}
               </h2>
-              <div class="c-content-block__body">
+              <div class="c-content-block__body--builder-template">
                 {{ block.settings.content_body }}
               </div>
               {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
@@ -173,6 +174,7 @@
                   {% endif %}
                 </div>
               {% endif %}
+              </div>
 
             </div>
 
