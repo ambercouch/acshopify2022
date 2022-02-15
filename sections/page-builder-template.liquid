@@ -85,7 +85,7 @@
         }
       </style>
     <div class="c-content-block  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row {{ cssClassDirection }}">
+      <div class="c-content-block__row--builder-template {{ cssClassDirection }}">
 
         <div class="c-content-block__col">
           <div class="c-content-block__content">
@@ -120,7 +120,7 @@
     </div>
         {% when 'section_title' %}
     <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row">
+      <div class="c-content-block__row--builder-template">
         <div class="c-content-block__col">
           <div class="c-content-block__content--section-title">
             <h2 class="c-content-block__heading--section-title">{{ block.settings.section_title }}</h2>
@@ -135,7 +135,7 @@
           }
         </style>
         <div class="c-content-block  c-content-block--{{ block.id }}">
-          <div class="c-content-block__row {{ cssClassDirection }}">
+          <div class="c-content-block__row--builder-template {{ cssClassDirection }}">
 
             <div class="c-content-block__col">
               <div class="c-content-block__content--image">
