@@ -428,7 +428,7 @@
               "content_title": "High Intensity Interval Training",
               "content_body": "<p>4 HIIT Session<\/p>",
               "content_image": "shopify:\/\/shop_images\/bearhug-training-hiit.jpg",
-              "block_direction": "",
+              "block_direction": "rev",
               "content_btn_1_label": "Download",
               "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/hiit.jpg?v=1613392843",
               "content_btn_2_label": "Find Out More",
