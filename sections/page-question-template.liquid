@@ -41,7 +41,7 @@
             max_height: 600
           %}
         </div>
-        {% else %}
+      {% else %}
         <!-- section.settings.hero_image_mobile -->
       {% endif %}
       <div class="c-header__content-wrap--question-template">
@@ -53,20 +53,20 @@
             <h4 class="c-header__sub-heading">
               {{ pageSubtitle }}
             </h4>
-            {% else %}
+          {% else %}
             <!-- NO section.settings.page_subtitle -->
           {% endif %}
         </header>
       </div>
     </header>
     {% unless hidePageContent %}
-    <div class="l-page__content--question-template">
-      {% if page.content != blank %}
-        <div class="l-page__rte--question-template rte" >
-          {{ page.content }}
-        </div>
-      {% endif %}
-    </div>
+      <div class="l-page__content--question-template">
+        {% if page.content != blank %}
+          <div class="l-page__rte--question-template rte" >
+            {{ page.content }}
+          </div>
+        {% endif %}
+      </div>
     {% endunless %}
 
   </div>
@@ -75,39 +75,39 @@
     {% for block in section.blocks %}
       {% case block.type %}
       {% when 'question' %}
-      <style>
-        .c-content-block--{{ block.id }}{
-          background-image: url({{ block.settings.block_background_image.src | image_url }});
-        }
-      </style>
-    <div class="c-content-block--question  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row--question {{ cssClassDirection }}">
+        <style>
+          .c-content-block--{{ block.id }}{
+            background-image: url({{ block.settings.block_background_image.src | image_url }});
+          }
+        </style>
+        <div class="c-content-block--question  c-content-block--{{ block.id }}">
+          <div class="c-content-block__row--question {{ cssClassDirection }}">
 
-        <div class="c-content-block__col--question">
-          <div class="c-content-block__qanda">
-            <div class="c-qanda">
-              <div class="c-qanda__question" data-state="{{ dateState }}" data-control="{{ block.id }}">
-                <span class="c-qanda__question-label">{{ block.settings.content_question }}</span>
-                <span class="c-qanda__icon">
+            <div class="c-content-block__col--question">
+              <div class="c-content-block__qanda">
+                <div class="c-qanda">
+                  <div class="c-qanda__question" data-state="{{ dateState }}" data-control="{{ block.id }}">
+                    <span class="c-qanda__question-label">{{ block.settings.content_question }}</span>
+                    <span class="c-qanda__icon">
                   <span class="c-icon is-state-on">{% include 'icon-minus'%}</span>
                   <span class="c-icon is-state-off">{% include 'icon-plus'%}</span>
                 </span></div>
-              <div class="c-qanda__answer" data-state="{{ dateState }}" data-container="{{ block.id }}">{{ block.settings.content_answer }}</div>
+                  <div class="c-qanda__answer" data-state="{{ dateState }}" data-container="{{ block.id }}">{{ block.settings.content_answer }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-        {% when 'section_title' %}
-    <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row--section-title-question">
-        <div class="c-content-block__col--section-title-question">
-          <div class="c-content-block__content--section-title">
-            <h2 class="c-content-block__heading--section-title-question">{{ block.settings.section_title }}</h2>
+      {% when 'section_title' %}
+        <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
+          <div class="c-content-block__row--section-title-question">
+            <div class="c-content-block__col--section-title-question">
+              <div class="c-content-block__content--section-title">
+                <h2 class="c-content-block__heading--section-title-question">{{ block.settings.section_title }}</h2>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
       {% endcase %}
       {% assign dateState = 'off' %}
     {% endfor %}
@@ -115,69 +115,69 @@
 </div>
 
 {% schema %}
-{
+  {
   "name": "FAQ Block",
   "max_blocks": 30,
   "settings": [
-    {
-      "type": "text",
-      "id": "page_title",
-      "label": "Page Title",
-      "default": "Title"
-    },
-    {
-      "type": "text",
-      "id": "page_subtitle",
-      "label": "Page Subtitle",
-      "default": "Subtitle"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Page Hero Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image_mobile",
-      "label": "Page Hero Image Mobile"
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_page_content",
-      "label": "Hide the page content area",
-      "default": true
-    }
+  {
+  "type": "text",
+  "id": "page_title",
+  "label": "Page Title",
+  "default": "Title"
+  },
+  {
+  "type": "text",
+  "id": "page_subtitle",
+  "label": "Page Subtitle",
+  "default": "Subtitle"
+  },
+  {
+  "type": "image_picker",
+  "id": "hero_image",
+  "label": "Page Hero Image"
+  },
+  {
+  "type": "image_picker",
+  "id": "hero_image_mobile",
+  "label": "Page Hero Image Mobile"
+  },
+  {
+  "type": "checkbox",
+  "id": "hide_page_content",
+  "label": "Hide the page content area",
+  "default": true
+  }
   ],
   "blocks": [
-    {
-      "type": "section_title",
-      "name": "Section Title",
-      "settings": [
-        {
-          "type": "text",
-          "id": "section_title",
-          "label": "Section Title",
-          "default": "Title"
-        }
-      ]
-    },
-    {
-      "type": "question",
-      "name": "Question",
-      "settings": [
-        {
-          "type": "text",
-          "id": "content_question",
-          "label": "Question"
-        },
-        {
-          "type": "richtext",
-          "id": "content_answer",
-          "label": "Answer",
-          "default": "<p>Answer the question</p>"
-        }
-      ]
-    }
+  {
+  "type": "section_title",
+  "name": "Section Title",
+  "settings": [
+  {
+  "type": "text",
+  "id": "section_title",
+  "label": "Section Title",
+  "default": "Title"
+  }
   ]
-}
+  },
+  {
+  "type": "question",
+  "name": "Question",
+  "settings": [
+  {
+  "type": "text",
+  "id": "content_question",
+  "label": "Question"
+  },
+  {
+  "type": "richtext",
+  "id": "content_answer",
+  "label": "Answer",
+  "default": "<p>Answer the question</p>"
+  }
+  ]
+  }
+  ]
+  }
 {% endschema %}

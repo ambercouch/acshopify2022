@@ -1,10 +1,16 @@
 {% assign productType = product.type | handle %}
 
-{% if product.metafields.global.below_form_button_text != nill %}
+{% if product.metafields.global.description_tabbed != nil %}
+{% assign productDescription = product.metafields.global.description_tabbed %}
+{% else %}
+  {% assign productDescription = product.description %}
+{% endif %}
+
+{% if product.metafields.global.below_form_button_text != nil %}
   <!-- below_form_link from the product meta -->
   {% assign belowFormButtonText =  product.metafields.global.below_form_button_text %}
 
-{% elsif shop.metafields[productType].below_form_button_text  != nill %}
+{% elsif shop.metafields[productType].below_form_button_text  != nil %}
   <!-- below_form_link from the shop meta -->
   {% assign belowFormButtonText = shop.metafields[productType].below_form_button_text %}
 
@@ -64,7 +70,7 @@
 
       {% if product.description != blank %}
         <div class="l-page__description">
-          {{ product.description }}
+          {{ productDescription }}
         </div>
       {% endif %}
 
