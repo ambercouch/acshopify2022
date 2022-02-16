@@ -10,7 +10,7 @@
 {% if item.image != blank %}
   {% assign itemFeatuerImage = item.image %}
 {% else %}
-  {% assign  itemFeatuerImage = images['product-fallback.png'] %}
+  {% assign  itemFeatuerImage = images['stockist-fallback.png'] %}
 {% endif %}
 
 {% assign googleMap = item.metafields.global.google_map %}
@@ -18,15 +18,15 @@
 
 <div class="c-item-thumb--stockist">
   <div class="c-item-thumb__featured-image">
-    <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__image-link">
       <div class="c-featured-image--stockist">
         {% include 'responsive-image' with
           image: itemFeatuerImage,
           max_width: 700,
-          max_height: 700
+          max_height: 700,
+          wrapper_class : 'c-featured-image__wrapper--stockist',
+          image_class : 'c-featured-image__img--stockist'
         %}
       </div>
-    </a>
   </div>
 
     <div class="c-item-thumb__info">

@@ -85,7 +85,7 @@
             <div class="l-item-list--stockist">
               <div class="l-item-list__list">
           {% for stockist in blogs['bearhug-stockists'].articles %}
-                <div class="l-item-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+                <div class="l-item-list__item is-product-id-{{ product.id }}">
                   <div class="l-item-list__item-thumb">
           {% include 'acstk-item-thumb-stockist' with {templateObject : stockist} %}
                   </div>
