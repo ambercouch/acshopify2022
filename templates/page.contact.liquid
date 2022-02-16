@@ -33,7 +33,7 @@
 
     <div class="l-page__content--static-page l-page__content--contact">
       {% if page.content != blank %}
-        <div class="l-page__rte--static-page rte size-guide" >
+        <div class="l-page__rte--static-page rte l-page__rte--contact" >
           {{ page.content }}
         </div>
       {% endif %}
@@ -102,7 +102,13 @@
   </div>
 </div>
 
-<div class="contact-section--newsletter">
+<style>
+  .l-main__content-section--newsletter{
+    background-image: url({{ 'bearhug-text-background.png' | asset_url }});
+  }
+</style>
+
+<div class="contact-section--newsletter l-main__content-section--newsletter">
   <div id="section-id-{{ section.id }}" class=" l-content-section--{{ section.id }} l-content-section--newsletter " data-section-id="{{ section.id }}" data-section-type="newsletter">
     <div class="c-newsletter">
       {% form 'customer' %}

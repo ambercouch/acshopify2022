@@ -70,7 +70,7 @@
     {% endunless %}
 
   </div>
-  <div class="l-page-after--story">
+  <div class="l-page-after--question-template">
     {% assign dateState = 'on' %}
     {% for block in section.blocks %}
       {% case block.type %}
@@ -80,13 +80,18 @@
           background-image: url({{ block.settings.block_background_image.src | image_url }});
         }
       </style>
-    <div class="c-content-block  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row {{ cssClassDirection }}">
+    <div class="c-content-block--question  c-content-block--{{ block.id }}">
+      <div class="c-content-block__row--question {{ cssClassDirection }}">
 
-        <div class="c-content-block__col">
+        <div class="c-content-block__col--question">
           <div class="c-content-block__qanda">
             <div class="c-qanda">
-              <div class="c-qanda__question" data-state="{{ dateState }}" data-control="{{ block.id }}"><span class="c-qanda__question-label">{{ block.settings.content_question }}</span><span class="c-qanda__icon">-</span></div>
+              <div class="c-qanda__question" data-state="{{ dateState }}" data-control="{{ block.id }}">
+                <span class="c-qanda__question-label">{{ block.settings.content_question }}</span>
+                <span class="c-qanda__icon">
+                  <span class="c-icon is-state-on">{% include 'icon-minus'%}</span>
+                  <span class="c-icon is-state-off">{% include 'icon-plus'%}</span>
+                </span></div>
               <div class="c-qanda__answer" data-state="{{ dateState }}" data-container="{{ block.id }}">{{ block.settings.content_answer }}</div>
             </div>
           </div>
@@ -95,10 +100,10 @@
     </div>
         {% when 'section_title' %}
     <div class="c-content-block--section-title  c-content-block--{{ block.id }}">
-      <div class="c-content-block__row">
-        <div class="c-content-block__col">
+      <div class="c-content-block__row--section-title-question">
+        <div class="c-content-block__col--section-title-question">
           <div class="c-content-block__content--section-title">
-            <h2 class="c-content-block__heading--section-title">{{ block.settings.section_title }}</h2>
+            <h2 class="c-content-block__heading--section-title-question">{{ block.settings.section_title }}</h2>
           </div>
         </div>
       </div>

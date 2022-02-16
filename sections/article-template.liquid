@@ -7,6 +7,12 @@
           <span class="c-header__title">{{ article.title }}</span>
         </h1>
       </header>
+      <div class="c-header__meta">{{ article.created_at | date: "%B %d, %Y" }}</div>
+    </div>
+
+    <div class="l-page__social-share-menu">
+
+        {% include 'social-sharing', type: 'article', share_title: article.title, share_permalink: article.url, share_image: article.image %}
 
     </div>
 
@@ -15,7 +21,9 @@
       {% include 'responsive-image' with
         image: article.image,
         max_width: 1440,
-        max_height: 600
+        max_height: 600,
+        wrapper_class: 'c-featured-image__wrapper--article',
+        image_class: 'c-featured-image__img--article'
       %}
     </div>
 

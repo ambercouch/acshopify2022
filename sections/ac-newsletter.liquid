@@ -1,5 +1,10 @@
+<style>
+  .l-main__content-section--newsletter{
+    background-image: url({{ 'bearhug-text-background.png' | asset_url }});
+  }
+</style>
 <div id="section-id-{{ section.id }}" class=" l-content-section--{{ section.id }} l-content-section--newsletter " data-section-id="{{ section.id }}" data-section-type="newsletter">
-  <div class="c-newsletter">
+  <div class="c-newsletter some test">
     {% form 'customer' %}
       <h2 class="c-newsletter__heading">{{ section.settings.heading | escape }}</h2>
       {% unless section.settings.subheading == blank %}
@@ -42,7 +47,7 @@
     "zh-CN": "新闻通讯",
     "zh-TW": "電子報"
   },
-  "class": "index-section index-section--newsletter",
+  "class": "index-section index-section--newsletter l-main__content-section--newsletter",
   "settings": [
     {
       "type": "text",
