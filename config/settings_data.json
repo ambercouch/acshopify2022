@@ -38,7 +38,7 @@
               "title": "BAMBOO JOINT SUPPORTS & MUSCLE SLEEVES",
               "button": "Slide title",
               "cta": "SHOP NOW",
-              "cta_link": "shopify:\/\/collections\/all"
+              "cta_link": "shopify:\/\/collections\/singles"
             }
           }
         },
@@ -76,9 +76,9 @@
               "content_body": "",
               "content_body_html": "<p class=\"u-col-w\">In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born. <\/p>\n<p class=\"u-col-w\">The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "http:\/\/google.com",
-              "content_btn_2_label": "Read Reviews",
-              "content_btn_2_link": "https:\/\/google.com"
+              "content_btn_1_link": "shopify:\/\/collections\/singles",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": "shopify:\/\/pages\/the-story"
             }
           }
         },
@@ -117,7 +117,7 @@
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Learn More",
-              "content_btn_2_link": "shopify:\/\/products\/ankle-support"
+              "content_btn_2_link": "shopify:\/\/pages\/the-story"
             }
           }
         },
@@ -339,9 +339,9 @@
               "content_title": "Birth of <br> the Bear.",
               "content_body": "<p>In 2014 our co - founder Gareth was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. <\/p><p>Fast forward two years and along with Rhys & Dan the pack was formed and Bearhug was born. The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike.<\/p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "\/",
+              "content_btn_1_link": "shopify:\/\/collections\/singles",
               "content_btn_2_label": "Read Reviews",
-              "content_btn_2_link": "\/"
+              "content_btn_2_link": ""
             }
           },
           "3bcebad2-94c9-4c9c-83ea-af2e8df2d1c2": {
