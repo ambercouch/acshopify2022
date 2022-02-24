@@ -21485,7 +21485,18 @@ const ACSTK = {
                     console.log('clickered');
                     const state = control.attr('data-state');
                     e.preventDefault();
+
                     ACSTK.fn.actStateToggleSelect(control, state);
+
+
+
+                    if(state == 'on'){
+                        $('body').addClass('has-' + containerId + '-off')
+                        $('body').removeClass('has-' + containerId + '-on')
+                    }else{
+                        $('body').addClass('has-' + containerId + '-on')
+                        $('body').removeClass('has-' + containerId + '-off')
+                    }
 
                     if (controlGroupId){
                         console.log('clickered group');

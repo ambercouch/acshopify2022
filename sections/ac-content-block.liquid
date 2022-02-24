@@ -21,8 +21,9 @@
 </style>
 <section id="section-id-{{ section.id }}" class="l-content-section--content-block l-content-section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
   <div class="c-content-block u-bgc-{{ section.settings.block_background_colour }}">
-    <div class="c-content-block__row">
-      {% if section.settings.block_layout == '5050' %}
+
+    <div class="c-content-block__row has-layout-{{  section.settings.block_layout }}">
+
         {% for block in section.blocks %}
       <div class="c-content-block__col">
           <div class="c-content-block__content">
@@ -75,7 +76,7 @@
           </div>
       </div>
         {% endfor %}
-      {% endif %}
+
     </div>
   </div>
 </section>
@@ -106,6 +107,22 @@
         {
           "value": "5050",
           "label": "50/50"
+        },
+        {
+        "value": "3366",
+        "label": "33/66"
+        },
+        {
+        "value": "2575",
+        "label": "25/75"
+        },
+        {
+        "value": "6633",
+        "label": "66/33"
+        },
+        {
+        "value": "7525",
+        "label": "75/25"
         }
       ]
     },

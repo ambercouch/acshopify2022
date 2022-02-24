@@ -62,7 +62,7 @@
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">BIRTH OF<br> THE BEAR.<\/h2>",
+              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">BIRTH<br>OF THE<br>BEAR.<\/h2>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -89,7 +89,7 @@
         "settings": {
           "title": "Birth of the bear section",
           "hide_title": true,
-          "block_layout": "5050",
+          "block_layout": "2575",
           "block_background_colour": "2",
           "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png"
         }
@@ -113,7 +113,7 @@
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">WHY BEARHUG?<\/h2>\n<div class=\"c-feature-list u-col-w\">\n  <ul class=\"c-feature-list__list\">\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-comfort\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-comfort\">\n            <use xlink:href=\"#icon-comfort\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n        UNRIVALLED COMFORT\n      <\/span>\n    <\/li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-renew\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-renew\">\n            <use xlink:href=\"#icon-renew\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n      RENEWABBLE RESOURCE\n      <\/span>\n    <\/li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-temp\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-temp\">\n            <use xlink:href=\"#icon-temp\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n      SUPERIOR WARMTH\n      <\/span>\n    <\/li>\n  <\/ul>\n<\/div>",
+              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">WHY BEARHUG?<\/h2>\n<div class=\"c-feature-list u-col-w\">\n  <ul class=\"c-feature-list__list\">\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-comfort\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-comfort\">\n            <use xlink:href=\"#icon-comfort\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n        UNRIVALLED COMFORT\n      <\/span>\n    <\/li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-renew\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-renew\">\n            <use xlink:href=\"#icon-renew\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n      RENEWABLE RESOURCE\n      <\/span>\n    <\/li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-temp\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-temp\">\n            <use xlink:href=\"#icon-temp\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n      SUPERIOR WARMTH\n      <\/span>\n    <\/li>\n  <\/ul>\n<\/div>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Learn More",
@@ -138,7 +138,7 @@
           "9341eabc-ae45-4472-9bb6-016fe468df24": {
             "type": "content",
             "settings": {
-              "content_title": "SUPPORTS & SLEEVES",
+              "content_title": "JOINT SUPPORTS & MUSCLE SLEEVES",
               "content_body": "<p>Bamboo joint and muscle supports created for exercise, recovery and pain relief. The range consists of wrist, elbow, thigh, knee, calf and ankle supports.<\/p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
