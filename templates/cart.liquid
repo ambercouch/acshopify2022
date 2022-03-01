@@ -70,7 +70,7 @@
 
 
                           {% unless item.variant.title contains 'Default' %}
-                            <span class="c-item-thumb__cart-note">* Have you checked your size?</span>
+                            <span class="c-item-thumb__cart-note">*Have you checked your size?</span>
                             <a href="{{ item.url }}#modalSizeGuide" class="c-item-thumb__cart-link">Size Guide</a>
 
                             <div class="variant-label">
@@ -140,11 +140,12 @@
               <span class="c-cart___title--cart">Order Summary</span>
             </h4>
           </header>
-
+{%  comment %}
           <div class="c-cart___notes">
             <label for="CartSpecialInstructions">Special instructions for Seller</label>
             <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
           </div>
+          {% endcomment %}
 
           <span class="c-cart___subtotal"><span>Subtotal:</span> <b class="carto">{{ cart.total_price | money }}</b></span>
           <div class="c-cart__checkout" >

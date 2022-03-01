@@ -37,5 +37,29 @@
 
     </div>
 
+
+
+  </div>
+  <div class="l-page-after--blog">
+    {% assign collection = collections['blog'] %}
+    <div class="l-page-after__content--product-list">
+      {{ collection.description }}
+    </div>
+    <div class="l-page-after__product-list">
+      <div class="l-product-list">
+        <div class="l-product-list__list">
+          {% for product in collection.products limit:4 %}
+
+            <div class="l-product-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+              <div class="l-product-list__item-thumb">
+                {% include 'acstk-item-thumb' %}
+              </div>
+            </div>
+
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

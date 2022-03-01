@@ -1,16 +1,16 @@
 <div class="c-product-gallery">
 
-  <div class="c-product-gallery__focus-image-container">
+  <div class="c-product-gallery__focus-image-container " data-acs-flickity>
 
 {% for image in product.images %}
 
-  <div class="c-product-gallery__focus-image" data-gallery-image >
+  <div class="c-product-gallery__focus-image is-id-{{ image.id }}"  >
   {% include 'responsive-image' with
     image: image,
     max_width: 700,
     max_height: 700,
     image_attributes: "data-product-featured-image",
-    wrapper_class: "c-product-gallery__wrapper u-hidden",
+    wrapper_class: "c-product-gallery__wrapper",
     image_class : 'c-product-gallery__img--focus'
     wrapper_attributes: "data-product-image-wrapper",
     crop: false
