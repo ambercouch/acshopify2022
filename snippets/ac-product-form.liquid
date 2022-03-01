@@ -72,17 +72,17 @@
       </div>
       {% else %}
         {% for option in product.options_with_values %}
-          <div class="js c-product-form__options">
+          <div class="js c-product-form__options--multi">
             {% if forloop.index0 > 4 %}
               {% for value in option.values %}
                 <div class="c-product-form__input-wrapper selector-wrapper">
-                  <input class="c-product-form__input--{{ option.name }}" type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
-                  <label class="c-product-form__label--{{ option.name }}" for="Option{{ option.position }}-{{ value }}">{{ value }}</label>
+                  <input class="c-product-form__input--{{ option.name | handle }}" type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
+                  <label class="c-product-form__label--{{ option.name | handle }}" for="Option{{ option.position }}-{{ value }}">{{ value }}</label>
                 </div>
               {% endfor %}
             {% else %}
               <div class="c-product-form__input-wrapper--select selector-wrapper">
-                <label class="c-product-form__label--{{ option.name }}" for="Option{{ option.position }}">
+                <label class="c-product-form__label--{{ option.name | handle }}" for="Option{{ option.position }}">
                   {{ option.name }}
                 </label>
                 <select
