@@ -14,13 +14,20 @@
 
 {%- assign block_layout =  section.settings.cb_layout -%}
 
+{% if section.settings.block_background_image.src != blank %}
 <style>
   .l-content-section--{{ section.id }} .c-content-block {
     background-image: url({{ section.settings.block_background_image.src | image_url }});
   }
 </style>
-<section id="section-id-{{ section.id }}" class="l-content-section--content-block l-content-section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
-  <div class="c-content-block u-bgc-{{ section.settings.block_background_colour }}">
+  {% assign classBg = ' has-bg-image ' %}
+  {% else %}
+    {% assign classBg = ' no-bg-image ' %}
+{% endif %}
+
+
+<section id="section-id-{{ section.id }}" class="l-content-section--content-block  l-content-section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="content-block" >
+  <div class="c-content-block {{ classBg }} u-bgc-{{ section.settings.block_background_colour }}">
 
     <div class="c-content-block__row has-layout-{{  section.settings.block_layout }}">
 
