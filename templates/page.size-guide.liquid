@@ -13,6 +13,11 @@
 {% endif %}
 
 
+{% assign iconPrefix = 'icon-' %}
+{% assign iconId = page.handle | prepend : iconPrefix %}
+
+
+
 {% if page.metafields.global.hero_image %}
   {% assign classHeroImage = 'has-hero-image' %}
 {% endif %}
@@ -46,7 +51,7 @@
       {% endif %}
 
       <div class="l-page__size-guide-icon" >
-      {% include 'svg-icon' {icon : 'icon-size-guide-single-knee'} %}
+        {% include 'svg-icon' {icon : iconId} %}
       </div>
 
     </div>

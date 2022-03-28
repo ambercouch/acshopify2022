@@ -2,11 +2,17 @@
 
 {% assign add_to_cart_text = 'products.product.add_to_cart' | t  %}
 
+{% if page.handle contains 'pair' %}
+    {% assign productType = 'pair-' %}
+  {% else %}
+    {% assign productType = 'single-' %}
+{% endif %}
+
 {% assign sizeGuides = 'knee,ankle,thigh,wrist,elbow,calf' %}
 {% assign sizeGuideArray = sizeGuides | split : ',' %}
 {% for id in sizeGuideArray %}
   {% if product.handle contains id %}
-    {% assign sizeGuideId = id %}
+    {% assign sizeGuideId = id | prepend : productType %}
   {% endif %}
 {% endfor %}
 
