@@ -12,14 +12,14 @@
           "logo_max_width_mobile": 250,
           "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width": 210,
-          "menu": "main-menu",
-          "mobile_menu": "side-menu"
+          "menu": "main-menu-2022",
+          "mobile_menu": ""
         }
       },
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist": "footer-pages",
+          "footer_linklist": "",
           "footer_newsletter_enable": true,
           "show_payment_icons": true,
           "site_info": "",
