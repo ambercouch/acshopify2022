@@ -3,16 +3,18 @@
 {% assign add_to_cart_text = 'products.product.add_to_cart' | t  %}
 
 {% if page.handle contains 'pair' %}
-    {% assign productType = 'pair-' %}
+    {% assign productType = 'pair' %}
+    {% assign productTypeHandle = 'pair-' %}
   {% else %}
-    {% assign productType = 'single-' %}
+    {% assign productType = 'single' %}
+    {% assign productTypeHandle = 'single-' %}
 {% endif %}
 
 {% assign sizeGuides = 'knee,ankle,thigh,wrist,elbow,calf' %}
 {% assign sizeGuideArray = sizeGuides | split : ',' %}
 {% for id in sizeGuideArray %}
   {% if product.handle contains id %}
-    {% assign sizeGuideId = id | prepend : productType %}
+    {% assign sizeGuideId = id | prepend : productTypeHandle %}
   {% endif %}
 {% endfor %}
 
