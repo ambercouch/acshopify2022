@@ -1,7 +1,7 @@
-{% if product.metafields.global.collection_title == null %}
+{% if product.metafields.global.title_thumb == null %}
   {% assign productTitle = product.title %}
 {% else %}
-  {% assign productTitle = product.metafields.global.collection_title %}
+  {% assign productTitle = product.metafields.global.title_thumb %}
 {% endif %}
 
 <div class="c-product-thumb{{ modClass }}">
