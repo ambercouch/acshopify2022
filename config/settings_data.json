@@ -19,7 +19,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist": "",
+          "footer_linklist": "footer-pages",
           "footer_newsletter_enable": true,
           "show_payment_icons": true,
           "site_info": "",
