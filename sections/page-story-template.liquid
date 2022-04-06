@@ -79,12 +79,17 @@
       {% endif %}
       {% case block.type %}
       {% when 'content' %}
+        {% if block.settings.block_background_image.src != blank %}
       <style>
         .c-content-block--{{ block.id }}{
           background-image: url({{ block.settings.block_background_image.src | image_url }});
         }
       </style>
-    <div class="c-content-block c-content-block--type-{{ block.type }}  c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }} u-bgs-{{ block.settings.block_background_size }}">
+          {% assign classBg = ' has-bg-image ' %}
+        {% else %}
+          {% assign classBg = ' no-bg-image ' %}
+        {% endif %}
+    <div class="c-content-block {{ classBg }} c-content-block--type-{{ block.type }}  c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }} u-bgs-{{ block.settings.block_background_size }}">
       <div class="c-content-block__row--story-template c-content-block__row--type-content {{ cssClassDirection }}">
 
         <div class="c-content-block__col">
