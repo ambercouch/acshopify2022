@@ -3,10 +3,8 @@
 {% assign add_to_cart_text = 'products.product.add_to_cart' | t  %}
 
 {% if page.handle contains 'pair' %}
-    {% assign productType = 'pair' %}
     {% assign productTypeHandle = 'pair-' %}
   {% else %}
-    {% assign productType = 'single' %}
     {% assign productTypeHandle = 'single-' %}
 {% endif %}
 
