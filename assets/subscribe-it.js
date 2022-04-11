@@ -2105,7 +2105,7 @@ function deferBisProductPageButton (callback) {
       "button": {
                 "use_image": false,
                 "caption": "NOTIFY WHEN AVAILABLE",
-                "font_size": 14,
+                "font_size": 13,
                 "bold": true,
                 "position": "right-top",
                 "corner_offset": 100,
