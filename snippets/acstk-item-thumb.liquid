@@ -24,9 +24,9 @@
   Check if this collection is singles or pairs
 {% endcomment  %}
 
-{% if collection.handle contains 'single' %}
+{% if collection.handle contains 'single' or collection.title contains 'single' %}
   {% assign productType = "Single" %}
-  {% elsif collection.handle contains 'pair' %}
+  {% elsif collection.handle contains 'pairs' or collection.title contains 'pairs' %}
   {% assign productType = "Pair" %}
 {% endif %}
 
@@ -34,13 +34,14 @@
   Check if the product is in collection singles or pairs
 {% endcomment  %}
 
-{% assign productCollections = itemProduct.collections | map: "handle" %}
-    {% if productCollections contains "singles" %}
+{% assign productCollectionsTitle = itemProduct.collections | map: "title" %}
+{% assign productCollectionsHandle = itemProduct.collections | map: "handle" %}
+{% assign productCollections = productCollectionsTitle | prepend : productCollectionsHandle %}
+    {% if productCollections contains "singles" or productCollections contains "Singles" %}
       {% assign productType = "Single" %}
-      {% elsif productCollections contains "pairs" %}
-        {% assign productType = "Pairs" %}
+      {% elsif productCollections contains "pairs"  or productCollections contains "Pairs" %}
+        {% assign productType = "Pair" %}
 {% endif %}
-
 <div class="c-item-thumb--product">
   <div class="c-item-thumb__featured-image">
     <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__image-link">
@@ -51,6 +52,7 @@
           max_height: 700
         %}
       </div>
+
     </a>
     <div class="c-item-thumb__quick-cart">
       <div class="c-quick-cart">
@@ -64,14 +66,14 @@
         </div>
       </div>
     </div>
-  </div>
-
+    </div>
     <div class="c-item-thumb__info">
       <h5 class="c-item-thumb__heading">
+
         <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__heading-link">
         <span class="c-item-thumb__title">{{ productTitle }}</span>
         {% if productType != blank %}
-        <span class="c-item-thumb__title-type">({{ productType }})</span>
+        <span class="c-item-thumb__title-type">({{  productType }})</span>
         {% endif %}
         </a>
       </h5>
