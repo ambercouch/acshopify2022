@@ -21797,40 +21797,42 @@ const ACSTK = {
             let $btnSubmit = $('[data-submit-button]')
             let $textSubmit = $('[data-submit-button-text]')
 
-            console.log(Object.keys($options).length)
+            console.log($options.length)
+            if($options.length > 0 ) {
 
-            $.each($options, function(){
-                variantHandle = variantHandle + $(this).val().toLowerCase();
-            });
-
-            console.log(variantHandle)
-
-            console.log ($selectorTarget.find('[data-variant-handle=' + 'smallmedium' + ']'));
-            $selectorTarget.find('[data-variant-handle=' + variantHandle + ']').prop('selected', true);
-
-            $(document).on('change', $options, function(){
-                $options = $('[data-multi-options] select');
-                let variantHandle = '';
-                $.each($options, function(){
+                $.each($options, function () {
                     variantHandle = variantHandle + $(this).val().toLowerCase();
                 });
-                var $optionTarget = $selectorTarget.find('[data-variant-handle=' + variantHandle + ']')
+
+                console.log(variantHandle)
+
+
                 $selectorTarget.find('[data-variant-handle=' + variantHandle + ']').prop('selected', true);
-                console.log(variantHandle);
-                console.log($optionTarget.length);
 
-                if($optionTarget.length < 1 ){
-                    console.log('soldout');
-                    $btnSubmit.prop('disabled', true);
-                    $textSubmit.text('SOLD OUT')
+                $(document).on('change', $options, function () {
+                    $options = $('[data-multi-options] select');
+                    let variantHandle = '';
+                    $.each($options, function () {
+                        variantHandle = variantHandle + $(this).val().toLowerCase();
+                    });
+                    var $optionTarget = $selectorTarget.find('[data-variant-handle=' + variantHandle + ']')
+                    $selectorTarget.find('[data-variant-handle=' + variantHandle + ']').prop('selected', true);
+                    console.log(variantHandle);
+                    console.log($optionTarget.length);
 
-                }else{
-                    $btnSubmit.prop('disabled', false)
-                    console.log('instock')
-                    $textSubmit.text('ADD TO CART')
-                }
+                    if ($optionTarget.length < 1) {
+                        console.log('soldout');
+                        $btnSubmit.prop('disabled', true);
+                        $textSubmit.text('SOLD OUT')
 
-            });
+                    } else {
+                        $btnSubmit.prop('disabled', false)
+                        console.log('instock')
+                        $textSubmit.text('ADD TO CART')
+                    }
+
+                });
+            }
 
 
             // $(document).on('click', '[data-product-form] [data-variant-id]', function () {
@@ -21903,12 +21905,27 @@ const ACSTK = {
                 let variantId = $(this).attr('data-variant-id')
                 let $parentForm = $(this).parents('form');
                 let $variantIdInput = $(selectorTarget , $parentForm)
+                let disabled = $(this).attr('disabled')
+                let $btnSubmit = $('[data-submit-button]', $parentForm)
+                let $textSubmit = $('[data-submit-button-text]' ,$parentForm)
 
                 //Update selected classes
                 $('[data-variant-id]', $parentForm).removeClass('is-selected').queue(function (next) {
                     $this.addClass('is-selected');
                     next();
                 });
+
+                console.log(disabled);
+
+                if(disabled == 'disabled'){
+                    console.log('disabled')
+                    $btnSubmit.prop('disabled', true);
+                    $textSubmit.text('SOLD OUT')
+                }else{
+                    console.log('enabled')
+                    $btnSubmit.prop('disabled', false);
+                    $textSubmit.text('ADD TO CART')
+                }
 
                 //Update form input
                 $variantIdInput.val(variantId);
