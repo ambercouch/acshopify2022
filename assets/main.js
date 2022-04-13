@@ -21924,12 +21924,14 @@ const ACSTK = {
                     $textSubmit.text('SOLD OUT')
                     console.log("$oosBtn")
                     console.log($oosBtn)
+                    $oosBtn.css('display', 'block')
                 }else{
                     console.log('enabled')
                     $btnSubmit.prop('disabled', false);
                     $textSubmit.text('ADD TO CART')
                     console.log("$oosBtn")
                     console.log($oosBtn)
+                    $oosBtn.css('display', 'none')
                 }
 
                 //Update form input
