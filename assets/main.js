@@ -21908,6 +21908,7 @@ const ACSTK = {
                 let disabled = $(this).attr('disabled')
                 let $btnSubmit = $('[data-submit-button]', $parentForm)
                 let $textSubmit = $('[data-submit-button-text]' ,$parentForm)
+                let $oosBtn = $('.si-button')
 
                 //Update selected classes
                 $('[data-variant-id]', $parentForm).removeClass('is-selected').queue(function (next) {
@@ -21921,10 +21922,14 @@ const ACSTK = {
                     console.log('disabled')
                     $btnSubmit.prop('disabled', true);
                     $textSubmit.text('SOLD OUT')
+                    console.log("$oosBtn")
+                    console.log($oosBtn)
                 }else{
                     console.log('enabled')
                     $btnSubmit.prop('disabled', false);
                     $textSubmit.text('ADD TO CART')
+                    console.log("$oosBtn")
+                    console.log($oosBtn)
                 }
 
                 //Update form input
