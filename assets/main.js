@@ -21794,6 +21794,8 @@ const ACSTK = {
             let $options = $('[data-multi-options] select');
             let variantHandle = '';
             let $selectorTarget = $('[name=id]');
+            let $btnSubmit = $('[data-submit-button]')
+            let $textSubmit = $('[data-submit-button-text]')
 
             console.log(Object.keys($options).length)
 
@@ -21812,7 +21814,22 @@ const ACSTK = {
                 $.each($options, function(){
                     variantHandle = variantHandle + $(this).val().toLowerCase();
                 });
+                var $optionTarget = $selectorTarget.find('[data-variant-handle=' + variantHandle + ']')
                 $selectorTarget.find('[data-variant-handle=' + variantHandle + ']').prop('selected', true);
+                console.log(variantHandle);
+                console.log($optionTarget.length);
+
+                if($optionTarget.length < 1 ){
+                    console.log('soldout');
+                    $btnSubmit.prop('disabled', true);
+                    $textSubmit.text('SOLD OUT')
+
+                }else{
+                    $btnSubmit.prop('disabled', false)
+                    console.log('instock')
+                    $textSubmit.text('ADD TO CART')
+                }
+
             });
 
 
