@@ -26,9 +26,8 @@
       </div>
     {% else %}
       <div class="l-btn-group__btn">
-        <div class="c-btn--product-radio is-disabled" disabled="disabled">
-          {{ variant.title }}
-        </div>
+        <div disabled="disabled" class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
+
       </div>
     {% endif %}
   {% endfor %}
