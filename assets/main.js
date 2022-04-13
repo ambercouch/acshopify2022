@@ -21791,6 +21791,31 @@ const ACSTK = {
 
             ACSTK.fn.actUpdateVariant();
 
+            let $options = $('[data-multi-options] select');
+            let variantHandle = '';
+            let $selectorTarget = $('[name=id]');
+
+            console.log(Object.keys($options).length)
+
+            $.each($options, function(){
+                variantHandle = variantHandle + $(this).val().toLowerCase();
+            });
+
+            console.log(variantHandle)
+
+            console.log ($selectorTarget.find('[data-variant-handle=' + 'smallmedium' + ']'));
+            $selectorTarget.find('[data-variant-handle=' + variantHandle + ']').prop('selected', true);
+
+            $(document).on('change', $options, function(){
+                $options = $('[data-multi-options] select');
+                let variantHandle = '';
+                $.each($options, function(){
+                    variantHandle = variantHandle + $(this).val().toLowerCase();
+                });
+                $selectorTarget.find('[data-variant-handle=' + variantHandle + ']').prop('selected', true);
+            });
+
+
             // $(document).on('click', '[data-product-form] [data-variant-id]', function () {
             //     let $this = $(this);
             //     let variantId = $(this).attr('data-variant-id')

@@ -1,0 +1,36 @@
+<div class="c-product-form__link--size-guide">
+  <div class="c-btn--size-guide">
+    <a class="c-btn__link--size-guide" data-ajax-id="/pages/size-guide-{{ sizeGuideId }}" data-remodal-ajax="product.handle" data-remodal-target="modalSizeGuide" href="#modalSizeGuide" data-remodal>
+      <span class="c-btn__label--size-guide">Size & Fit Guide</span>
+      <span class="c-btn__icon">
+              {% include 'svg-icon' with {icon : 'icon-arrow-up'} %}
+            </span>
+    </a>
+  </div>
+  <div class="remodal" data-remodal-id="modalSizeGuide" data-remodal-options="hashTracking: false," >
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-ajax-content" data-ajax-content>
+      <div class="c-size-guide__loading">
+        Size Guide Loading...
+      </div>
+    </div>
+  </div>
+</div>
+<div class="l-btn-group">
+
+
+  {% for variant in product.variants %}
+    {% if variant.available %}
+      <div class="l-btn-group__btn">
+        <div class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
+      </div>
+    {% else %}
+      <div class="l-btn-group__btn">
+        <div class="c-btn--product-radio is-disabled" disabled="disabled">
+          {{ variant.title }}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
