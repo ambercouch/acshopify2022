@@ -21925,6 +21925,7 @@ const ACSTK = {
                     console.log("$oosBtn")
                     console.log($oosBtn)
                     $oosBtn.css('display', 'block')
+                    $oosBtn.attr('data-variant-id', variantId)
                 }else{
                     console.log('enabled')
                     $btnSubmit.prop('disabled', false);
@@ -21932,6 +21933,7 @@ const ACSTK = {
                     console.log("$oosBtn")
                     console.log($oosBtn)
                     $oosBtn.css('display', 'none')
+                    $oosBtn.attr('data-variant-id', variantId)
                 }
 
                 //Update form input
