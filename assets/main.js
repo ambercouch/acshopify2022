@@ -21448,15 +21448,16 @@ const ACSTK = {
                     const container = $(containerSelector);
                     const control = $(this);
                     $(this).on('click', function(e) {
+                        console.log('radio click')
                         e.preventDefault();
                         const state = control.attr('data-state');
                         if (state == 'on'){
                             console.log('this control is already on')
-                            return;
+                            //return;
                         }
-                        // toggele state of this controller
+                        // toggle state of this controller
                             ACSTK.fn.actStateToggleSelect(control, state);
-                        // toggele state of this container
+                        // toggle state of this container
                             ACSTK.fn.actStateToggleSelect(container, state);
                         // toggle off all other container
                         containers.not(container).each(function() {
