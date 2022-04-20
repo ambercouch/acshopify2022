@@ -76,8 +76,8 @@
               "content_body": "",
               "content_body_html": "<p class=\"u-col-w\">In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born. <\/p>\n<p class=\"u-col-w\">The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/muscle-compression-support-sleeves",
-              "content_btn_2_label": "Find Out More",
+              "content_btn_1_link": "shopify:\/\/collections\/pairs",
+              "content_btn_2_label": "Learn More",
               "content_btn_2_link": "shopify:\/\/pages\/the-story"
             }
           }
@@ -89,7 +89,7 @@
         "settings": {
           "title": "Birth of the bear section",
           "hide_title": true,
-          "block_layout": "2575",
+          "block_layout": "3366",
           "block_background_colour": "2",
           "block_background_image": "shopify:\/\/shop_images\/bg-repeat-2.png"
         }
@@ -272,7 +272,7 @@
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">MEET THE PACK.<\/h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
+              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">MEET THE PACK.<\/h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
               "content_btn_1_label": "Meet The Pack",
               "content_btn_1_link": "shopify:\/\/pages\/the-story",
               "content_btn_2_label": "Find Out More",
