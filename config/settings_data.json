@@ -34,7 +34,7 @@
             "type": "video",
             "settings": {
               "video_url": "https:\/\/www.youtube.com\/watch?v=YG2Fz9tqS5k",
-              "image": "shopify:\/\/shop_images\/Website_Desktop_copy.jpg",
+              "image": "shopify:\/\/shop_images\/1800x1000_788ef9a4-f2fd-4155-861e-1997f2fa01e1.jpg",
               "title": "BAMBOO JOINT SUPPORTS & MUSCLE SLEEVES",
               "button": "Slide title",
               "cta": "SHOP NOW",
@@ -51,7 +51,7 @@
           "show_overlay": true,
           "overlay_color": "#000000",
           "overlay_text": "#ffffff",
-          "overlay_opacity": 40
+          "overlay_opacity": 30
         }
       },
       "1642591167f3ea18b4": {
