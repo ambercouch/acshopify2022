@@ -1,5 +1,10 @@
 {
   "current": {
+    "checkout_header_image": "shopify:\/\/shop_images\/chbg.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
+    "checkout_logo_size": "large",
+    "checkout_accent_color": "#f26e22",
+    "checkout_button_color": "#f26e22",
     "sections": {
       "header": {
         "type": "header",
