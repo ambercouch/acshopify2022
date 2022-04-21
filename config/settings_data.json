@@ -16,8 +16,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "announcement_bar_enabled": true,
-          "announcement_bar_home_page_only": true,
+          "announcement_bar_enabled": false,
+          "announcement_bar_home_page_only": false,
           "announcement_bar_text": "FREE SHIPPING OVER £40",
           "announcement_bar_link": "",
           "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
@@ -68,6 +68,7 @@
       },
       "1642591167f3ea18b4": {
         "type": "ac-content-block",
+        "disabled": true,
         "blocks": {
           "60e2e60b-00bf-42f9-80ab-931c38bdb192": {
             "type": "content",
@@ -119,6 +120,7 @@
       },
       "1643016298f1c80f98": {
         "type": "ac-content-block",
+        "disabled": true,
         "blocks": {
           "9556bbc9-349b-4dce-968f-9b16fb632bb6": {
             "type": "content",
@@ -300,8 +302,8 @@
           "title": "Block Heading",
           "hide_title": true,
           "block_layout": "5050",
-          "block_background_colour": "2",
-          "block_background_image": "shopify:\/\/shop_images\/bhg-team-banner.png"
+          "block_background_colour": "t",
+          "block_background_image": "shopify:\/\/shop_images\/3453.jpg"
         }
       },
       "16431012843577f266": {
@@ -586,6 +588,126 @@
           "page_subtitle": "",
           "hide_page_content": true
         }
+      },
+      "1650543184447b7ae1": {
+        "type": "ac-content-block",
+        "blocks": {
+          "c81711ce-ff1d-4259-92cb-04b7585d8e75": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/2bcdeaa2-fbc6-4d6a-9559-43d11c4cd93d.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "f03a0c24-30ce-4dc3-9394-c64421fb1596": {
+            "type": "content",
+            "settings": {
+              "content_title": "<br> SUPERIOR WARMTH",
+              "content_body": "<p>Bamboo compression supports have accelerated heat retention properties. Enhancing your performance along with decreasing your recovery period and rehabilitation periods.  <\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "c81711ce-ff1d-4259-92cb-04b7585d8e75",
+          "f03a0c24-30ce-4dc3-9394-c64421fb1596"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "2575",
+          "block_background_colour": "t"
+        }
+      },
+      "16505434604cbd951f": {
+        "type": "ac-content-block",
+        "blocks": {
+          "49e37ea7-bb32-45fe-9cc6-2391f9ba53aa": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/d108a7fe-f95d-4721-9e2f-4a3d04685e57.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "4d3aaf41-7948-4db8-a8c2-6eda66e9e100": {
+            "type": "content",
+            "settings": {
+              "content_title": "<br> UNRIVALLED COMFORT",
+              "content_body": "<p>The comfort provided by the round structure of the bamboo fibres is non-irritating, the yarn also has a cross section filled with micro gaps which allows the fabric to breathe. <\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "49e37ea7-bb32-45fe-9cc6-2391f9ba53aa",
+          "4d3aaf41-7948-4db8-a8c2-6eda66e9e100"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "2575",
+          "block_background_colour": "t"
+        }
+      },
+      "16505434773cfa6f88": {
+        "type": "ac-content-block",
+        "blocks": {
+          "33296205-8417-4ec5-8647-58c83fa4a5f5": {
+            "type": "content",
+            "settings": {
+              "content_title": "",
+              "content_body": "",
+              "content_body_html": "",
+              "content_image": "shopify:\/\/shop_images\/0f58b619-541f-4755-847e-5cd3823c5e2c.png",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "bdb223b5-a8cc-4fc0-8226-0b7b477e8c13": {
+            "type": "content",
+            "settings": {
+              "content_title": "<br> RENWABLE RESOURCE",
+              "content_body": "<p>Bamboo is considered one of the world's most renewable resources due to its speed of growth in an array of conditions. <\/p>",
+              "content_body_html": "",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "33296205-8417-4ec5-8647-58c83fa4a5f5",
+          "bdb223b5-a8cc-4fc0-8226-0b7b477e8c13"
+        ],
+        "settings": {
+          "title": "Block Heading",
+          "hide_title": true,
+          "block_layout": "2575",
+          "block_background_colour": "t"
+        }
       }
     },
     "content_for_index": [
@@ -593,10 +715,13 @@
       "16430262408de1051e",
       "16430296842a0fc99f",
       "1643029741d3b07d30",
-      "1642591167f3ea18b4",
+      "16431012843577f266",
       "1643029835b6c91d25",
+      "1642591167f3ea18b4",
       "1643016298f1c80f98",
-      "16431012843577f266"
+      "1650543184447b7ae1",
+      "16505434604cbd951f",
+      "16505434773cfa6f88"
     ]
   },
   "presets": {
