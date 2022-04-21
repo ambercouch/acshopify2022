@@ -1,9 +1,13 @@
 {
   "current": {
+    "social_twitter_link": "https:\/\/twitter.com\/getabearhug",
+    "social_facebook_link": "https:\/\/facebook.com\/getabearhug",
+    "social_instagram_link": "https:\/\/instagram.com\/getabearhug",
+    "favicon": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
     "checkout_header_image": "shopify:\/\/shop_images\/chbg.jpg",
     "checkout_logo_image": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
     "checkout_logo_size": "large",
-    "checkout_body_background_color": "#f2f0f0",
+    "checkout_body_background_color": "#f6f6f6",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_color": "#ffffff",
     "checkout_accent_color": "#f26e22",
