@@ -8,7 +8,7 @@
   <!-- modclass {{ modClass }} ac-product-thumb.liquid -->
   {% if product.featured_image != blank %}
     <div class="c-product-thumb__feature-image{{ modClass }}">
-    <a class="c-product-thumb__link-image" href="{{ product.url | within: collection }}">
+    <a class="c-product-thumb__link-image" href="{{ product.url }}">
       {% include 'responsive-image' with
         image: product.featured_image,
         max_width: 700,
@@ -20,7 +20,7 @@
   <div class="c-product-thumb__info{{ modClass }}">
   <h4 class="c-product-thumb__heading{{ modClass }}">
     <span class="c-product-thumb__title">
-      <a class="c-product-thumb__link-title ac-product-title" href="{{ product.url | within: collection }}">{{ productTitle }}</a>
+      <a class="c-product-thumb__link-title ac-product-title" href="{{ product.url }}">{{ productTitle }}</a>
     </span>
   </h4>
   <div class="c-product-thumb__meta">

@@ -44,7 +44,7 @@
 {% endif %}
 <div class="c-item-thumb--product">
   <div class="c-item-thumb__featured-image">
-    <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__image-link">
+    <a href="{{ itemProduct.url  }}" class="c-item-thumb__image-link">
       <div class="c-featured-image--collection">
         {% include 'responsive-image' with
           image: productFeatuerImage,
@@ -72,7 +72,7 @@
     <div class="c-item-thumb__info">
       <h5 class="c-item-thumb__heading">
 
-        <a href="{{ itemProduct.url | within: collection }}" class="c-item-thumb__heading-link">
+        <a href="{{ itemProduct.url }}" class="c-item-thumb__heading-link">
         <span class="c-item-thumb__title">{{ productTitle }}</span>
         {% if productType != blank %}
         <span class="c-item-thumb__title-type">({{  productType }})</span>
