@@ -21745,6 +21745,7 @@ const ACSTK = {
                         // options
                         cellAlign: 'left',
                         contain: true,
+                        pageDots: false,
                     });
 
 
