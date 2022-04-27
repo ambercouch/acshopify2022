@@ -2,9 +2,10 @@
 
 {% assign add_to_cart_text = 'products.product.add_to_cart' | t  %}
 
+{% assign productCollections = product.collections | map: "handle" %}
 {% if product.handle contains 'pair' %}
     {% assign productTypeHandle = 'pair-' %}
-  {% elsif product.collections contains 'single-supports'  %}
+  {% elsif productCollections contains 'single-supports'  %}
     {% assign productTypeHandle = 'single-' %}
   {% else %}
     {% assign productTypeHandle = '' %}
@@ -18,7 +19,7 @@
   {% endif %}
 {% endfor %}
 
-<div class="c-product-form ac-test-product">
+<div class="c-product-form ac-test-{{ productCollections }}">
 {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', class:'c-product-form__form'%}
 
   <input type="hidden" name="id" value="{{ current_variant.id }}">
