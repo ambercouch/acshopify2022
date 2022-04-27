@@ -21414,7 +21414,7 @@ return Packery;
  * ACSTK v4
  *
  */
-console.log('youtube test video bg')
+console.log('youtube test mouse enter')
 const ACSTK = {
     common: {
         init: function () {
@@ -21677,15 +21677,17 @@ const ACSTK = {
             End Video BG
              */
 
-            $(document).on('mouseover', '[data-remodal-ajax]:not(.is-ajax-loaded,.is-ajax-failed)', function () {
+            $(document).on('mouseenter', '[data-remodal-ajax]:not(.is-ajax-loading,.is-ajax-loaded,.is-ajax-failed)', function () {
 
+                $(this).addClass('is-ajax-loading')
+                console.log(this);
                 console.log('mouse over remodal control')
                 let $clicker = $(this);
                 let targetId = $clicker.attr('data-remodal-target')
                 let $target = $('[data-remodal-id=' + targetId )
                 let ajaxUrl = $(this).attr('data-ajax-id')
 
-                let sizeGuideId = "knee"
+
                 $.ajax({
                     url: ajaxUrl,
                     data: {ajax:1},
@@ -21696,6 +21698,7 @@ const ACSTK = {
                     // because dataType is json 'data' is guaranteed to be an object
 
                     $clicker.addClass('is-ajax-loaded');
+                    $clicker.removeClass('is-ajax-loading');
 
                     let temp = $(data);
                     temp.find('.c-size-guide-table').remove()
@@ -21710,6 +21713,7 @@ const ACSTK = {
 
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     $clicker.addClass('is-ajax-failed');
+                    $clicker.removeClass('is-ajax-loading');
                     $target.addClass('is-ajax-failed')
                     let content = '<p>No size guide found</p>';
                     $('[data-ajax-content]', $target).html(content)
