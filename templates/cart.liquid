@@ -109,19 +109,28 @@
                             </button>
                           </div>
                         </div>
-
-                        <div class="c-item-thumb__control--cart-product-remove">
+                        <div class="c-item-thumb__control--remove-text">
                           <div class="c-cart-remove cart-remove">
-                            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
-                              {% include 'icon-close.liquid' %}
+                            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="">
+                              remove
                             </a>
                           </div>
                         </div>
+
+
 
                       </div>
 
                       <div class="c-item-thumb__container--cart-product-price">
                         <span class="c-item-thumb__line-price-money">{{ item.line_price | money }}</span>
+                      </div>
+
+                      <div class="c-item-thumb__control--cart-product-remove">
+                        <div class="c-cart-remove cart-remove">
+                          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
+                            {% include 'icon-close.liquid' %}
+                          </a>
+                        </div>
                       </div>
 
 
