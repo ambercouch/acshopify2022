@@ -20,6 +20,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+
+        {{ 'paymentfont.scss.css' | asset_url | stylesheet_tag }}
+      
 </head>
 <body id="siteBody" class="template-{{ template | handle }}" data-template="{{ template.name | handle }}" data-template-type="{{ template.suffix | replace : ' ', '_' | replace : '-', '_'}}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
 </html>
