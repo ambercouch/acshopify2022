@@ -1,0 +1,33 @@
+<div class="c-site-search-form">
+  <form  id="siteSearchForm" name="searchstore" class="c-site-search-form__form" action="/search" method="get" role="search" >
+    <label class="c-site-search-form__label" for="Search" class="label-hidden">
+      {{ 'general.search.placeholder' | t }}
+    </label>
+<div class="c-site-search-form__input-wrapper">
+  <div class="c-site-search-form__btn--search-submit">
+    <button id="searchSubmit" type="submit" class="c-btn--search-submit search-site__control--search">
+      {% include 'icon-search' %}
+      <span class="c-icon__fallback-text search-site__fallback-text">{{ 'general.search.submit' | t }}</span>
+    </button>
+  </div>
+
+
+    <input type="search"
+           name="q"
+           id="Search"
+           value="{{ search.terms | escape  | replace : '*' , ' ' | strip }}"
+           placeholder="{{ 'general.search.placeholder' | t }}"
+           class="c-site-search-form__input">
+
+  <input type="hidden" name="type" value="product,page" />
+
+<div class="c-site-search-form__btn--search-close">
+    <button id="searchControlClose"  class="c-btn--search-close search-site__control--close" data-control="siteSearch" data-state="off">
+      {% include 'icon-close' %}
+      <span class="c-icon__fallback-text search-site__fallback-text">Cancel</span>
+    </button>
+</div>
+</div>
+
+  </form>
+</div>

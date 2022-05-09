@@ -1,0 +1,54 @@
+<div data-section-id="{{ section.id }}" data-section-type="promotion">
+<div class="hero">
+  <div class="hero__carousel">
+    {% for block in section.blocks limit: section.blocks.size %}
+    <div class="hero__cell">
+      {% if block.settings.hero_url != '' %}
+      <a href="{{ block.settings.hero_url }}" class="hero__link">
+      <img src="{{ block.settings.hero_image | img_url: '1270x465' }}" alt="" class="hero__img">
+      </a>
+      {% else %}
+        <img src="{{ block.settings.hero_image | img_url: '1270x465' }}" alt="" class="hero__img">
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Slider",
+    "class": "site__hero",
+    "settings": [
+
+    ],
+    "blocks": [
+{
+"type": "hero",
+"name": "Hero Slide",
+"settings": [
+{
+"label": "Hero Image",
+"id": "hero_image",
+"type": "image_picker",
+"info": "Image size should be 1270px by 465px"
+},
+
+{
+"label": "Hero Url",
+"id": "hero_url",
+"type": "text",
+"info": "Link to a url eg. http://google.com"
+}
+]
+}
+    ],
+    "presets": [
+      {
+        "name": "Hero Slider",
+        "category": "Promotions"
+      }
+    ]
+  }
+{% endschema %}

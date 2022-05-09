@@ -1,0 +1,75 @@
+{% if page.metafields.global.gallery_title %}
+  {% assign galleryTitle = page.metafields.global.gallery_title %}
+{% else %}
+  {% assign galleryTitle = '#supertribe Gallery' %}
+{% endif %}
+
+{% if page.metafields.global.gallery_header_background %}
+  {% assign galleryHeaderBg = page.metafields.global.gallery_header_background  %}
+{% else %}
+  {% assign galleryHeaderBg = 3 %}
+{% endif %}
+
+{% if page.metafields.global.gallery_header_colour %}
+  {% assign galleryHeaderCol = page.metafields.global.gallery_header_colour  %}
+{% else %}
+  {% assign galleryHeaderCol = 'w' %}
+{% endif %}
+
+
+{% assign blog = blogs[galleryHandle] %}
+{% if blog.articles_count > 0 %}
+  <!--  blog.articles_count = {{  blog.articles_count }} -->
+<div class="l-gallery__header u-bgc-{{ galleryHeaderBg }}">
+  <div class="c-header--gallery">
+    <h2 class="c-header__heading--gallery">
+      <span class="c-header__title u-col-{{ galleryHeaderCol }} ">{{ galleryTitle }}</span>
+    </h2>
+  </div>
+</div>
+
+<div class="l-gallery__gallery test another-test-2">
+  <div class="c-gallery">
+    <div class="c-gallery__list">
+    {% for article in blog.articles %}
+      {% if article.image %}
+        <div class="c-gallery__item">
+          <div class="c-gallery__image lazyload" >
+            <a class="c-gallery__link-image" href="#modal-{{ article.id }}">
+              {% include 'responsive-image' with
+                image: article.image,
+                max_width: 700,
+                max_height: 700
+              %}
+            </a>
+          </div>
+          {% if article.metafields.global.slide_title %}
+          <div class="c-gallery__item-info">
+            <h5 class="c-gallery__item-heading">{{ article.metafields.global.slide_title }}</h5>
+          </div>
+          {% else %}
+         <!-- no metafield slide_title -->
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="remodal" data-remodal-id="modal-{{ article.id }}">
+        <button data-remodal-action="close" class="remodal-close"></button>
+
+        <div class="c-gallery__image lazyload" >
+
+            {% include 'responsive-image' with
+              image: article.image,
+              max_width: 1200,
+              max_height: 1200
+            %}
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

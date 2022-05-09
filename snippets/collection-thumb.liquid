@@ -1,0 +1,17 @@
+{%- if settingsId -%}
+  {%-  assign collectionSettings = settings -%}
+  {%-  include "collection-thumb-settings" -%}
+{% elsif  block.settings %}
+  {%-  assign collectionSettings = block.settings -%}
+  {%-  include "collection-thumb-settings" -%}
+  {% else %}
+  {%-  assign collectionSettings = null-%}
+{%- endif -%}
+
+{% if collectionSettings %}
+  <!-- collection-thumb-dynamic -->
+{% include "collection-thumb-dynamic" %}
+{%- else -%}
+  <!-- collection-thumb-default CTclassModifier {{ CTclassModifier }}-->
+  {% include "collection-thumb-default" %}
+{%- endif -%}

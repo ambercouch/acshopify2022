@@ -1,0 +1,7 @@
+{% if product.description == null or product.description == '' %}
+  <!-- description Blank -->
+  <p>{{ product.title }}</p>
+{% else %}
+  <!-- product description  -->
+  {{ product.description }}
+{% endif %}

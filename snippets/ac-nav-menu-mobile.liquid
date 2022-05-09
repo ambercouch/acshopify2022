@@ -1,0 +1,29 @@
+<nav class="c-nav-menu--mobile" role="navigation" >
+  <ul  class="c-nav-menu__list--mobile">
+    {% for link in linklists[section.settings.mobile_menu].links %}
+      {% if link.links != blank %}
+        <li  class="c-nav-menu__item--mobile">
+          <a  class="c-nav-menu__link--mobile" href="{{ link.url }}" data-control-radio="menuMobile" data-state="off" data-control="{{ link.title | handle }}">
+            <span  class="c-nav-menu__label--mobile">{{ link.title }} </span>
+            <span  class="c-nav-menu__icon--arrow-down">{% include 'icon-arrow-down' %}</span>
+          </a>
+          <ul class="c-nav-menu__list--mobile-sub-list" data-container-radio="menuMobile" data-state="off" data-container="{{ link.title | handle }}">
+            {% for childlink in link.links %}
+              <li  class="c-nav-menu__item--mobile-sub-item">
+                <a class="c-nav-menu__link--mobile-sub-link" href="{{ childlink.url }}">
+                  <span  class="c-nav-menu__mobile-sub-label">{{ childlink.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li class="c-nav-menu__item--mobile">
+          <a  class="c-nav-menu__link--mobile" href="{{ link.url }}">
+            <span  class="c-nav-menu__label--mobile">{{ link.title }} </span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

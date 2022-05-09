@@ -1,0 +1,64 @@
+
+<!-- slide blog - block type = {{ blockType }} -->
+
+{% assign blog = blogs[blockType] %}
+
+<section class="l-main__content-block anotheractest" data-section-id="{{ section.id }}" data-section-type="quotes" data-section-handle="{{ section.settings.title | handle }}">
+  <div class="c-image-layer">
+
+    {% comment %}
+    <div class="c-image-layer__background">
+      {% include 'ac-blobs' %}
+    </div>
+    {% endcomment %}
+
+    <div class="c-image-layer__content">
+      <div class="l-main__content-block-wrapper">
+        <div class="c-content-block--quote ">
+
+          {% comment %}
+
+          {% if section.settings.title != blank %}
+            <header class="c-content-block__header--quote">
+              <h2 class="c-content-block__heading--quote u-col-{{ cb_heading_colour_class }} u-fs-{{ cb_heading_size_class }}">
+                <span  class="c-content-block__title--quote">{{ section.settings.title | escape }}</span>
+              </h2>
+              {% if section.settings.cb_sub_title != blank %}
+                <h4 class="c-content-block__sub-heading">
+                  {{  section.settings.cb_sub_title }}
+                </h4>
+              {% endif %}
+            </header>
+          {% endif %}
+
+          {% endcomment %}
+
+
+          <div class="c-content-block__quote-list">
+            <div class="c-quote-list" id="Quotes-{{ blockType }}" data-count="{{ blog.articles_count }}">
+              <div class="c-quote-list__list">
+
+                {% for article in blog.articles %}
+
+
+                  <div class="c-quote-list__quote--{{ forloop.index }}">
+                    <blockquote class="c-quote">
+                      <span class="c-quote__icon">{% include 'icon-quote' %}</span>
+                      {% if article.content != blank %}
+                        <div class="c-quote__text ">{{ article.content }}</div>
+                      {% endif %}
+                      {% if article.title != blank %}
+                        <cite class="c-quote-list__quote-cite ">{{article.title }}</cite>
+                      {% endif %}
+                    </blockquote>
+                  </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- .l-main__content-block-wrapper -->
+    </div><!-- .c-image-layer__content -->
+  </div><!-- .c-image-layer__content -->
+</section>
