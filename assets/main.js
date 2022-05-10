@@ -21414,7 +21414,7 @@ return Packery;
  * ACSTK v4
  *
  */
-console.log('ac_shopify.js lazysizes')
+console.log('ac_shopify.js acs2022')
 const ACSTK = {
     common: {
         init: function () {
