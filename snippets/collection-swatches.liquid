@@ -1,6 +1,6 @@
 {% if settings.collection_swatches %}
   {% assign file_extension = 'png' %}
-<div class=""product-thumb__collection-swatches">
+<div class="product-thumb__collection-swatches">
   {% for option in product.options %}
     {% assign downcased_option = option | downcase %}
     {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
@@ -14,10 +14,58 @@
           {% assign values = values | join: ',' %}
           {% assign values = values | append: ',' | append: value %}
           {% assign values = values | split: ',' %}
+            {% assign valueHandle = value | replace : ' ', '' | downcase %}
+            {% case valueHandle  %}
+              {% when 'taupe' %}
+              {% assign htmlColour  = '#e5d5c9' %}
+            {% when 'bge' %}
+              {% assign htmlColour  = '#DFD5CA' %}
+            {% when 'tpe' %}
+            {% assign htmlColour  = '#e5d5c9' %}
+            {% when 'dgry' %}
+            {% assign htmlColour  = 'dimgrey' %}
+            {% when 'lgry' %}
+            {% assign htmlColour  = 'lightgrey' %}
+            {% when 'mgry' %}
+            {% assign htmlColour  = 'grey' %}
+            {% when 'gry' %}
+            {% assign htmlColour  = 'grey' %}
+            {% when 'grn' %}
+            {% assign htmlColour  = 'green' %}
+            {% when 'pnk' %}
+            {% assign htmlColour  = 'pink' %}
+            {% when 'bpnk' %}
+            {% assign htmlColour  = 'pink' %}
+            {% when 'blk' %}
+            {% assign htmlColour  = 'black' %}
+            {% when 'wht' %}
+            {% assign htmlColour  = 'white' %}
+            {% when 'blu' %}
+            {% assign htmlColour  = 'blue' %}
+            {% when 'lblu' %}
+            {% assign htmlColour  = 'lightblue' %}
+            {% when 'mstd' %}
+            {% assign htmlColour  = '#e1ad01' %}
+            {% when 'cream' %}
+            {% assign htmlColour  = 'lightyellow' %}
+            {% when 'neonyellow' %}
+            {% assign htmlColour  = '#FFF01F' %}
+            {% when 'lilac' %}
+            {% assign htmlColour  = '#DCD3E3' %}
+            {% when 'rust' %}
+            {% assign htmlColour  = '#C25A3C' %}
+            {% when 'nvy' %}
+            {% assign htmlColour  = '#022658' %}
+            {% when 'crml' %}
+            {% assign htmlColour  = '#C6733D' %}
+
+              {% else %}
+            {% assign htmlColour  = valueHandle  %}
+            {% endcase %}
           <div class="c-collection-swatches__swatch">
           <a href="{{ variant.url | within: collection }}" class="c-collection-swatches__swatch-link">
-            <!-- {{ value }} -->
-            <span class="c-collection-swatches__swatch-label" data-image="{{ variant.featured_image | product_img_url: '480x' }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' }}); background-position: center"></span>
+            <!-- valueHandle {{ valueHandle }} htmlColour  {{ htmlColour }}-->
+            <span class="c-collection-swatches__swatch-label" data-image="{{ variant.featured_image | product_img_url: '480x' }}" style="background-color: {{ htmlColour }}; background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' }}); background-position: center"></span>
           </a>
           </div>
           {% endunless %}

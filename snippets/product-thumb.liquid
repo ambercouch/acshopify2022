@@ -37,6 +37,8 @@
         </div>
       {% endif %}
     {% endif %}
+    {% include 'collection-swatches' %}
+
   </div>
   {% include 'logic-admin' %}
   {% if adminUser %}
@@ -45,5 +47,18 @@
   {% else %}
     <!-- Not Admin -->
   {% endif %}
+  <div class="product-thumb__quick-cart">
+    <div class="c-quick-cart">
+      <div class="c-quick-cart__controls">
+        <a  href="{{ variant.url | within: collection }}" class="c-quick-cart__control--more-info">More Info</a>
+        <a href="#modalQuickCart{{ variant.id }}" class="c-quick-cart__control--quick-cart">Add to Cart</a>
+      </div>
+      <div class="remodal" data-remodal-id="modalQuickCart{{ variant.id }}">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        {% assign prodClassModifier = "--q-cart" %}
+        {%  include "product" %}
+      </div>
+    </div>
+  </div>
 
 </div>

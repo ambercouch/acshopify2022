@@ -78,16 +78,17 @@
     {% unless customerAccess == 'restricted' %}
     <ul class="collection__list customerAccess-{{ customerAccess }}">
     {% for product in collection.products %}
-      {% for variant in product.variants %}
+
       {% include 'bold-product' with product, hide_action: 'skip' %}
-        {% if variant.available %}
+
           <li class="collection__item--layout4">
+            {% include 'product-thumb' %}
             {%  comment %}
-              {% include 'product-thumb' %}
+              {% include 'variant-thumb' %}
             {% endcomment %}
-            {% include 'variant-thumb' %}
+
           </li>
-        {% endif %}
+
 
     {% else %}
       {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
@@ -108,7 +109,7 @@
       {% else %}
         <p>{{ 'collections.general.no_matches' | t }}</p>
       {% endif %}
-      {% endfor %}
+
     {% endfor %}
     </ul>
       {% else %}
