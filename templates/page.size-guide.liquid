@@ -28,8 +28,6 @@
 {% if (page.metafields.global.youtube_url_size_guide) %}
   {% assign videoUrlArray =  page.metafields.global.youtube_url_size_guide | split: '/' %}
   {%  assign youtubeId =  videoUrlArray | last %}
-  <br>
-  {{ youtubeId }}
 {% else %}
  <!-- No video URL -->
 {% endif %}
