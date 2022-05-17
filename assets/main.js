@@ -21677,6 +21677,74 @@ const ACSTK = {
             End Video BG
              */
 
+            /*
+           Open Modal size guide with url hash and load ajax page
+            */
+
+            let urlHash = window.location.hash.substring(1);
+
+            console.log(urlHash);
+
+            if (urlHash == 'modalSizeGuide'){
+                let remodalId = '[data-remodal-id='+urlHash+']'
+                let $remodal = $(remodalId);
+                let $target = $remodal;
+                let inst = $remodal.remodal();
+                let $clicker = $('[data-remodal-ajax]')
+                let ajaxUrl = $clicker.attr('data-ajax-id')
+                inst.open();
+
+                $remodal.addClass('is-ajax-loading')
+
+                $.ajax({
+                    url: ajaxUrl,
+                    data: {ajax:1},
+                    // data: JSON.stringify({var:'val'}), // send data in the request body
+                    // contentType: "application/json; charset=utf-8",  // if sending in the request body
+                }).done(function(data, textStatus, jqXHR) {
+                    console.log('ajax is loaded')
+
+                    let response = $('<div />').html(data);
+                    // because dataType is json 'data' is guaranteed to be an object
+
+                    $clicker.addClass('is-ajax-loaded');
+                    $clicker.removeClass('is-ajax-loading');
+
+                    let temp = $(data);
+                    temp.find('.c-size-guide-table').remove()
+
+                    let contentTable = response.find('[data-ajax-content] .c-size-guide-table');
+
+                    $('[data-ajax-content]', $target).append(temp.find('[data-ajax-content]').children());
+                    $('[data-ajax-content] .rte', $target).after(contentTable);
+
+                    $target.addClass('is-ajax-loaded');
+                    $target.find('.c-size-guide__loading').remove();
+
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    console.log('ajax NOT loaded')
+                    $clicker.addClass('is-ajax-failed');
+                    $clicker.removeClass('is-ajax-loading');
+                    $target.addClass('is-ajax-failed')
+                    let content = '<p>No size guide found</p>';
+                    $('[data-ajax-content]', $target).html(content)
+                }).always(function(dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
+                    console.log('always');
+                });
+
+            }else{
+                console.log("no urlHash");
+                console.log(urlHash);
+            }
+
+            /*
+           END Open Modal
+            */
+
+
+            /*
+            Ajax load size guid on mouse event
+            */
             $(document).on('mouseenter', '[data-remodal-ajax]:not(.is-ajax-loading,.is-ajax-loaded,.is-ajax-failed)', function () {
 
                 $(this).addClass('is-ajax-loading')
@@ -21686,6 +21754,11 @@ const ACSTK = {
                 let targetId = $clicker.attr('data-remodal-target')
                 let $target = $('[data-remodal-id=' + targetId )
                 let ajaxUrl = $(this).attr('data-ajax-id')
+
+
+
+                console.log('$target')
+                console.log($target)
 
 
                 $.ajax({
@@ -21720,10 +21793,11 @@ const ACSTK = {
                 }).always(function(dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
                     console.log('always');
                 });
-
-
-
             });
+
+            /*
+           END Ajax load
+           */
 
             var $grid
             $grid = $('.l-thumb-list__list--blog').isotope({
