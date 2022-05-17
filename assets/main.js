@@ -21421,6 +21421,8 @@ const ACSTK = {
             //console.log('main.js - Common')
             $('body').addClass('jquery-loaded')
 
+            fitvids();
+
             // scroll top
             $("a[href='#top']").click(function() {
                 $('html, body').animate({ scrollTop: 0 }, 1000 );
@@ -21704,7 +21706,7 @@ const ACSTK = {
 
                     $.ajax({
                         url: ajaxUrl,
-                        data: {ajax: 1},
+                        data: {ajax: 1}
                         // data: JSON.stringify({var:'val'}), // send data in the request body
                         // contentType: "application/json; charset=utf-8",  // if sending in the request body
                     }).done(function (data, textStatus, jqXHR) {
@@ -21726,6 +21728,7 @@ const ACSTK = {
 
                         $target.addClass('is-ajax-loaded');
                         $target.find('.c-size-guide__loading').remove();
+                        fitvids();
 
                     }).fail(function (jqXHR, textStatus, errorThrown) {
                         console.log('ajax NOT loaded')
@@ -21736,6 +21739,8 @@ const ACSTK = {
                         $('[data-ajax-content]', $target).html(content)
                     }).always(function (dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
                         console.log('always');
+                        fitvids();
+
                     });
                 }
 
@@ -21774,6 +21779,7 @@ const ACSTK = {
                     // data: JSON.stringify({var:'val'}), // send data in the request body
                     // contentType: "application/json; charset=utf-8",  // if sending in the request body
                 }).done(function(data, textStatus, jqXHR) {
+
                     let response = $('<div />').html(data);
                     // because dataType is json 'data' is guaranteed to be an object
 
@@ -21791,6 +21797,8 @@ const ACSTK = {
                     $target.addClass('is-ajax-loaded');
                     $target.find('.c-size-guide__loading').remove();
 
+                    fitvids();
+
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     $clicker.addClass('is-ajax-failed');
                     $clicker.removeClass('is-ajax-loading');
@@ -21799,6 +21807,7 @@ const ACSTK = {
                     $('[data-ajax-content]', $target).html(content)
                 }).always(function(dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
                     console.log('always');
+                    fitvids();
                 });
             });
 

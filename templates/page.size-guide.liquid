@@ -25,6 +25,15 @@
   {% assign classHeroText = 'has-hero-text' %}
 {% endif %}
 
+{% if (page.metafields.global.youtube_url_size_guide) %}
+  {% assign videoUrlArray =  page.metafields.global.youtube_url_size_guide | split: '/' %}
+  {%  assign youtubeId =  videoUrlArray | last %}
+  <br>
+  {{ youtubeId }}
+{% else %}
+ <!-- No video URL -->
+{% endif %}
+
 <div class="l-main__page--static-page l-main__page--{{ page.title | handle }}">
   <div class="l-page--static-page l-page--{{ page.title | handle }}">
     <div class="l-page__header--static-page l-page__header--{{ page.title | handle }} {{ classHeroImage }} {{ classHeroText }} u-bgc-{{ classHeroBackground}}" role="banner">
@@ -54,7 +63,13 @@
         {% include 'svg-icon' {icon : iconId} %}
       </div>
 
-    </div>
+      {% if youtubeId %}
+      <div class="l-page__size-guide-video" >
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ youtubeId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      {% endif %}
+
+      </div>
 
   </div>
 </div>
