@@ -11,6 +11,7 @@
     {% assign productTypeHandle = '' %}
 {% endif %}
 
+
 {% assign sizeGuides = 'knee,ankle,thigh,wrist,elbow,calf,bearhug-tee' %}
 {% assign sizeGuideArray = sizeGuides | split : ',' %}
 {% for id in sizeGuideArray %}
@@ -51,6 +52,7 @@
       {% comment %}
         This product has multiple variant options
       {% endcomment %}
+     {% include 'ac-modal-size-guide-bundle' %}
       <div class="js c-product-form__options--multi" data-multi-options>
       {% for option in product.options_with_values %}
             {% if forloop.index0 > 4 %}
@@ -62,6 +64,7 @@
               {% endfor %}
             {% else %}
               <div class="c-product-form__input-wrapper--select selector-wrapper">
+
                 <label class="c-product-form__label--{{ option.name | handle }}" for="Option{{ option.position }}">
                   {{ option.name }}
                 </label>

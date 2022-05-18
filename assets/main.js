@@ -21694,8 +21694,6 @@ const ACSTK = {
                 console.log($remodal.length);
                 if ($remodal.length > 0) {
 
-
-
                     let $target = $remodal;
                     let inst = $remodal.remodal();
                     let $clicker = $('[data-remodal-ajax]')
@@ -21814,6 +21812,107 @@ const ACSTK = {
             /*
            END Ajax load
            */
+
+            $(document).on('mouseenter', '[data-remodal-ajax-bundle]:not(.is-ajax-loading,.is-ajax-loaded,.is-ajax-failed)', function () {
+
+                $(this).addClass('is-ajax-loading')
+                console.log(this);
+                console.log('mouse over remodal control')
+                let $clicker = $(this);
+                let targetId = $clicker.attr('data-remodal-target')
+                let $target = $('[data-remodal-id=' + targetId )
+                let ajaxUrl = $(this).data('ajax-id')
+
+                $target.addClass('is-size-guide-bundle')
+
+
+
+                console.log('$target')
+                console.log($target)
+                console.log('ajaxUrl')
+                console.log(ajaxUrl[0])
+
+
+
+                $.when(
+                    $.ajax({
+                    url: ajaxUrl[0],
+                    data: {ajax:1},
+                    // data: JSON.stringify({var:'val'}), // send data in the request body
+                    // contentType: "application/json; charset=utf-8",  // if sending in the request body
+                }).done(function(data, textStatus, jqXHR) {
+
+                    let response = $('<div />').html(data);
+                    // because dataType is json 'data' is guaranteed to be an object
+
+                    $clicker.addClass('is-ajax-loaded');
+                    $clicker.removeClass('is-ajax-loading');
+
+                    let temp = $(data);
+                    temp.find('.c-size-guide-table').remove()
+
+                    let contentTable = response.find('[data-ajax-content] .c-size-guide-table');
+
+                    $('[data-ajax-content]', $target).append(temp.find('[data-ajax-content]').children());
+                    $('[data-ajax-content] .rte:last', $target).after(contentTable);
+
+                    $target.addClass('is-ajax-loaded');
+                    $target.find('.c-size-guide__loading').remove();
+
+                    fitvids();
+
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    $clicker.addClass('is-ajax-failed');
+                    $clicker.removeClass('is-ajax-loading');
+                    $target.addClass('is-ajax-failed')
+                    let content = '<p>No size guide found</p>';
+                    $('[data-ajax-content]', $target).html(content)
+                }).always(function(dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
+                    console.log('always');
+                    fitvids();
+                })
+            ).then(
+                    $.ajax({
+                        url: ajaxUrl[1],
+                        data: {ajax:1},
+                        // data: JSON.stringify({var:'val'}), // send data in the request body
+                        // contentType: "application/json; charset=utf-8",  // if sending in the request body
+                    }).done(function(data, textStatus, jqXHR) {
+
+                        let response = $('<div />').html(data);
+                        // because dataType is json 'data' is guaranteed to be an object
+
+                        $clicker.addClass('is-ajax-loaded');
+                        $clicker.removeClass('is-ajax-loading');
+
+                        let temp = $(data);
+                        temp.find('.c-size-guide-table').remove()
+
+                        let contentTable = response.find('[data-ajax-content] .c-size-guide-table');
+
+                        $('[data-ajax-content]', $target).append(temp.find('[data-ajax-content]').children());
+                        $('[data-ajax-content] .rte:last', $target).after(contentTable);
+
+                        $target.addClass('is-ajax-loaded');
+                        $target.find('.c-size-guide__loading').remove();
+
+                        fitvids();
+
+                    }).fail(function(jqXHR, textStatus, errorThrown) {
+                        $clicker.addClass('is-ajax-failed');
+                        $clicker.removeClass('is-ajax-loading');
+                        $target.addClass('is-ajax-failed')
+                        let content = '<p>No size guide found</p>';
+                        $('[data-ajax-content]', $target).html(content)
+                    }).always(function(dataOrjqXHR, textStatus, jqXHRorErrorThrown) {
+                        console.log('always');
+                        fitvids();
+                    })
+                )
+
+            });
+
+
 
             var $grid
             $grid = $('.l-thumb-list__list--blog').isotope({
