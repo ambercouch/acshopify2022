@@ -1,8 +1,14 @@
 {% assign  productIds = product.metafields.global.bundle_products %}
 {% assign  productIdsArray = productIds | split : ',' %}
-{% capture productIdsAtt %}[{% for item in productIdsArray %}"/pages/size-guide-pair-{{ item }}"{% if forloop.last != true %},{% endif` %}{% endfor %}]{% endcapture %}
+{%- capture productIdsAtt -%}
+  [{%- for item in productIdsArray -%}
+  {% assign productType = 'pair-' %}
+  {% if item == "bearhug-tee" %}{% assign productType = '' %}{% endif %}
+  "/pages/size-guide-{{ productType }}{{ item }}"{% if forloop.last != true %},{% endif %}
+{%- endfor -%}]
+{%- endcapture -%}
 
-
+{% if productIdsAtt != "[]" %}
 <div class="c-product-form__link--size-guide">
   <div class="c-btn--size-guide">
     <a class="c-btn__link--size-guide" data-ajax-id='{{ productIdsAtt }}' data-remodal-ajax-bundle="{{  product.handle }}" data-remodal-target="modalSizeGuide" href="#modalSizeGuide" data-remodal>
@@ -21,3 +27,4 @@
     </div>
   </div>
 </div>
+{% endif %}
