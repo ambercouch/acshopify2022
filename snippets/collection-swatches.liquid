@@ -65,7 +65,11 @@
           <div class="c-collection-swatches__swatch">
           <a href="{{ variant.url | within: collection }}" class="c-collection-swatches__swatch-link">
             <!-- valueHandle {{ valueHandle }} htmlColour  {{ htmlColour }}-->
-            <span class="c-collection-swatches__swatch-label" data-image="{{ variant.featured_image | product_img_url: '480x' }}" style="background-color: {{ htmlColour }}; background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' }}); background-position: center"></span>
+            <span class="c-collection-swatches__swatch-label"
+                  data-image="{{ variant.featured_image | product_img_url: '480x' }}"
+                  style="background-color: {{ htmlColour }};
+                      background-image: url({{ variant.featured_image | product_img_url: '50x' }});
+                      background-position: center"></span>
           </a>
           </div>
           {% endunless %}
