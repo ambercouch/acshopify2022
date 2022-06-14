@@ -1,3 +1,4 @@
+
 {% if templateProduct != nil %}
   <!-- templateProduct not nil -->
 {% assign itemProduct = templateProduct %}
@@ -28,6 +29,8 @@
   {% assign productType = "Single" %}
   {% elsif collection.handle contains 'pairs' or collection.title contains 'pairs' %}
   {% assign productType = "Pair" %}
+  {% elsif collection.handle contains 'bundle' or collection.title contains 'bundle' %}
+  {% assign productType = "Bundle" %}
 {% endif %}
 
 {% comment %}
@@ -54,9 +57,11 @@
       </div>
 
     </a>
+
     {% if template == 'collection' %}
     <div class="c-item-thumb__quick-cart">
       <div class="c-quick-cart">
+
         <div class="c-quick-cart__controls">
           <a href="#modalQuickCart{{ itemProduct.id }}" class="c-quick-cart__control--quick-cart">Quick Buy</a>
         </div>
@@ -64,6 +69,7 @@
           <button data-remodal-action="close" class="remodal-close"></button>
           {% assign prodClassModifier = "--q-cart" %}
           {%  include "ac-product-remodal" %}
+
         </div>
       </div>
     </div>

@@ -2,9 +2,9 @@
 {% assign  productIdsArray = productIds | split : ',' %}
 {%- capture productIdsAtt -%}
   [{%- for item in productIdsArray -%}
-  {% assign productType = 'pair-' %}
-  {% if item == "bearhug-tee" %}{% assign productType = '' %}{% endif %}
-  "/pages/size-guide-{{ productType }}{{ item }}"{% if forloop.last != true %},{% endif %}
+  {% assign productTypeSlug = 'pair-' %}
+  {% if item == "bearhug-tee" %}{% assign productTypeSlug = '' %}{% endif %}
+  "/pages/size-guide-{{ productTypeSlug }}{{ item }}"{% if forloop.last != true %},{% endif %}
 {%- endfor -%}]
 {%- endcapture -%}
 
