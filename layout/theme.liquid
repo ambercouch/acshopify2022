@@ -18,7 +18,7 @@
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
         {{ 'paymentfont.scss.css' | asset_url | stylesheet_tag }}
-      
+
 </head>
 <body id="siteBody" class="template-{{ template | handle }}" data-template="{{ template.name | handle }}" data-template-type="{{ template.suffix | replace : ' ', '_' | replace : '-', '_'}}">
 
@@ -47,5 +47,6 @@
 </div>
 
 {% include 'subscribe-it-helper' %}{% render 'spurit_po2_theme_snippet' %}
+{% include 'ac-klaviyo-oos' %}
 </body>
 </html>
