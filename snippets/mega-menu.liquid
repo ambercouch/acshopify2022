@@ -1,6 +1,11 @@
 <div class="mega-menu">
+  <div  class="mega-menu__header">
+    <span id="ButtonClose{{ link.handle }}" class="mega-menu__close" data-control="{{ link.handle }}" data-state="off">
+    {% include 'icon-close' %}
+  </span>
+  </div>
   <div class="mega-menu__all-link">
-    <a class="mega-menu__link--all" href="{{ link.url }}"><span class="mega-menu__link-label">All {{ link.title }}</span></a>
+    <a class="mega-menu__link--all" href="{{ link.url }}"><span class="mega-menu__link-label">Browse All {{ link.title }}</span></a>
   </div>
   {% for list in menus %}
   {%  assign megaListHandle = child_list_handle | append : '-' | append : list %}
