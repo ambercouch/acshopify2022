@@ -83,19 +83,14 @@
 
         <div class="l-page-after__stockists">
           <h4 class="l-page-after__heading--stockists">Stockists</h4>
-          <div class="l-page-after__thumb-list">
-            <div class="l-item-list--stockist">
-              <div class="l-item-list__list">
-          {% for stockist in blogs['bearhug-stockists'].articles %}
-                <div class="l-item-list__item is-product-id-{{ product.id }}">
-                  <div class="l-item-list__item-thumb">
-          {% include 'acstk-item-thumb-stockist' with {templateObject : stockist} %}
-                  </div>
-                </div>
-          {% endfor %}
-              </div>
-            </div>
-          </div>
+          <!-- Start Stockist.co widget -->
+          <div data-stockist-widget-tag="u12924">Loading store locator from <a href="https://stockist.co">Stockist store locator</a>...</div>
+          <script>// <![CDATA[
+              (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;
+                  k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);
+              })(document,'script','//stockist.co/embed/v1/widget.min.js');
+              // ]]></script>
+          <!-- End Stockist.co widget -->
         </div>
 
       </div>
