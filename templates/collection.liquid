@@ -1,7 +1,7 @@
 <!-- collection.liquid -->
 {%  include  'logic-access'%}
 {%  include  'logic-customer'%}
-{% paginate collection.products by 16%}
+{% paginate collection.products by 48%}
   <div class="collection">
     <div class="collection__breadcrumbs">
       {% assign BCClassModifier = "--collection"  %}
@@ -79,6 +79,8 @@
             <ul class="collection__list customerAccess-{{ customerAccess }}">
               {% for product in collection.products %}
 
+                {% if product.available %}
+
                 {% include 'bold-product' with product, hide_action: 'skip' %}
 
                 <li class="collection__item--layout4">
@@ -89,6 +91,7 @@
 
                 </li>
 
+                {% endif %}
 
               {% else %}
                 {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
