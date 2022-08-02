@@ -12,7 +12,8 @@
 {% endif %}
 
 
-{% assign sizeGuides = 'knee,ankle,thigh,wrist,elbow,calf,bearhug-tee' %}
+{% assign sizeGuides = shop.metafields.acbhg.product_list %}
+<!-- shop.metafields.acbhg.product_list {{ shop.metafields.acbhg.product_list }} -->
 {% assign sizeGuideArray = sizeGuides | split : ',' %}
 {% for id in sizeGuideArray %}
   {% if product.handle contains id %}
