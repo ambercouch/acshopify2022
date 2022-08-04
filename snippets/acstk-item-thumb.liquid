@@ -24,15 +24,18 @@
 {% comment %}
   Check if this collection is singles or pairs
 {% endcomment  %}
-
+{% if template.name contains "collection" %}
 {% if collection.handle contains 'single' or collection.title contains 'single' %}
   {% assign productType = "Single" %}
   {% elsif collection.handle contains 'pairs' or collection.title contains 'pairs' %}
   {% assign productType = "Pair" %}
   {% elsif collection.handle contains 'bundle' or collection.title contains 'bundle' %}
   {% assign productType = "Bundle" %}
+  {% else %}
+    {% assign productType = nil %}
 {% endif %}
 
+{% else %}
 {% comment %}
   Check if the product is in collection singles or pairs
 {% endcomment  %}
@@ -44,7 +47,13 @@
       {% assign productType = "Single" %}
       {% elsif productCollections contains "pairs"  or productCollections contains "Pairs" %}
         {% assign productType = "Pair" %}
+      {% elsif productCollections contains "bundle"  or productCollections contains "Bundle" %}
+      {% assign productType = "Bundle" %}
+      {% else  %}
+        {% assign productType = nil %}
 {% endif %}
+{% endif %}
+
 <div class="c-item-thumb--product">
   <div class="c-item-thumb__featured-image">
     <a href="{{ itemProduct.url  }}" class="c-item-thumb__image-link">
