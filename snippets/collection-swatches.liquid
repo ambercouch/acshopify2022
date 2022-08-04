@@ -3,7 +3,7 @@
 <div class="product-thumb__collection-swatches">
   {% for option in product.options %}
     {% assign downcased_option = option | downcase %}
-    {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
+
       {% assign option_index = forloop.index0 %}
       {% assign values = '' %}
       <div class="c-collection-swatches">
@@ -77,7 +77,7 @@
 
       </div>
       </div>
-    {% endif %}
+
   {% endfor %}
   {% else %}
     <!-- collection swatches disabled -->
