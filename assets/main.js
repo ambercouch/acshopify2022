@@ -21978,6 +21978,21 @@ const ACSTK = {
     product: {
         init: function () {
 
+
+            let $questionBtn = $('.stamped-summary-actions-newquestion')
+
+            $questionBtn.addClass('ac-some-btn-class')
+
+            let faqHref = $('.c-nav-menu__list--mobile-2 a:first-of-type').attr('href')
+            $questionBtn.after('<a class="ac-faq-btn">Read our FAQs</a>')
+            $('.ac-faq-btn').attr('href', faqHref)
+
+            let testReviews = "Test reviews btn"
+
+
+
+            console.log(testReviews)
+
             console.log('main.js - Product')
 
             let wrapperClass = '.c-product-gallery__wrapper';
