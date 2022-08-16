@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>{% render 'pagefly-head' %}
+  {% include "ac-critical-css" %}
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -8,8 +9,7 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
-  {{ 'main.css' | asset_url | stylesheet_tag }}
-  {{ 'main.js' | asset_url | script_tag }}
+
 
   <!-- Google Console verification -->
   <meta name="google-site-verification" content="eIdB9QP0KPh_pS-t5ow6rRcRiDuy70PxLrpvsmmsXcU" />
@@ -64,5 +64,7 @@
 {% render 'spurit_po2_theme_snippet' %}
 <!-- get oos -->
 {% include 'ac-klaviyo-oos' %}
+{{ 'main.css' | asset_url | stylesheet_tag }}
+{{ 'main.js' | asset_url | script_tag }}
 </body>
 </html>
