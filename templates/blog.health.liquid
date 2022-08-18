@@ -4,8 +4,8 @@
 
 
 
-<div class="blog blog-health">
-  <div class="blog__header">
+<div class="blog blog--health">
+  <div class="blog__header blog__header--health">
     <h1 class="blog__heading">{{ blog_title }}</h1>
   </div>
   <div class="blog__blog-cats">
@@ -41,7 +41,7 @@
     <ul class="blog__list">
       {% for article in blog.articles %}
         <li class="blog__item">
-          {% include 'blog-article-preview' %}
+          {% include 'blog-article-preview-health' %}
         </li>
       {% endfor %}
     </ul>
