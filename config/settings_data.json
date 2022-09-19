@@ -412,6 +412,7 @@
         "blocks": {
           "b093688a-241a-4f28-a3df-6b42adab0583": {
             "type": "image_content",
+            "disabled": true,
             "settings": {
               "content_title": "Couch to 5K",
               "content_body": "<p>4 Week Training Plan<\/p>",
