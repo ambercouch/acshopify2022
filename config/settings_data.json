@@ -712,6 +712,60 @@
           "block_layout": "2575",
           "block_background_colour": "t"
         }
+      },
+      "page-ambassador-template": {
+        "type": "page-ambassador-template",
+        "blocks": {
+          "dfa2ef84-cc9a-4527-b7b9-6ef81f2b0148": {
+            "type": "section_title",
+            "settings": {
+              "section_title": "The Team",
+              "block_background_colour": "t"
+            }
+          },
+          "7ba2c3d9-5737-43b8-9335-2216aa185ff4": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "RHYS GEORGE",
+              "content_role": "CEO",
+              "content_body": "<p>FMCG Commercial Background. Mentor to multiple businesses and founder of Visionary Group and Visionary Food Solutions.<br\/>Leading the Bearhug pack since its inception in 2016.<br\/><em>Believes he has a 100mph squash serve. X<\/em><\/p>",
+              "content_image": "shopify:\/\/shop_images\/ambassador-rhys.jpg",
+              "block_background_colour": "t",
+              "block_direction": "",
+              "content_btn_1_label": "Linkedin",
+              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/startupandscaleupceo\/",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "5a6bac34-b24a-4aa9-8e94-945571b677e8": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "ALEXANDER DAVIES",
+              "content_role": "COO",
+              "content_body": "<p>Joined Bearhug as a graduate in 2018 (read Civil Engineering) as the brands first hire.<br\/><em>Fancies himself as a part time adventurer.<\/em><\/p>",
+              "content_image": "shopify:\/\/shop_images\/ambassador-alexandor.jpg",
+              "block_background_colour": "t",
+              "block_direction": "",
+              "content_btn_1_label": "Linkedin",
+              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/alexanderbrandbuilder\/",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "dfa2ef84-cc9a-4527-b7b9-6ef81f2b0148",
+          "7ba2c3d9-5737-43b8-9335-2216aa185ff4",
+          "5a6bac34-b24a-4aa9-8e94-945571b677e8"
+        ],
+        "settings": {
+          "page_title": "Meet the Pack",
+          "page_subtitle": "<p>Bearhug.s vision is to create an inclusive supportive community connected through activity<\/p><p>That starts with the people behind the brand, found<br\/>out how Bearhug was born and meet the team<br\/>below.<br\/><\/p>",
+          "page_hashtag": "<p>GET A BEARHUG | GET MOVING<\/p>",
+          "hero_image": "shopify:\/\/shop_images\/page-header-ambassador.jpg",
+          "hide_page_content": true
+        }
       }
     },
     "content_for_index": [
