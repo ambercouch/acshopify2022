@@ -11,6 +11,11 @@
   {% else %}
     {% assign pageHandle = page.handle %}
 {% endif %}
+{% if shop.metafields.acbhg.contact_address %}
+  {% assign contactAddress =  shop.metafields.acbhg.contact_address %}
+{% else %}
+  {% assign contactAddress =  shop.address.summary %}
+{% endif %}
 
 
 {% if page.metafields.global.hero_image %}
@@ -75,7 +80,7 @@
           <h4 class="l-page-after__heading">Location</h4>
           <div class="l-page-after__content--address">
             {{ shop.name }},
-            {{ shop.address.summary }}
+            {{ contactAddress }}
           </div>
         </div>
       </div>
