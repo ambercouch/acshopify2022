@@ -8,16 +8,8 @@
   <div class="customer-account__info">
     <!-- customerAccess {{ customerAccess }} -->
     {% if customerAccess == 'inactive' %}
-      <div class="customer-account__notice">
-        <div class="customer-account__notice-header" >
-        <h6 class="customer-account__notice-heading" >Account Notice</h6>
-        </div>
-          <div class="customer-account__notice-content" >
-        <p><small>Your account is inactive and currently under review. We will review your account shortly and email you once it has been activated.</small></p>
-        </div>
-      </div>
-
-        {% endif %}
+      {% include 'account-notice-inactive' %}
+    {% endif %}
     <p>Hi {{ customer.first_name | capitalize }}, you are now logged into your <strong>Tempest Designs</strong> customer account.</p>
     <p>This is your account area, here you can find details of your <a href="#orderHistory">order history</a> and your <a href="#accountDetails">account details</a>. Please use the <a href="/account/login#recover" >password reset form</a>, If you need to reset your password</p>
     {% if customer.tags contains 'little gems' %}

@@ -75,47 +75,8 @@
           {% endif %}
 
 
-          {% unless customerAccess == 'restricted' %}
-            <ul class="collection__list customerAccess-{{ customerAccess }}">
-              {% for product in collection.products %}
+          {% unless customerAccess == 'full' %}
 
-                {% if product.available %}
-
-                {% include 'bold-product' with product, hide_action: 'skip' %}
-
-                <li class="collection__item--layout4">
-                  {% include 'product-thumb' %}
-                  {%  comment %}
-                    {% include 'variant-thumb' %}
-                  {% endcomment %}
-
-                </li>
-
-                {% endif %}
-
-              {% else %}
-                {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
-                  {% for i in (1..8) %}
-                    <a href="#">
-                      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-                      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
-                    </a>
-
-                    <p>
-                      <a href="#">{{ 'homepage.onboarding.product_title' | t }}</a>
-                    </p>
-
-                    <p>
-                      {{ 1999 | money }}
-                    </p>
-                  {% endfor %}
-                {% else %}
-                  <p>{{ 'collections.general.no_matches' | t }}</p>
-                {% endif %}
-
-              {% endfor %}
-            </ul>
-            {% else %}
             <!-- Restricted Access -->
             <ul class="collection__list customerAccess-{{ customerAccess }} ">
               {% for product in collection.products | limit: 3 %}
@@ -146,25 +107,72 @@
 
               {% endfor %}
             </ul>
-            <footer class="collection__footer">
-              <div class="collection__wholesale-info">
-                <p>To you want to buy wholesale jewellery? Sign in or <a href="/account/register">sign up</a> for an account now.</p>
-              </div>
+            {% if customerAccess == 'restricted' %}
+              <footer class="collection__footer">
+                <div class="collection__wholesale-info">
+                  <p>Do you want to buy wholesale clothes and jewellery? Sign in or <a href="/account/register">sign up</a> for an account now.</p>
+                </div>
 
-              {% include 'customer-login-form-login' %}
-              {% include 'customer-login-form-recover' %}
-            </footer>
+                {% include 'customer-login-form-login' %}
+                {% include 'customer-login-form-recover' %}
+              </footer>
+            {% endif %}
+
+            {% else %}
+            <ul class="collection__list customerAccess-{{ customerAccess }}">
+              {% for product in collection.products %}
+
+                {% if product.available %}
+
+                  {% include 'bold-product' with product, hide_action: 'skip' %}
+
+                  <li class="collection__item--layout4">
+                    {% include 'product-thumb' %}
+                    {%  comment %}
+                      {% include 'variant-thumb' %}
+                    {% endcomment %}
+
+                  </li>
+
+                {% endif %}
+
+              {% else %}
+                {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+                  {% for i in (1..8) %}
+                    <a href="#">
+                      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+                    </a>
+
+                    <p>
+                      <a href="#">{{ 'homepage.onboarding.product_title' | t }}</a>
+                    </p>
+
+                    <p>
+                      {{ 1999 | money }}
+                    </p>
+                  {% endfor %}
+                {% else %}
+                  <p>{{ 'collections.general.no_matches' | t }}</p>
+                {% endif %}
+
+              {% endfor %}
+            </ul>
           {% endunless %}
 
+          {% if customerAccess == 'inactive' %}
+            {% include 'account-notice-inactive' %}
+          {% endif %}
+
         </div>
-        {% unless customerAccess == 'restricted' %}
+        {% if customerAccess == 'full' %}
         <footer class="collection__footer">
           {% if paginate.pages > 1 %}
             {% include 'pagination' %}
           {% endif %}
         </footer>
       </div>
-      {% endunless %}
+      {% endif %}
     </div>
   </div>
 {% endpaginate %}
