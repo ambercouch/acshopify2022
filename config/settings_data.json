@@ -195,7 +195,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/bhg-t-shirt-front.png",
+              "content_image": "shopify:\/\/shop_images\/Untitled.gif",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -205,8 +205,8 @@
           "dbb27682-8378-4f8c-9a61-5e12359d928a": {
             "type": "content",
             "settings": {
-              "content_title": "CLOTHING",
-              "content_body": "<p>Our range of apparel can be worn while training, playing or competing, whether in the gym, on the tennis court, golf course or running in your local parkrun.<\/p>",
+              "content_title": "30 DAY GUARANTEE",
+              "content_body": "<p><em><strong>Bearhug 30 day money back guarantee!<\/strong><\/em><br\/><\/p><p>Try any product for 30 days and if you're not happy and don't want to be part of the pack get your money back - <strong>swap sizes or product for free too!<\/strong><\/p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "shopify:\/\/collections\/clothing",
@@ -232,8 +232,8 @@
           "25a105cc-807a-4346-9a35-90bfa500b08a": {
             "type": "content",
             "settings": {
-              "content_title": "BUNDLES",
-              "content_body": "<p>Products are sold in variety of bundles all of which are discounted compared to purchasing them singularly.<\/p>",
+              "content_title": "CLOTHING & BUNDLES",
+              "content_body": "<p>Products are sold in variety of bundles all of which are discounted compared to purchasing them singularly.<br\/><br\/>Our range of apparel can be worn while training, playing or competing, whether in the gym, on the tennis court, golf course or running in your local parkrun.<\/p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "shopify:\/\/collections\/bundles",
