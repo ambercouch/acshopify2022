@@ -110,11 +110,11 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "BEST SELLERS",
+          "title": "PRIME DAY FLASH SALE",
           "subtitle": "",
           "show_description": true,
           "description_override": "",
-          "collection": "frontpage",
+          "collection": "summer-sale",
           "product_limit": 4
         }
       },
