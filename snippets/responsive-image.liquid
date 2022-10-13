@@ -75,7 +75,7 @@
 {%- assign image_widths = image_widths | strip -%}
 
 <div id="ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="c-featured-image__wrapper {{ wrapper_class }}" {{ wrapper_attributes }}>
-  <img id="Image-{{ image.id }}-{{ responsive_image_counter }}"
+  <img loading="lazy" id="Image-{{ image.id }}-{{ responsive_image_counter }}"
     class="c-featured-image__img lazyload {{ image_class }}"
     src="{{ thumb_img_url }}"
     data-src="{{ img_url }}"
@@ -89,5 +89,5 @@
 </div>
 
 <noscript>
-  <img class="{{ image_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+  <img loading="lazy"data-state=""  class="{{ image_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
 </noscript>
