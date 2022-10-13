@@ -308,6 +308,7 @@
       },
       "16431012843577f266": {
         "type": "ac-newsletter",
+        "disabled": true,
         "settings": {
           "heading": "#JOINTHEPACK",
           "subheading": "<p>Keep up to date with the #packlife<\/p>",
