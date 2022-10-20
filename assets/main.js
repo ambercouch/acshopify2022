@@ -21414,7 +21414,7 @@ return Packery;
  * ACSTK v4
  *
  */
-console.log('ac_shopify.js acs2022')
+console.log('ac_shopify.js acs2022 remodal ajax')
 const ACSTK = {
     common: {
         init: function () {
@@ -21700,7 +21700,42 @@ const ACSTK = {
                 }
             });
 
+            /*
+           Ajax load size guid on mouse event
+           */
+            $(document).on('opening', '[data-remodal-id="modalProductVideo"]', function () {
+                console.log('some Modal is opening');
+
+
+
+               let $iframe = $('[data-remodal-id="modalProductVideo"]').find('iframe')
+
+                $iframe.attr('src', $iframe.attr('data-src'))
+                fitvids();
+
+
+
+            });
+
+            $(document).on('closing', '[data-remodal-id="modalProductVideo"]', function () {
+                console.log('some Modal is opening');
+
+
+
+                let $iframe = $('[data-remodal-id="modalProductVideo"]').find('iframe')
+
+                $iframe.attr('src', '')
+
+
+
+            });
+
+            /*
+           END Ajax load
+           */
+
         }
+
     },
     collection: {
         init: function () {
