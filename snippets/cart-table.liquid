@@ -15,9 +15,9 @@
     {%- assign low_price = settings.low_price_product | times: 1  -%}
     {%- assign low_price_2 = settings.low_price_product_2 | times: 1  -%}
     {%- assign pTypeMinimums = 'Clothing' -%}
-    {%- assign pTypeMinQty = 2 -%}
+    {%- assign pTypeMinQty = low_cost_minimum_qty -%}
     {%- assign pTypeMinimums2 = 'Handbags' -%}
-    {%- assign pTypeMinQty2 = 1 -%}
+    {%- assign pTypeMinQty2 = low_cost_minimum_qty_2 -%}
     {%- assign pType = item.product.type -%}
     {%- assign varInvQty = item.variant.inventory_quantity | times : 1 -%}
 
