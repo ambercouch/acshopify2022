@@ -34,7 +34,7 @@
   {% endif %}
 </script>
 {% assign commonLoad = true %}
-{% if request.page_type == 'collection' or request.page_type == 'search' or request.page_type == 'product' or request.page_type == 'cart' or request.page_type == 'index' %}
+{% if request.page_type == 'collection' or request.page_type == 'search' or request.page_type == 'product' or request.page_type == 'cart' or request.page_type == 'index' or request.page_type == 'page' %}
 {% if commonLoad %}
   <script src="https://amaicdn.com/discountmanager/common.js"></script>
   <link href="https://amaicdn.com/discountmanager/common.css" rel="stylesheet" type="text/css" media="all">
