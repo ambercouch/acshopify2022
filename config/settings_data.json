@@ -733,6 +733,7 @@
               "content_image": "shopify:\/\/shop_images\/ambassador-rhys.jpg",
               "block_background_colour": "t",
               "block_direction": "",
+              "block_layout": "has-layout-2575",
               "content_btn_1_label": "Linkedin",
               "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/startupandscaleupceo\/",
               "content_btn_2_label": "Find Out More",
@@ -748,8 +749,72 @@
               "content_image": "shopify:\/\/shop_images\/ambassador-alexandor.jpg",
               "block_background_colour": "t",
               "block_direction": "",
+              "block_layout": "has-layout-2575",
               "content_btn_1_label": "Linkedin",
               "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/alexanderbrandbuilder\/",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "87d1be8c-a113-4b2a-898f-7d6d23d2fd5d": {
+            "type": "content",
+            "settings": {
+              "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png",
+              "block_background_size": "cov",
+              "block_background_colour": "2",
+              "block_direction": "",
+              "content_title": "Birth of <br> the Bear.",
+              "content_body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born.<\/p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "shopify:\/\/collections\/single-supports",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "461f7d58-7d31-466a-a788-3e60e6afab1c": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "NICK WILLIAMS",
+              "content_role": "RUGBY PLAYER",
+              "content_body": "<p>The now retired talismanic number eight, who established himself as one of the most destructive Guinness PRO14 players of his generation. Ex. Auckland Blues, Munster, Aironi, Ulster & Cardiff Rugby, Cites Bearhug calf sleeves as a key part of prolonging his career.<br\/><\/p>",
+              "content_image": "shopify:\/\/shop_images\/NW_HS.png",
+              "block_background_colour": "t",
+              "block_direction": "",
+              "block_layout": "has-layout-33",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "1d72eeb6-3095-412c-96e0-955e3ba5c615": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "KATE STRONG",
+              "content_role": "ADVENTURER",
+              "content_body": "<p>World Champion Triathlete, Engineer, Plant-based Adventurer, Coach & Consultant, Entrepreneur, Reiki Master, Philanthropist and 3 Time World Record Holder. Judge Kate not by her titles and accolades but on the action she takes today. Kate’s favourite products are the Bearhug Elbow supports!<br\/><\/p>",
+              "content_image": "shopify:\/\/shop_images\/Web_Page_Page_2_Image_0001.jpg",
+              "block_background_colour": "t",
+              "block_direction": "",
+              "block_layout": "has-layout-33",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
+              "content_btn_2_label": "Find Out More",
+              "content_btn_2_link": ""
+            }
+          },
+          "52d21cee-e06c-410b-8a0c-981a65c0f519": {
+            "type": "image_content",
+            "settings": {
+              "content_title": "RICHARD SLOCOCK",
+              "content_role": "CLIMBER",
+              "content_body": "<p>After losing his sight in 2016, Richard decided to truly commit to his climbing and within 12 months represented Team GB. He now holds the position as the, UK number 1 and World number 2 visually impaired climber. Richard swears by the Bearhug Wrist supports and trains in them everyday<\/p>",
+              "content_image": "shopify:\/\/shop_images\/Web_Page_Page_2_Image_0006.jpg",
+              "block_background_colour": "t",
+              "block_direction": "",
+              "block_layout": "has-layout-33",
+              "content_btn_1_label": "Shop Now",
+              "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -758,7 +823,11 @@
         "block_order": [
           "dfa2ef84-cc9a-4527-b7b9-6ef81f2b0148",
           "7ba2c3d9-5737-43b8-9335-2216aa185ff4",
-          "5a6bac34-b24a-4aa9-8e94-945571b677e8"
+          "5a6bac34-b24a-4aa9-8e94-945571b677e8",
+          "87d1be8c-a113-4b2a-898f-7d6d23d2fd5d",
+          "461f7d58-7d31-466a-a788-3e60e6afab1c",
+          "1d72eeb6-3095-412c-96e0-955e3ba5c615",
+          "52d21cee-e06c-410b-8a0c-981a65c0f519"
         ],
         "settings": {
           "page_title": "Meet the Pack",

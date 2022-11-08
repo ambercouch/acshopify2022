@@ -39,7 +39,7 @@
           {% include 'responsive-image' with
             image: pageImageMobile,
             max_width: 800,
-            max_height: 600
+            max_height: 600,
           %}
         </div>
         {% else %}
@@ -51,9 +51,9 @@
             <span class="c-header__title">{{ pageTitle }}</span>
           </h1>
           {% if pageSubtitle != blank %}
-            <h4 class="c-header__sub-heading--story-template">
+            <div class="c-header__sub-heading--story-template">
               {{ pageSubtitle }}
-            </h4>
+            </div>
             {% else %}
             <!-- NO section.settings.page_subtitle -->
           {% endif %}
@@ -76,12 +76,25 @@
 
   </div>
   <div class="l-page-after--story">
+    {% assign flexWrapper = 'closed' %}
+
     {% for block in section.blocks %}
       {%  if block.settings.block_direction != blank %}
         {% assign cssClassDirection = 'is-direction-' | append :   block.settings.block_direction %}
         {% else %}
         {% assign cssClassDirection = 'is-direction-not-set' %}
       {% endif %}
+      <!-- for index {{ forloop.index }} -->
+      {% if block.settings.block_layout == 'has-layout-33'%}
+        {% if  currentLayout != block.settings.block_layout %}
+          {% assign currentLayout = block.settings.block_layout %}
+          {% assign flexWrapper = 'open' %}
+        <!-- open div wrapper open -->
+          <div class="c-content-block__wrapper ">
+          <div class="c-content-block__row--story--template c-content-block__row--sub-row" >
+        {% endif %}
+      {% endif %}
+
       {% case block.type %}
       {% when 'content' %}
         {% if block.settings.block_background_image.src != blank %}
@@ -145,17 +158,21 @@
             background-image: url({{ block.settings.block_background_image.src | image_url }});
           }
         </style>
-        <div class="c-content-block  c-content-block--type-{{ block.type | replace : '_', '-'}} c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }}  u-bgs-{{ block.settings.block_background_size }}">
+
+        {% assign blockLayout = block.settings.block_layout %}
+
+        <div class="c-content-block  {{ blockLayout }} c-content-block--type-{{ block.type | replace : '_', '-'}} c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }}  u-bgs-{{ block.settings.block_background_size }}">
           <div class="c-content-block__row--story-template c-content-block__row--type-image-content {{ cssClassDirection }}">
 
-            <div class="c-content-block__col">
+            <div class="c-content-block__col--image">
               <div class="c-content-block__content--image">
                 {% if block.settings.content_image != blank %}
-                  <div class="c-content-block__image">
+                  <div class="c-content-block__image--story-template">
                     {% include 'responsive-image' with
                       image: block.settings.content_image,
                       max_width: 800,
-                      max_height: 800
+                      max_height: 800.
+                      class: 'c-feature-image--story-template'
                     %}
                   </div>
                 {% else %}
@@ -163,7 +180,7 @@
                 {% endif %}
               </div>
             </div>
-            <div class="c-content-block__col">
+            <div class="c-content-block__col--content">
               <div class="c-content-block__content--image-text">
               <h2 class="c-content-block__heading">
                 {{ block.settings.content_title }}
@@ -199,6 +216,18 @@
           </div>
         </div>
       {% endcase %}
+
+      {% if flexWrapper == 'open' and block.settings.block_layout != 'has-layout-33'  %}
+        {% assign currentLayout = '' %}
+        {% assign flexWrapper = 'closed' %}
+        <!-- close div wrapper -->
+      {% endif %}
+      {% if flexWrapper == 'open' and forloop.last %}
+        <!-- close div wrapper open and last -->
+        </div><!-- -->
+        </div><!-- -->
+      {% endif %}
+
     {% endfor %}
   </div>
 </div>
@@ -206,7 +235,7 @@
 {% schema %}
 {
   "name": "Story Block",
-  "max_blocks": 8,
+  "max_blocks": 24,
   "settings": [
     {
       "type": "text",
@@ -447,6 +476,26 @@
             {
               "value": "rev",
               "label": "Content First"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "block_layout",
+          "label": "Block Layout",
+          "default": "has-layout-5050",
+          "options": [
+            {
+              "value": "has-layout-5050",
+              "label": "100% 50/50"
+            },
+            {
+              "value": "has-layout-2575",
+              "label": "100% 25/75"
+            },
+            {
+              "value": "has-layout-33",
+              "label": "33% 100"
             }
           ]
         },
