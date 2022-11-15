@@ -180,7 +180,9 @@
     {% if youtubeId %}
       <div class="c-product-form__link--product-video">
         <div class="c-btn--product-video">
+
           <a class="c-btn__link--product-video" data-ajax-id="/pages/size-guide-{{ youtubeId }}" data-remodal-lazy-youtube="{{  youtubeId }}" data-remodal-target="modalProductVideo" href="#modalProductVideo" data-remodal>
+            <img class="c-btn__img-thumb" src="{{ 'tpd-video-placeholder.jpg' |   asset_img_url: '300x' }}" />
             <span class="c-btn__label--product-video">View Product Video</span>
             <!--
             <span class="c-btn__icon">
