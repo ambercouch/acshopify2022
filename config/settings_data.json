@@ -858,7 +858,16 @@
       "1650543184447b7ae1",
       "16505434604cbd951f",
       "16505434773cfa6f88"
-    ]
+    ],
+    "blocks": {
+      "10605408327587305396": {
+        "type": "shopify:\/\/apps\/easygift-auto-add-to-cart\/blocks\/app-embed\/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
+        "disabled": false,
+        "settings": {
+          "version": "v3"
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
