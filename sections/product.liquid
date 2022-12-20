@@ -39,6 +39,28 @@
 {% endif %}
 
 
+{% assign productCollections = product.collections | map: "handle" %}
+{% if product.handle contains 'pair' %}
+  {% assign productVersion = 'pair' %}
+  {% elsif productCollections contains 'single-supports'  %}
+  {% assign productVersion = 'single' %}
+{% else %}
+  {% assign productVersion = '' %}
+{% endif %}
+{% if productVersion == 'pair'%}
+  {% assign handleArray = product.handle | split : '-' %}
+{% assign siblingUrl = handleArray[0] | append : '-support' %}
+  {% elsif  productVersion == 'single' %}
+  {% assign handleArray = product.handle | split : '-' %}
+  {% assign siblingUrl = handleArray[0] | append : '-sleeves-pair' %}
+  {% else %}
+    {% assign siblingUrl = '' %}
+{% endif %}
+
+
+
+
+
 <div class="l-page--product">
 <section data-section-id="{{ section.id }}" data-section-type="product" class="l-page__section--product">
 
@@ -51,6 +73,22 @@
 
   <div class="l-page__product-detail-wrap">
     <div class="l-page__header--product">
+{% if productVersion != '' %}
+        <div class="l-page__nav-menu--product-filter">
+          <div class="c-nav-menu--product-filter ">
+            <ul class="c-nav-menu__list--product-filter">
+                <li  class="c-nav-menu__item--product-filter {% if productVersion == "single" %}is-current{% endif %} " >
+                  <a  title="Shop singles" class="c-nav-menu__link--product-filter "  href="/products/{{ siblingUrl }}">Single</a>
+                </li>
+              <li  class="c-nav-menu__item--product-filter {% if productVersion == "pair" %}is-current{% endif %}" >
+                <a title="Shop pairs" class="c-nav-menu__link--product-filter"  href="/products/{{ siblingUrl }}">Pair </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
       <header class="c-header--product">
         <h1 class="c-header__heading--product">
           <span class="c-header__title">
