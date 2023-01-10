@@ -70,9 +70,8 @@
         "blocks": {
           "8466db52-cedf-4934-9278-5649db6bcdff": {
             "type": "hero",
-            "disabled": true,
             "settings": {
-              "hero_image": "shopify:\/\/shop_images\/Tempest_Christmas_Banner_2022_c83a4e26-ba19-4870-b6f7-09474d1721c1.jpg",
+              "hero_image": "shopify:\/\/shop_images\/SCOTLANDS_TRADE_FAIR_BANNER.jpg",
               "hero_url": "https:\/\/www.tempestdesigns.co.uk\/collections\/recently-added"
             }
           },
