@@ -12,7 +12,7 @@
     {% endif %}
 
     <div class="collection-thumb__heading is-{{ collectionSettings[ctp] }}">
-      <h5 class="collection-thumb__title{{ CTclassModifier }}" {% if collectionSettings[cht] == true %}style="display:none !important" {% endif %}>
+      <h5 class="collection-thumb__title{{ CTclassModifier }} collection-thumb__title--{{ collectionSettings[cttc] }}" {% if collectionSettings[cht] == true %}style="display:none !important" {% endif %}>
         {% if collection.empty? %}
           {{ 'homepage.onboarding.collection_title' | t }}
           {% elsif collectionSettings[ct] == '' %}
