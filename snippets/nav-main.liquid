@@ -1,6 +1,6 @@
-<nav id="primaryNavigation" role="navigation" class="nav-main" data-container="mobileNav" data-state="off">
+<nav id="primaryNavigation" role="navigation" class="nav-main" data-state="off" data-container="mainMenu">
   <div  class="nav-main__header">
-    <span id="menuButtonClose" class="nav-main__close" data-control="mobileNav" data-state="off">
+    <span id="menuButtonClose" class="nav-main__close" data-control="mainMenu" data-state="off">
     {% include 'icon-close' %}
   </span>
   </div>
@@ -18,6 +18,11 @@
       {%- endcapture -%}
       {%- assign megaLinks = megaLinks | split: ','  | size -%}
       <!-- megaLinks {{megaLinks | size }} -->
+      {% comment %}
+      Set megaLinks to 0 the remove megamenu dropdowns
+      TODO : Add setting disable_menu_dropdowns
+      {% endcomment %}
+      {%- assign megaLinks = 0 -%}
       {% if megaLinks  > 0 %}
         <!-- inc megaLinks -->
         {% include "nav-main-mega" %}

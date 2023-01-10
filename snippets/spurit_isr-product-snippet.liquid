@@ -6,14 +6,13 @@
     ISRParams.fullMoneyFormat = "{{shop.money_with_currency_format | strip_html}}";
     ISRParams.customer = {};
     ISRParams.product = {{ product | json }};
-    ISRParams.serverType = "production";
 
     {% if  customer %}
-        ISRParams.customer.email = "{{ customer.email }}";
-        {% if customer.default_address != nil %}
-            ISRParams.customer.country_code = "{{ customer.default_address.country_code }}";
-        {% else %}
-            ISRParams.customer.country_code = null;
-        {% endif %}
+    ISRParams.customer.email = "{{ customer.email }}";
+    {% if customer.default_address != nil %}
+    ISRParams.customer.country_code = "{{ customer.default_address.country_code }}";
+    {% else %}
+    ISRParams.customer.country_code = null;
+    {% endif %}
     {% endif %}
 </script>

@@ -13,51 +13,31 @@
   {% assign number_of_comments = article.comments_count | plus: 1 %}
 {% endif %}
 
-<article class="article" role="article" itemscope itemtype="http://schema.org/Article">
-
-  <header role="banner" class="article__header">
-    {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
-    <div class="article__meta">
-      <small>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</small>
-    </div>
-    <h1 class="article__heading">
-      <span  class="article__title">{{ article.title }}</span>
-    </h1>
-
-  </header>
+<article role="article" itemscope itemtype="http://schema.org/Article">
 
   {% if article.image %}
-    <div class="article__featured-image">
-      <a href="{{ article.url }}" class="article__image-link">
-        <img src="{{ article | img_url: '1024x1024' }}" alt="{{ article.title }}" class="article__img">
-      </a>
-    </div>
+    {{ article | img_url: '1024x1024' | img_tag: article.title }}
   {% endif %}
 
+  <header role="banner">
+    <h1>{{ article.title }}</h1>
+    {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+    <p>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>
+  </header>
 
-
-  <div class="rte article__body" itemprop="articleBody">
+  <div class="rte" itemprop="articleBody">
     {{ article.content }}
   </div>
-<div class="article__footer">
-  {% comment %}
 
   {% if article.tags.size > 0 %}
-  <div class="article__blog-cats">
-    <div class="blog-cats">
-    <ul class="blog-cats__list">
+    <ul>
       {% for tag in article.tags %}
-        <li class="blog-cats__item">
+        <li>
           <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
         </li>
       {% endfor %}
     </ul>
-    </div>
-  </div>
-
   {% endif %}
-  {% endcomment %}
-</div>
 
   {% if settings.social_sharing_blog %}
     {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}

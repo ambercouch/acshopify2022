@@ -1,0 +1,113 @@
+
+{% assign popup_page = pages[settings.popup_content]%}
+  {% assign popup_image =  settings.popup_content_image %}
+  {% assign popup_expires = settings.popup_expires %}
+
+<div id="remodalPopupPromo" class="remodal c-remodal--promo" data-remodal-id="modal"  data-hash-tracking="false" data-expires="{% if popup_expires  %}{{ popup_expires }}{% else %}0{% endif %}">
+
+  <button data-remodal-action="close" class="remodal-close"></button>
+
+  {% if popup_image %}
+    <div class="c-remodal__image">
+      <img class="c-remodal__img" src="{{  popup_image  | img_url: '1000x' }}" >
+    </div>
+  {% endif %}
+
+  {% if popup_page.content != '' %}
+    <div class="c-remodal__content">
+      <!-- popup page - {{ popup_page.title }} -->
+      {{ popup_page.content }}
+    </div>
+    {% elsif settings.popup_content_simple != '' %}
+    <div class="c-remodal__content">
+      <!-- Popup content simple - update in theme customizer -->
+      {{  settings.popup_content_simple }}
+    </div>
+    {% elsif settings.popup_content_html != '' %}
+    <div class="c-remodal__content">
+      <!-- Popup content html - update in theme customizer -->
+      {{  settings.popup_content_html }}
+    </div>
+
+
+
+    <div id="mc_embed_signup" class="c-form--mc">
+      <form action="https://andsoboutique.us6.list-manage.com/subscribe/post-json?u=113f0c30c0835c9c827c14525&amp;id=3fa9c53c43&c=?" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate c-form__form--mc" target="_blank" novalidate>
+        <div class="c-form__content--mc">
+          <input type="email" value="" name="EMAIL" class="email c-form__input--email c-form__input--mc" id="mce-EMAIL" placeholder="Your Best Email" required>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_113f0c30c0835c9c827c14525_3fa9c53c43" tabindex="-1" value=""></div>
+          <div class="c-form__controls--mc">
+            <input type="submit" value="Sign Up Now" name="subscribe" id="mc-embedded-subscribe" class="c-form__input--submit ">
+          </div>
+          <div id="formMcError" class="c-form__dialog--mc c-form__dialog--error">
+
+          </div>
+        </div>
+        <div id="formMcSuccess"  class="c-form__dialog--mc c-form__dialog--success">
+          <p><b>Thanks for signing up</b></p>
+          <p>Use Code <code class="c-text--coupon">ASBNEW2021</code> at checkout <br> and save today. </p>
+        </div>
+      </form>
+
+    </div>
+
+    <script>
+        console.log("mc script method get")
+        $(document).ready( function () {
+            // I only have one form on the page but you can be more specific if need be.
+            var $form = $('#mc-embedded-subscribe-form');
+
+
+            if ( $form.length > 0 ) {
+                $('input[type="submit"]', $form).bind('click', function ( event ) {
+                    if ( event ) event.preventDefault();
+                    // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
+                   register($form);
+                   $form.find('.c-form__content--mc').fadeOut(500);
+                    $form.find('#formMcError').empty();
+                });
+            }
+        });
+
+        function register($form) {
+            var $success_dialog = $form.find('#formMcSuccess');
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                cache       : false,
+                dataType    : 'json',
+                contentType: "application/json; charset=utf-8",
+                error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+                success     : function(data) {
+                    if (data.result != "success") {
+                        // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                        var errorMsg = data.msg
+                        if (errorMsg.startsWith('0')){
+                            errorMsg = errorMsg.substring(3);
+                        }
+                        console.log('sumit went wong')
+                        console.log(data)
+                        $form.find('#formMcError').append(errorMsg)
+                        $form.find('.c-form__content--mc').fadeIn();
+                    } else {
+                        // It worked, carry on...
+                        $success_dialog.fadeIn();
+                        console.log('form sent')
+
+                    }
+                }
+            });
+        }
+    </script>
+
+
+
+    <!--End mc_embed_signup-->
+    {% elsif popup_image == nil %}
+    <div class="c-remodal__content">
+      <p>Turn off or add content to this promo popup in the theme customizer</p>
+    </div>
+  {% endif %}
+</div>

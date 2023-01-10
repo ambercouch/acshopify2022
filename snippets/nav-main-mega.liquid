@@ -2,12 +2,13 @@
 {% assign range = 'style,brand' | split: ',' %}
 <li class="nav-main__item nav-main__item--has-submenu{% if link.active %}  is-current{% endif %}">
 
-  <a href="{{ link.url }}" class="nav-main__link" data-state="off" data-control="{{ link.handle }}">
+
+  <a href="{{ link.url }}" class="nav-main__link">
     <span class="nav-main__link-label">{{ link.title }}</span>
     <span class="nav-main__arrow" {% include 'icon-arrow-down' %}</span>
   </a>
 
-  <div class="nav-main__mega" data-state="off" data-container="{{ link.handle }}">
+  <div class="nav-main__mega">
     {% include 'mega-menu' %}
     {% include 'menu-feature' %}
   </div>

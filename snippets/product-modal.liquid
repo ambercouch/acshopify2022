@@ -1,5 +1,5 @@
 {% include 'bold-product' with product, hide_action: 'break' %}{% if bold_hidden_product %}{% break %}{%endif %}
-<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
+<div class="product-modal" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
 
   {%- assign current_variant = bold_selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
@@ -33,27 +33,6 @@
         </div>
 
       </div>
-      {% include 'logic-admin' %}
-      {% if adminUser %}
-        <!-- Admin user -->
-        <a style="color: #ddd" href="/admin/products/{{ product.id }}"><small>Edit this product</small></a>
-      {% else %}
-        <!-- Not Admin -->
-      {% endif %}
     </div>
   </div>
 </div>
-
-{% schema %}
-  {
-    "name": "Product pages",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "show_share_buttons",
-        "label": "Show social sharing buttons",
-        "default": true
-      }
-    ]
-  }
-{% endschema %}

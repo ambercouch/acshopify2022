@@ -8,8 +8,11 @@
     <div class="customer-register__form-content">
 
       {% include 'register-form-controls--about' %}
+      {% comment %}
       {% include 'register-form-controls--company' %}
+{% endcomment %}
       {% include 'register-form-controls--address' %}
+
 
       <div class="customer-register__form-control">
         <label for="CreatePassword" class="label-hidden customer-register__label">
@@ -49,8 +52,6 @@
         <a class="customer-login__link " href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a>
       </div>
     </div>
-    <div class="bold-loyalties-code"></div>
-    <script src="https://loy.boldapps.net/app_assets/js/client/signup-refer.js"></script>
     {% endform %}
   </div>
 </div>

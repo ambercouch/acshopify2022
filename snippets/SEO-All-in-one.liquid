@@ -207,13 +207,15 @@
 {%- assign cMeta = shop.metafields.spseotool.company_info -%}
 {%- assign cMetaArr = cMeta | split : "$#$" -%}
 {%- assign c_s_url =  ''  -%}
+{%- assign str_type = 'Store' %}
+{%- assign str_price= '0-500' %}
 {%- for cInfoArr in cMetaArr -%}
 	{%- assign cInfo = cInfoArr | split : ":" -%}
 
 	{%- assign cKey = cInfo[0] -%}
 	{%- assign cVal = cInfo[1] | replace: '%2F', '/' | replace: '\/', '/' | replace: '%3A', ':' | replace: '%2B', '+' | replace: '%3F', '?' -%}
 
-	{%- if c_s_url != '' -%}
+	{%- if c_s_url != '' and cKey contains 'url' -%}
 		{%- assign c_s_url =  c_s_url | append: ', ' -%}
 	{%- endif -%}
 
@@ -234,6 +236,10 @@
 			{%- assign c_s_url =  c_s_url | append: '"' | append: cVal | append: '"' -%}
 		{%- when 'img_url' -%}
 			{%- assign img_url =  cVal -%}
+		{%- when 'str_type' -%}
+			{%- assign str_type =  cVal -%}
+        {%- when 'str_price' -%}
+            {%- assign str_price =  cVal -%}
 	{%- endcase -%}
 {%- endfor -%}
 
@@ -252,6 +258,41 @@
 		{{ c_s_url }}
 	]
 	{%- endunless -%}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "http://www.schema.org",
+  "@type": "{{str_type}}"
+  {%-unless shop.name == '' -%},"name": "{{ shop.name }}"{%-endunless-%}
+  {%-unless shop.url == '' -%},"url": "{{ shop.url }}"{%-endunless-%}
+  {%-unless img_url == blank -%},"logo": "{{ img_url | remove: "\" }}"{%-endunless-%}
+  {%-unless img_url == blank -%},"image": "{{ img_url | remove: "\" }}"{%-endunless-%}
+  {%-unless shop.description == '' -%},"description": "{{shop.description}}" {%-endunless-%}
+  {%- if str_price != null %},"priceRange":"{{str_price}}"{%- endif %}
+  {%- if shop.phone != null -%},"telephone": "{{shop.phone}}"{%-endif-%}
+  {%-unless shop.address.country == '' -%}
+  ,"address": {
+    "@type": "PostalAddress"
+    {%- if shop.address != null -%},"streetAddress": "{{shop.address}}"{%- endif-%}
+    {%- if shop.address.city != null -%},"addressLocality": "{{shop.address.city}}"{%- endif-%}
+    {%- if shop.address.province != null -%},"addressRegion": "{{shop.address.province}}"{%- endif-%}
+    {%- if shop.address.zip != null -%},"postalCode": "{{shop.address.zip}}"{%- endif-%}
+	{%- if shop.address.country != null -%},"addressCountry": "{{shop.address.country}}"{%- endif-%}
+  }{%-endunless-%}
+  {%-unless shop.latitude == '' and shop.longitude == '' -%}
+  ,"geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{shop.latitude}}",
+    "longitude": "{{shop.longitude}}"
+  }{%-endunless-%}
+  {%- if shop.phone == '' -%}
+  ,"contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+{{shop.phone}}",
+    "contactType": "sales"
+  }{%- endif-%}
 }
 </script>
 
@@ -281,6 +322,7 @@
 		"@type": "Brand",
 		"name": {{ product.vendor | json }}
 	},
+	"@id" : {{ canonical_url | json }},
 	"sku": {{ product.selected_or_first_available_variant.sku | json }},
 	"description": {{ desc | escape | strip_html | json }},
 	"url": {{ canonical_url | json }},
@@ -290,6 +332,9 @@
 	{%- endif -%}
 	"offers": {
 		"@type": "Offer",
+		"url" :{{ canonical_url | json }},		
+        "image": "https:{{ product.featured_image | product_img_url: 'grande' }}",		
+        "sku" :{{ product.selected_or_first_available_variant.sku | json }},
 		"price": "{{ product.selected_or_first_available_variant.price | money_without_currency | replace : ',', '' }}",
 		"priceCurrency": "{{ shop.currency }}",
 		"availability": "{%- if product.selected_or_first_available_variant.available -%}InStock{%- else -%}OutOfStock{%- endif -%}"

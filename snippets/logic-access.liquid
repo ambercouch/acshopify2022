@@ -22,17 +22,6 @@
         {% assign access = 'full' %}
         {% when 'page.contact' %}
         {% assign access = 'full' %}
-        {% when 'page' %}
-        {% assign access = 'full' %}
-		{% when 'article' %}
-        {% assign access = 'full' %}
-		{% when 'blog' %}
-        {% assign access = 'full' %}
-        {% when 'page.login-footer' %}
-        {% assign access = 'SEO' %}
-        {% when 'collection' %}
-        {% assign access = 'SEO' %}
-
         {% else %}
           {% if customer %}
             {% assign access = 'inactive' %}

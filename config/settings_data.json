@@ -15,14 +15,16 @@
     "social_tumblr_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
+    "enable_popup": false,
+    "popup_content": "",
+    "popup_content_simple": "",
+    "popup_expires": "1",
     "collection_swatches": true,
     "cart_notes_enable": true,
-    "cart_min_spend": "10000",
-    "low_price_product": "600",
+    "cart_min_spend": "0",
+    "low_price_product": "0",
     "low_cost_minimum_qty": "2",
-    "low_price_product_2": "300",
-    "low_cost_minimum_qty_2": "3",
-    "cart_promo_1_collection": "recently-added",
+    "cart_promo_1_collection": "",
     "cart_promo_1_collection_title": "",
     "cart_promo_1_collection_title_position": "centre-centre",
     "cart_promo_1_hide_collection_title": false,
@@ -30,7 +32,7 @@
     "cart_promo_1_collection_button": "Shop now",
     "cart_promo_1_collection_button_text_colour": "p431",
     "cart_promo_1_collection_button_background_colour": "white",
-    "cart_promo_2_collection": "spinning-rings",
+    "cart_promo_2_collection": "",
     "cart_promo_2_collection_title": "",
     "cart_promo_2_collection_title_position": "centre-centre",
     "cart_promo_2_hide_collection_title": false,
@@ -38,7 +40,7 @@
     "cart_promo_2_collection_button": "Shop now",
     "cart_promo_2_collection_button_text_colour": "white",
     "cart_promo_2_collection_button_background_colour": "p4735",
-    "cart_promo_3_collection": "necklace",
+    "cart_promo_3_collection": "",
     "cart_promo_3_collection_title": "",
     "cart_promo_3_collection_title_position": "centre-centre",
     "cart_promo_3_hide_collection_title": false,
@@ -47,7 +49,7 @@
     "cart_promo_3_collection_button_text_colour": "p431",
     "cart_promo_3_collection_button_background_colour": "white",
     "favicon": "",
-    "mega_menu_list": "hair-accessorie,belt,other,hat,type,range,plating,colour,decoration,material,charm,jewellery-display,boxes-and-block,bags-and-tag",
+    "mega_menu_list": "range,style,type,plating,colour,material,decoration",
     "mega_menu_list_range": "type,brand",
     "mega_menu_list_plating": "plating,antique-plating,matt-plating",
     "checkout_header_image": "",
@@ -64,59 +66,37 @@
     "checkout_accent_color": "#1990c6",
     "checkout_button_color": "#1990c6",
     "checkout_error_color": "#ff6d6d",
+    "Collection Swatchec": true,
     "sections": {
-      "hero": {
-        "type": "hero",
-        "blocks": {
-          "8466db52-cedf-4934-9278-5649db6bcdff": {
-            "type": "hero",
-            "settings": {
-              "hero_image": "shopify:\/\/shop_images\/web-banner-New-SEASON-CLOTHING_5038fbf7-3110-431d-a048-13c3ab824e05.jpg",
-              "hero_url": "https:\/\/www.tempestdesigns.co.uk\/collections\/recently-added"
-            }
-          },
-          "313539b0-7e4e-4db1-a9d7-ff714028f948": {
-            "type": "hero",
-            "settings": {
-              "hero_image": "shopify:\/\/shop_images\/web-banner-New-Seren.jpg",
-              "hero_url": ""
-            }
-          }
-        },
-        "block_order": [
-          "8466db52-cedf-4934-9278-5649db6bcdff",
-          "313539b0-7e4e-4db1-a9d7-ff714028f948"
-        ],
-        "settings": {
-        }
-      },
       "collection-list": {
         "type": "collection-list",
         "blocks": {
           "collection-list-0": {
             "type": "collection",
             "settings": {
-              "collection": "recently-added",
+              "collection": "clutch-bags",
               "collection_title": "",
-              "collection_title_position": "centre-centre",
+              "collection_title_position": "top-left",
+              "collection_title_text_colour": "p11",
               "hide_collection_title": false,
               "collection_image_position": "centre",
-              "collection_button": "Shop now",
-              "collection_button_text_colour": "p431",
-              "collection_button_background_colour": "white"
+              "collection_button": "Shop range",
+              "collection_button_text_colour": "white",
+              "collection_button_background_colour": "p5175"
             }
           },
           "collection-list-1": {
             "type": "collection",
             "settings": {
-              "collection": "spinning-rings",
+              "collection": "everyday-bags",
               "collection_title": "",
-              "collection_title_position": "top-left",
+              "collection_title_position": "bottom-centre",
+              "collection_title_text_colour": "white",
               "hide_collection_title": false,
               "collection_image_position": "centre",
-              "collection_button": "",
-              "collection_button_text_colour": "p431",
-              "collection_button_background_colour": "white"
+              "collection_button": "Shop range",
+              "collection_button_text_colour": "white",
+              "collection_button_background_colour": "p5175"
             }
           }
         },
@@ -139,7 +119,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/tempestdesigns-logo-and-mark2017_c0bc5f00-f709-4178-aa41-80a630501f09.png",
+          "logo": "shopify:\/\/shop_images\/AND-SO-1.jpg",
           "logo_max_width": "250",
           "main_linklist": "main-menu"
         }
@@ -148,120 +128,71 @@
         "type": "footer",
         "settings": {
           "footer_linklist": "footer",
-          "show_payment_icons": true
+          "show_payment_icons": false
         }
       },
       "1498657188359": {
         "type": "banner-list",
+        "disabled": true,
         "blocks": {
           "1498657223372": {
             "type": "banner",
             "settings": {
-              "banner_url": "https:\/\/www.springfair.com\/"
+              "banner_url": ""
             }
           },
           "1498657244123": {
             "type": "banner",
             "settings": {
-              "banner_url": "https:\/\/www.moda-uk.co.uk\/welcome"
+              "banner_url": ""
             }
           },
-          "1547027989354": {
+          "1498657251979": {
             "type": "banner",
             "settings": {
-              "banner_url": "https:\/\/www.homeandgift.co.uk\/exhibitors\/tempest-designs"
+              "banner_url": ""
             }
           }
         },
         "block_order": [
           "1498657223372",
           "1498657244123",
-          "1547027989354"
+          "1498657251979"
         ],
         "settings": {
           "title": "Exhibitions"
         }
       },
-      "1506329773418": {
-        "type": "collection-list",
-        "blocks": {
-          "1506329773418-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "earrings",
-              "collection_title": "",
-              "collection_title_position": "top-left",
-              "hide_collection_title": false,
-              "collection_image_position": "centre",
-              "collection_button": "",
-              "collection_button_text_colour": "p431",
-              "collection_button_background_colour": "white"
-            }
-          },
-          "1506329773418-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "bracelets",
-              "collection_title": "",
-              "collection_title_position": "top-left",
-              "hide_collection_title": false,
-              "collection_image_position": "centre",
-              "collection_button": "",
-              "collection_button_text_colour": "p431",
-              "collection_button_background_colour": "white"
-            }
-          },
-          "1506329773418-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "necklace",
-              "collection_title": "",
-              "collection_title_position": "top-left",
-              "hide_collection_title": false,
-              "collection_image_position": "left",
-              "collection_button": "",
-              "collection_button_text_colour": "p431",
-              "collection_button_background_colour": "white"
-            }
-          }
-        },
-        "block_order": [
-          "1506329773418-0",
-          "1506329773418-1",
-          "1506329773418-2"
-        ],
-        "settings": {
-          "title": "",
-          "collection_list_layout": "25-50-25"
-        }
-      },
       "1506339511798": {
         "type": "collection-list",
+        "disabled": true,
         "blocks": {
           "1506339511798-0": {
             "type": "collection",
             "settings": {
-              "collection": "seren",
+              "collection": "",
               "collection_title": "some title",
               "collection_title_position": "bottom-centre",
+              "collection_title_text_colour": "white",
               "hide_collection_title": true,
               "collection_image_position": "centre",
               "collection_button": "Shop now",
               "collection_button_text_colour": "white",
-              "collection_button_background_colour": "p489"
+              "collection_button_background_colour": "white"
             }
           },
           "1506339511798-1": {
             "type": "collection",
             "settings": {
-              "collection": "sarah-tempest",
+              "collection": "",
               "collection_title": "",
               "collection_title_position": "bottom-centre",
+              "collection_title_text_colour": "white",
               "hide_collection_title": true,
               "collection_image_position": "centre",
               "collection_button": "Shop now",
               "collection_button_text_colour": "white",
-              "collection_button_background_colour": "p318"
+              "collection_button_background_colour": "white"
             }
           }
         },
@@ -274,20 +205,75 @@
           "collection_list_layout": "50-50"
         }
       },
-      "1543407482729": {
-        "type": "page-content",
+      "1523432222727": {
+        "type": "featured-collection",
         "settings": {
-          "page": "homepage-content"
+          "title": "Featured",
+          "collection": "frontpage",
+          "col_layout": "4"
+        }
+      },
+      "1523962758861": {
+        "type": "hero",
+        "blocks": {
+          "1569497357076": {
+            "type": "hero",
+            "settings": {
+              "hero_image": "shopify:\/\/shop_images\/COMING-SOON-BANNER.jpg",
+              "hero_url": "",
+              "hero_collection": "",
+              "hero_collection_title": "",
+              "hero_collection_title_position": "centre-centre",
+              "hero_hide_collection_title": false,
+              "hero_collection_button": "Shop now",
+              "hero_collection_button_text_colour": "white",
+              "hero_collection_button_background_colour": "white"
+            }
+          },
+          "1543505647757": {
+            "type": "hero",
+            "settings": {
+              "hero_image": "shopify:\/\/shop_images\/NEW-SEASON-CLOTHING-BANNER_d7cb3eb2-34ad-4a91-83b4-3c32833a6adc.jpg",
+              "hero_url": "",
+              "hero_collection": "",
+              "hero_collection_title": "",
+              "hero_collection_title_position": "centre-centre",
+              "hero_hide_collection_title": false,
+              "hero_collection_button": "Shop now",
+              "hero_collection_button_text_colour": "white",
+              "hero_collection_button_background_colour": "white"
+            }
+          },
+          "4b6ba2b9-7b92-4511-873e-81c4fd0c5f27": {
+            "type": "hero",
+            "settings": {
+              "hero_image": "shopify:\/\/shop_images\/LUXURY-LEATHER-HANDBAGS-BANNER_54652a83-fefb-452b-be03-a9e98b6e9d50.jpg",
+              "hero_url": "",
+              "hero_collection": "",
+              "hero_collection_title": "",
+              "hero_collection_title_position": "centre-centre",
+              "hero_hide_collection_title": false,
+              "hero_collection_button": "Shop now",
+              "hero_collection_button_text_colour": "white",
+              "hero_collection_button_background_colour": "white"
+            }
+          }
+        },
+        "block_order": [
+          "1569497357076",
+          "1543505647757",
+          "4b6ba2b9-7b92-4511-873e-81c4fd0c5f27"
+        ],
+        "settings": {
         }
       }
     },
     "content_for_index": [
-      "hero",
+      "1523962758861",
       "collection-list",
-      "1506329773418",
+      "1523432222727",
       "1506339511798",
-      "1498657188359",
-      "1543407482729"
+      "1498657188359"
     ]
   },
   "presets": {

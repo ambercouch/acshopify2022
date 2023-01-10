@@ -21414,7 +21414,7 @@ return Packery;
  * ACSTK v4
  *
  */
-console.log('ac_shopify.js acs2022')
+console.log('cart min qants')
 const ACSTK = {
     common: {
         init: function () {
@@ -21700,7 +21700,42 @@ const ACSTK = {
                 }
             });
 
+            /*
+           Ajax load size guid on mouse event
+           */
+            $(document).on('opening', '[data-remodal-id="modalProductVideo"]', function () {
+                console.log('some Modal is opening');
+
+
+
+               let $iframe = $('[data-remodal-id="modalProductVideo"]').find('iframe')
+
+                $iframe.attr('src', $iframe.attr('data-src'))
+                fitvids();
+
+
+
+            });
+
+            $(document).on('closing', '[data-remodal-id="modalProductVideo"]', function () {
+                console.log('some Modal is opening');
+
+
+
+                let $iframe = $('[data-remodal-id="modalProductVideo"]').find('iframe')
+
+                $iframe.attr('src', '')
+
+
+
+            });
+
+            /*
+           END Ajax load
+           */
+
         }
+
     },
     collection: {
         init: function () {
@@ -21823,7 +21858,7 @@ const ACSTK = {
     cart: {
         init: function () {
             //uncomment to debug
-            //console.log('cart template');
+            console.log('qty click');
             var lastCollectionPath = Cookies.get('lastCollectionPath');
             var lastProductPath = Cookies.get('lastProductPath');
 
@@ -21834,6 +21869,20 @@ const ACSTK = {
             }else {
                 $('[data-continue-path]').attr('href', '/');
             }
+
+            //Min quantites
+            let selectorInputQty = '.cart-table__qty-input';
+
+            $(document).on('blur', selectorInputQty, function (e,el) {
+
+               let $inputQty = $(this)
+                let value = $inputQty.val();
+               let min = $inputQty.attr('min')
+
+                if (value < min){
+                    $inputQty.val(min)
+                }
+            })
         }
 
     },

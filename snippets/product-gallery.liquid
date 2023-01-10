@@ -1,39 +1,15 @@
-<div class="c-product-gallery">
-
-  <div class="c-product-gallery__focus-image-container">
-
-    {% for image in product.images %}
-      {% capture wrapper_class %}
-        {%- unless featured_image == image -%}
-          u-hidden
-        {%- endunless -%}
-      {% endcapture %}
-      <div class="c-product-gallery__focus-image">
-        {% include 'responsive-image' with
-          image: image,
-          max_width: 700,
-          max_height: 700,
-          image_attributes: "data-product-featured-image",
-          wrapper_class: wrapper_class,
-          image_class : 'c-product-gallery__img--focus'
-          wrapper_attributes: "data-product-image-wrapper",
-        %}
-      </div>
-
-    {% endfor %}
-  </div>
-
+<div class="product-gallery">
+  <a href="{{ featured_image | img_url: '900x900' }}" data-product-featured-link ><img class="product-gallery__featured" src="{{ featured_image | img_url: '700x700' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image></a>
   {% if product.images.size > 1 %}
-    <ul class="c-product-gallery__list--thumb">
-      {% for image in product.images %}
-        <li class="c-product-gallery__item--thumb">
-          <a class="c-product-gallery__link--thumb" href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %}>
-            <img class="c-product-gallery__img--thumb" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-          </a>
+    <ul class="product-gallery__list">
+        {% for variant in product.variants %}
+        <li class="product-gallery__item">
+            <a href="{{ variant.url }}" data-variant-title="{{ variant.title }}">
+              <img class="product-gallery__img" src="{{ variant.image.src | img_url: '160x160' }}" alt="{{ variant.title }}" title="{{ variant.title }}" data-variantLink="{{ variant.image.src | img_url: '900x900' }}" data-variantImage="{{ variant.image.src | img_url: '700x700' }}" data-variantTitle="{{ variant.title }}" data-variantId="{{ variant.id }}">
+            </a>
         </li>
 
       {% endfor %}
     </ul>
   {% endif %}
-
 </div>
