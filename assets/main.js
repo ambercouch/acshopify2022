@@ -21414,7 +21414,7 @@ return Packery;
  * ACSTK v4
  *
  */
-console.log('cart min qants')
+console.log('js test 123')
 const ACSTK = {
     common: {
         init: function () {
@@ -21703,6 +21703,7 @@ const ACSTK = {
             /*
            Ajax load size guid on mouse event
            */
+
             $(document).on('opening', '[data-remodal-id="modalProductVideo"]', function () {
                 console.log('some Modal is opening');
 
@@ -21725,7 +21726,6 @@ const ACSTK = {
                 let $iframe = $('[data-remodal-id="modalProductVideo"]').find('iframe')
 
                 $iframe.attr('src', '')
-
 
 
             });

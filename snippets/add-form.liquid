@@ -17,6 +17,13 @@
         <!--  price less than 200 {{ current_variant.price }} -->
       {%- endif -%}
 
+      {% if product.metafields.global.youtube_url_product %}
+        {% assign videoUrlArray =  product.metafields.global.youtube_url_product | split: '/' %}
+        {%  assign youtubeId =  videoUrlArray | last %}
+      {% else %}
+        <!-- No video URL -->
+      {% endif %}
+
       <input class="add-form__qty-input" type="number" id="Quantity" name="quantity" value="{{ minQty }}" min="{{ minQty }}">
     </div>
     <div class="add-form__price-wrapper">
@@ -78,6 +85,38 @@
     <div class="add-form__continue-shopping-helper">
       {% include 'continue-shopping-helper' %}
     </div>
+
+
+
+
+    {% if youtubeId %}
+      <div class="c-product-form__link--product-video">
+        <div class="c-btn--product-video">
+          <a class="c-btn__link--product-video" data-ajax-id="/pages/size-guide-{{ youtubeId }}" data-remodal-lazy-youtube="{{  youtubeId }}" data-remodal-target="modalProductVideo" href="#modalProductVideo" data-remodal>
+            <img class="c-btn__img-thumb" src="{{ 'tpd-video-placeholder.jpg' |   asset_img_url: '300x' }}" />
+            <span class="c-btn__label--product-video">View Product Video</span>
+            <!--
+            <span class="c-btn__icon">
+              {% include 'svg-icon' with {icon : 'icon-arrow-up'} %}
+            </span>
+            -->
+          </a>
+        </div>
+        <div id="modalProductVideo" class="remodal remodal--product-video" data-remodal-id="modalProductVideo" data-remodal-options="hashTracking: false," >
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <div class="remodal-ajax-content" data-ajax-content>
+            <div class="c-size-guide__loading">
+              <div class="l-page__size-guide-video" >
+                <iframe width="173" height="315" data-src="https://www.youtube.com/embed/{{ youtubeId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    {% endif %}
 
     <div class="add-form__submit-wrapper">
       <button class="add-form__submit-btn"
