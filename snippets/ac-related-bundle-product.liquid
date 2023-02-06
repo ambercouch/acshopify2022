@@ -21,7 +21,19 @@
 
 {%- assign related_count = 0 -%}
 {%- capture shopify_explorer_related_bundle_product -%}
-{% for product in collections['bundles'].products %}
+  {% for product in collections['bundles'].products %}
+    {% for joint in relatedJointsArray %}
+      {% if product.handle contains joint or product.tags contains joint%}
+        {%- assign related_count = related_count | plus: 1 -%}
+        <div class="l-product-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+          <div class="l-product-list__item-thumb">
+            {% include 'acstk-item-thumb' with {templateProduct : related_product}%}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% for product in collections['sleeves-pairs'].products %}
   {% for joint in relatedJointsArray %}
    {% if product.handle contains joint or product.tags contains joint%}
      {%- assign related_count = related_count | plus: 1 -%}
