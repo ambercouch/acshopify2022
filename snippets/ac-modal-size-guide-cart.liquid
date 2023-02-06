@@ -1,0 +1,70 @@
+{% assign productCollections = item.product.collections | map: "handle" %}
+{% unless productCollections contains 'bundles' %}
+{% if item.product.handle contains 'pair' %}
+  {% assign productTypeHandle = 'pair-' %}
+  {% elsif productCollections contains 'single-supports'  %}
+  {% assign productTypeHandle = 'single-' %}
+{% else %}
+  {% assign productTypeHandle = '' %}
+{% endif %}
+
+{% assign sizeGuides = shop.metafields.acbhg.product_list %}
+<!-- shop.metafields.acbhg.product_list {{ shop.metafields.acbhg.product_list }} -->
+{% assign sizeGuideArray = sizeGuides | split : ',' %}
+{% for id in sizeGuideArray %}
+  {% if item.product.handle contains id %}
+    {% assign sizeGuideId = id | prepend : productTypeHandle %}
+  {% endif %}
+{% endfor %}
+
+<div class="c-item-thumb__link--size-guide">
+  <div class="c-btn--size-guide-cart">
+    <a class="c-btn__link--size-guide-cart" data-ajax-id="/pages/size-guide-{{ sizeGuideId }}" data-remodal-ajax="{{  item.product.handle }}" data-remodal-target="modalSizeGuide{{  item.product.handle }}" href="#modalSizeGuide{{  item.product.handle }}" data-remodal>
+      <span class="c-btn__label--size-guide-cart">Size Guide</span>
+      <!-- <span class="c-btn__icon">
+              {% include 'svg-icon' with {icon : 'icon-arrow-up'} %}
+            </span> -->
+    </a>
+  </div>
+  <div id="modalSizeGuide{{  item.product.handle }}" class="remodal" data-remodal-id="modalSizeGuide{{  item.product.handle }}" data-remodal-options="hashTracking: false," >
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-ajax-content" data-ajax-content>
+      <div class="c-size-guide__loading">
+        Size Guide Loading...
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+
+{% assign  productIds = item.product.metafields.global.bundle_products %}
+{% assign  productIdsArray = productIds | split : ',' %}
+{%- capture productIdsAtt -%}
+  [{%- for item in productIdsArray -%}
+  {% assign productTypeSlug = 'pair-' %}
+  {% if item == "bearhug-tee" %}{% assign productTypeSlug = '' %}{% endif %}
+  "/pages/size-guide-{{ productTypeSlug }}{{ item }}"{% if forloop.last != true %},{% endif %}
+{%- endfor -%}]
+{%- endcapture -%}
+
+{% if productIdsAtt != "[]" %}
+  <div class="c-product-form__link--size-guide">
+    <div class="c-btn--size-guide-cart">
+      <a class="c-btn__link--size-guide-cart" data-ajax-id='{{ productIdsAtt }}' data-remodal-ajax-bundle="{{  item.product.handle }}" data-remodal-target="modalSizeGuide{{  item.product.handle }}" href="#modalSizeGuide{{  item.product.handle }}" data-remodal>
+        <span class="c-btn__label--size-guide-cart">Size Guide</span>
+       <!-- <span class="c-btn__icon">
+              {% include 'svg-icon' with {icon : 'icon-arrow-up'} %}
+            </span> -->
+      </a>
+    </div>
+    <div id="modalSizeGuide{{  item.product.handle }}" class="remodal" data-remodal-id="modalSizeGuide{{  item.product.handle }}" data-remodal-options="hashTracking: false," >
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <div class="remodal-ajax-content" data-ajax-content>
+        <div class="c-size-guide__loading">
+          Size Guide Loading...
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endunless %}

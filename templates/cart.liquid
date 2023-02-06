@@ -44,7 +44,7 @@
               {% endif %}
 
               <li class="l-cart-list__item">
-                <div class="l-cart-list__item-thum">
+                <div class="l-cart-list__item-thumb">
                   <div class="c-item-thumb--cart-product">
 
                     <div class="c-item-thumb__feature-image--cart-product">
@@ -71,7 +71,10 @@
 
                           {% unless item.variant.title contains 'Default' %}
                             <span class="c-item-thumb__cart-note">*Have you checked your size?</span>
-                            <a href="{{ item.url }}#modalSizeGuide" class="c-item-thumb__cart-link">Size Guide</a>
+                            <!-- <a href="{{ item.url }}#modalSizeGuide" class="c-item-thumb__cart-link">Size Guide</a> -->
+
+                            {% include 'ac-modal-size-guide-cart' %}
+
 
                             <div class="variant-label">
                               <span class="c-item-thumb__variant-label">Size : </span>
