@@ -7,6 +7,9 @@
 {% assign itemProduct = product %}
 {% endif %}
 
+
+
+
 <!-- render acstk-item-thumb.liquid -->
 {% if itemProduct.featured_image != blank %}
   {% assign productFeatuerImage = itemProduct.featured_image %}
@@ -56,7 +59,7 @@
 
 <div class="c-item-thumb--product">
   <div class="c-item-thumb__featured-image">
-    <a href="{{ itemProduct.url  }}" class="c-item-thumb__image-link">
+    <a href="{{ itemProduct.url }}{{ ac_url_tracking | prepend :'?ac_ref=' }}" class="c-item-thumb__image-link">
       <div class="c-featured-image--collection">
         {% include 'responsive-image' with
           image: productFeatuerImage,
