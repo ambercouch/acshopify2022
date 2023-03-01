@@ -21824,7 +21824,7 @@ const ACSTK = {
 
                 let $optionSelected = $("option:selected", this);
                 let valueSelected = this.value;
-                let $realOption = $('[data-option-name=' + valueSelected + ']')
+                let $realOption = $('[data-option-name="' + valueSelected + '"]')
                 let variantImageId = $realOption.attr('data-image-id')
 
                 let galleryImage = $('.c-product-gallery__wrapper[data-image-id=' + variantImageId + ']')
