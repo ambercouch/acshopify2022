@@ -88,7 +88,9 @@
 <!-- / ac-klaviyo-oos -->
 
 <!-- spurit_dmr_theme_snippet -->
-{% render 'spurit_dmr_theme_snippet' %}
+{% if template.name != "index" %}
+  {% render 'spurit_dmr_theme_snippet' %}
+{% endif %}
 <!-- / spurit_dmr_theme_snippet -->
 
 {{ 'main.css' | asset_url | stylesheet_tag }}
