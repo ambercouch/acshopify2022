@@ -866,6 +866,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "15820462083712392141": {
+        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/discount-redeem\/5c736972-c385-431c-8cbb-05726b7a1739",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
