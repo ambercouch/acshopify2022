@@ -70,6 +70,7 @@
         "blocks": {
           "8466db52-cedf-4934-9278-5649db6bcdff": {
             "type": "hero",
+            "disabled": true,
             "settings": {
               "hero_image": "shopify:\/\/shop_images\/Harrohate_Fashion_Week-Tempest_Banner_dba0fbc8-8a6d-462b-87f8-84516fe59ec9.jpg",
               "hero_url": "https:\/\/harrogatefashionweek.com\/brands\/tempest-designs\/"
@@ -77,6 +78,7 @@
           },
           "3743ac94-9df5-42c1-ac19-08f48d83f811": {
             "type": "hero",
+            "disabled": true,
             "settings": {
               "hero_image": "shopify:\/\/shop_images\/INDEX_BANNER-2_b62e269e-ba5f-4e19-a7f6-ed61a34add6a.jpg",
               "hero_url": "https:\/\/www.indxshows.co.uk\/indx-fashion\/womenswear\/womenswear"
