@@ -18,7 +18,7 @@
     "collection_swatches": true,
     "cart_notes_enable": true,
     "cart_min_spend": "10000",
-    "low_price_product": "5",
+    "low_price_product": "500",
     "low_cost_minimum_qty": "2",
     "low_price_product_2": "300",
     "low_cost_minimum_qty_2": "3",
