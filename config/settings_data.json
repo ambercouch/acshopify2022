@@ -19,8 +19,8 @@
         "settings": {
           "announcement_bar_enabled": true,
           "announcement_bar_home_page_only": false,
-          "announcement_bar_text": "SHOP WIMBLEDON SALE",
-          "announcement_bar_link": "shopify:\/\/collections\/elbow-sale",
+          "announcement_bar_text": "PRIME DAY SALE | 25% OFF SUPPORTS. & SLEEVES",
+          "announcement_bar_link": "shopify:\/\/collections\/best-seller-internal-use",
           "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width_mobile": 250,
           "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
@@ -111,11 +111,11 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "ELBOW SUPPORT SALE",
+          "title": "PRIME DAY SALE",
           "subtitle": "",
           "show_description": true,
           "description_override": "",
-          "collection": "elbow-sale",
+          "collection": "best-seller-internal-use",
           "product_limit": 4
         }
       },
