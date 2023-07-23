@@ -6,8 +6,8 @@ Spurit['Discountmanager'].settings = {
     enabledCollection: true,
     collectionPageSelector: "div[class=\"l-product-list__list\"] > div > div[class=\"l-product-list__item-thumb\"] > div[class=\"c-item-thumb--product\"] > div[class=\"c-item-thumb__featured-image\"] > a[class=\"c-item-thumb__image-link\"] > div[class=\"c-featured-image--collection\"] > div[class=\"c-featured-image__wrapper \"] > img[class=\"c-featured-image__img lazyautosizes lazyloaded\"]",
     productPageSelector: "h1[class=\"c-header__heading--product\"] > span[class=\"c-header__title\"]",
-    productIds: [1339814412371,2343350796371],
-    variantIds: [12445741514835,12445864230995,12445864263763,12445864296531,12445864329299,21160956100691,21160956133459,21160956166227,21160956198995,21160956231763]
+    productIds: [],
+    variantIds: []
 };
 Spurit['Discountmanager'].labelConfig = {
     checkout_label: {
