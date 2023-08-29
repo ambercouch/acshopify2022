@@ -50,7 +50,7 @@
               "image": "shopify:\/\/shop_images\/Desktop_Main_4.jpg",
               "title": "BAMBOO JOINT SUPPORTS & MUSCLE SLEEVES",
               "button": "Slide title",
-              "cta": "SHOP SALE NOW",
+              "cta": "SHOP NOW",
               "cta_link": "shopify:\/\/collections\/bank-holiday-sale"
             }
           }
@@ -111,7 +111,7 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "SHOP BANK HOLIDAY SALE",
+          "title": "SHOP BEST SELLERS",
           "subtitle": "",
           "show_description": true,
           "description_override": "",
