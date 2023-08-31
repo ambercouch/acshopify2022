@@ -68,6 +68,21 @@
       "hero": {
         "type": "hero",
         "blocks": {
+          "5afdbd12-f1dd-4d2a-ac49-a1af00145a7c": {
+            "type": "hero",
+            "settings": {
+              "hero_image": "shopify:\/\/shop_images\/Design.png",
+              "hero_url": ""
+            }
+          },
+          "3743ac94-9df5-42c1-ac19-08f48d83f811": {
+            "type": "hero",
+            "disabled": true,
+            "settings": {
+              "hero_image": "shopify:\/\/shop_images\/INDEX_BANNER-2_b62e269e-ba5f-4e19-a7f6-ed61a34add6a.jpg",
+              "hero_url": "https:\/\/www.indxshows.co.uk\/indx-fashion\/womenswear\/womenswear"
+            }
+          },
           "313539b0-7e4e-4db1-a9d7-ff714028f948": {
             "type": "hero",
             "settings": {
@@ -82,20 +97,13 @@
               "hero_image": "shopify:\/\/shop_images\/Harrohate_Fashion_Week-Tempest_Banner_dba0fbc8-8a6d-462b-87f8-84516fe59ec9.jpg",
               "hero_url": "https:\/\/harrogatefashionweek.com\/brands\/tempest-designs\/"
             }
-          },
-          "3743ac94-9df5-42c1-ac19-08f48d83f811": {
-            "type": "hero",
-            "disabled": true,
-            "settings": {
-              "hero_image": "shopify:\/\/shop_images\/INDEX_BANNER-2_b62e269e-ba5f-4e19-a7f6-ed61a34add6a.jpg",
-              "hero_url": "https:\/\/www.indxshows.co.uk\/indx-fashion\/womenswear\/womenswear"
-            }
           }
         },
         "block_order": [
+          "5afdbd12-f1dd-4d2a-ac49-a1af00145a7c",
+          "3743ac94-9df5-42c1-ac19-08f48d83f811",
           "313539b0-7e4e-4db1-a9d7-ff714028f948",
-          "8466db52-cedf-4934-9278-5649db6bcdff",
-          "3743ac94-9df5-42c1-ac19-08f48d83f811"
+          "8466db52-cedf-4934-9278-5649db6bcdff"
         ],
         "settings": {
         }
