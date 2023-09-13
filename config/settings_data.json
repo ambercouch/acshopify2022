@@ -313,6 +313,36 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "7906939159855860195": {
+        "type": "shopify:\/\/apps\/charge-me-later-wholesale-app\/blocks\/cml_snippet\/f6aa9802-b86e-43c4-9f25-9ffaee840587",
+        "disabled": false,
+        "settings": {
+          "customers_type": "specific",
+          "specific_customer_tag": "NET30",
+          "show_payment_options": true,
+          "payment_title": "Select payment option",
+          "pay_now": "Pay Now",
+          "pay_later": "Pay Later",
+          "pay_later_collection": "",
+          "cml_checkout_title": "Your Order details",
+          "cml_checkout_shipping_title": "Shipping address",
+          "cml_checkout_first_name": "First name",
+          "cml_checkout_last_name": "Last name",
+          "cml_checkout_email": "Email",
+          "cml_checkout_address1": "Address line 1",
+          "cml_checkout_city": "City",
+          "cml_checkout_zipcode": "PIN code",
+          "cml_checkout_phone": "Phone",
+          "cml_checkout_return": "Return to cart",
+          "cml_checkout_continue": "Continue to shipping",
+          "cml_checkout_shipping": "shipping",
+          "cml_checkout_place_order": "Place Order",
+          "cml_checkout_thank_title": "Thank you for your order!",
+          "cml_checkout_thank_content": "An email receipt containing information about your order will soon follow. Please keep it for your records.",
+          "cml_checkout_thank_link": "Continue shopping",
+          "cml_button_color": "#1773B0"
+        }
       }
     }
   },
