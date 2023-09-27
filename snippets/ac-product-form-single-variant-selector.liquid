@@ -1,3 +1,25 @@
+
+<div class="c-product-form__variants">
+  <h5 class="c-product-form__heading--detail">Size</h5>
+<div class="l-btn-group">
+
+
+  {% for variant in product.variants %}
+    {% if variant.available %}
+      <div class="l-btn-group__btn">
+        <div class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
+      </div>
+    {% else %}
+      <div class="l-btn-group__btn">
+        <div disabled="disabled" class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
+
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+</div>
+
 <div class="c-product-form__link--size-guide">
   <div class="c-btn--size-guide">
     <a class="c-btn__link--size-guide" data-ajax-id="/pages/size-guide-{{ sizeGuideId }}" data-remodal-ajax="{{  product.handle }}" data-remodal-target="modalSizeGuide" href="#modalSizeGuide" data-remodal>
@@ -15,21 +37,4 @@
       </div>
     </div>
   </div>
-</div>
-<div class="l-btn-group">
-
-
-  {% for variant in product.variants %}
-    {% if variant.available %}
-      <div class="l-btn-group__btn">
-        <div class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
-      </div>
-    {% else %}
-      <div class="l-btn-group__btn">
-        <div disabled="disabled" class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
-
-      </div>
-    {% endif %}
-  {% endfor %}
-
 </div>

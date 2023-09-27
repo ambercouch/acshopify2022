@@ -21,7 +21,8 @@
   </div>
 
   {% if product.images.size > 1 %}
-    <ul class="c-product-gallery__list--thumb">
+  <div class="c-product-gallery__thumb-carousel">
+    <ul class="c-product-gallery__list--thumb"  data-acs-flickity-thumb>
       {% for image in product.images %}
         <li class="c-product-gallery__item--thumb">
           <a class="c-product-gallery__link--thumb" href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %}>
@@ -30,6 +31,7 @@
         </li>
       {% endfor %}
     </ul>
+  </div>
   {% endif %}
 
 </div>

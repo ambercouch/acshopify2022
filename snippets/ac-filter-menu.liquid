@@ -1,0 +1,13 @@
+
+    <div class="c-nav-menu--product-filter ">
+      <h5 class="c-nav-menu__heading">Pack Size <i>Big Savings On Pairs</i></h5>
+      <ul class="c-nav-menu__list--product-filter">
+        <li  class="c-nav-menu__item--product-filter {% if productVersion == "single" %}is-current{% endif %} " >
+          <a  title="Shop singles" class="c-nav-menu__link--product-filter "  href="/products/{{ siblingUrl }}">Single</a>
+        </li>
+        <li  class="c-nav-menu__item--product-filter {% if productVersion == "pair" %}is-current{% endif %}" >
+          <a title="Shop pairs" class="c-nav-menu__link--product-filter"  href="/products/{{ siblingUrl }}">Pair </a>
+        </li>
+      </ul>
+    </div>
+

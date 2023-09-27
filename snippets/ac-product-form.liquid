@@ -126,6 +126,12 @@
     </select>
   </noscript>
 
+  {% if productVersion != '' %}
+    <div class="l-page__nav-menu--product-filter">
+      {% include 'ac-filter-menu' %}
+    </div>
+  {% endif %}
+
   <div class="c-product-form__input-wrapper--qty">
   <label class="c-product-form__label--qty" for="Quantity">{{ 'products.product.quantity' | t }}</label>
   <input class="c-product-form__input--qty" type="number" id="Quantity" name="quantity" value="1" min="1">
