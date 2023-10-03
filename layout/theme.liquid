@@ -60,6 +60,17 @@
   sweet.init('AT-651c43e8288a5');
   sweet.track('pageview', 1);
 </script>
+
+  
+<script>
+  window.sweet=window.sweet||{},window.sweet.q=sweet.q||[],
+  window.sweet.init=function(e){this.cid=e;},
+  window.sweet.track=function(){this.q.push(arguments)};var a=document.createElement("script"),
+  m=document.getElementsByTagName("script")[0];
+  a.async=1,a.src="https://track.sweetanalytics.com/sweet.min.js",m.parentNode.insertBefore(a,m);
+  sweet.init('AT-651c43e8288a5');
+  sweet.track('pageview', 1);
+</script>
 </head>
 <body id="siteBody" class="template-{{ template | handle }}" data-template="{{ template.name | handle }}" data-template-type="{{ template.suffix | replace : ' ', '_' | replace : '-', '_'}}">
 
