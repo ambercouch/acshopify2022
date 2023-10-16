@@ -22,7 +22,7 @@
 {% endfor %}
 
 <div class="c-product-form ac-test-{{ productCollections }}">
-{% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', class:'c-product-form__form'%}
+{% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', data-submit-ajax: true, class:'c-product-form__form'%}
 
   <input type="hidden" name="id" value="{{ current_variant.id }}">
 
@@ -87,7 +87,8 @@
             {% endif %}
 
         {% endfor %}
-      </div>                                                                                                       <select name="id" data-productid="{{product.id }}" id="productSelect" class="product-single__variants" style="display:none">
+      </div>
+      <select name="id" data-productid="{{product.id }}" id="productSelect" class="product-single__variants" style="display:none">
           {% for variant in product.variants %}
             {% if variant.available %}
 

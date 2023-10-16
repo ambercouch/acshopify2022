@@ -21,9 +21,9 @@
       {%- assign related_count = related_count | plus: 1 -%}
       {%- assign grid_item_width = 'small--one-half medium-up--one-half' -%}
 
-			<div class="l-product-list__item is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+			<div class="l-product-list__item--related-product is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
 				<div class="l-product-list__item-thumb">
-					{% include 'acstk-item-thumb' with {templateProduct : related_product}%}
+					{% include 'acstk-item-thumb' with {templateProduct : related_product, modClass : '--related-product'}%}
 				</div>
 			</div>
 
@@ -36,7 +36,7 @@
 	</div>
 {%- endif -%}
   <div class="l-product-list">
-    <div class="l-product-list__list" data-grid-style="{{ grid_style }}">
+    <div class="l-product-list__list--related-product" data-grid-style="{{ grid_style }}">
       {{ shopify_explorer_related_product }}
     </div>
   </div>

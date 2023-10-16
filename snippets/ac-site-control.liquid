@@ -31,8 +31,8 @@
         </li>
       {% endif %}
     {% endif %}
-    <li class="c-site-control__item--cart" data-button-cart >
-      <a href="/cart" class="c-site-control__link--cart js-drawer-open-right-disabled" >
+    <li class="c-site-control__item--cart">
+      <a href="/cart" class="c-site-control__link--cart" data-state="off" data-control="ajaxCartOffPageContainer" >
         <span class="c-site-control__label">{{ 'layout.cart.title' | t }}</span>
         {% include 'icon-shopping-bag' %}
         <span data-cart-count class="c-site-control__cart-count ">

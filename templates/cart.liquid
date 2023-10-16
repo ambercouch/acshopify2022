@@ -146,20 +146,20 @@
           </ul>
         </div>
 
-        <div class="c-cart___summary">
-          <header class="c-cart___header--cart">
-            <h4 class="c-cart___heading--cart">
-              <span class="c-cart___title--cart">Order Summary</span>
+        <div class="c-cart__summary">
+          <header class="c-cart__header--cart">
+            <h4 class="c-cart__heading--cart">
+              <span class="c-cart__title--cart">Order Summary</span>
             </h4>
           </header>
 {%  comment %}
-          <div class="c-cart___notes">
+          <div class="c-cart__notes">
             <label for="CartSpecialInstructions">Special instructions for Seller</label>
             <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
           </div>
           {% endcomment %}
 
-          <span class="c-cart___subtotal"><span>Subtotal:</span> <b class="carto">{{ cart.total_price | money }}</b></span>
+          <span class="c-cart__subtotal"><span>Subtotal:</span> <b class="carto">{{ cart.total_price | money }}</b></span>
           <div class="c-cart__checkout" >
             <button type="submit" class="c-btn--cart-submit" name="checkout" value>
               <i class="fa fa-lock"></i>

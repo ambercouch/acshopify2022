@@ -1,0 +1,131 @@
+
+<div class="c-cart">
+  <form action="/cart" method="post" novalidate class="cart ajaxcart c-cart__form">
+    {% if cart.item_count > 0 %}
+      <div class="c-cart__cart-list--quick-cart">
+
+
+          <ul class="c-cart-list__list--quick-cart">
+            {% for item in cart.items %}
+
+              {% assign titleThumb = item.product.metafields.global.title_thumb %}
+              {% if titleThumb != blank %}
+                {% assign productTitle = titleThumb %}
+              {% else %}
+                {% assign productTitle = item.product.title %}
+              {% endif %}
+
+              {% comment %}
+                Check if the product is in collection singles or pairs
+              {% endcomment  %}
+
+              {% assign productCollections = item.product.collections | map: "handle" %}
+              {% if productCollections contains "singles" %}
+                {% assign productType = "Single" %}
+                {% elsif productCollections contains "pairs" %}
+                {% assign productType = "Pairs" %}
+              {% endif %}
+
+              <li class="l-cart-list__item--quick-cart">
+                <div class="l-cart-list__item-thumb">
+                  <div class="c-item-thumb--quick-cart" data-item-id="{{ item.variant.id  }}">
+
+                    <div class="c-item-thumb__feature-image--quick-cart">
+                      <img class="c-item-thumb__img--cart" src="{{ item | img_url: '240x240' }}" alt="{{ name }}">
+                    </div>
+
+                    <h4 class="c-item-thumb__heading--quick-cart">
+                      <div class="c-item-thumb__title--quick-cart">
+                        <a class="c-item-thumb__link-title--quick-cart" href="{{ item.url }}">
+                          <span class="c-item-thumb__title--quick-cart">{{ productTitle }}</span>
+                          {% if productType != blank %}
+                            <span class="c-item-thumb__title-type">({{ productType }})</span>
+                          {% endif %}
+                        </a>
+                      </div>
+                      <div class="c-item-thumb__variant--quick-cart">
+                        {% unless item.variant.title contains 'Default' %}
+                          <div class="c-item-thumb__variant--quick-cart">
+                            <span class="c-item-thumb__variant-label">Size : </span>
+                            <span class="c-item-thumb__variant-title">{{ item.variant.title }}</span>
+                          </div>
+                        {% endunless %}
+                        {% assign property_size = item.properties | size %}
+                        {% if property_size > 0 %}
+                          <div class="c-item-thumb__options">
+                            {% for p in item.properties %}
+                              {% unless p.last == blank %}
+                                <div class="c-item-thumb__option">{{ p.first }}: {{ p.last }}</div>
+                              {% endunless %}
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </h4>
+
+                    <div class="c-item-thumb__container--cart-product-qty-quick-cart">
+                      <div class="c-item-thumb__qty" data-item-qty="{{ item.quantity }}">{{ item.quantity }}</div>
+
+                    </div>
+
+                    <div class="c-item-thumb__container--cart-product-price-quick-cart">
+                      <span class="c-item-thumb__line-price-money">{{ item.line_price | money }}</span>
+                    </div>
+
+                    <div class="c-item-thumb__control--quick-cart">
+                      <div class="c-cart-remove cart-remove">
+                        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="ajaxcart__qty-remove c-btn--cart-remove">
+                          {% include 'icon-close.liquid' %}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-item-thumb__cart-size-reminder--quick-cart">
+                    <span class="c-item-thumb__cart-note--quick-cart">*Have you checked your size?</span>
+                    {% include 'ac-modal-size-guide-cart' %}
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+
+
+
+        <div class="c-cart__summary--quick-cart">
+          <header class="c-cart__header--cart">
+            <h4 class="c-cat__heading--cart">
+              <span class="c-cart__title--quick-cart">Order Summary</span>
+            </h4>
+          </header>
+          {%  comment %}
+            <div class="c-cart__notes">
+              <label for="CartSpecialInstructions">Special instructions for Seller</label>
+              <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+            </div>
+          {% endcomment %}
+
+          <span class="c-cart__subtotal"><span>Subtotal:</span> <b class="carto">{{ cart.total_price | money }}</b></span>
+          <div class="c-cart__checkout" >
+            <button type="submit" class="c-btn--cart-submit" name="checkout" value>
+              <i class="fa fa-lock"></i>
+              <span class="c-btn__link-label">
+        {{ 'cart.general.checkout' | t }}
+          </span>
+            </button>
+            <div class="c-cart__user-info--quick-cart">
+              <p>{{ settings.cart_user_info }}</p>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+ {% else %}
+   <p class="u-ta-center">{{ 'cart.general.empty' | t }}</p>
+
+{% endif %}
+  </form>
+
+</div>
+
