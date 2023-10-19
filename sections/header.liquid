@@ -56,8 +56,22 @@
         </div>
       </div>
     </div>
-
   </div>
+
+  <div id="ajaxCart" class="site__off-page-container" >
+    <div id="ajaxCartOffPageContainer" class="l-off-page-container--cart" data-state="off" data-container="ajaxCartOffPageContainer">
+      <div class="l-off-page-container--cart-inner">
+        <div class="l-off-page-container__header" data-state="off" data-control="ajaxCartOffPageContainer" >
+          <div class="c-btn--mobile-nav-close"><span class="c-btn__icon--mobile-nav-close">{% include 'icon-close' %}</span><span class="c-btn__label--mobile-nav-close">close</span></div>
+        </div>
+        <div class="l-off-page-container__cart">
+          {% include "ac-ajax-cart" %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 </section>
 

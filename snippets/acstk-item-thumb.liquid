@@ -57,7 +57,7 @@
 {% endif %}
 {% endif %}
 
-<div class="c-item-thumb--product">
+<div class="c-item-thumb--product c-item-thumb{{ modClass }}">
   <div class="c-item-thumb__featured-image">
     <a href="{{ itemProduct.url }}{{ ac_url_tracking | prepend :'?ac_ref=' }}" class="c-item-thumb__image-link">
       <div class="c-featured-image--collection">
@@ -88,12 +88,11 @@
     {% endif %}
     </div>
     <div class="c-item-thumb__info">
-      <h5 class="c-item-thumb__heading">
-
+      <h5 class="c-item-thumb__heading{{ modClass }}">
         <a href="{{ itemProduct.url }}" class="c-item-thumb__heading-link">
         <span class="c-item-thumb__title">{{ productTitle }}</span>
         {% if productType != blank %}
-        <span class="c-item-thumb__title-type">({{  productType }})</span>
+        <span class="c-item-thumb__title-type{{ modClass }}">({{  productType }})</span>
         {% endif %}
         </a>
       </h5>
