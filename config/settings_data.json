@@ -4,7 +4,7 @@
     "social_facebook_link": "https:\/\/facebook.com\/getabearhug",
     "social_instagram_link": "https:\/\/instagram.com\/getabearhug",
     "favicon": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
-    "cart_user_info": "Discount codes non-redeemable against bundles & clothing.",
+    "cart_user_info": "Orders delivered Monday - Saturday with Royal Mail.",
     "checkout_header_image": "shopify:\/\/shop_images\/chbg.jpg",
     "checkout_logo_image": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
     "checkout_logo_size": "large",
@@ -69,7 +69,6 @@
       },
       "1642591167f3ea18b4": {
         "type": "ac-content-block",
-        "disabled": true,
         "blocks": {
           "60e2e60b-00bf-42f9-80ab-931c38bdb192": {
             "type": "content",
@@ -100,6 +99,7 @@
           "60e2e60b-00bf-42f9-80ab-931c38bdb192",
           "8d1e2822-177d-4e14-9166-85a4676b9da9"
         ],
+        "disabled": true,
         "settings": {
           "title": "Birth of the bear section",
           "hide_title": true,
@@ -121,7 +121,6 @@
       },
       "1643016298f1c80f98": {
         "type": "ac-content-block",
-        "disabled": true,
         "blocks": {
           "9556bbc9-349b-4dce-968f-9b16fb632bb6": {
             "type": "content",
@@ -139,6 +138,7 @@
         "block_order": [
           "9556bbc9-349b-4dce-968f-9b16fb632bb6"
         ],
+        "disabled": true,
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
@@ -594,7 +594,6 @@
       },
       "1650543184447b7ae1": {
         "type": "ac-content-block",
-        "disabled": true,
         "blocks": {
           "c81711ce-ff1d-4259-92cb-04b7585d8e75": {
             "type": "content",
@@ -626,6 +625,7 @@
           "c81711ce-ff1d-4259-92cb-04b7585d8e75",
           "f03a0c24-30ce-4dc3-9394-c64421fb1596"
         ],
+        "disabled": true,
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
@@ -635,7 +635,6 @@
       },
       "16505434604cbd951f": {
         "type": "ac-content-block",
-        "disabled": true,
         "blocks": {
           "49e37ea7-bb32-45fe-9cc6-2391f9ba53aa": {
             "type": "content",
@@ -667,6 +666,7 @@
           "49e37ea7-bb32-45fe-9cc6-2391f9ba53aa",
           "4d3aaf41-7948-4db8-a8c2-6eda66e9e100"
         ],
+        "disabled": true,
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
@@ -676,7 +676,6 @@
       },
       "16505434773cfa6f88": {
         "type": "ac-content-block",
-        "disabled": true,
         "blocks": {
           "33296205-8417-4ec5-8647-58c83fa4a5f5": {
             "type": "content",
@@ -708,6 +707,7 @@
           "33296205-8417-4ec5-8647-58c83fa4a5f5",
           "bdb223b5-a8cc-4fc0-8226-0b7b477e8c13"
         ],
+        "disabled": true,
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
@@ -861,13 +861,6 @@
       "16505434773cfa6f88"
     ],
     "blocks": {
-      "10605408327587305396": {
-        "type": "shopify:\/\/apps\/easygift-auto-add-to-cart\/blocks\/app-embed\/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
-        "disabled": false,
-        "settings": {
-          "version": "v3"
-        }
-      },
       "855628211100114053": {
         "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
