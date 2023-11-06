@@ -157,16 +157,19 @@ window.__lo_site_id = 139417;
 
 {% include 'adolab-get-clicked-seo' %}
 
+
+</body>
+
   cml_template: {{ template }}
   {% if template contains "page" %}
     <script>
-       $(function(){
-         alert("page");
-         $(".totals").append("<p>Total does not include tax</p>");
-       })
+      setTimeout(function () {
+         $(function(){
+           alert("page");
+           $(".totals").append("<p>Total does not include tax</p>");
+         })
+     }, 1000);
+       
     </script>
   {% endif %}
-</body>
-
-
 </html>
