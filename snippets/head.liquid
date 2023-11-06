@@ -3,15 +3,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="{{ settings.color_primary }}">
 
-cml_template: {{ template }}
-  {% if template contains "page" %}
-    <script>
-       $(function(){
-         alert("page");
-         $(".totals").append("<p>Total does not include tax</p>");
-       })
-    </script>
-  {% endif %}
 <link rel="canonical" href="{{ canonical_url }}">
 
 {% if settings.favicon != blank %}
