@@ -61,6 +61,15 @@
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts -->
       <script src='https://upsell-app.logbase.io/lb-upsell.js?shop=tempestdesigns.myshopify.com' defer></script>
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
+
+  {% if template contains "cml_checkout" %}
+    <script>
+       $(function(){
+         alert("page");
+         $(".totals").append("<p>Total does not include tax</p>");
+       })
+    </script>
+  {% endif %}
 </head>
 
 {% include 'body-tag' %}
@@ -154,15 +163,7 @@ window.__lo_site_id = 139417;
 
 {% include 'adolab-get-clicked-seo' %}
 
-  {% if template contains "cml_checkout" %}
-    <script>
-       $(function(){
-         alert("page");
-         $(".totals").append("<p>Total does not include tax</p>");
-       })
-    </script>
-  {% endif %}
-
+  
 </body>
 
 
