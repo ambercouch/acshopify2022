@@ -160,8 +160,7 @@ window.__lo_site_id = 139417;
 
 </body>
 
-  cml_template: {{ template }}
-  {% if template contains "page" %}
+  {% if page.handle contains "page" %}
     <script>
       setTimeout(function () {
          $(function(){
