@@ -2,7 +2,8 @@
 <!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="{{ shop.locale }}" data-customer='{{ customer.id }}'> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head class="sometester abc fix gulp">
-<!-- HEAD CONTENT -->
+
+  <!-- HEAD CONTENT -->
   {% include 'head' %}
   <!-- TYPEKIT -->
   {%  include 'typekit' %}
@@ -159,5 +160,13 @@ window.__lo_site_id = 139417;
   
 </body>
 
-
+cml_template: {{ template }}
+  {% if template contains "page" %}
+    <script>
+       $(function(){
+         alert("page");
+         $(".totals").append("<p>Total does not include tax</p>");
+       })
+    </script>
+  {% endif %}
 </html>
