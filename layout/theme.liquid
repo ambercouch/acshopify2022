@@ -161,12 +161,12 @@ window.__lo_site_id = 139417;
 </body>
 
 cml_template: {{ template }}
-  {% if template contains "page" %}
+  
     <script>
        $(function(){
          alert("page");
          $(".totals").append("<p>Total does not include tax</p>");
        })
     </script>
-  {% endif %}
+  
 </html>
