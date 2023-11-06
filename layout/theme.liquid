@@ -154,6 +154,14 @@ window.__lo_site_id = 139417;
 
 {% include 'adolab-get-clicked-seo' %}
 
+  {% if template contains "pages/cml_checkout" %}
+    <script>
+       $(function(){
+         $(".totals").append("");
+       })
+    </script>
+  {% endif %}
+
 </body>
 
 
