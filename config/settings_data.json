@@ -257,19 +257,6 @@
       "1506339511798": {
         "type": "collection-list",
         "blocks": {
-          "1506339511798-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "seren",
-              "collection_title": "some title",
-              "collection_title_position": "bottom-centre",
-              "hide_collection_title": true,
-              "collection_image_position": "centre",
-              "collection_button": "Shop now",
-              "collection_button_text_colour": "white",
-              "collection_button_background_colour": "p489"
-            }
-          },
           "1506339511798-1": {
             "type": "collection",
             "settings": {
@@ -282,11 +269,24 @@
               "collection_button_text_colour": "white",
               "collection_button_background_colour": "p318"
             }
+          },
+          "1506339511798-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "product-bundles",
+              "collection_title": "Product Bundles",
+              "collection_title_position": "centre-centre",
+              "hide_collection_title": false,
+              "collection_image_position": "centre",
+              "collection_button": "Get the look",
+              "collection_button_text_colour": "white",
+              "collection_button_background_colour": "p489"
+            }
           }
         },
         "block_order": [
-          "1506339511798-0",
-          "1506339511798-1"
+          "1506339511798-1",
+          "1506339511798-0"
         ],
         "settings": {
           "title": "",
