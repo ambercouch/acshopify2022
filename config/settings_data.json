@@ -70,6 +70,7 @@
         "blocks": {
           "5afdbd12-f1dd-4d2a-ac49-a1af00145a7c": {
             "type": "hero",
+            "disabled": true,
             "settings": {
               "hero_image": "shopify:\/\/shop_images\/Design.png",
               "hero_url": ""
