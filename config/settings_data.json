@@ -19,7 +19,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "announcement_bar_home_page_only": false,
-          "announcement_bar_text": "Spend £50 & Get A Free Bobble Hat | Free Shipping As Standard",
+          "announcement_bar_text": "FREE SHIPPING AVAILABLE | ORDER BY 18TH DECEMBER FOR CHRISTMAS",
           "announcement_bar_link": "",
           "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width_mobile": 250,
@@ -50,7 +50,7 @@
               "image": "shopify:\/\/shop_images\/Desktop_Main_4.jpg",
               "title": "BAMBOO JOINT SUPPORTS & MUSCLE SLEEVES",
               "button": "Slide title",
-              "cta": "SHOP now",
+              "cta": "SHOP NOW",
               "cta_link": "shopify:\/\/collections\/all-products"
             }
           }
@@ -111,7 +111,7 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "SHOP SUPPORTS & SLEEVES",
+          "title": "BEST SELLERS",
           "subtitle": "",
           "show_description": true,
           "description_override": "",
@@ -929,6 +929,12 @@
       },
       "14952540001915115444": {
         "type": "shopify:\/\/apps\/upcart-cart-drawer\/blocks\/app-embed\/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "6986766168588894248": {
+        "type": "shopify:\/\/apps\/preorder-now-wolf\/blocks\/app-embed\/7ee1d740-e67b-4ea8-b0c9-1f62cb8777ec",
         "disabled": false,
         "settings": {
         }
