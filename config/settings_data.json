@@ -845,6 +845,65 @@
           "hero_image": "shopify:\/\/shop_images\/page-header-ambassador.jpg",
           "hide_page_content": true
         }
+      },
+      "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c": {
+        "type": "ac-content-block-icon-list",
+        "blocks": {
+          "8c287f6e-525d-4808-bec3-cecb0bff520e": {
+            "type": "icon",
+            "settings": {
+              "title": "Mens health",
+              "cb_icon_image": "shopify:\/\/shop_images\/Menshealth.svg",
+              "cb_icon_hide_title": true
+            }
+          },
+          "bc516a9e-fb1a-4088-a88d-6d59ccf6e8b8": {
+            "type": "icon",
+            "settings": {
+              "title": "Womens Running",
+              "cb_icon_image": "shopify:\/\/shop_images\/Womens_RUNNING.svg",
+              "cb_icon_hide_title": true
+            }
+          },
+          "7e4dca64-1284-49fe-aeed-71d9ed6cd8ac": {
+            "type": "icon",
+            "settings": {
+              "title": "The Independent",
+              "cb_icon_image": "shopify:\/\/shop_images\/Independent.svg",
+              "cb_icon_hide_title": true
+            }
+          },
+          "76e17670-bfd9-4c8c-9a41-7b3856a00134": {
+            "type": "icon",
+            "settings": {
+              "title": "Metro",
+              "cb_icon_image": "shopify:\/\/shop_images\/Metro.svg",
+              "cb_icon_hide_title": true
+            }
+          }
+        },
+        "block_order": [
+          "8c287f6e-525d-4808-bec3-cecb0bff520e",
+          "bc516a9e-fb1a-4088-a88d-6d59ccf6e8b8",
+          "7e4dca64-1284-49fe-aeed-71d9ed6cd8ac",
+          "76e17670-bfd9-4c8c-9a41-7b3856a00134"
+        ],
+        "settings": {
+          "cb_background_colour": "t",
+          "title": "AS SEEN IN...",
+          "cb_heading_size": "2",
+          "cb_heading_colour": "2",
+          "cb_heading_layout": "left",
+          "cb_hide_title": false,
+          "cb_sub_title": "",
+          "cb_text": "",
+          "cb_text_colour": "w",
+          "cb_text_layout": "left",
+          "cb_button_label": "",
+          "cb_button_link": "",
+          "cb_button_colour": "w",
+          "cb_desk_width_50": false
+        }
       }
     },
     "content_for_index": [
@@ -858,7 +917,8 @@
       "1643016298f1c80f98",
       "1650543184447b7ae1",
       "16505434604cbd951f",
-      "16505434773cfa6f88"
+      "16505434773cfa6f88",
+      "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c"
     ],
     "blocks": {
       "855628211100114053": {

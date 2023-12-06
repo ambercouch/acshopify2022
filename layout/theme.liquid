@@ -99,6 +99,16 @@
 <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 {{ 'paymentfont.scss.css' | asset_url | stylesheet_tag }}
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Disable add btn');
+        var addButton = document.getElementById('add-to-cart-button');
+        var variantsContainer = document.getElementById('size-options-container');
+
+        addButton.disabled = true; // Disable the button initially
+        variantsContainer.classList.add('disabled'); // Add 'disabled' class to the variants container
+    });
+</script>
 
 </body>
 </html>
