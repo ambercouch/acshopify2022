@@ -101,12 +101,18 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Disable add btn');
         var addButton = document.getElementById('add-to-cart-button');
-        var variantsContainer = document.getElementById('size-options-container');
+        if(addButton){
+            addButton.disabled = true; // Disable the button initially
+        }
 
-        addButton.disabled = true; // Disable the button initially
-        variantsContainer.classList.add('disabled'); // Add 'disabled' class to the variants container
+        var variantsContainer = document.getElementById('size-options-container');
+        if(variantsContainer){
+            variantsContainer.classList.add('disabled'); // Add 'disabled' class to the variants container
+        }
+
+
+
     });
 </script>
 

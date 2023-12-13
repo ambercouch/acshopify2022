@@ -88,7 +88,9 @@
 
         {% endfor %}
       </div>
-      <select name="id" data-productid="{{product.id }}" id="productSelect" class="product-single__variants" style="display:none">
+
+      <!-- Real product selector -->
+      <select name="id" data-productid="{{product.id }}" id="productSelect" class="product-single__variants" style="display:none" >
           {% for variant in product.variants %}
             {% if variant.available %}
 
