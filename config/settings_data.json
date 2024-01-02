@@ -302,9 +302,9 @@
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
-          "block_layout": "5050",
+          "block_layout": "7525",
           "block_background_colour": "t",
-          "block_background_image": "shopify:\/\/shop_images\/3453.jpg"
+          "block_background_image": "shopify:\/\/shop_images\/3453_copy_3.jpg"
         }
       },
       "16431012843577f266": {
@@ -908,10 +908,10 @@
     },
     "content_for_index": [
       "1643016047b462c6f9",
+      "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c",
       "16430262408de1051e",
       "16430296842a0fc99f",
       "1643029741d3b07d30",
-      "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c",
       "16431012843577f266",
       "1643029835b6c91d25",
       "1642591167f3ea18b4",
