@@ -17,6 +17,7 @@
       {%- assign pType = product.type -%}
       {%- assign varInvQty = current_variant.inventory_quantity | times : 1 -%}
 
+      <!-- Check stock levels test 123 -->
       {%- if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" -%}
         <!-- We have {{ current_variant.inventory_quantity }} in stock. -->
       {%- else -%}
@@ -26,22 +27,27 @@
 
       {%- if current_variant.price >  low_price -%}
         {% comment %}
-        if the variant price is greater than he low price 600, allow single purchases
+          if the variant price is greater than he low price, allow single purchases
         {% endcomment %}
-
         {%- assign minQty = 1 -%}
         {%- assign minLowPriceQty = 1 -%}
-        <!-- 1 current_variant.price > low_price : {{ current_variant.price }}  > {{ low_price }} -->
+        <!-- The variant price is greater than he low price, allow single purchases -->
+        <!-- 1 is current_variant.price > low_price -->
+        {% if current_variant.price   >  low_price  %}
+          <!-- TRUE -->
+          <!-- {{ current_variant.price }}  > {{ low_price }} -->
+        {% endif %}
 
         {% elsif  current_variant.price < low_price_2 %}
 
         {% comment %}
-          if the variant price is less than the VERY low price 300, set the minQty accordingly
+          if the variant price is less than the VERY low price, set the minQty accordingly
         {% endcomment %}
 
         {%- assign minQty = settings.low_cost_minimum_qty_2 | times: 1 -%}
         {%- assign minLowPriceQty = settings.low_cost_minimum_qty_2 -%}
         {%- assign qty = settings.low_cost_minimum_qty_2 -%}
+        <!-- The variant price is less than the VERY low price, set the minQty accordingly -->
         <!-- 2 current_variant.price < low_price_2 : {{ current_variant.price }}  < {{ low_price_2 }} -->
 
       {%- else -%}

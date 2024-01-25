@@ -2,11 +2,71 @@
 {%  include  'logic-access'%}
 {%  include  'logic-customer'%}
 {% paginate collection.products by 48%}
+{% assign slide1 = images[collection.metafields.actpd.collection_slide_1] %}
+{% assign slide2 = images[collection.metafields.actpd.collection_slide_2] %}
+{% assign slide3 = images[collection.metafields.actpd.collection_slide_3] %}
+
+{% assign slideUrl1 = collection.metafields.actpd.collection_slide_url_1 %}
+{% assign slideUrl2 = collection.metafields.actpd.collection_slide_url_2 %}
+{% assign slideUrl3 = collection.metafields.actpd.collection_slide_url_3 %}
+
+  {% capture slides %}
+    {% unless slide1  == empty %}
+      {{ slide1 | img_url: '1270x465'  }}
+    {% endunless %}
+    {% unless slide2  == empty  %}
+      ,{{ slide2 | img_url: '1270x465'}}
+    {% endunless %}
+    {% unless slide3  == empty %}
+      ,{{ slide3 | img_url: '1270x465' }}
+    {% endunless %}
+  {% endcapture %}
+  {% assign aSlides = slides | split: ',' %}
   <div class="collection">
     <div class="collection__breadcrumbs">
       {% assign BCClassModifier = "--collection"  %}
       {%  include "breadcrumbs" %}
     </div>
+
+{% unless  aSlides == empty %}
+    <div class="hero--collection">
+      <div class="hero__carousel">
+        {% if collection.image.src %}
+        <div class="hero__cell">
+          <img src="{{ collection.image | img_url: '1270x465' }}" alt="" class="hero__img">
+        </div>
+        {% endif %}
+    {% for slide in aSlides %}
+      <div class="hero__cell slide-c-{{ forloop.index }}">
+        {% assign key =   "collection_slide_url_" | append:  forloop.index %}
+        {% assign slideUrl = collection.metafields.actpd[key] %}
+        {% if  slideUrl %}
+          <a href="{{  slideUrl }}" class="hero__link">
+          <img src="{{ slide }}" alt="" class="hero__img">
+          </a>
+          {% else %}
+            <img src="{{ slide }}" alt="" class="hero__img">
+        {% endif %}
+        </div>
+    {% endfor %}
+      </div>
+    </div>
+    {% endunless %}
+
+    {% if  aSlides == empty %}
+    {% if collection.image.src %}
+      <div class="l-page__feature-image--collection">
+        {% include 'responsive-image' with
+          image: collection.image,
+          max_width: 1440,
+          max_height: 600
+        %}
+      </div>
+    {% else %}
+      <!-- no collection image -->
+    {% endif %}
+    {% endif %}
+
     <div class="collection__flex">
       <div class="collection__sidebar">
         <div class="collection__filters">
@@ -45,6 +105,8 @@
       {% endfor %}
 
       <div class="collection__main">
+
+
         {% if custom_header == false %}
           <header class="collection__header" role="banner">
             <h1 class="collection__heading">{% if current_tags contains 'sarah-tempest' %}<!-- Sarah Tempest -->Sarah Tempest {% else %}<!-- NOT Sarah Tempest -->{% endif %}{{ collection.title }}</h1>
