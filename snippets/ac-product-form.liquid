@@ -24,7 +24,7 @@
 <div class="c-product-form ac-test-{{ productCollections }}">
 {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', data-submit-ajax: true, class:'c-product-form__form'%}
 
-  <input type="hidden" name="id" value="{{ current_variant.id }}">
+  <input type="hidden" name="id" value="">
 
   <div class="c-product-form__product-price">
     {% include 'ac-product-form-price' %}
@@ -55,6 +55,9 @@
       {% endcomment %}
      {% include 'ac-modal-size-guide-bundle' %}
       <div class="js c-product-form__options--multi" data-multi-options>
+
+        <p>Please select your size.</p>
+
       {% for option in product.options_with_values %}
             {% if forloop.index0 > 4 %}
               {% for value in option.values %}
@@ -75,10 +78,11 @@
                     name="options[{{ option.name | escape }}]"
                     data-js-product-form-select
                 >
+                  <option value="" disabled selected="selected" >Please Select an option</option>
                   {% for value in option.values %}
                     <option
                         value="{{ value | escape }}"
-                        {% if option.selected_value == value %}selected="selected"{% endif %}>
+                        {% if option.selected_value == value %}{% endif %}>
                       {{ value }}
                     </option>
                   {% endfor %}
@@ -140,14 +144,13 @@
   <input class="c-product-form__input--qty" type="number" id="Quantity" name="quantity" value="1" min="1">
   </div>
 
-
-
-  <div class="c-product-form__submit">
+  <div class="c-product-form__submit variant-not-selected">
   <button
       class="c-btn--product-form-submit"
       id="add-to-cart-button"
       type="submit"
       name="add"
+      title="Please select your size"
       data-submit-button
       {% unless current_variant.available %}disabled="disabled"{% endunless %}>
         <span data-submit-button-text class="c-btn__link-label">

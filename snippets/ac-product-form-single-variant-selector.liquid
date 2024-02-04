@@ -1,13 +1,14 @@
 
 <div class="c-product-form__variants">
   <h5 class="c-product-form__heading--detail">Size</h5>
+  <p data-size-instruction class="c-product-form__instructions" style="display: block;">Please select your size.</p>
 <div id="size-options-container" class="l-btn-group">
 
 
   {% for variant in product.variants %}
     {% if variant.available %}
       <div class="l-btn-group__btn">
-        <div class="c-btn--product-radio {% if variant == product.selected_or_first_available_variant %} is-selected {% endif %}" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
+        <div class="c-btn--product-radio" data-sku="{{ variant.sku }}" data-variant-id="{{ variant.id}}" data-variant-qty="{{ variant.inventory_quantity }}" data-variant-policy="{{ variant.inventory_policy}}" data-variants="{{ variant.option1 | handle }};{{ variant.option2 | handle }};{{ variant.option3 | handle }}" value="{{ variant.id }}">{{ variant.title }}</div>
       </div>
     {% else %}
       <div class="l-btn-group__btn">
