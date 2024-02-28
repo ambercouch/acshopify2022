@@ -1,0 +1,25 @@
+
+  <div class="c-item-thumb--product-sport">
+
+    <div class="c-item-thumb__content-col--image">
+      {% if productSport.product_sport_image != blank %}
+        <div class="c-item-thumb__feature-image--product-sport">
+          {% include 'responsive-image' with
+            image: productSport.product_sport_image.value,
+            max_width: 400,
+            max_height: 250
+          %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="c-item-thumb__content-col--content">
+      <h4 class="c-item-thumb__heading--product-sport-product">{{ productSport.product_sport_title }}</h4>
+      <div class="c-item-thumb__text--product-sport-prodcuct">
+        <p>{{ productSport.product_sport_description.value | newline_to_br }}</p>
+      </div>
+      {% include 'ac-product-thumb'  with {{ modClass : '--product-sport-product' }} %}
+    </div>
+  </div>
+
+
