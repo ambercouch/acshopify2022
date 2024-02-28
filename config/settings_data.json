@@ -4,7 +4,7 @@
     "social_facebook_link": "https:\/\/facebook.com\/getabearhug",
     "social_instagram_link": "https:\/\/instagram.com\/getabearhug",
     "favicon": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
-    "cart_user_info": "Discount codes non-redeemable against bundles & clothing.",
+    "cart_user_info": "Orders delivered Monday - Saturday with Royal Mail.",
     "checkout_header_image": "shopify:\/\/shop_images\/chbg.jpg",
     "checkout_logo_image": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
     "checkout_logo_size": "large",
@@ -19,7 +19,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "announcement_bar_home_page_only": false,
-          "announcement_bar_text": "Free Shipping As Standard",
+          "announcement_bar_text": "FREE SHIPPING AS STANDARD",
           "announcement_bar_link": "",
           "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
           "logo_max_width_mobile": 250,
@@ -111,7 +111,7 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "SHOP SUPPORTS & SLEEVES",
+          "title": "BEST SELLERS",
           "subtitle": "",
           "show_description": true,
           "description_override": "",
@@ -302,9 +302,9 @@
         "settings": {
           "title": "Block Heading",
           "hide_title": true,
-          "block_layout": "5050",
+          "block_layout": "7525",
           "block_background_colour": "t",
-          "block_background_image": "shopify:\/\/shop_images\/3453.jpg"
+          "block_background_image": "shopify:\/\/shop_images\/3453_copy_3.jpg"
         }
       },
       "16431012843577f266": {
@@ -845,10 +845,70 @@
           "hero_image": "shopify:\/\/shop_images\/page-header-ambassador.jpg",
           "hide_page_content": true
         }
+      },
+      "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c": {
+        "type": "ac-content-block-icon-list",
+        "blocks": {
+          "8c287f6e-525d-4808-bec3-cecb0bff520e": {
+            "type": "icon",
+            "settings": {
+              "title": "Mens health",
+              "cb_icon_image": "shopify:\/\/shop_images\/Menshealth.svg",
+              "cb_icon_hide_title": true
+            }
+          },
+          "bc516a9e-fb1a-4088-a88d-6d59ccf6e8b8": {
+            "type": "icon",
+            "settings": {
+              "title": "Womens Running",
+              "cb_icon_image": "shopify:\/\/shop_images\/Womens_RUNNING.svg",
+              "cb_icon_hide_title": true
+            }
+          },
+          "7e4dca64-1284-49fe-aeed-71d9ed6cd8ac": {
+            "type": "icon",
+            "settings": {
+              "title": "The Independent",
+              "cb_icon_image": "shopify:\/\/shop_images\/Independent.svg",
+              "cb_icon_hide_title": true
+            }
+          },
+          "76e17670-bfd9-4c8c-9a41-7b3856a00134": {
+            "type": "icon",
+            "settings": {
+              "title": "Metro",
+              "cb_icon_image": "shopify:\/\/shop_images\/Metro.svg",
+              "cb_icon_hide_title": true
+            }
+          }
+        },
+        "block_order": [
+          "8c287f6e-525d-4808-bec3-cecb0bff520e",
+          "bc516a9e-fb1a-4088-a88d-6d59ccf6e8b8",
+          "7e4dca64-1284-49fe-aeed-71d9ed6cd8ac",
+          "76e17670-bfd9-4c8c-9a41-7b3856a00134"
+        ],
+        "settings": {
+          "cb_background_colour": "t",
+          "title": "AS SEEN IN...",
+          "cb_heading_size": "2",
+          "cb_heading_colour": "2",
+          "cb_heading_layout": "left",
+          "cb_hide_title": false,
+          "cb_sub_title": "",
+          "cb_text": "",
+          "cb_text_colour": "w",
+          "cb_text_layout": "left",
+          "cb_button_label": "",
+          "cb_button_link": "",
+          "cb_button_colour": "w",
+          "cb_desk_width_50": false
+        }
       }
     },
     "content_for_index": [
       "1643016047b462c6f9",
+      "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c",
       "16430262408de1051e",
       "16430296842a0fc99f",
       "1643029741d3b07d30",
@@ -868,8 +928,32 @@
           "version": "v3"
         }
       },
-      "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+      "14952540001915115444": {
+        "type": "shopify:\/\/apps\/upcart-cart-drawer\/blocks\/app-embed\/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "6986766168588894248": {
+        "type": "shopify:\/\/apps\/preorder-now-wolf\/blocks\/app-embed\/7ee1d740-e67b-4ea8-b0c9-1f62cb8777ec",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "18121446316682264196": {
+        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/fab-embed\/5c736972-c385-431c-8cbb-05726b7a1739",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "15549472988515247997": {
+        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/banner\/5c736972-c385-431c-8cbb-05726b7a1739",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "15820462083712392141": {
+        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/discount-redeem\/5c736972-c385-431c-8cbb-05726b7a1739",
         "disabled": false,
         "settings": {
         }

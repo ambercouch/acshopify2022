@@ -1,0 +1,394 @@
+{% assign metaTypeHandle = metaobject.title | handle   %}
+
+{% assign bannerImage = metaobject.banner_image.value   %}
+{% assign bannerTitle = metaobject.banner_title %}
+{% assign pageSubtitle = metaobject.banner_text %}
+{% assign contentImage = metaobject.content_image.value %}
+{% assign contentTitle = metaobject.content_title %}
+{% assign contentText = metaobject.content_text %}
+{% assign contentQuote = metaobject.content_quote %}
+
+{% assign sportInfoTitle = metaobject.info_area_title %}
+{% assign sportInfoText = metaobject.info_area_intro %}
+
+{% assign sportProductTitle = metaobject.product_area_title %}
+{% assign sportProductText = metaobject.product_area_intro %}
+
+{% assign sportAdditionalImage = metaobject.additional_content_image.value %}
+{% assign sportAdditionalTitle = metaobject.additional_content_title %}
+{% assign sportAdditionalText = metaobject.additional_content_text %}
+{% assign sportAdditionalQuote = metaobject.additional_content_quote %}
+
+{% assign sportFooterTitle = metaobject.footer_content_title %}
+{% assign sportFooterText = metaobject.footer_content %}
+{% assign sportFooterProducts = metaobject.footer_products %}
+
+{% assign productSport = shop.metaobjects['product_sport'] %}
+
+
+
+{% if page.metafields.global.hero_image %}
+  {% assign classHeroImage = 'has-hero-image' %}
+{% endif %}
+{% if pageHeroText %}
+  {% assign classHeroText = 'has-hero-text' %}
+{% endif %}
+
+
+
+<div class="l-main__page--{{ metaobject.title | handle }} l-main__page--sport-template">
+  <div class="l-page--{{ metaobject.title | handle }} l-page--sport-template">
+    <header class="l-page__header--sport-template">
+      {% if bannerImage %}
+        <div class="l-page__feature-image--sport-template l-page__feature-image--static-page">
+          {% include 'responsive-image' with
+            image: bannerImage,
+            max_width: 1440,
+            max_height: 600
+          %}
+        </div>
+      {% else %}
+        <!-- no section.settings.hero_image -->
+      {% endif %}
+      {% if bannerImageMobile != blank %}
+        <div class="l-page__feature-image--sport-template-mobile">
+          {% include 'responsive-image' with
+            image: bannerImageMobile,
+            max_width: 800,
+            max_height: 600
+          %}
+        </div>
+      {% else %}
+        <!-- section.settings.hero_image_mobile -->
+      {% endif %}
+      <div class="c-header__content-wrap--sport-template">
+        <header class="c-header--sport-template">
+          {% if bannerTitle != blank %}
+          <h1 class="c-header__heading--sport-template">
+            <span class="c-header__title">{{ bannerTitle }}</span>
+          </h1>
+          {% else %}
+            <!-- NO metaoblect.banner_title -->
+          {% endif %}
+          {% if pageSubtitle != blank %}
+            <h4 class="c-header__sub-heading--sport-template">
+              {{ pageSubtitle }}
+            </h4>
+          {% else %}
+            <!-- NO metaoblect.banner_text -->
+          {% endif %}
+        </header>
+      </div>
+    </header>
+
+      <div class="l-page__content--sport-template">
+        {% if contentImage != blank %}
+        <div class="l-page__content-col--image">
+          <div class="l-page__image">
+          {% include 'responsive-image' with
+            image: contentImage,
+            max_width: 800,
+            max_height: 800.
+            class: 'c-feature-image--content-template'
+          %}
+          </div>
+        </div>
+        {% else %}
+          <!-- BLANK metaobject.content_image -->
+        {% endif %}
+        <div class="l-page__content-col--content">
+          {% if contentTitle != blank %}
+            <h2 class="l-page__heading--sport-template" >
+              {{ contentTitle }}
+            </h2>
+          {% endif %}
+          {% if contentText != blank %}
+            <div class="l-page__rte--sport-template rte" >
+              {{ contentText | metafield_tag }}
+            </div>
+          {% endif %}
+        </div>
+        {% if contentQuote != blank %}
+        <div class="l-page__content-col--single-review">
+          <div class="c-single-review">
+            <div class="c-single-review__text--story-template">
+              <p>{{ contentQuote }}</p>
+            </div>
+          </div>
+        </div>
+          {% else %}
+          <!-- BLANK metaobject.content_quote -->
+        {% endif %}
+
+      </div>
+
+  </div>
+  <div class="l-page-after--sport-template">
+    <div class="l-page-after__section--sport-info">
+      <h3 class="l-page-after__heading">{{ sportInfoTitle }}</h3>
+      <div class="l-page-after__intro">
+        {{ sportInfoText | metafield_tag }}
+      </div>
+
+      {% assign sportInfos = shop.metaobjects['sport_info'].values %}
+
+      <div class="l-page-after__item-list">
+        <div class="l-item-list--sport-info">
+          <div class="l-item-list__item--sport-info">
+
+            {% for sportInfo in sportInfos %}
+
+              {% for item in sportInfo.sport.value %}
+                {% capture sportType %}{{ item.title | handle }}{% endcapture %}
+              {% endfor %}
+              {% if  sportType == metaTypeHandle   %}
+            <div class="c-item-thumb--sport-info">
+
+              <div class="c-item-thumb__content-col--image">
+                {% if sportInfo.sport_info_image != blank %}
+                  <div class="c-item-thumb__feature-image--sport-info">
+                    {% include 'responsive-image' with
+                      image: sportInfo.sport_info_image.value,
+                      max_width: 800,
+                      max_height: 800
+                    %}
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="c-item-thumb__content-col--content">
+                <h4 class="c-item-thumb__heading--product-sport-product">{{ sportInfo.sport_info_title }}</h4>
+                <div class="c-item-thumb__text--product-sport-prodcuct">
+                  <p>{{ sportInfo.sport_info_content |  metafield_tag }}</p>
+                </div>
+              </div>
+
+              <div class="c-item-thumb__content-col--single-review">
+                <div class="c-single-review">
+                  <div class="c-single-review__text--story-template">
+                    <p>{{ sportInfo.sport_info_quote }}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="l-page-after__section--sport-product">
+
+      {% comment %}
+      This is the introductory heading and text from the SPORT object for the SPORT/PRODUCT object
+      {% endcomment %}
+
+      <h3 class="l-page-after__heading">{{ sportProductTitle }}</h3>
+      <div class="l-page-after__intro">
+        {{ sportProductText | metafield_tag }}
+      </div>
+      {% assign productSports = shop.metaobjects['product_sport'].values %}
+      <div class="l-page-after__item-list">
+        <div class="l-item-list--product-sport">
+          <div class="l-item-list__item--product-sport">
+      {% for productSport in productSports %}
+        {% for item in productSport.sport.value %}
+          {% capture sportType %}{{ item.title | handle }}{% endcapture %}
+        {% endfor %}
+        {% if  sportType == metaTypeHandle   %}
+          {% assign product = productSport.product.value %}
+
+          {% include 'ac-product-sport' %}
+        {% endif %}
+      {% endfor %}
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="l-page-after__section--additional-content">
+
+      <div class="l-page-after__section-col--content">
+        <h3 class="l-page-after__heading">{{ sportAdditionalTitle }}</h3>
+        <div class="l-page-after__intro">
+          {{ sportAdditionalText | metafield_tag }}
+        </div>
+        <div class="l-page-after__single-review">
+          <div class="c-single-review">
+            <div class="c-single-review__text--story-template">
+              <p>{{ sportAdditionalQuote }}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+        {% if sportAdditionalImage != blank %}
+          <div class="l-page-after__section-col--image">
+            <div class="l-page__image">
+              {% include 'responsive-image' with
+                image: sportAdditionalImage,
+                max_width: 800,
+                max_height: 800.
+                class: 'c-feature-image--content-template'
+              %}
+
+
+          </div>
+        {% else %}
+          <!-- BLANK metaobject.content_image -->
+        {% endif %}
+
+      </div>
+
+    </div>
+
+    <div class="l-page-after__section--sport-footer">
+      <h3 class="l-page-after__heading">{{ sportFooterTitle }}</h3>
+      <div class="l-page-after__intro">
+        {{ sportFooterText | metafield_tag }}
+      </div>
+      <div class="l-page-after__products">
+        <div class="l-product-list">
+
+          <div class="l-product-list__list">
+            {% for product in sportFooterProducts.value  %}
+              <div class="l-product-list__item--sport-template is-product-id-{{ product.id }} u-bgc-{{ product.metafields.global.background }}">
+                <div class="l-product-list__item-thumb">
+                  {% include 'acstk-item-thumb' with {templateProduct :product, modClass : '--sport-template-product'} %}
+                  <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{product.id}}" data-product-title="{{product.title}}" data-product-type="{{product.type}}" style="display: block;"></span>
+                </div>
+              </div>
+
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% for block in section.blocks %}
+      {%  if block.settings.block_direction != blank %}
+        {% assign cssClassDirection = 'is-direction-' | append :   block.settings.block_direction %}
+      {% else %}
+        {% assign cssClassDirection = 'is-direction-not-set' %}
+      {% endif %}
+      {% case block.type %}
+      {% when 'content' %}
+        {% if block.settings.block_background_image.src != blank %}
+          <style>
+            .c-content-block--{{ block.id }}{
+              background-image: url({{ block.settings.block_background_image.src | image_url }});
+            }
+          </style>
+          {% assign classBg = ' has-bg-image ' %}
+        {% else %}
+          {% assign classBg = ' no-bg-image ' %}
+        {% endif %}
+        <div class="c-content-block {{ classBg }} c-content-block--type-{{ block.type }}  c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }} u-bgs-{{ block.settings.block_background_size }}">
+          <div class="c-content-block__row--sport-template c-content-block__row--type-content {{ cssClassDirection }}">
+
+            <div class="c-content-block__col">
+              <div class="c-content-block__content">
+                <h2 class="c-content-block__heading--type-content ">
+                  {{ block.settings.content_title }}
+                </h2>
+              </div>
+            </div>
+            <div class="c-content-block__col">
+              <div class="c-content-block__body">
+                {{ block.settings.content_body }}
+              </div>
+
+              {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+                <div class="c-content-block__footer">
+                  {% if block.settings.content_btn_1_link %}
+                    <div class="c-btn--cta-primary">
+                      <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.content_btn_2_link %}
+                    <div class="c-btn--cta-secondry">
+                      <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+            </div>
+
+          </div>
+        </div>
+      {% when 'section_title' %}
+        <div class="c-content-block--section-title c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }}">
+          <div class="c-content-block__row--sport-template c-content-block__row--section-title">
+            <div class="c-content-block__col">
+              <div class="c-content-block__content--section-title">
+                <h2 class="c-content-block__heading--section-title">{{ block.settings.section_title }}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% when 'image_content' %}
+        <style>
+          .c-content-block--{{ block.id }}{
+            background-image: url({{ block.settings.block_background_image.src | image_url }});
+          }
+        </style>
+        <div class="c-content-block  c-content-block--type-{{ block.type | replace : '_', '-'}} c-content-block--{{ block.id }} u-bgc-{{ block.settings.block_background_colour }}  u-bgs-{{ block.settings.block_background_size }}">
+          <div class="c-content-block__row--sport-template c-content-block__row--type-image-content {{ cssClassDirection }}">
+
+            <div class="c-content-block__col">
+              <div class="c-content-block__content--image">
+                {% if block.settings.content_image != blank %}
+                  <div class="c-content-block__image">
+                    {% include 'responsive-image' with
+                      image: block.settings.content_image,
+                      max_width: 800,
+                      max_height: 800
+                    %}
+                  </div>
+                {% else %}
+                  <!-- content_image false -->
+                {% endif %}
+              </div>
+            </div>
+            <div class="c-content-block__col">
+              <div class="c-content-block__content--image-text">
+                <h2 class="c-content-block__heading">
+                  {{ block.settings.content_title }}
+                </h2>
+                <div class="c-content-block__body">
+                  {{ block.settings.content_body }}
+                </div>
+                {% if block.settings.content_btn_1_link != '' or block.settings.content_btn_2_link != '' %}
+                  <div class="c-content-block__footer">
+                    {% if block.settings.content_btn_1_link %}
+                      <div class="c-btn--cta-primary">
+                        <a href="{{ block.settings.content_btn_1_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_1_label }}</span></a>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.content_btn_2_link %}
+                      <div class="c-btn--cta-secondry">
+                        <a href="{{ block.settings.content_btn_2_link }}" class="c-btn__link"><span class="c-btn__label">{{ block.settings.content_btn_2_label }}</span></a>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>

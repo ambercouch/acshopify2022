@@ -38,23 +38,13 @@
 
 <section class="l-main__content-block--icon-list u-bgc-{{ cb_background_colour_class  }} {{ cb_desk_width_50_class }}">
   <div class="c-content-block--page is-image-layout-{{ cb_image_layout }} ">
-
+    <div class="c-content-block__col">
     {% if section.settings.title != blank %}
       <header class="c-content-block__header--page  is-heading-layout-{{ cb_text_layout }} {{ cb_sub_class }} {{ cb_hide_title_class  }}">
-
-        {% if section.settings.cb_logo_image != blank %}
-          <div class="c-content-block__logo">
-            {% include 'responsive-image' with
-              image: section.settings.cb_logo_image,
-              max_width: 700,
-              max_height: 700
-            %}
-          </div>
-        {% endif %}
-
         <h2 class="c-content-block__heading--icon-list u-col-{{ cb_heading_colour_class }} u-fs-{{ cb_heading_size_class }}">
           <span  class="c-content-block__title">{{ section.settings.title | escape }}</span>
         </h2>
+
         {% if section.settings.cb_sub_title != blank %}
           <h4 class="c-content-block__sub-heading u-col-{{ cb_heading_colour_class }}">
             {{  section.settings.cb_sub_title }}
@@ -69,6 +59,7 @@
           image: section.settings.cb_image,
           max_width: 700,
           max_height: 700
+          wrapper_class : 'c-featured-image__wrapper--logo-icon'
         %}
       </div>
     {% endif %}
@@ -97,6 +88,7 @@
                         image: icon.settings.cb_icon_image,
                         max_width: 500,
                         max_height: 500
+                        wrapper_class : 'c-featured-image__wrapper--logo-icon'
                       %}
                     </div>
                     {% unless icon.settings.cb_icon_hide_title %}
@@ -113,8 +105,8 @@
       </div>
 
     </div>
-
-  </div>
+    </div>
+  </div> <!-- /.c-content-block__col -->
 </section>
 
 {% schema %}
