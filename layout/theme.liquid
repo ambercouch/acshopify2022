@@ -2,7 +2,6 @@
 <!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="{{ shop.locale }}" data-customer='{{ customer.id }}'> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head class="sometester abc fix gulp">
-
   <!-- HEAD CONTENT -->
   {% include 'head' %}
   <!-- TYPEKIT -->
@@ -58,12 +57,6 @@
   {% endif %}
 
 
-
-    <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts -->
-      <script src='https://upsell-app.logbase.io/lb-upsell.js?shop=tempestdesigns.myshopify.com' defer></script>
-    <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
-
-  
 </head>
 
 {% include 'body-tag' %}
@@ -128,7 +121,7 @@
 
 {% endif %}
 
-  
+  <script src="//cdn.codeblackbelt.com/js/modules/also-bought/main.min.js?shop=tempestdesigns.myshopify.com" defer></script>
 
 <script>
     window.cffPCLiquidPlaced = true
@@ -157,17 +150,7 @@ window.__lo_site_id = 139417;
 
 {% include 'adolab-get-clicked-seo' %}
 
-
 </body>
 
-  {% if page.handle contains "cml_checkout" %}
-    <script>
-      setTimeout(function () {
-         $(function(){
-           $("#cml_checkout_start .totals").append("<p>*Total does not include tax</p>");
-         })
-     }, 1000);
-       
-    </script>
-  {% endif %}
+
 </html>
