@@ -731,11 +731,12 @@
     ]
   },
   {
-    "name" : "Cart Settings",
-    "settings" : [
-      { "type" : "text",
-        "id" : "cart_user_info",
-        "label" : "Note for user"
+    "name": "Cart Settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cart_user_info",
+        "label": "Note for user"
       }
     ]
   }
