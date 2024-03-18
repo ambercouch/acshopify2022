@@ -116,5 +116,10 @@
     });
 </script>
 
+{% if product %}
+  <!-- klaviyo add to cart -->
+  {% include 'ac-klaviyo-add-cart-event' %}
+{% endif %}
+
 </body>
 </html>
