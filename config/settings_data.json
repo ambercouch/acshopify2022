@@ -111,11 +111,11 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "BEST SELLERS",
-          "subtitle": "",
-          "show_description": true,
+          "title": "SHOP SALE",
+          "subtitle": "UP TO 50% OFF - ends monday 1st april",
+          "show_description": false,
           "description_override": "",
-          "collection": "best-seller-internal-use",
+          "collection": "spring-sale-2024",
           "product_limit": 4
         }
       },
