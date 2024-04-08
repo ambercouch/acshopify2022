@@ -111,11 +111,11 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "BEST SELLERS",
+          "title": "SHOP BEST SELLERS",
           "subtitle": "",
-          "show_description": true,
+          "show_description": false,
           "description_override": "",
-          "collection": "best-seller-internal-use",
+          "collection": "all-products",
           "product_limit": 4
         }
       },
