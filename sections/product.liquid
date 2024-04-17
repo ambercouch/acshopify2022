@@ -1,10 +1,45 @@
 {% assign productType = product.type | handle %}
 
-{% if product.metafields.global.description_tabbed != nil %}
+{% if product.metafields.bhg.product_tab_description != nil or product.metafields.bhg.product_tab_faq != nil or product.metafields.bhg.product_tab_returns != nil %}
+  {% assign productDescription = nil %}
+  {% assign metaTabs = true %}
+
+  {% if product.metafields.bhg.product_tab_description != nil %}
+    <!-- product.metafields.bhg.product_tab_description != nil -->
+    <!-- product.metafields.bhg.product_tab_description = {{ product.metafields.bhg.product_tab_description }} -->
+  {% assign productTabDescription = product.metafields.bhg.product_tab_description |  metafield_tag  %}
+  {% else %}
+    <!-- productTabDescription else -->
+    {% assign productTabDescription = nil  %}
+  {% endif %}
+
+  {% if product.metafields.bhg.product_tab_faq != nil %}
+  {% assign productTabFaq = product.metafields.bhg.product_tab_faq |  metafield_tag  %}
+    {% else %}
+      {% assign productTabFaq = nil  %}
+  {% endif %}
+
+  {% if product.metafields.bhg.product_tab_returns != nil %}
+    <!-- product.metafields.bhg.product_tab_returns != nil -->
+    <!-- product.metafields.bhg.product_tab_returns = {{ product.metafields.bhg.product_tab_returns }} -->
+    {% assign productTabReturns = product.metafields.bhg.product_tab_returns |  metafield_tag  %}
+  {% elsif shop.metafields.bhg.product_tab_returns != nil %}
+    <!-- shop.metafields.bhg.product_tab_returns != nil -->
+    <!-- shop.metafields.bhg.product_tab_returns = {{ shop.metafields.bhg.product_tab_returns }} -->
+    {% assign productTabReturns = shop.metafields.bhg.product_tab_returns |  metafield_tag %}
+    {% else %}
+      <!-- productTabReturns else -->
+    {% assign productTabReturns = nil  %}
+  {% endif %}
+
+
+  {% elsif product.metafields.global.description_tabbed != nil %}
 {% assign productDescription = product.metafields.global.description_tabbed %}
 {% else %}
   {% assign productDescription = product.description %}
 {% endif %}
+
+{% assign productDescription = product.metafields.global.description_tabbed %}
 
 {% if product.metafields.global.below_form_button_text != nil %}
   <!-- below_form_link from the product meta -->
@@ -156,8 +191,38 @@
     {% endif %}
 
     <div class="l-page__content--product">
-
-      {% if productDescription != blank %}
+    {% if metaTabs == true %}
+      <div class="c-tabbed-content">
+        <div class="c-tabbed-content__controls">
+          {% if productTabDescription  %}
+            <div class="c-tabbed-content__control" data-control-radio="product-tabs" data-state="on" data-control="tab-description"><span class="c-tabbed-content__label">Description</span></div>
+          {% endif %}
+          {% if productTabFaq  %}
+        <div class="c-tabbed-content__control" data-control-radio="product-tabs" data-state="off" data-control="tab-faq"><span class="c-tabbed-content__label">FAQ</span></div>
+          {% endif %}
+          <div class="c-tabbed-content__control" data-control-radio="product-tabs" data-state="off" data-control="tab-shipping"><span class="c-tabbed-content__label">Shipping</span></div>
+        </div>
+      {% if productTabDescription  %}
+      <div class="c-tabbed-content__tab" data-container-radio="product-tabs" data-state="on" data-container="tab-description">
+        <div class="c-tabbed-content__content">
+          {{ productTabDescription }}
+        </div>
+      </div>
+      {% endif %}
+      {% if productTabFaq  %}
+        <div class="c-tabbed-content__tab" data-container-radio="product-tabs" data-state="off" data-container="tab-faq">
+          <div class="c-tabbed-content__content">
+            {{ productTabFaq }}
+          </div>
+        </div>
+      {% endif %}
+        <div class="c-tabbed-content__tab" data-container-radio="product-tabs" data-state="off" data-container="tab-shipping">
+          <div class="c-tabbed-content__content">
+            {{ productTabReturns}}
+          </div>
+        </div>
+      </div>
+      {% elsif productDescription != blank %}
         <div class="l-page__description">
           {{ productDescription }}
         </div>
