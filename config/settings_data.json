@@ -196,7 +196,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/30_Day_Returns_Graphic_1.gif",
+              "content_image": "shopify:\/\/shop_images\/30_Day_Returns_Graphic_a72ac1ac-0437-404f-a8a5-7f290f5da527.gif",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -206,11 +206,11 @@
           "dbb27682-8378-4f8c-9a61-5e12359d928a": {
             "type": "content",
             "settings": {
-              "content_title": "30 DAY GUARANTEE",
-              "content_body": "<p><em><strong>Bearhug 30 day money back guarantee!<\/strong><\/em><br\/><\/p><p>Try any product for 30 days and if you're not happy and don't want to be part of the pack get your money back - <strong>swap sizes or product for free too!<\/strong><\/p>",
+              "content_title": "FREE EXCHANGES",
+              "content_body": "<p><em><strong>Bearhug 30 day trial opportunity!<\/strong><\/em><\/p><p>Try any product for 30 days and if the size isn't quite right or you want to swap it for another product you can - <strong>free of charge!<\/strong><\/p><p>*refunds are charged a handling fee of £4.95<\/p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/clothing",
+              "content_btn_1_link": "shopify:\/\/collections\/sleeves-pairs",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
