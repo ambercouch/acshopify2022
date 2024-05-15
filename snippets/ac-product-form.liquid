@@ -24,9 +24,9 @@
 <div class="c-product-form ac-test-{{ productCollections }}">
 {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true', data-submit-ajax: true, class:'c-product-form__form'%}
 
-  <input type="hidden" name="id" value="">
+  <input type="hidden" name="id" value="{% if product.variants.size == 1 %}{{ current_variant.id }}{% endif %}">
 
-  <div class="c-product-form__product-price">
+  <div class="c-product-form__product-price some-test">
     {% include 'ac-product-form-price' %}
   </div>
 
@@ -39,18 +39,23 @@
 
 
   {% unless product.has_only_default_variant %}
+    <!-- unless product.has_only_default_variant -->
 
     {% comment %}One option{% endcomment %}
 
     {% assign optionsCount = product.options_with_values | size %}
     {% if  optionsCount == 1 %}
+      <!-- optionsCount == 1 -->
       {% comment %}
         This product has a single variant option so we are assuming it is the size option
       {% endcomment %}
+
       {% include 'ac-product-form-single-variant-selector' %}
+
       {% include 'ac-modal-size-guide' %}
 
     {% else %}
+      <!-- NOT optionsCount == 1 -->
 
       {% comment %}
         This product has multiple variant options
@@ -135,7 +140,8 @@
     </select>
   </noscript>
 
-  {% if productVersion != '' %}
+  {% if productVersion != blank %}
+    <!-- productVersion : {{ productVersion }} -->
     <div class="l-page__nav-menu--product-filter">
       {% include 'ac-filter-menu' %}
     </div>
@@ -152,7 +158,7 @@
       id="add-to-cart-button"
       type="submit"
       name="add"
-      title="Please select your size"
+      title="{% if product.variants.size > 1 %}Please select your size {% else %}Add to cart{% endif %}"
       data-submit-button
       {% unless current_variant.available %}disabled="disabled"{% endunless %}>
         <span data-submit-button-text class="c-btn__link-label">

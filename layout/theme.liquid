@@ -99,7 +99,9 @@
 <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 {{ 'paymentfont.scss.css' | asset_url | stylesheet_tag }}
 
+{% if template.name == 'product' and product.variants.size > 1 %}
 <script>
+  console.log("Disable the Add button")
     document.addEventListener('DOMContentLoaded', function() {
         var addButton = document.getElementById('add-to-cart-button');
         if(addButton){
@@ -111,10 +113,9 @@
             variantsContainer.classList.add('disabled'); // Add 'disabled' class to the variants container
         }
 
-
-
     });
 </script>
+{% endif %}
 
 {% if product %}
   <!-- klaviyo add to cart -->
