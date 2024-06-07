@@ -1,7 +1,7 @@
-
+{% assign first_variant_option = product.options[0] %}
 <div class="c-product-form__variants">
-  <h5 class="c-product-form__heading--detail">Size</h5>
-  <p data-size-instruction class="c-product-form__instructions" style="display: block;">Please select your size.</p>
+  <h5 class="c-product-form__heading--detail">{{ first_variant_option }}</h5>
+  <p data-size-instruction class="c-product-form__instructions" style="display: block;">Please select your {{ first_variant_option | downcase }}.</p>
 <div id="size-options-container" class="l-btn-group">
 
 
