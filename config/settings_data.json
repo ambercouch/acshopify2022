@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "type_base_size": "16px",
@@ -18,9 +27,9 @@
     "collection_swatches": true,
     "cart_notes_enable": true,
     "cart_min_spend": "10000",
-    "low_price_product": "500",
+    "low_price_product": "944",
     "low_cost_minimum_qty": "2",
-    "low_price_product_2": "200",
+    "low_price_product_2": "495",
     "low_cost_minimum_qty_2": "3",
     "cart_promo_1_collection": "recently-added",
     "cart_promo_1_collection_title": "",
@@ -351,9 +360,9 @@
         "settings": {
           "button_color": "#000000",
           "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",
           "button_vertical_position": "lowest",
-          "button_text": "chat_with_us",
           "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
       }
