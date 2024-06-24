@@ -10,6 +10,7 @@
 
       {%- assign low_price = settings.low_price_product | times: 1  -%}
       {%- assign low_price_2 = settings.low_price_product_2 | times: 1  -%}
+      {%- assign low_price_3 = settings.low_price_product_3 | times: 1  -%}
       {%- assign pTypeMinimums = 'Clothing' -%}
       {%- assign pTypeMinQty = 2 -%}
       {%- assign pTypeMinimums2 = 'Handbags' -%}
@@ -21,96 +22,87 @@
       {%- if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" -%}
         <!-- We have {{ current_variant.inventory_quantity }} in stock. -->
       {%- else -%}
-       <!-- This product is available. -->
+        <!-- This product is available. -->
       {%- endif -%}
-
 
       {%- if current_variant.price >  low_price -%}
         {% comment %}
-          if the variant price is greater than he low price, allow single purchases
+          if the variant price is greater than the low price, allow single purchases
         {% endcomment %}
         {%- assign minQty = 1 -%}
         {%- assign minLowPriceQty = 1 -%}
-        <!-- The variant price is greater than he low price, allow single purchases -->
-        <!-- 1 is current_variant.price > low_price -->
-        {% if current_variant.price   >  low_price  %}
+        <!-- The variant price is greater than the low price, allow single purchases -->
+        {% if current_variant.price > low_price %}
           <!-- TRUE -->
           <!-- {{ current_variant.price }}  > {{ low_price }} -->
         {% endif %}
 
-        {% elsif  current_variant.price < low_price_2 %}
-
+        {%- elsif current_variant.price < low_price_3 -%}
         {% comment %}
-          if the variant price is less than the VERY low price, set the minQty accordingly
+          if the variant price is less than the very low price 3, set the minQty accordingly
         {% endcomment %}
+        {%- assign minQty = settings.low_cost_minimum_qty_3 | times: 1 -%}
+        {%- assign minLowPriceQty = settings.low_cost_minimum_qty_3 -%}
+        {%- assign qty = settings.low_cost_minimum_qty_3 -%}
+        <!-- The variant price is less than the very low price 3, set the minQty accordingly -->
+        <!-- 2 current_variant.price < low_price_3 : {{ current_variant.price }}  < {{ low_price_3 }} -->
 
+        {%- elsif current_variant.price < low_price_2 -%}
+        {% comment %}
+          if the variant price is less than the very low price 2, set the minQty accordingly
+        {% endcomment %}
         {%- assign minQty = settings.low_cost_minimum_qty_2 | times: 1 -%}
         {%- assign minLowPriceQty = settings.low_cost_minimum_qty_2 -%}
         {%- assign qty = settings.low_cost_minimum_qty_2 -%}
-        <!-- The variant price is less than the VERY low price, set the minQty accordingly -->
-        <!-- 2 current_variant.price < low_price_2 : {{ current_variant.price }}  < {{ low_price_2 }} -->
+        <!-- The variant price is less than the very low price 2, set the minQty accordingly -->
+        <!-- 3 current_variant.price < low_price_2 : {{ current_variant.price }}  < {{ low_price_2 }} -->
 
       {%- else -%}
-
         {% comment %}
-          if the variant price is less than the low price 600 and greater the the very low price 300, set the minQty accordingly
+          if the variant price is less than the low price and greater than the very low price, set the minQty accordingly
         {% endcomment %}
-
-        <!-- 3 current_variant.price < low_price : {{ current_variant.price }}  < {{ low_price }} -->
-        <!-- 4 current_variant.price > low_price_2 : {{ current_variant.price }}  > {{ low_price_2 }} -->
-
+        <!-- 4 current_variant.price < low_price : {{ current_variant.price }}  < {{ low_price }} -->
+        <!-- 5 current_variant.price > low_price_2 : {{ current_variant.price }}  > {{ low_price_2 }} -->
         {%- assign minQty = settings.low_cost_minimum_qty | times: 1 -%}
         {%- assign minLowPriceQty = settings.low_cost_minimum_qty -%}
         {%- assign qty = settings.low_cost_minimum_qty -%}
-
       {%- endif -%}
 
       {%- if minLowPriceQty == 1 -%}
-
         {% comment %}
           if High price item (min qty 1) check ...
         {% endcomment %}
-
         <!-- pType = {{ pType }} -->
-
         {%- if pTypeMinimums contains pType -%}
-          {%- if  current_variant.price < 1000 -%}
-          {%- assign minQty =  pTypeMinQty | times: 1 %}
+          {%- if current_variant.price < 1000 -%}
+            {%- assign minQty =  pTypeMinQty | times: 1 %}
 
-
-          <!-- pTypeMinQty assigned {{ pType }} - {{ pTypeMinimums }} - {{ minQty }} -->
-            {%- endif -%}
+            <!-- pTypeMinQty assigned {{ pType }} - {{ pTypeMinimums }} - {{ minQty }} -->
+          {%- endif -%}
         {%- else -%}
-
           <!-- pTypeMinQty NOT Assigned {{ pType }} - {{ pTypeMinimums }}-->
-
         {%- endif -%}
-      {% endif %}
+      {%- endif -%}
 
       <!-- testing -->
       <!-- {{ current_variant.inventory_quantity }} -->
-
-      {%- if  varInvQty < minQty  -%}
-
-        {%- assign qty = 1 -%}
+      {%- if varInvQty < minQty -%}
+        {%- assign minQty = varInvQty -%}
         <!-- reset minQty -->
-        <!--  varInvQty {{  varInvQty }} -->
+        <!-- varInvQty {{ varInvQty }} -->
+      {%- endif -%}
 
-      {%- else -%}
-        <!-- DONT reset minQty -->
-        <!--  varInvQty {{  varInvQty }} -->
-      {% endif %}
       {% if template contains 'product' %}
         <!-- This is a product -->
         {% assign qtyId = 'Quantity' %}
-        {% else %}
+      {% else %}
         <!-- this is not a product -->
-          {% assign qtyId = 'Quantity' | append : variant.id %}
+        {% assign qtyId = 'Quantity' | append : variant.id %}
       {% endif %}
 
       {% if product.metafields.global.youtube_url_product %}
         {% assign videoUrlArray =  product.metafields.global.youtube_url_product | split: '/' %}
-        {%  assign youtubeId =  videoUrlArray | last %}
+        {% assign youtubeId =  videoUrlArray | last %}
       {% else %}
         <!-- No video URL -->
       {% endif %}
@@ -145,27 +137,26 @@
         {% endunless %}
       {% endfor %}
       <!-- varCount {{ varCount }} -->
-      <select {% if varCount == 0 %} style="display: none" {% endif %} id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}"  name="id" class="add-form__variants no-js" data-product-select>
-        {% if  varCount > 0 %}
-
+      <select {% if varCount == 0 %} style="display: none" {% endif %} id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" name="id" class="add-form__variants no-js" data-product-select>
+        {% if varCount > 0 %}
           {% for variant in product.variants %}
-            {% unless variant.title contains '+'  %}
-            <option class="c-input__option--multi"
-                {% if variant == current_variant %}selected="selected"{% endif %}
-                {% unless variant.available %}disabled="disabled"{% endunless %}
-                    value="{{ variant.id }}"
-                    data-option-name="{{ variant.title }}"
-                    data-image-id="{{ variant.image.id }}">
-              {{ variant.title }}
-            </option>
+            {% unless variant.title contains '+' %}
+              <option class="c-input__option--multi"
+                      {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                      value="{{ variant.id }}"
+                      data-option-name="{{ variant.title }}"
+                      data-image-id="{{ variant.image.id }}">
+                {{ variant.title }}
+              </option>
             {% endunless %}
           {% endfor %}
         {% else %}
           {% assign variant = product.variants.first %}
           <option class="c-input__option--var-0"
-              {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% if variant == current_variant %}selected="selected"{% endif %}
               {% unless variant.available %}disabled="disabled"{% endunless %}
-              value="{{ variant.id }}">
+                  value="{{ variant.id }}">
             {{ variant.title }}
           </option>
         {% endif %}
@@ -180,37 +171,25 @@
       {% include 'continue-shopping-helper' %}
     </div>
 
-
-
-
     {% if youtubeId %}
       <div class="c-product-form__link--product-video">
         <div class="c-btn--product-video">
-
-          <a class="c-btn__link--product-video" data-ajax-id="/pages/size-guide-{{ youtubeId }}" data-remodal-lazy-youtube="{{  youtubeId }}" data-remodal-target="modalProductVideo" href="#modalProductVideo" data-remodal>
-            <img class="c-btn__img-thumb" src="{{ 'tpd-video-placeholder.jpg' |   asset_img_url: '300x' }}" />
+          <a class="c-btn__link--product-video" data-ajax-id="/pages/size-guide-{{ youtubeId }}" data-remodal-lazy-youtube="{{ youtubeId }}" data-remodal-target="modalProductVideo" href="#modalProductVideo" data-remodal>
+            <img class="c-btn__img-thumb" src="{{ 'tpd-video-placeholder.jpg' | asset_img_url: '300x' }}" />
             <span class="c-btn__label--product-video">View Product Video</span>
-            <!--
-            <span class="c-btn__icon">
-              {% include 'svg-icon' with {icon : 'icon-arrow-up'} %}
-            </span>
-            -->
           </a>
         </div>
         <div id="modalProductVideo" class="remodal remodal--product-video" data-remodal-id="modalProductVideo" data-remodal-options="hashTracking: false," >
           <button data-remodal-action="close" class="remodal-close"></button>
           <div class="remodal-ajax-content" data-ajax-content>
             <div class="c-size-guide__loading">
-              <div class="l-page__size-guide-video" >
+              <div class="l-page__size-guide-video">
                 <iframe width="173" height="315" data-src="https://www.youtube.com/embed/{{ youtubeId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
-
     {% endif %}
 
     <div class="add-form__submit-wrapper">
@@ -234,19 +213,16 @@
     </div>
     <div id="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></div>
 
-
     {% if customer.tags contains 'platinum' %}
       {% unless qb_loaded == 'true' %}
-      <div class="add-form__bqb">
-        <h3 class="add-form__bqb-title"><span class="add-form__bqb-title-platinum">Platinum</span> <small>(Bulk Discounts)</small></h3>
-        <div class="shappify-qty-msg">
-          {{bold_selected_or_first_available_variant.metafields.shappify_qb.pricing_html}}
+        <div class="add-form__bqb">
+          <h3 class="add-form__bqb-title"><span class="add-form__bqb-title-platinum">Platinum</span> <small>(Bulk Discounts)</small></h3>
+          <div class="shappify-qty-msg">
+            {{bold_selected_or_first_available_variant.metafields.shappify_qb.pricing_html}}
+          </div>
+          {% assign qb_loaded = 'true' %}
         </div>
-        {% assign qb_loaded = 'true' %}
-      </div>
       {% endunless %}
     {% endif %}
-
   </form>
-
 </div>

@@ -207,6 +207,20 @@
         "label": "Quantity 2",
         "default": "2",
         "info": "The minimum quantity of low price product price"
+      },
+      {
+        "type": "text",
+        "id": "low_price_product_3",
+        "label": "Product price 3",
+        "default": "200",
+        "info": "The price that identifies product as low price (200 = £2)"
+      },
+      {
+        "type": "text",
+        "id": "low_cost_minimum_qty_3",
+        "label": "Quantity 3",
+        "default": "4",
+        "info": "The minimum quantity of the third low price product price"
       }
     ]
   },

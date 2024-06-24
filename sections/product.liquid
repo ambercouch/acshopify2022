@@ -36,6 +36,47 @@
           {% include 'share-links'%}
         </div>
 
+        <div class="l-single-product__tabbed-content">
+          <div class="c-product-tabs">
+            <div class="c-tabbed-content">
+              <div class="c-tabbed-content__controls">
+                {% if product.metafields.tpd.sizing_information %}
+                <div class="c-tabbed-content__control" data-control-radio="product-tabs" data-state="on" data-control="tab-sizing"><span class="c-tabbed-content__label">Sizing</span></div>
+                {% endif %}
+                {% if product.metafields.tpd.material_information %}
+                <div class="c-tabbed-content__control" data-control-radio="product-tabs" data-state="off" data-control="tab-material"><span class="c-tabbed-content__label">Material</span></div>
+                {% endif %}
+                {% if product.metafields.tpd.washing_information %}
+                <div class="c-tabbed-content__control" data-control-radio="product-tabs" data-state="off" data-control="tab-washing"><span class="c-tabbed-content__label">Washing and Care</span></div>
+                {% endif % %}
+              </div>
+              {% if product.metafields.tpd.sizing_information %}
+              <div class="c-tabbed-content__tab" data-container-radio="product-tabs" data-state="on" data-container="tab-sizing">
+                <div class="c-tabbed-content__content">
+                  {{ product.metafields.tpd.sizing_information |  metafield_tag  }}
+                </div>
+              </div>
+              {% endif %}
+              {% if product.metafields.tpd.material_information %}
+              <div class="c-tabbed-content__tab" data-container-radio="product-tabs" data-state="off" data-container="tab-material">
+                <div class="c-tabbed-content__content">
+                  {{ product.metafields.tpd.material_information |  metafield_tag  }}
+                </div>
+              </div>
+              {% endif %}
+              {% if product.metafields.tpd.material_information %}
+              <div class="c-tabbed-content__tab" data-container-radio="product-tabs" data-state="off" data-container="tab-washing">
+                <div class="c-tabbed-content__content">
+                  {{ product.metafields.tpd.washing_information |  metafield_tag  }}
+                </div>
+              </div>
+              {% endif %}
+
+            </div>
+          </div>
+
+        </div>
+
       </div>
       {% include 'logic-admin' %}
       {% if adminUser %}
