@@ -10,17 +10,20 @@
 {% assign slideUrl2 = collection.metafields.actpd.collection_slide_url_2 %}
 {% assign slideUrl3 = collection.metafields.actpd.collection_slide_url_3 %}
 
-  {% capture slides %}
-    {% unless slide1  == empty %}
-      {{ slide1 | img_url: '1270x465'  }}
-    {% endunless %}
-    {% unless slide2  == empty  %}
-      ,{{ slide2 | img_url: '1270x465'}}
-    {% endunless %}
-    {% unless slide3  == empty %}
-      ,{{ slide3 | img_url: '1270x465' }}
-    {% endunless %}
-  {% endcapture %}
+  {%- capture slides -%}
+    {%- unless slide1 == empty -%}
+      {{ slide1 | img_url: '1270x465' }}
+    {%- endunless -%}
+    {%- unless slide2 == empty -%}
+      {%- if slides != empty -%},{%- endif -%}
+      {{ slide2 | img_url: '1270x465' }}
+    {%- endunless -%}
+    {%- unless slide3 == empty -%}
+      {%- if slides != empty -%},{%- endif -%}
+      {{ slide3 | img_url: '1270x465' }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <!-- Slides 123 = {{ slides }} -->
   {% assign aSlides = slides | split: ',' %}
   <div class="collection">
     <div class="collection__breadcrumbs">
@@ -28,7 +31,7 @@
       {%  include "breadcrumbs" %}
     </div>
 
-{% unless  aSlides == empty %}
+{% unless aSlides == empty or (aSlides.size == 1 and aSlides[0] == '') %}
     <div class="hero--collection">
       <div class="hero__carousel">
         {% if collection.image.src %}
