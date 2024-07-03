@@ -76,47 +76,6 @@
           "overlay_opacity": 30
         }
       },
-      "1642591167f3ea18b4": {
-        "type": "ac-content-block",
-        "blocks": {
-          "60e2e60b-00bf-42f9-80ab-931c38bdb192": {
-            "type": "content",
-            "settings": {
-              "content_title": "",
-              "content_body": "",
-              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">BIRTH<br>OF THE<br>BEAR.<\/h2>",
-              "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "",
-              "content_btn_2_label": "Find Out More",
-              "content_btn_2_link": ""
-            }
-          },
-          "8d1e2822-177d-4e14-9166-85a4676b9da9": {
-            "type": "content",
-            "settings": {
-              "content_title": "",
-              "content_body": "",
-              "content_body_html": "<p class=\"u-col-w\">In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born. <\/p>\n<p class=\"u-col-w\">The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
-              "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/sleeves-pairs",
-              "content_btn_2_label": "Learn More",
-              "content_btn_2_link": "shopify:\/\/pages\/the-story"
-            }
-          }
-        },
-        "block_order": [
-          "60e2e60b-00bf-42f9-80ab-931c38bdb192",
-          "8d1e2822-177d-4e14-9166-85a4676b9da9"
-        ],
-        "disabled": true,
-        "settings": {
-          "title": "Birth of the bear section",
-          "hide_title": true,
-          "block_layout": "3366",
-          "block_background_colour": "2",
-          "block_background_image": "shopify:\/\/shop_images\/bg-repeat-2.png"
-        }
-      },
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
@@ -298,7 +257,7 @@
               "content_body": "",
               "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">MEET THE PACK.<\/h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
               "content_btn_1_label": "Meet The Pack",
-              "content_btn_1_link": "",
+              "content_btn_1_link": "https:\/\/getabearhug.com\/pages\/bearhug-ambassador",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -610,8 +569,8 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/2bcdeaa2-fbc6-4d6a-9559-43d11c4cd93d.png",
-              "content_btn_1_label": "Shop Now",
+              "content_image": "shopify:\/\/shop_images\/Untitled_design_6.png",
+              "content_btn_1_label": "",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
@@ -620,11 +579,11 @@
           "f03a0c24-30ce-4dc3-9394-c64421fb1596": {
             "type": "content",
             "settings": {
-              "content_title": "<br> SUPERIOR WARMTH",
-              "content_body": "<p>Bamboo compression supports have accelerated heat retention properties. Enhancing your performance along with decreasing your recovery period and rehabilitation periods.  <\/p>",
+              "content_title": "<br> CHIEF MEDICAL OFFICER",
+              "content_body": "<p>John Miles is hte Welsh Rugby Unions National Squad Physiotherapist and now holds the role of Chief Medical Officer at Bearhug. Joining the team to utilise his extensive 20 years experience from high perfromance sporting environments. <\/p>",
               "content_body_html": "",
-              "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "",
+              "content_btn_1_label": "Learn More ABout JOHN",
+              "content_btn_1_link": "https:\/\/getabearhug.com\/blogs\/news\/bearhug-chief-medical-officer",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -634,11 +593,10 @@
           "c81711ce-ff1d-4259-92cb-04b7585d8e75",
           "f03a0c24-30ce-4dc3-9394-c64421fb1596"
         ],
-        "disabled": true,
         "settings": {
           "title": "Block Heading",
-          "hide_title": true,
-          "block_layout": "2575",
+          "hide_title": false,
+          "block_layout": "5050",
           "block_background_colour": "t"
         }
       },
@@ -919,13 +877,12 @@
       "1643016047b462c6f9",
       "e130b35c-ae86-46a2-80a5-ccfdd5dfc18c",
       "16430262408de1051e",
-      "16430296842a0fc99f",
+      "1650543184447b7ae1",
       "1643029741d3b07d30",
+      "16430296842a0fc99f",
       "16431012843577f266",
       "1643029835b6c91d25",
-      "1642591167f3ea18b4",
       "1643016298f1c80f98",
-      "1650543184447b7ae1",
       "16505434604cbd951f",
       "16505434773cfa6f88"
     ],
