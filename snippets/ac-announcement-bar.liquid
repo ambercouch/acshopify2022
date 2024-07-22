@@ -1,20 +1,40 @@
 {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+
     <div class="c-announcement-bar" data-state="on" data-container="announcement">
-        {%- if section.settings.announcement_bar_link != blank -%}
-          <a class="c-announcement-bar__link" href="{{ section.settings.announcement_bar_link }}">
-            {{ section.settings.announcement_bar_text | escape }}
-          </a>
-        {%- else -%}
-          <div class="c-announcement-bar__text">
-            <p>{{ section.settings.announcement_bar_text | escape }}</p>
-          </div>
-        {%- endif -%}
+  {%- if section.settings.announcement_bar_link != blank -%}
+    <a class="c-announcement-bar__link" href="{{ section.settings.announcement_bar_link }}">
+      {{ section.settings.announcement_bar_text | escape }}
+    </a>
+  {%- else -%}
+    <div class="c-announcement-bar__text">
+      <p>{{ section.settings.announcement_bar_text | escape }}</p>
+    </div>
+  {%- endif -%}
+  <div class="c-announcement-bar__control">
+    <div class="c-btn--control-announcement">
+      <a class="c-btn__link--control-announcement" href="#" data-state="on" data-control="announcement">X</a>
+    </div>
+  </div>
+
+</div><!-- .c-announcement-bar -->
+  {% assign announcement_bar_text_mobile = section.settings.announcement_bar_text_mobile | default: section.settings.announcement_bar_text %}
+
+  <div class="c-announcement-bar--mobile" data-state="on" data-container="announcement">
+    {%- if section.settings.announcement_bar_link != blank -%}
+      <a class="c-announcement-bar__link" href="{{ section.settings.announcement_bar_link }}">
+        {{ announcement_bar_text_mobile | escape }}
+      </a>
+    {%- else -%}
+      <div class="c-announcement-bar__text">
+        <p>{{ announcement_bar_text_mobile | escape }}</p>
+      </div>
+    {%- endif -%}
     <div class="c-announcement-bar__control">
       <div class="c-btn--control-announcement">
         <a class="c-btn__link--control-announcement" href="#" data-state="on" data-control="announcement">X</a>
       </div>
-
     </div>
 
-    </div><!-- .c-announcement-bar -->
+  </div><!-- .c-announcement-bar -->
+
 {%- endif -%}
