@@ -52,7 +52,6 @@
 
   <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"137003992", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
 
-
 </head>
 <body id="siteBody" class="template-{{ template | handle }}" data-template="{{ template.name | handle }}" data-template-type="{{ template.suffix | replace : ' ', '_' | replace : '-', '_'}}">
 
@@ -99,7 +98,7 @@
 
 <link rel="preload" href="{{ 'main.css' | asset_url }}" type="text/css" as="style" onload="this.onload = null; this.rel='stylesheet' ; "/>
 <script src="{{ 'main.js' | asset_url }}" async></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;0,900;1,400;&display=swap" rel="stylesheet">
 <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 {{ 'paymentfont.scss.css' | asset_url | stylesheet_tag }}
 
