@@ -4,30 +4,39 @@
     {% include 'icon-close' %}
   </span>
   </div>
-
+  {%- for linklist in linklists -%}
+    <!-- linklist.handle {{ linklist.handle }} -->
+  {%- endfor -%}
   <ul class="nav-main__list">
     {% for link in linklists[section.settings.main_linklist].links %}
       {%- assign child_list_handle = link.title | handleize -%}
-      {%- assign mega = '' -%}
-      {%- capture  megaLinks -%}
+      {%- assign has_mega = false -%}
+      {%- assign has_dropdown = false -%}
+
       {%- for list in linklists -%}
         {%- if list.handle contains child_list_handle -%}
-         {{ list.handle }},
+          {%- unless list.handle contains 'child' -%}
+          {%- assign has_mega = true -%}
+          {%- break -%}
+          {%- endunless -%}
         {%- endif -%}
-        {%- endfor -%}
-      {%- endcapture -%}
-      {%- assign megaLinks = megaLinks | split: ','  | size -%}
-      <!-- megaLinks {{megaLinks | size }} -->
-      {% if megaLinks  > 0 %}
-        <!-- inc megaLinks -->
+      {%- endfor -%}
+
+      {%- if link.links.size > 0 -%}
+        {%- assign has_dropdown = true -%}
+      {%- endif -%}
+
+      {% if has_mega %}
         {% include "nav-main-mega" %}
-        {%  elsif menus[child_list_handle].links != blank %}
-        <!-- inc drop -->
+        {% elsif has_dropdown %}
         {% include "nav-main-dropdown" %}
       {% else %}
-        <!-- inc  -->
         {% include "nav-main-single" %}
       {% endif %}
     {% endfor %}
   </ul>
+
+
+
+
 </nav>

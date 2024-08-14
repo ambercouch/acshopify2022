@@ -1,0 +1,24 @@
+<div class="mega-menu">
+  <div  class="mega-menu__header">
+    <span id="ButtonClose{{ link.handle }}" class="mega-menu__close" data-control="{{ link.handle }}" data-state="off">
+    {% include 'icon-close' %}
+  </span>
+  </div>
+  <div class="mega-menu__all-link">
+    <a class="mega-menu__link--all" href="{{ link.url }}"><span class="mega-menu__link-label">Browse All {{ link.title }}</span></a>
+  </div>
+  <div class="mega-menu__menu-wrapper">
+    <div class="mega-menu__menu--{{ link.handle  }}">
+      <h6 class="mega-menu__menu-title">{{ link.title | upcase}}</h6>
+      <ul class="mega-menu__list">
+        {%  for childlink in link.links %}
+          <li class="mega-menu__item">
+            <a class="mega-menu__link" href="{{ childlink.url }}"><span class="mega-menu__link-label">{{ childlink.title }}</span></a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div><!-- /.mega-menu__menu-- -->
+  </div>
+
+</div><!-- /.mega-menu -->
+
