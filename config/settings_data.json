@@ -365,6 +365,12 @@
           "button_vertical_position": "lowest",
           "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
+      },
+      "6356550796936186666": {
+        "type": "shopify:\/\/apps\/amai-upsell-volume-discounts\/blocks\/app-embed\/a8198207-c94c-43c6-8e51-f4d802fff7f3",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
