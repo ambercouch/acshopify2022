@@ -9,13 +9,13 @@
 */
 {
   "current": {
-    "social_twitter_link": "https:\/\/twitter.com\/getabearhug",
-    "social_facebook_link": "https:\/\/facebook.com\/getabearhug",
-    "social_instagram_link": "https:\/\/instagram.com\/getabearhug",
-    "favicon": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
+    "social_twitter_link": "https://twitter.com/getabearhug",
+    "social_facebook_link": "https://facebook.com/getabearhug",
+    "social_instagram_link": "https://instagram.com/getabearhug",
+    "favicon": "shopify://shop_images/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
     "cart_user_info": "Orders delivered Monday - Saturday with Royal Mail.",
-    "checkout_header_image": "shopify:\/\/shop_images\/chbg.jpg",
-    "checkout_logo_image": "shopify:\/\/shop_images\/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
+    "checkout_header_image": "shopify://shop_images/chbg.jpg",
+    "checkout_logo_image": "shopify://shop_images/New_Icon_bf8dc8dd-7fd1-49b5-a0a9-d081007d8e8c.png",
     "checkout_logo_size": "large",
     "checkout_body_background_color": "#f6f6f6",
     "checkout_input_background_color_mode": "white",
@@ -28,12 +28,12 @@
         "settings": {
           "announcement_bar_enabled": true,
           "announcement_bar_home_page_only": false,
-          "announcement_bar_text": "FREE SHIPPING OVER £30 | FREE BOTTLE OVER £50",
+          "announcement_bar_text": "FREE SHIPPING OVER £30",
           "announcement_bar_text_mobile": "",
           "announcement_bar_link": "",
-          "mobile_logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "mobile_logo": "shopify://shop_images/Bearhug-logo-text.png",
           "logo_max_width_mobile": 250,
-          "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo": "shopify://shop_images/Bearhug-logo-text.png",
           "logo_max_width": 210,
           "menu": "main-menu-2022",
           "mobile_menu": "side-menu"
@@ -46,7 +46,7 @@
           "footer_newsletter_enable": true,
           "show_payment_icons": true,
           "site_info": "",
-          "logo": "shopify:\/\/shop_images\/Bearhug-logo-text.png",
+          "logo": "shopify://shop_images/Bearhug-logo-text.png",
           "logo_max_width": 250
         }
       },
@@ -56,12 +56,12 @@
           "f4c25c10-d1e6-481c-8543-2766e1883102": {
             "type": "video",
             "settings": {
-              "video_url": "https:\/\/www.youtube.com\/watch?v=YG2Fz9tqS5k",
-              "image": "shopify:\/\/shop_images\/Desktop_Main_4.jpg",
+              "video_url": "https://www.youtube.com/watch?v=YG2Fz9tqS5k",
+              "image": "shopify://shop_images/Desktop_Main_4.jpg",
               "title": "BAMBOO JOINT SUPPORTS & MUSCLE SLEEVES",
               "button": "Slide title",
               "cta": "SHOP NOW",
-              "cta_link": "shopify:\/\/collections\/all-products"
+              "cta_link": "shopify://collections/all-products"
             }
           }
         },
@@ -96,11 +96,11 @@
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">WHY BEARHUG?<\/h2>\n<div class=\"c-feature-list u-col-w\">\n  <ul class=\"c-feature-list__list\">\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-comfort\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-comfort\">\n            <use xlink:href=\"#icon-comfort\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n        UNRIVALLED COMFORT\n      <\/span>\n    <\/li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-renew\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-renew\">\n            <use xlink:href=\"#icon-renew\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n      RENEWABLE RESOURCE\n      <\/span>\n    <\/li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-temp\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-temp\">\n            <use xlink:href=\"#icon-temp\"><\/use>\n          <\/svg>\n        <\/span>\n      <\/span>\n      <span class=\"c-feature-list__lable\">\n      SUPERIOR WARMTH\n      <\/span>\n    <\/li>\n  <\/ul>\n<\/div>",
+              "content_body_html": "<h2 class=\"u-col-3 u-fw-900\">WHY BEARHUG?</h2>\n<div class=\"c-feature-list u-col-w\">\n  <ul class=\"c-feature-list__list\">\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-comfort\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-comfort\">\n            <use xlink:href=\"#icon-comfort\"></use>\n          </svg>\n        </span>\n      </span>\n      <span class=\"c-feature-list__lable\">\n        UNRIVALLED COMFORT\n      </span>\n    </li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-renew\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-renew\">\n            <use xlink:href=\"#icon-renew\"></use>\n          </svg>\n        </span>\n      </span>\n      <span class=\"c-feature-list__lable\">\n      RENEWABLE RESOURCE\n      </span>\n    </li>\n    <li class=\"c-feature-list__item\">\n      <span class=\"c-feature-list__icon\">\n        <span class=\"o-svg-icon c-svg-icon--icon-temp\">\n          <svg preserveaspectratio=\"none\" class=\"o-svg-icon__svg c-svg-icon__svg--icon-temp\">\n            <use xlink:href=\"#icon-temp\"></use>\n          </svg>\n        </span>\n      </span>\n      <span class=\"c-feature-list__lable\">\n      SUPERIOR WARMTH\n      </span>\n    </li>\n  </ul>\n</div>",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Learn More",
-              "content_btn_2_link": "shopify:\/\/pages\/the-story"
+              "content_btn_2_link": "shopify://pages/the-story"
             }
           }
         },
@@ -113,7 +113,7 @@
           "hide_title": true,
           "block_layout": "5050",
           "block_background_colour": "2",
-          "block_background_image": "shopify:\/\/shop_images\/bhg-feature-banner.png"
+          "block_background_image": "shopify://shop_images/bhg-feature-banner.png"
         }
       },
       "16430262408de1051e": {
@@ -123,10 +123,10 @@
             "type": "content",
             "settings": {
               "content_title": "BAMBOO COMPRESSION",
-              "content_body": "<p>Bamboo joint supports and muscle sleeves created from our unique bamboo yarn, offering unrivalled comfort and superior warmth from a renewable resource. <\/p><p>The range consists of wrist, elbow, knee & ankle joint supports along with calf & thigh muscle sleeves.<\/p>",
+              "content_body": "<p>Bamboo joint supports and muscle sleeves created from our unique bamboo yarn, offering unrivalled comfort and superior warmth from a renewable resource. </p><p>The range consists of wrist, elbow, knee & ankle joint supports along with calf & thigh muscle sleeves.</p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/single-supports",
+              "content_btn_1_link": "shopify://collections/single-supports",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -137,7 +137,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/bhg-elbow.png",
+              "content_image": "shopify://shop_images/bhg-elbow.png",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -165,7 +165,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/30_Day_Returns_Graphic_a72ac1ac-0437-404f-a8a5-7f290f5da527.gif",
+              "content_image": "shopify://shop_images/30_Day_Returns_Graphic_a72ac1ac-0437-404f-a8a5-7f290f5da527.gif",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -176,10 +176,10 @@
             "type": "content",
             "settings": {
               "content_title": "FREE EXCHANGES",
-              "content_body": "<p><em><strong>Bearhug 30 day trial opportunity!<\/strong><\/em><\/p><p>Try any product for 30 days and if the size isn't quite right or you want to swap it for another product you can - <strong>free of charge!<\/strong><\/p><p>*refunds are charged a handling fee of £4.95<\/p>",
+              "content_body": "<p><em><strong>Bearhug 30 day trial opportunity!</strong></em></p><p>Try any product for 30 days and if the size isn't quite right or you want to swap it for another product you can - <strong>free of charge!</strong></p><p>*refunds are charged a handling fee of £4.95</p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/sleeves-pairs",
+              "content_btn_1_link": "shopify://collections/sleeves-pairs",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -203,10 +203,10 @@
             "type": "content",
             "settings": {
               "content_title": "CLOTHING & BUNDLES",
-              "content_body": "<p>Products are sold in variety of bundles all of which are discounted compared to purchasing them singularly.<br\/><br\/>Our range of apparel can be worn while training, playing or competing, whether in the gym, on the tennis court, golf course or running in your local parkrun.<\/p>",
+              "content_body": "<p>Products are sold in variety of bundles all of which are discounted compared to purchasing them singularly.<br/><br/>Our range of apparel can be worn while training, playing or competing, whether in the gym, on the tennis court, golf course or running in your local parkrun.</p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/bundles",
+              "content_btn_1_link": "shopify://collections/bundles",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -217,7 +217,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/bhg-bundle.png",
+              "content_image": "shopify://shop_images/bhg-bundle.png",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -256,9 +256,9 @@
             "settings": {
               "content_title": "",
               "content_body": "",
-              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">MEET THE PACK.<\/h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.<\/p>",
+              "content_body_html": "<h2 class=\"u-fs-g u-col-w u-fw-900\">MEET THE PACK.</h2>\n<p class=\"u-col-w\">Bearhug is worn by athletes across the entire sport playing-spectrum, male &amp; female, amateur to elite, junior to veteran.</p>",
               "content_btn_1_label": "Meet The Pack",
-              "content_btn_1_link": "https:\/\/getabearhug.com\/pages\/bearhug-ambassador",
+              "content_btn_1_link": "https://getabearhug.com/pages/bearhug-ambassador",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -273,7 +273,7 @@
           "hide_title": true,
           "block_layout": "7525",
           "block_background_colour": "t",
-          "block_background_image": "shopify:\/\/shop_images\/3453_copy_3.jpg"
+          "block_background_image": "shopify://shop_images/3453_copy_3.jpg"
         }
       },
       "16431012843577f266": {
@@ -281,7 +281,7 @@
         "disabled": true,
         "settings": {
           "heading": "#JOINTHEPACK",
-          "subheading": "<p>Keep up to date with the #packlife<\/p>",
+          "subheading": "<p>Keep up to date with the #packlife</p>",
           "success_message": "Thanks for subscribing",
           "text_color": "#3a3a3a",
           "background_color": "#eae7e0"
@@ -317,14 +317,14 @@
           "3515fabe-c3b2-498f-9500-374724697c7f": {
             "type": "content",
             "settings": {
-              "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png",
+              "block_background_image": "shopify://shop_images/bg-repeat.png",
               "block_background_size": "a",
               "block_background_colour": "2",
               "block_direction": "",
               "content_title": "Birth of <br> the Bear.",
-              "content_body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born.<\/p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
+              "content_body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born.</p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.</p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/single-supports",
+              "content_btn_1_link": "shopify://collections/single-supports",
               "content_btn_2_label": "Read Reviews",
               "content_btn_2_link": ""
             }
@@ -340,12 +340,12 @@
             "type": "image_content",
             "settings": {
               "content_title": "Rhys George",
-              "content_body": "<p>Managing Director & Co Founder<\/p>",
-              "content_image": "shopify:\/\/shop_images\/bearhug-rhys-george.jpg",
+              "content_body": "<p>Managing Director & Co Founder</p>",
+              "content_image": "shopify://shop_images/bearhug-rhys-george.jpg",
               "block_background_colour": "t",
               "block_direction": "",
               "content_btn_1_label": "LinkedIn",
-              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/startupandscaleupceo\/",
+              "content_btn_1_link": "https://www.linkedin.com/in/startupandscaleupceo/",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -354,12 +354,12 @@
             "type": "image_content",
             "settings": {
               "content_title": "Alexander Davies",
-              "content_body": "<p>Chief Brand Builder<\/p>",
-              "content_image": "shopify:\/\/shop_images\/bearhug-alexander-davies.jpg",
+              "content_body": "<p>Chief Brand Builder</p>",
+              "content_image": "shopify://shop_images/bearhug-alexander-davies.jpg",
               "block_background_colour": "t",
               "block_direction": "rev",
               "content_btn_1_label": "LinkedIn",
-              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/alexanderbrandbuilder\/",
+              "content_btn_1_link": "https://www.linkedin.com/in/alexanderbrandbuilder/",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -374,7 +374,7 @@
         "settings": {
           "page_title": "About Us",
           "page_subtitle": "Bamboo joint supports and muscle sleeves created for exercise, recovery and pain relief.",
-          "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-bamboo-joint-support.jpg",
+          "hero_image": "shopify://shop_images/page-header-bearhug-bamboo-joint-support.jpg",
           "hide_page_content": true
         }
       },
@@ -386,11 +386,11 @@
             "disabled": true,
             "settings": {
               "content_title": "Couch to 5K",
-              "content_body": "<p>4 Week Training Plan<\/p>",
-              "content_image": "shopify:\/\/shop_images\/bearhug-training-couch-to-5k.jpg",
+              "content_body": "<p>4 Week Training Plan</p>",
+              "content_image": "shopify://shop_images/bearhug-training-couch-to-5k.jpg",
               "block_direction": "rev",
               "content_btn_1_label": "Download",
-              "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/couch5k.jpg?v=1613392810",
+              "content_btn_1_link": "https://cdn.shopify.com/s/files/1/0011/3878/6387/files/couch5k.jpg?v=1613392810",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -399,11 +399,11 @@
             "type": "image_content",
             "settings": {
               "content_title": "Half Marathon",
-              "content_body": "<p>8 Week Training Plan<\/p>",
-              "content_image": "shopify:\/\/shop_images\/bearhug-training-half-marathon.jpg",
+              "content_body": "<p>8 Week Training Plan</p>",
+              "content_image": "shopify://shop_images/bearhug-training-half-marathon.jpg",
               "block_direction": "",
               "content_btn_1_label": "Download",
-              "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/half_marathon.jpg?v=1613392827",
+              "content_btn_1_link": "https://cdn.shopify.com/s/files/1/0011/3878/6387/files/half_marathon.jpg?v=1613392827",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -412,11 +412,11 @@
             "type": "image_content",
             "settings": {
               "content_title": "High Intensity Interval Training",
-              "content_body": "<p>4 HIIT Session<\/p>",
-              "content_image": "shopify:\/\/shop_images\/bearhug-training-hiit.jpg",
+              "content_body": "<p>4 HIIT Session</p>",
+              "content_image": "shopify://shop_images/bearhug-training-hiit.jpg",
               "block_direction": "rev",
               "content_btn_1_label": "Download",
-              "content_btn_1_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0011\/3878\/6387\/files\/hiit.jpg?v=1613392843",
+              "content_btn_1_link": "https://cdn.shopify.com/s/files/1/0011/3878/6387/files/hiit.jpg?v=1613392843",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -430,7 +430,7 @@
         "settings": {
           "page_title": "Training Plans",
           "page_subtitle": "No email input, no excess nonsense, just free training tools for the pack.",
-          "hero_image": "shopify:\/\/shop_images\/page-header-bearhug-training-plans.jpg",
+          "hero_image": "shopify://shop_images/page-header-bearhug-training-plans.jpg",
           "hide_page_content": false
         }
       },
@@ -447,21 +447,21 @@
             "type": "question",
             "settings": {
               "content_question": "How long is delivery time?",
-              "content_answer": "<p>We aim to dispatch your order on the same working day if the order is placed before 1pm.<\/p><p>Any orders after 1pm will be dispatched the next working day. <\/p><p>Orders are dispatched with the service you have selected, either Royal Mail 1st Class Tracked or Royal Mail 2nd Class Untracked. See more at Royalmail.com for specific delivery times.<\/p>"
+              "content_answer": "<p>We aim to dispatch your order on the same working day if the order is placed before 1pm.</p><p>Any orders after 1pm will be dispatched the next working day. </p><p>Orders are dispatched with the service you have selected, either Royal Mail 1st Class Tracked or Royal Mail 2nd Class Untracked. See more at Royalmail.com for specific delivery times.</p>"
             }
           },
           "5c6ed6b0-4f8a-4c9e-a3f1-0cca565d9030": {
             "type": "question",
             "settings": {
               "content_question": "Can I see the delivery status on my order?",
-              "content_answer": "<p>It is not possible to track your shipment.<\/p>"
+              "content_answer": "<p>It is not possible to track your shipment.</p>"
             }
           },
           "63bab92b-06bc-4277-a542-a17ba5721b35": {
             "type": "question",
             "settings": {
               "content_question": "What shall I do if my goods are damaged when I receive it?",
-              "content_answer": "<p>Please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a> quoting your order number. <\/p>"
+              "content_answer": "<p>Please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com</a> quoting your order number. </p>"
             }
           },
           "d84109f7-a1cb-41fe-8021-085b88f651ed": {
@@ -474,14 +474,14 @@
             "type": "question",
             "settings": {
               "content_question": "Can I make a change to my order?",
-              "content_answer": "<p>Yes, only before you receive your shipping confirmation - please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a>. You cannot change your order after you have received your confirmation. <\/p>"
+              "content_answer": "<p>Yes, only before you receive your shipping confirmation - please contact <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com</a>. You cannot change your order after you have received your confirmation. </p>"
             }
           },
           "fd275c91-3cce-4945-8d5a-39b5151f5c6e": {
             "type": "question",
             "settings": {
               "content_question": "Can I cancel my order?",
-              "content_answer": "<p>You can't cancel your order if you have already received your order confirmation. If you want to cancel your order you can return it within 21 days from when it was received and we will refund the products value.<\/p>"
+              "content_answer": "<p>You can't cancel your order if you have already received your order confirmation. If you want to cancel your order you can return it within 21 days from when it was received and we will refund the products value.</p>"
             }
           },
           "01c01de5-36d3-4c54-9a54-b99eae569bf6": {
@@ -494,14 +494,14 @@
             "type": "question",
             "settings": {
               "content_question": "How long do I have right of return?",
-              "content_answer": "<p>You can return a product up to 30 days from when it was received. <\/p>"
+              "content_answer": "<p>You can return a product up to 30 days from when it was received. </p>"
             }
           },
           "342e175e-2bca-45d7-acb0-1ec03e54662e": {
             "type": "question",
             "settings": {
               "content_question": "How do I make a return?",
-              "content_answer": "<p>Please email <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com<\/a> quoting your order number. <\/p><p>Please note original shipping fees are not refunded. <\/p><p>Bearhug is not responsible for any return shipping costs. <\/p>"
+              "content_answer": "<p>Please email <a href=\"mailto:orders@getabearhug.com\">orders@getabearhug.com</a> quoting your order number. </p><p>Please note original shipping fees are not refunded. </p><p>Bearhug is not responsible for any return shipping costs. </p>"
             }
           },
           "7f07c419-fdf5-4718-b9d2-4b5fdd59d597": {
@@ -514,14 +514,14 @@
             "type": "question",
             "settings": {
               "content_question": "Do you have a product guide?",
-              "content_answer": "<p>You can scroll and explore all our products at our homepage, which works as our product guide. <\/p>"
+              "content_answer": "<p>You can scroll and explore all our products at our homepage, which works as our product guide. </p>"
             }
           },
           "299ed318-160c-4ff8-b990-d5e3096e7076": {
             "type": "question",
             "settings": {
               "content_question": "Where do I find the size guide?",
-              "content_answer": "<p>You can find size guides for the product on each product page. <\/p>"
+              "content_answer": "<p>You can find size guides for the product on each product page. </p>"
             }
           },
           "bee461e2-7ae8-4ce7-a9d1-57150646f382": {
@@ -534,7 +534,7 @@
             "type": "question",
             "settings": {
               "content_question": "When do I get charged for my purchase?",
-              "content_answer": "<p>You are charged at the same moment as you place your order. <\/p>"
+              "content_answer": "<p>You are charged at the same moment as you place your order. </p>"
             }
           }
         },
@@ -570,7 +570,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/Untitled_design_6.png",
+              "content_image": "shopify://shop_images/Untitled_design_6.png",
               "content_btn_1_label": "",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -581,10 +581,10 @@
             "type": "content",
             "settings": {
               "content_title": "<br> CHIEF MEDICAL OFFICER",
-              "content_body": "<p>John Miles is the Welsh Rugby Unions National Squad Physiotherapist and now also holds the role of Chief Medical Officer at Bearhug. Joining the team to utilise his extensive 20 years experience from high perfromance sporting environments. <\/p>",
+              "content_body": "<p>John Miles is the Welsh Rugby Unions National Squad Physiotherapist and now also holds the role of Chief Medical Officer at Bearhug. Joining the team to utilise his extensive 20 years experience from high perfromance sporting environments. </p>",
               "content_body_html": "",
               "content_btn_1_label": "Learn More ABout JOHN",
-              "content_btn_1_link": "https:\/\/getabearhug.com\/blogs\/news\/bearhug-chief-medical-officer",
+              "content_btn_1_link": "https://getabearhug.com/blogs/news/bearhug-chief-medical-officer",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -610,7 +610,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/d108a7fe-f95d-4721-9e2f-4a3d04685e57.png",
+              "content_image": "shopify://shop_images/d108a7fe-f95d-4721-9e2f-4a3d04685e57.png",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -621,7 +621,7 @@
             "type": "content",
             "settings": {
               "content_title": "<br> UNRIVALLED COMFORT",
-              "content_body": "<p>The comfort provided by the round structure of the bamboo fibres is non-irritating, the yarn also has a cross section filled with micro gaps which allows the fabric to breathe. <\/p>",
+              "content_body": "<p>The comfort provided by the round structure of the bamboo fibres is non-irritating, the yarn also has a cross section filled with micro gaps which allows the fabric to breathe. </p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
@@ -651,7 +651,7 @@
               "content_title": "",
               "content_body": "",
               "content_body_html": "",
-              "content_image": "shopify:\/\/shop_images\/0f58b619-541f-4755-847e-5cd3823c5e2c.png",
+              "content_image": "shopify://shop_images/0f58b619-541f-4755-847e-5cd3823c5e2c.png",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
               "content_btn_2_label": "Find Out More",
@@ -662,7 +662,7 @@
             "type": "content",
             "settings": {
               "content_title": "<br> RENWABLE RESOURCE",
-              "content_body": "<p>Bamboo is considered one of the world's most renewable resources due to its speed of growth in an array of conditions. <\/p>",
+              "content_body": "<p>Bamboo is considered one of the world's most renewable resources due to its speed of growth in an array of conditions. </p>",
               "content_body_html": "",
               "content_btn_1_label": "Shop Now",
               "content_btn_1_link": "",
@@ -698,13 +698,13 @@
             "settings": {
               "content_title": "RHYS GEORGE",
               "content_role": "CEO",
-              "content_body": "<p>FMCG Commercial Background. Mentor to multiple businesses and founder of Visionary Group and Visionary Food Solutions.<br\/>Leading the Bearhug pack since its inception in 2016.<br\/><em>Believes he has a 100mph squash serve.<\/em><\/p>",
-              "content_image": "shopify:\/\/shop_images\/ambassador-rhys.jpg",
+              "content_body": "<p>FMCG Commercial Background. Mentor to multiple businesses and founder of Visionary Group and Visionary Food Solutions.<br/>Leading the Bearhug pack since its inception in 2016.<br/><em>Believes he has a 100mph squash serve.</em></p>",
+              "content_image": "shopify://shop_images/ambassador-rhys.jpg",
               "block_background_colour": "t",
               "block_direction": "",
               "block_layout": "has-layout-2575",
               "content_btn_1_label": "Linkedin",
-              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/startupandscaleupceo\/",
+              "content_btn_1_link": "https://www.linkedin.com/in/startupandscaleupceo/",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -714,13 +714,13 @@
             "settings": {
               "content_title": "ALEXANDER DAVIES",
               "content_role": "COO",
-              "content_body": "<p>Joined Bearhug as a graduate in 2018 (read Civil Engineering) as the brands first hire.<br\/><em>Fancies himself as a part time adventurer.<\/em><\/p>",
-              "content_image": "shopify:\/\/shop_images\/ambassador-alexandor.jpg",
+              "content_body": "<p>Joined Bearhug as a graduate in 2018 (read Civil Engineering) as the brands first hire.<br/><em>Fancies himself as a part time adventurer.</em></p>",
+              "content_image": "shopify://shop_images/ambassador-alexandor.jpg",
               "block_background_colour": "t",
               "block_direction": "",
               "block_layout": "has-layout-2575",
               "content_btn_1_label": "Linkedin",
-              "content_btn_1_link": "https:\/\/www.linkedin.com\/in\/alexanderbrandbuilder\/",
+              "content_btn_1_link": "https://www.linkedin.com/in/alexanderbrandbuilder/",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -728,14 +728,14 @@
           "87d1be8c-a113-4b2a-898f-7d6d23d2fd5d": {
             "type": "content",
             "settings": {
-              "block_background_image": "shopify:\/\/shop_images\/bg-repeat.png",
+              "block_background_image": "shopify://shop_images/bg-repeat.png",
               "block_background_size": "cov",
               "block_background_colour": "2",
               "block_direction": "",
               "content_title": "Birth of <br> the Bear.",
-              "content_body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born.<\/p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.<\/p>",
+              "content_body": "<p>In 2014 our co - founder was battling with a long-standing ankle injury that was threatening to put an end to his competitive rugby playing days. Not one to lie down and accept defeat this kicked off a worldwide search until he found a support that could get him back out there. Fast forward two years, the pack was formed and Bearhug was born.</p><p>The pack continues to grow as Bearhug is now worn by athletes across the entire sport playing spectrum. From amateur to elite, junior to veteran, men and women alike. The range currently includes wrist, elbow, knee and ankle joint supports along with calf and thigh muscle sleeves.</p>",
               "content_btn_1_label": "Shop Now",
-              "content_btn_1_link": "shopify:\/\/collections\/single-supports",
+              "content_btn_1_link": "shopify://collections/single-supports",
               "content_btn_2_label": "Find Out More",
               "content_btn_2_link": ""
             }
@@ -752,8 +752,8 @@
             "settings": {
               "content_title": "NICK WILLIAMS",
               "content_role": "RUGBY PLAYER",
-              "content_body": "<p>The now retired talismanic number eight, who established himself as one of the most destructive Guinness PRO14 players of his generation. Ex. Auckland Blues, Munster, Aironi, Ulster & Cardiff Rugby, Cites Bearhug calf sleeves as a key part of prolonging his career.<br\/><\/p>",
-              "content_image": "shopify:\/\/shop_images\/NW_HS.png",
+              "content_body": "<p>The now retired talismanic number eight, who established himself as one of the most destructive Guinness PRO14 players of his generation. Ex. Auckland Blues, Munster, Aironi, Ulster & Cardiff Rugby, Cites Bearhug calf sleeves as a key part of prolonging his career.<br/></p>",
+              "content_image": "shopify://shop_images/NW_HS.png",
               "block_background_colour": "t",
               "block_direction": "",
               "block_layout": "has-layout-33",
@@ -768,8 +768,8 @@
             "settings": {
               "content_title": "KATE STRONG",
               "content_role": "ADVENTURER",
-              "content_body": "<p>World Champion Triathlete, Engineer, Plant-based Adventurer, Coach & Consultant, Entrepreneur, Reiki Master, Philanthropist and 3 Time World Record Holder. Judge Kate not by her titles and accolades but on the action she takes today. Kate’s favourite products are the Bearhug Elbow supports!<br\/><\/p>",
-              "content_image": "shopify:\/\/shop_images\/Web_Page_Page_2_Image_0001.jpg",
+              "content_body": "<p>World Champion Triathlete, Engineer, Plant-based Adventurer, Coach & Consultant, Entrepreneur, Reiki Master, Philanthropist and 3 Time World Record Holder. Judge Kate not by her titles and accolades but on the action she takes today. Kate’s favourite products are the Bearhug Elbow supports!<br/></p>",
+              "content_image": "shopify://shop_images/Web_Page_Page_2_Image_0001.jpg",
               "block_background_colour": "t",
               "block_direction": "",
               "block_layout": "has-layout-33",
@@ -784,8 +784,8 @@
             "settings": {
               "content_title": "RICHARD SLOCOCK",
               "content_role": "CLIMBER",
-              "content_body": "<p>After losing his sight in 2016, Richard decided to truly commit to his climbing and within 12 months represented Team GB. He now holds the position as the, UK number 1 and World number 2 visually impaired climber. Richard swears by the Bearhug Wrist supports and trains in them everyday<\/p>",
-              "content_image": "shopify:\/\/shop_images\/Web_Page_Page_2_Image_0006.jpg",
+              "content_body": "<p>After losing his sight in 2016, Richard decided to truly commit to his climbing and within 12 months represented Team GB. He now holds the position as the, UK number 1 and World number 2 visually impaired climber. Richard swears by the Bearhug Wrist supports and trains in them everyday</p>",
+              "content_image": "shopify://shop_images/Web_Page_Page_2_Image_0006.jpg",
               "block_background_colour": "t",
               "block_direction": "",
               "block_layout": "has-layout-33",
@@ -808,9 +808,9 @@
         ],
         "settings": {
           "page_title": "Meet the Pack",
-          "page_subtitle": "<p>Bearhug's vision is to create an inclusive supportive community connected through activity.<\/p><p>That starts with the people behind the brand, find<br\/>out how Bearhug was born and meet the team<br\/>below.<br\/><\/p>",
-          "page_hashtag": "<p>GET A BEARHUG | GET MOVING<\/p>",
-          "hero_image": "shopify:\/\/shop_images\/page-header-ambassador.jpg",
+          "page_subtitle": "<p>Bearhug's vision is to create an inclusive supportive community connected through activity.</p><p>That starts with the people behind the brand, find<br/>out how Bearhug was born and meet the team<br/>below.<br/></p>",
+          "page_hashtag": "<p>GET A BEARHUG | GET MOVING</p>",
+          "hero_image": "shopify://shop_images/page-header-ambassador.jpg",
           "hide_page_content": true
         }
       },
@@ -821,7 +821,7 @@
             "type": "icon",
             "settings": {
               "title": "Mens health",
-              "cb_icon_image": "shopify:\/\/shop_images\/Menshealth.svg",
+              "cb_icon_image": "shopify://shop_images/Menshealth.svg",
               "cb_icon_hide_title": true
             }
           },
@@ -829,7 +829,7 @@
             "type": "icon",
             "settings": {
               "title": "Womens Running",
-              "cb_icon_image": "shopify:\/\/shop_images\/Womens_RUNNING.svg",
+              "cb_icon_image": "shopify://shop_images/Womens_RUNNING.svg",
               "cb_icon_hide_title": true
             }
           },
@@ -837,7 +837,7 @@
             "type": "icon",
             "settings": {
               "title": "The Independent",
-              "cb_icon_image": "shopify:\/\/shop_images\/Independent.svg",
+              "cb_icon_image": "shopify://shop_images/Independent.svg",
               "cb_icon_hide_title": true
             }
           },
@@ -845,7 +845,7 @@
             "type": "icon",
             "settings": {
               "title": "Metro",
-              "cb_icon_image": "shopify:\/\/shop_images\/Metro.svg",
+              "cb_icon_image": "shopify://shop_images/Metro.svg",
               "cb_icon_hide_title": true
             }
           }
@@ -889,37 +889,37 @@
     ],
     "blocks": {
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {
         }
       },
       "14952540001915115444": {
-        "type": "shopify:\/\/apps\/upcart-cart-drawer\/blocks\/app-embed\/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
+        "type": "shopify://apps/upcart-cart-drawer/blocks/app-embed/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
         "disabled": false,
         "settings": {
         }
       },
       "6986766168588894248": {
-        "type": "shopify:\/\/apps\/preorder-now-wolf\/blocks\/app-embed\/7ee1d740-e67b-4ea8-b0c9-1f62cb8777ec",
+        "type": "shopify://apps/preorder-now-wolf/blocks/app-embed/7ee1d740-e67b-4ea8-b0c9-1f62cb8777ec",
         "disabled": false,
         "settings": {
         }
       },
       "18121446316682264196": {
-        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/fab-embed\/5c736972-c385-431c-8cbb-05726b7a1739",
+        "type": "shopify://apps/student-beans-verification/blocks/fab-embed/5c736972-c385-431c-8cbb-05726b7a1739",
         "disabled": false,
         "settings": {
         }
       },
       "15549472988515247997": {
-        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/banner\/5c736972-c385-431c-8cbb-05726b7a1739",
+        "type": "shopify://apps/student-beans-verification/blocks/banner/5c736972-c385-431c-8cbb-05726b7a1739",
         "disabled": false,
         "settings": {
         }
       },
       "15820462083712392141": {
-        "type": "shopify:\/\/apps\/student-beans-verification\/blocks\/discount-redeem\/5c736972-c385-431c-8cbb-05726b7a1739",
+        "type": "shopify://apps/student-beans-verification/blocks/discount-redeem/5c736972-c385-431c-8cbb-05726b7a1739",
         "disabled": false,
         "settings": {
         }
