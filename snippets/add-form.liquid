@@ -73,7 +73,7 @@
           if High price item (min qty 1) check ...
         {% endcomment %}
         <!-- pType = {{ pType }} -->
-        {%- if pTypeMinimums contains pType -%}
+        {%- if pTypeMinimums downcase contains pType downcase -%}
           {%- if current_variant.price < 1000 -%}
             {%- assign minQty =  pTypeMinQty | times: 1 %}
 
