@@ -80,11 +80,11 @@
       "1643016047b462c6f9": {
         "type": "featured-collection",
         "settings": {
-          "title": "SHOP BEST SELLERS",
+          "title": "SHOP PRIME DAY SALE",
           "subtitle": "",
           "show_description": false,
           "description_override": "",
-          "collection": "frontpage",
+          "collection": "prime-day-sale",
           "product_limit": 4
         }
       },
