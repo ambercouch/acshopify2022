@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "type_base_size": "16px",
@@ -16,10 +16,10 @@
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_twitter_link": "https:\/\/twitter.com\/TempestDesigns",
-    "social_facebook_link": "https:\/\/www.facebook.com\/TempestDesigns",
+    "social_twitter_link": "https://twitter.com/TempestDesigns",
+    "social_facebook_link": "https://www.facebook.com/TempestDesigns",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/tempestdesignsjewellery",
+    "social_instagram_link": "https://www.instagram.com/tempestdesignsjewellery",
     "social_snapchat_link": "",
     "social_tumblr_link": "",
     "social_youtube_link": "",
@@ -56,7 +56,7 @@
     "cart_promo_3_collection_button_text_colour": "p431",
     "cart_promo_3_collection_button_background_colour": "white",
     "favicon": "",
-    "mega_menu_list": "hair-accessorie,belt,other,hat,type,range,plating,colour,decoration,material,charm,jewellery-display,boxes-and-block,bags-and-tag",
+    "mega_menu_list": "hair-accessorie,belt,other,hat,type,clothing,range,plating,colour,decoration,material,charm,jewellery-display,boxes-and-block,bags-and-tag",
     "mega_menu_list_range": "type,brand",
     "mega_menu_list_plating": "plating,antique-plating,matt-plating",
     "checkout_header_image": "",
@@ -81,7 +81,7 @@
             "type": "hero",
             "disabled": true,
             "settings": {
-              "hero_image": "shopify:\/\/shop_images\/Design.png",
+              "hero_image": "shopify://shop_images/Design.png",
               "hero_url": ""
             }
           },
@@ -89,14 +89,14 @@
             "type": "hero",
             "disabled": true,
             "settings": {
-              "hero_image": "shopify:\/\/shop_images\/INDEX_BANNER-2_b62e269e-ba5f-4e19-a7f6-ed61a34add6a.jpg",
-              "hero_url": "https:\/\/www.indxshows.co.uk\/indx-fashion\/womenswear\/womenswear"
+              "hero_image": "shopify://shop_images/INDEX_BANNER-2_b62e269e-ba5f-4e19-a7f6-ed61a34add6a.jpg",
+              "hero_url": "https://www.indxshows.co.uk/indx-fashion/womenswear/womenswear"
             }
           },
           "313539b0-7e4e-4db1-a9d7-ff714028f948": {
             "type": "hero",
             "settings": {
-              "hero_image": "shopify:\/\/shop_images\/web-banner-New-Seren.jpg",
+              "hero_image": "shopify://shop_images/web-banner-New-Seren.jpg",
               "hero_url": ""
             }
           },
@@ -104,8 +104,8 @@
             "type": "hero",
             "disabled": true,
             "settings": {
-              "hero_image": "shopify:\/\/shop_images\/Harrohate_Fashion_Week-Tempest_Banner_dba0fbc8-8a6d-462b-87f8-84516fe59ec9.jpg",
-              "hero_url": "https:\/\/harrogatefashionweek.com\/brands\/tempest-designs\/"
+              "hero_image": "shopify://shop_images/Harrohate_Fashion_Week-Tempest_Banner_dba0fbc8-8a6d-462b-87f8-84516fe59ec9.jpg",
+              "hero_url": "https://harrogatefashionweek.com/brands/tempest-designs/"
             }
           }
         },
@@ -115,8 +115,7 @@
           "313539b0-7e4e-4db1-a9d7-ff714028f948",
           "8466db52-cedf-4934-9278-5649db6bcdff"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "collection-list": {
         "type": "collection-list",
@@ -167,7 +166,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/tempestdesigns-logo-and-mark2017_c0bc5f00-f709-4178-aa41-80a630501f09.png",
+          "logo": "shopify://shop_images/tempestdesigns-logo-and-mark2017_c0bc5f00-f709-4178-aa41-80a630501f09.png",
           "logo_max_width": "250",
           "main_linklist": "main-menu"
         }
@@ -185,19 +184,19 @@
           "1498657223372": {
             "type": "banner",
             "settings": {
-              "banner_url": "https:\/\/www.springfair.com\/"
+              "banner_url": "https://www.springfair.com/"
             }
           },
           "1498657244123": {
             "type": "banner",
             "settings": {
-              "banner_url": "https:\/\/www.moda-uk.co.uk\/welcome"
+              "banner_url": "https://www.moda-uk.co.uk/welcome"
             }
           },
           "1547027989354": {
             "type": "banner",
             "settings": {
-              "banner_url": "https:\/\/www.homeandgift.co.uk\/exhibitors\/tempest-designs"
+              "banner_url": "https://www.homeandgift.co.uk/exhibitors/tempest-designs"
             }
           }
         },
@@ -319,13 +318,12 @@
     ],
     "blocks": {
       "4372474792694305445": {
-        "type": "shopify:\/\/apps\/also-bought-related-products\/blocks\/app-embed-block\/b94b27b4-738d-4d92-9e60-43c22d1da3f2",
+        "type": "shopify://apps/also-bought-related-products/blocks/app-embed-block/b94b27b4-738d-4d92-9e60-43c22d1da3f2",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "7906939159855860195": {
-        "type": "shopify:\/\/apps\/charge-me-later-wholesale-app\/blocks\/cml_snippet\/f6aa9802-b86e-43c4-9f25-9ffaee840587",
+        "type": "shopify://apps/charge-me-later-wholesale-app/blocks/cml_snippet/f6aa9802-b86e-43c4-9f25-9ffaee840587",
         "disabled": false,
         "settings": {
           "customers_type": "specific",
@@ -355,7 +353,7 @@
         }
       },
       "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": true,
         "settings": {
           "button_color": "#000000",
@@ -365,12 +363,6 @@
           "button_vertical_position": "lowest",
           "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
-      },
-      "6356550796936186666": {
-        "type": "shopify:\/\/apps\/amai-upsell-volume-discounts\/blocks\/app-embed\/a8198207-c94c-43c6-8e51-f4d802fff7f3",
-        "disabled": false,
-        "settings": {
-        }
       }
     }
   },
@@ -379,29 +371,25 @@
       "sections": {
         "hero": {
           "type": "hero",
-          "settings": {
-          }
+          "settings": {}
         },
         "collection-list": {
           "type": "collection-list",
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
             "collection-list-0",
             "collection-list-1"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -411,8 +399,7 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "content_for_index": [
