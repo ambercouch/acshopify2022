@@ -12,115 +12,68 @@
 
     {% for item in cart.items %}
 
-    {%- assign low_price = settings.low_price_product | times: 1  -%}
-    {%- assign low_price_2 = settings.low_price_product_2 | times: 1  -%}
+    {%- assign low_price = settings.low_price_product | times: 1 -%}
+    {%- assign low_price_2 = settings.low_price_product_2 | times: 1 -%}
+    {%- assign low_price_3 = settings.low_price_product_3 | times: 1 -%}
     {%- assign pTypeMinimums = 'Clothing' -%}
-    {%- assign pTypeMinQty = low_cost_minimum_qty -%}
+    {%- assign pTypeMinQty = settings.low_cost_minimum_qty -%}
     {%- assign pTypeMinimums2 = 'Handbags' -%}
-    {%- assign pTypeMinQty2 = low_cost_minimum_qty_2 -%}
+    {%- assign pTypeMinQty2 = settings.low_cost_minimum_qty_2 -%}
     {%- assign pType = item.product.type -%}
-    {%- assign varInvQty = item.variant.inventory_quantity | times : 1 -%}
+    {%- assign varInvQty = item.variant.inventory_quantity | times: 1 -%}
 
-    {%- if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" -%}
-      <!-- We have {{ current_variant.inventory_quantity }} in stock. -->
-    {%- else -%}
-      <!-- This product is available. -->
-    {%- endif -%}
+    {%- assign minQty = 1 -%} {% comment %} Default minQty to 1 {% endcomment %}
 
-
-    {%- if item.variant.price >  low_price -%}
-      {% comment %}
-        if the variant price is greater than he low price 600, allow single purchases
-      {% endcomment %}
-
+    {%- if item.variant.price > low_price -%}
       {%- assign minQty = 1 -%}
-      {%- assign minLowPriceQty = 1 -%}
-      <!-- 1 current_variant.price > low_price : {{ current_variant.price }}  > {{ low_price }} -->
-
-      {% elsif item.variant.price < low_price_2 %}
-
-      {% comment %}
-        if the variant price is less than the VERY low price 300, set the minQty accordingly
-      {% endcomment %}
-
+      {%- elsif item.variant.price < low_price_3 -%}
+      {%- assign minQty = settings.low_cost_minimum_qty_3 | times: 1 -%}
+      {%- elsif item.variant.price < low_price_2 -%}
       {%- assign minQty = settings.low_cost_minimum_qty_2 | times: 1 -%}
-      {%- assign minLowPriceQty = settings.low_cost_minimum_qty_2 -%}
-      {%- assign qty = settings.low_cost_minimum_qty_2 -%}
-      <!-- 2 current_variant.price < low_price_2 : {{ current_variant.price }}  < {{ low_price_2 }} -->
-
     {%- else -%}
-
-      {% comment %}
-        if the variant price is less than the low price 600 and greater the the very low price 300, set the minQty accordingly
-      {% endcomment %}
-
-      <!-- 3 item.variant.price < low_price : {{ item.variant.price }}  < {{ low_price }} -->
-      <!-- 4 item.variant.price > low_price_2 : {{ item.variant.price }}  > {{ low_price_2 }} -->
-
       {%- assign minQty = settings.low_cost_minimum_qty | times: 1 -%}
-      {%- assign minLowPriceQty = settings.low_cost_minimum_qty -%}
-      {%- assign qty = settings.low_cost_minimum_qty -%}
-
     {%- endif -%}
 
-    {%- if minLowPriceQty == 1 -%}
-
-      {% comment %}
-        if High price item (min qty 1) check ...
-      {% endcomment %}
-
-      <!-- pType = {{ pType }} -->
-
-      {%- if pTypeMinimums contains pType -%}
-        {%- if  item.variant.price < 1000 -%}
-          {%- assign minQty =  pTypeMinQty | times: 1 %}
-
-
-          <!-- pTypeMinQty assigned {{ pType }} - {{ pTypeMinimums }} - {{ minQty }} -->
-        {%- endif -%}
-      {%- else -%}
-
-        <!-- pTypeMinQty NOT Assigned {{ pType }} - {{ pTypeMinimums }}-->
-
+    {% comment %}
+      If it's a high price item (min qty 1), check if it's in the product type minimums list.
+    {% endcomment %}
+    {%- if minQty == 1 and pTypeMinimums contains pType -%}
+      {%- if item.variant.price < 1000 -%}
+        {%- assign minQty = pTypeMinQty | times: 1 -%}
       {%- endif -%}
-    {% endif %}
+    {%- endif -%}
 
-    <!-- testing -->
-    <!-- ' current_variant.inventory_quantity' -->
-    <!-- {{ current_variant.inventory_quantity }} -->
-    <!-- varInvQty -->
-    <!-- {{ varInvQty  }} -->
+    {% comment %}
+      Check for specific tags to enforce multiples based on clearance tags.
+    {% endcomment %}
+    {%- if item.product.tags contains 'clearance10for10' -%}
+      {%- assign minQty = 10 -%}
+      {%- elsif item.product.tags contains 'clearance5for10' -%}
+      {%- assign minQty = 5 -%}
+      {%- elsif item.product.tags contains 'clearance3for10' -%}
+      {%- assign minQty = 3 -%}
+      {%- elsif item.product.tags contains 'clearance2for10' -%}
+      {%- assign minQty = 2 -%}
+    {%- endif -%}
 
-    {%- if  varInvQty < minQty  -%}
-
-      {%- assign minQty = 1 -%}
-      <!-- reset minQty -->
-      <!--  varInvQty {{  varInvQty }} -->
-
-    {%- else -%}
-      <!-- DONT reset minQty -->
-      <!--  varInvQty {{  varInvQty }} -->
-    {% endif %}
-    {% if template contains 'product' %}
-      <!-- This is a product -->
-      {% assign qtyId = 'Quantity' %}
-    {% else %}
-      <!-- this is not a product -->
-      {% assign qtyId = 'Quantity' | append : variant.id %}
-    {% endif %}
+    {% comment %}
+      Adjust minQty based on available inventory.
+    {% endcomment %}
+    {%- if varInvQty < minQty -%}
+      {%- assign minQty = varInvQty -%}
+    {%- endif -%}
 
     {%- assign currentQty = item.quantity -%}
 
-    {% if currentQty < minQty %}
-      <!-- low quatity {{ currentQty }}-->
+    {%- if currentQty < minQty -%}
       {% assign currentQty = minQty %}
-    {% endif %}
+    {%- endif -%}
 
-
-    {% if currentQty > varInvQty %}
-      <!-- low quatity {{ currentQty }}-->
+    {%- if currentQty > varInvQty -%}
       {% assign currentQty = varInvQty %}
-    {% endif %}
+    {%- endif -%}
+
+
 
     {% comment %}
 
@@ -190,6 +143,7 @@
                  min="{{ minQty }}"
                  max="{{  varInvQty }}"
                  size="4"
+                 step="{{ minQty }}"
                  aria-label="{{ 'cart.general.item_quantity' | t }}">
           <input class="cart-table__qty-input-submit" type="submit" name="update" value="{{ 'cart.general.update' | t }}">
         </td>

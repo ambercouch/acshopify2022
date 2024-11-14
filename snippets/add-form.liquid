@@ -83,13 +83,26 @@
           <!-- pTypeMinQty NOT Assigned {{ pType }} - {{ pTypeMinimums }}-->
         {%- endif -%}
       {%- endif -%}
-
+      <!-- pType = {{ pType }} -->
       <!-- testing -->
-      <!-- {{ current_variant.inventory_quantity }} -->
+
       {%- if varInvQty < minQty -%}
         {%- assign minQty = varInvQty -%}
-        <!-- reset minQty -->
-        <!-- varInvQty {{ varInvQty }} -->
+      {%- endif -%}
+
+
+      {%- if product.tags contains 'clearance10for10' -%}
+        {%- assign minQty = 10 -%}
+        {%- elsif product.tags contains 'clearance5for10' -%}
+        {%- assign minQty = 5 -%}
+        {%- elsif product.tags contains 'clearance3for10' -%}
+        {%- assign minQty = 3 -%}
+        {%- elsif product.tags contains 'clearance2for10' -%}
+        {%- assign minQty = 2 -%}
+      {%- endif -%}
+
+      {%- if varInvQty < minQty -%}
+        {%- assign minQty = varInvQty -%}
       {%- endif -%}
 
       {% if template contains 'product' %}
@@ -107,7 +120,19 @@
         <!-- No video URL -->
       {% endif %}
 
-      <input class="add-form__qty-input" data-type-min="{{ pTypeMinQty }}" data-low-price-min="{{  minLowPriceQty }}" data-min-qty="{{ minQty }}" type="number" data-qty-id="Quantity" data-product-id="{{ product.id }}" id="{{ qtyId }}" name="quantity" value="{{ minQty }}" min="{{ minQty }}">
+      <!-- Quantity Input Field -->
+      <input class="add-form__qty-input"
+             data-type-min="{{ pTypeMinQty }}"
+             data-low-price-min="{{ minLowPriceQty }}"
+             data-min-qty="{{ minQty }}"
+             type="number"
+             data-qty-id="Quantity"
+             data-product-id="{{ product.id }}"
+             id="{{ qtyId }}"
+             name="quantity"
+             value="{{ minQty }}"
+             min="{{ minQty }}"
+             step="{{ minQty }}">
     </div>
     <div class="add-form__price-wrapper{{ afClassModifier }}">
       <div data-price-wrapper>
